@@ -130,6 +130,9 @@ a.dotted-link:hover {
 
 .header .profile-image {
   margin-right: 30px;
+  width: 168px;
+  height: 168px;
+  object-fit: cover;
 }
 
 .header .profile-content .name {
@@ -761,6 +764,12 @@ body[data-theme="dark"] .gha-feed a {
   color: #3AAA64;
 }
 
+@media print {
+  .dark-mode-switch {
+    display: none !important;
+  }
+}
+
 body[data-theme="dark"] .gha-header > .gha-github-icon,
 body[data-theme="dark"] .gha-header > .gha-user-info > a,
 body[data-theme="dark"] .gha-header > .gha-user-info > p > a {
@@ -806,7 +815,9 @@ body[data-theme="dark"] .text-muted {
   }
   .header .profile-image {
     float: none !important;
-    margin: 0 auto;
+    margin: 0 auto 15px auto;
+    width: 132px;
+    height: 132px;
   }
   .header .profile-content {
     float: none !important;
