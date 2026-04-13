@@ -1,0 +1,778 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.38/dist/katex.min.css">
+      
+      
+      <script src="https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="omni-agent">Omni-Agent </h1>
+<h2 id="i-tổng-quan-dự-án">I. Tổng quan dự án </h2>
+<h3 id="1-tóm-tắt-dựa-án-executive-summary">1. Tóm tắt dựa án (Executive Summary) </h3>
+<p>Omni-Agent là hệ thống event-driven hỗ trợ tìm kiếm kết hợp (RAG + Graph), quản lý/tạo test case và bug, tối ưu hóa truy xuất thông tin cho LLM.</p>
+<h3 id="2-định-nghĩa-bài-toán-problem-definition">2. Định nghĩa bài toán (Problem definition) </h3>
+<h4 id="21-test-cases-generation">2.1. Test Cases Generation </h4>
+<p>Sau khi document (tài liệu yêu cầu, đặc tả, hướng dẫn...) đã được nhập vào hệ thống, thực hiện quy trình sau để tạo test case:</p>
+<ol>
+<li><strong>Tiền xử lý document:</strong> Chuẩn hóa, phân đoạn, và phân loại các phần quan trọng (requirement, rule, scenario, v.v.).</li>
+<li><strong>Sinh test case tự động:</strong> Sử dụng LLM hoặc module chuyên biệt để phân tích nội dung document, trích xuất các điều kiện kiểm thử, luồng chính/phụ, và sinh ra các test case sơ bộ.</li>
+<li><strong>Kiểm tra &amp; hiệu chỉnh:</strong> Người kiểm thử hoặc hệ thống kiểm tra lại test case, bổ sung hoặc chỉnh sửa cho phù hợp với thực tế nghiệp vụ.</li>
+<li><strong>Liên kết với requirement:</strong> Gán các test case vừa tạo với các requirement, rule, hoặc scenario tương ứng trên đồ thị tri thức.</li>
+<li><strong>Quản lý vòng đời:</strong> Đưa test case vào hệ thống quản lý (GNN-LM), phục vụ cho các hoạt động kiểm thử, phân tích ảnh hưởng, tối ưu hồi quy, v.v.</li>
+</ol>
+<p><strong>Lưu ý:</strong> Có thể tích hợp AI để tự động hóa bước sinh test case, hoặc thực hiện bán tự động tùy theo mức độ phức tạp của document và yêu cầu dự án.</p>
+<h4 id="22-hybrid-search-rag--graph">2.2. Hybrid Search (RAG + Graph) </h4>
+<p>Xây dựng hệ thống kết hợp song song giữa RAG (Retrieval-Augmented Generation) và Graph Search nhằm tăng khả năng truy xuất thông tin và tư duy logic cho các LLM.</p>
+<p>=&gt; <strong>Knowledge Foundation (GNN-KF)</strong>: mô-đun chịu trách nhiệm duy trì "chân lý" (ground truth) và ý đồ thiết kế của sản phẩm. Mô-đun này có thể được huấn luyện và tái sử dụng qua nhiều dự án cùng miền.</p>
+<h4 id="23-test-cases-and-bug-management">2.3. Test cases and bug management </h4>
+<p>Tối ưu hóa quản lý test case và bug (có thể tích hợp với công cụ như Jira).</p>
+<details>
+<summary>Phân tích ảnh hưởng (Impact Analysis)</summary>
+<p><strong>Ý tưởng:</strong> Khi một Requirement (ví dụ <code>REQ-50</code>) thay đổi, xác định node tương ứng trên đồ thị, lấy embedding (ví dụ từ GraphSAGE) và thực hiện tìm kiếm gần nhất trong không gian vector để tìm các TestCase có embedding giống.</p>
+<p><strong>Ưu điểm:</strong></p>
+<ul>
+<li>Không chỉ phát hiện TestCase có kết nối trực tiếp, mà còn tìm các TestCase tương đồng về ngữ nghĩa hoặc cấu trúc (ví dụ kiểm tra cùng DataEntity) — điều mà truy vấn đồ thị thuần túy có thể bỏ sót.</li>
+</ul>
+</details>
+<details>
+<summary>Tối ưu hóa hồi quy (Regression Test Optimization)</summary>
+<p><strong>Quy trình:</strong></p>
+<ul>
+<li>Dùng GraphSAGE sinh embedding cho tất cả TestCase. Embedding phản ánh mối liên hệ ẩn như: feature hay thay đổi, module hay phát sinh bug...</li>
+<li>Huấn luyện một mô hình đơn giản (ví dụ hồi quy tuyến tính) nhận embedding làm đầu vào để dự đoán "risk score" cho mỗi TestCase, dùng dữ liệu lịch sử (embedding, số lần phát hiện bug) làm nhãn.</li>
+<li>Khi cần tối ưu hồi quy, tính embedding mới và chọn top-N TestCase có điểm rủi ro cao để ưu tiên chạy.</li>
+</ul>
+</details>
+<details>
+<summary>Phát hiện bug trùng lặp</summary>
+<p><strong>Quy trình:</strong></p>
+<ul>
+<li>Khi có báo cáo bug mới (ví dụ <code>Bug-123</code>), tạo node và embedding ban đầu từ mô tả (SLM / PhoBERT...).</li>
+<li>Chạy inference trên GraphSAGE để tổng hợp thông tin từ các hàng xóm và tạo embedding cuối cùng.</li>
+<li>Tìm kiếm các bug có embedding gần nhất để đề xuất các ứng viên trùng lặp.</li>
+</ul>
+</details>
+<details>
+<summary>Gợi ý test case còn thiếu (Test Gap Analysis)</summary>
+<p><strong>Ý tưởng:</strong> Bài toán link prediction. Huấn luyện GraphSAGE để học biểu diễn hợp lý; với một requirement (<code>REQ-75</code>) so sánh embedding của nó với embedding các TestCase khác để tính "compatibility score". Các TestCase có điểm cao nhưng chưa có liên kết là gợi ý kiểm thử bị bỏ sót.</p>
+</details>
+<p><strong>Ví dụ thực tế (ngắn):</strong></p>
+<ul>
+<li>Impact Analysis: REQ-420 thay đổi → trả về 23 TC ưu tiên (12 liên kết trực tiếp, 8 tương đồng ngữ nghĩa, 3 module bị ảnh hưởng).</li>
+<li>Regression Test Optimization: từ 5.000 TC chọn top‑100 (2%) có risk cao để chạy trước, phát hiện ~85% lỗi nghiêm trọng.</li>
+<li>Duplicate Bug Detection: ticket “thanh toán thất bại” → tìm 2 bug gần giống (cosine 0.92, 0.87) → gợi ý duplicate.</li>
+<li>Test Gap Analysis: REQ-75 → phát hiện 2 TC tương hợp &gt;0.8 nhưng chưa cover → đề xuất tạo <code>TC-addr-001</code>.</li>
+</ul>
+<p>=&gt; <strong>Lifecycle Management (GNN-LM)</strong>: mô-đun quản lý các sự kiện và hoạt động trong vòng đời phát triển và kiểm thử.</p>
+<h3 id="3-mục-tiêu--mục-đích-goals--objectives">3. Mục tiêu &amp; Mục đích (Goals &amp; Objectives) </h3>
+<h4 id="mục-tiêu-tổng-thể">Mục tiêu tổng thể </h4>
+<ul>
+<li>Xây dựng hệ thống hỗ trợ tự động hóa kiểm thử phần mềm, tối ưu hóa quản lý test case và bug, nâng cao hiệu quả truy xuất thông tin cho LLM.</li>
+<li>Tích hợp các công nghệ AI/ML (RAG, Graph, GNN) để tăng khả năng phân tích, đề xuất và kiểm thử thông minh.</li>
+<li>Đảm bảo traceability giữa requirement, test case, bug và các thực thể nghiệp vụ, phục vụ phân tích ảnh hưởng và tối ưu hồi quy.</li>
+<li>Tối ưu hóa quy trình kiểm thử, giảm chi phí và thời gian phát hiện lỗi nghiêm trọng.</li>
+<li>Hỗ trợ mở rộng, tái sử dụng tri thức kiểm thử cho nhiều dự án cùng miền.</li>
+</ul>
+<h4 id="mục-đích-cụ-thể">Mục đích cụ thể </h4>
+<ol>
+<li>Tự động hóa sinh test case từ document, giảm phụ thuộc vào kiểm thử thủ công.</li>
+<li>Quản lý vòng đời test case và bug hiệu quả, tích hợp với các công cụ quản lý hiện có (Jira, CI/CD).</li>
+<li>Tăng khả năng phát hiện bug trùng lặp, test gap, và tối ưu hóa hồi quy dựa trên phân tích đồ thị và embedding.</li>
+<li>Hỗ trợ truy vấn thông minh, kết hợp RAG và Graph Search để trả lời các câu hỏi nghiệp vụ/phân tích.</li>
+<li>Đảm bảo hệ thống có khả năng mở rộng, bảo trì và tích hợp dễ dàng với các nền tảng khác.</li>
+</ol>
+<h2 id="ii-thiết-kế-kỹ-thuật-và-kiến-trúc">II. THIẾT KẾ KỸ THUẬT VÀ KIẾN TRÚC </h2>
+<h3 id="1-thiết-kế-kiến-trúc-tổng-quan-high-level-architecture-design">1. Thiết kế kiến trúc tổng quan (High-Level Architecture Design) </h3>
+<p></p><p><strong>System Architecture</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        "primaryTextColor": "#000000",
+        "clusterBorder": "#000000",
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    classDef user fill:#cde4ff,stroke:#446180;
+    classDef webapp fill:#d4edda,stroke:#155724;
+    classDef datastore fill:#f8d7da,stroke:#721c24;
+    classDef async fill:#fff3cd,stroke:#856404;
+    
+    subgraph Graph["Omni-Agent"]
+        direction TB
+
+        User("fa:fa-user User"):::user
+        IntergatedSystem("fa:fa-cogs Integrated System"):::user
+
+        subgraph Backend["Backend System"]
+            direction TB
+
+            subgraph LoadBalancerLayer["Load Balancer Layer"]
+                direction TB
+                Nginx["fa:fa-server Ingress Controller"]:::webapp
+            end
+
+            subgraph Web["Web Application Layer"]
+                direction TB
+                DjangoWeb["fa:fa-server Django Web"]:::webapp
+                SqlDb_Web[("fa:fa-database SQL DB")]:::datastore
+            end
+
+            subgraph SharedServices["Shared Services Layer"]
+                direction TB
+                Redis[(fa:fa-layer-group Redis)]:::datastore
+                S3[(fa:fa-aws S3 Storage)]:::datastore
+                VecDb[("fa:fa-database Vec DB")]:::datastore
+            end
+
+            subgraph Workers["Asynchronous Workers"]
+                direction TB
+                OCR["fa:fa-microchip OCR Worker"]:::async
+                Agent["fa:fa-robot Omni Core Worker"]:::async
+            end
+
+            subgraph LlmService["LLM Services Layer"]
+                direction TB
+                LiteLLM["fa:fa-robot LiteLLM Proxy"]:::async
+
+                SqlDb_LiteLLM[("fa:fa-database SQL DB")]:::datastore
+                S3_LiteLLM[(fa:fa-aws S3 Storage)]:::datastore
+
+                Local_LLM["fa:fa-server Local LLM"]:::async
+            end
+
+            subgraph Monitoring["Monitoring &amp; Logging"]
+                direction TB
+                Prometheus["fa:fa-chart-line Prometheus"]:::async
+                Grafana["fa:fa-chart-bar Grafana"]:::async
+                
+                Langfuse["fa:fa-robot Langfuse"]:::async
+
+                SqlDb_Monitoring[("fa:fa-database SQL DB")]:::datastore
+
+                CeleryLogger["fa:fa-clipboard-list Celery Logger"]:::async
+            end
+        end
+
+        External_LLM["fa:fa-cloud External LLM"]:::async
+    end
+
+    %% User Interaction
+    User &lt;--&gt;|"HTTP Request"| Nginx
+    IntergatedSystem &lt;--&gt;|"API Calls"| Nginx
+    
+    Nginx &lt;--&gt;|"Proxy"| DjangoWeb
+
+    %% Web to Data Layer
+    DjangoWeb &lt;---&gt; |"Up/Down Files"| S3
+    DjangoWeb &lt;---&gt; |"Push/Cache"| Redis
+    DjangoWeb &lt;--&gt; |"Read/Write"| SqlDb_Web
+    DjangoWeb --&gt; Prometheus
+    VecDb &lt;--&gt; |"Read/Write"| Agent
+    S3 &lt;--&gt; |"Up/Down Files"| Workers
+    Redis &lt;--&gt; |"Push/Pop Tasks"| Workers
+    Redis --&gt;|"Logging"| CeleryLogger
+
+    Workers --&gt;|"API Callback"| DjangoWeb
+    Workers &lt;---&gt;|"API Calls"| LiteLLM
+
+    Grafana &lt;--&gt;|"Query Metrics"| Prometheus
+    
+
+    Langfuse &lt;--&gt; SqlDb_Monitoring
+
+    Langfuse &lt;--&gt;|"Logging"| LiteLLM
+    LiteLLM &lt;--&gt; S3_LiteLLM
+    LiteLLM &lt;--&gt; SqlDb_LiteLLM
+    LiteLLM &lt;--&gt; Local_LLM
+    LiteLLM &lt;---&gt; External_LLM
+
+</div><p></p>
+<h3 id="2-luồng-xử-lý-dữ-liệu-data-processing-pipelines">2. Luồng xử lý dữ liệu (Data Processing Pipelines) </h3>
+<p></p><p><strong>Data Processing and Graph Construction Pipeline</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    subgraph PipelineOverview["Data Processing Pipeline"]
+        direction TB
+        Doc(["Document"])
+        
+        Phase1["Phase 1: Data Preprocessing"]
+        Chunks(["Chunked Documents"])
+        Toc(["Table of Contents"])
+
+        subgraph n-chunk/batch
+            direction TB
+            Phase2["Phase 2: Sumarize Toc"]
+            Phase3["Phase 3: Build Sub-Graph"]
+        end
+        sToc(["sTable of Contents"])
+        SubGraphs(["SubGraphs"])
+
+        Phase4["Phase 4: Merge Sub-Graph"]
+        MergedGraph(["Merged Graph"])
+
+        MergedGraph
+
+        Doc --&gt; Phase1
+        Phase1 --&gt; Chunks
+        Phase1 --&gt; Toc
+
+        Chunks --&gt;|"n-chunk/batch"| Phase2
+        Toc --&gt; Phase2
+
+        Phase2 --&gt; sToc
+        Phase3 --&gt; SubGraphs
+        SubGraphs --&gt; Phase4
+        sToc --&gt; Phase4
+
+        Toc --&gt; Phase3
+        Phase4 --&gt; MergedGraph
+    end
+</div><p><strong>Note:</strong></p>
+<ul>
+<li>sToc: Table of Contents with summarization</li>
+</ul>
+<p><strong>Phase 1: Preprocessing Document (<span style="color:green">DONE</span>)</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    subgraph Phase1Graph["Phase 1: Preprocessing Document"]
+        direction TB
+        Doc(["Document"])
+        Docling(["Docling"])
+        Markdown(["Markdown Doc"])
+        Toc(["Table of Content"])
+        Chunks(["Chunks (json)"])
+        
+        Doc --&gt; Docling
+        Docling --&gt;|Export| Markdown
+        Docling --&gt;|Generate| Toc
+        Docling --&gt;|Generate| Chunks
+    end
+</div><p><strong>Phase 2: Summerize Documents (<span style="color:green">DONE</span>)</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    subgraph Phase2Graph["Phase 2: Summerize Documents"]
+        direction TB
+        MChunk(["Main Chunk"])
+        SChunk(["Context Chunk"])
+
+        Toc(["Table of Content"])
+        LLM(["Summarization For Graph Ready|LLM"])
+
+        sToc(["sTable of Contents"])
+
+        MChunk --&gt; LLM
+        SChunk --&gt; LLM
+        Toc --&gt; LLM
+
+        LLM --&gt; sToc
+    end
+</div><p><strong>Phase 3: Build Sub-Graph (<span style="color:green">DONE</span>)</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    subgraph Phase3Graph["Phase 3: Build Sub-Graph"]
+        direction TB
+
+        MChunk(["Main Chunk"])
+        SChunk(["Context Chunk"])
+        sToc(["sTable of Content"])
+
+
+        Nodes(["Nodes"])
+        Edges(["Edges"])
+        Relationship(["Relationship"])
+
+        EntityExtractor(["Entity Extraction|LLM"])
+
+        RelationshipMapping(["Relationship Mapping|LLM"])
+
+        GraphValidator(["Graph Validator|LLM"])
+
+        MChunk --&gt; EntityExtractor
+        SChunk --&gt; EntityExtractor
+        sToc --&gt; EntityExtractor
+
+        EntityExtractor --&gt; RelationshipMapping
+        
+        RelationshipMapping --&gt; GraphValidator
+
+        SubGraph(["SubGraph"])
+
+        GraphValidator --&gt; SubGraph
+
+        SubGraph --&gt;|Output| Nodes
+        SubGraph --&gt;|Output| Edges
+        SubGraph --&gt;|Output| Relationship
+    end
+</div><p><strong>Note:</strong></p>
+<ul>
+<li>sToc: Table of Contents with summarization for nodes/edges context.</li>
+</ul>
+<p><strong>Phase 4: Merge Sub-Graph (<span style="color:green">DONE</span>)</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+
+    subgraph Phase3Graph["Phase 3: Build Sub-Graph"]
+        direction TB
+
+        SubGraph(["SubGraph"])
+
+        LogicMerger(["Logic Merger"])
+
+        LLMMerger(["LLM Merger|LLM"])
+
+        DocGraph(["Document Graph"])
+
+        subgraph BuildClusters["Build Clusters"]
+            direction TB
+            Embed["Embedding"]
+            Milvus[("Milvus Vector DB")]
+
+            HDBSCAN(["HDBSCAN Clustering"])
+
+            Embed --&gt; Milvus
+            Milvus --&gt;|Computed Distances| HDBSCAN
+        end
+        
+        CentroidUpdate(["Centroid Update (Auto Merge)"])
+
+        SubGraph --&gt; LogicMerger
+        LogicMerger --&gt;|"Unique Nodes"| BuildClusters
+
+        HDBSCAN --&gt;|"label == -1 (Noise)"| DocGraph
+        
+        HDBSCAN --&gt;|"score &gt; 0.95"| CentroidUpdate
+        HDBSCAN --&gt;|"0.8 &lt;= score &lt;= 0.95"| LLMMerger
+        HDBSCAN --&gt;|"score &lt; 0.8 (No Merge)"| DocGraph
+
+        LLMMerger --&gt;|"Approved Merges"| DocGraph
+        LLMMerger --&gt;|"Rejected Merges"| DocGraph
+        
+        CentroidUpdate --&gt;|"Finalized Nodes"| DocGraph
+        
+    end
+</div><p></p>
+<h3 id="3-mô-hình-hóa-dữ-liệu-data-modeling">3. Mô hình hóa dữ liệu (Data Modeling) </h3>
+<p></p><p>Mô tả cấu trúc node/edge cơ bản — phần này do LLM hỗ trợ tạo và kiểm soát (ví dụ: định dạng node type, edge type chuẩn hóa).</p>
+<h4 id="31-gnn-kf-node--edge-cơ-bản">3.1. GNN-KF (Node / Edge cơ bản) </h4>
+<h5 id="node-types-ground-truth--product-intent">Node types (Ground truth / Product Intent) </h5>
+<p>Kết hợp các kĩ thuật:</p>
+<p><strong>Domain-Driven Design (DDD)</strong>:</p>
+<ul>
+<li>Node: Entity, ValueObject</li>
+<li>Edge: HAS_ATTRIBUTE</li>
+</ul>
+<p><strong>Finite State Machine (FSM)</strong>:</p>
+<ul>
+<li>Node: State, Action,</li>
+<li>Edge: CURRENT_STATE, ALLOWS_ACTIONS, TRANSITIONS_TO</li>
+</ul>
+<p><strong>Decision Logic</strong></p>
+<ul>
+<li>Node: Rule</li>
+<li>Edge: REQUIRES_RULE, MEET_RULE</li>
+</ul>
+<p><strong>Định nghĩa Node Type</strong></p>
+<ol>
+<li><strong>Actor (Chủ thể)</strong>: Trả lời câu hỏi <em>"Ai đang thao tác?"</em>. Đây là những thực thể chủ động tác động vào hệ thống (Ví dụ: Người dùng (User), Quản trị viên (Admin), Hệ thống thanh toán bên thứ 3 (Momo)).</li>
+<li><strong>Object (Đối tượng nghiệp vụ)</strong>: Trả lời câu hỏi <em>"Thao tác trên cái gì?"</em>. Đây là các thành phần hoặc cấu trúc dữ liệu chính chịu sự tác động, có định danh rõ ràng để phân biệt (Ví dụ: Đơn hàng (Order), Form đăng nhập, Hồ sơ người dùng).</li>
+<li><strong>ValueObject (Dữ liệu chi tiết)</strong>: Là các mẩu thông tin nhỏ lẻ cấu thành nên <em>Actor</em> hoặc <em>Object</em>. Chúng chỉ mang ý nghĩa chứa giá trị, không đứng độc lập (Ví dụ: Số điện thoại, Số tiền 100k, Chuỗi ký tự email).</li>
+<li><strong>State (Trạng thái)</strong>: Tình trạng hiện tại của <em>Actor</em> hoặc <em>Object</em> tại một mốc thời gian nhất định (Ví dụ: Đang chờ duyệt, Chưa đăng nhập, Đã khóa).</li>
+<li><strong>Action (Hành động)</strong>: Các thao tác làm thay đổi hệ thống hoặc kích hoạt luồng xử lý (Ví dụ: Bấm nút "Gửi", Gọi API tạo đơn hàng).</li>
+<li><strong>Rule (Điều kiện/Quy tắc)</strong>: Các chốt chặn logic (luật IF/ELSE) mà hệ thống bắt buộc phải kiểm tra để xem hành động có hợp lệ hay không (Ví dụ: Mật khẩu phải &gt; 8 ký tự, Giỏ hàng phải có ít nhất 1 sản phẩm).</li>
+<li><strong>Output (Kết quả trả về)</strong>: Thứ hệ thống "nhả ra" sau khi hành động hoàn tất hoặc khi vi phạm <em>Rule</em>. Đây là căn cứ để xác nhận test case pass hay fail (Ví dụ: Mã HTTP 400 Bad Request, Dòng chữ báo lỗi màu đỏ trên màn hình, Json response).</li>
+</ol>
+<p><strong>Định nghĩa Edge Type</strong></p>
+<ol>
+<li><strong>PERFORMS</strong> (<code>Actor</code> -&gt; <code>Action</code>): Chỉ định chủ thể thực hiện một hành động cụ thể (Ví dụ: User thực hiện Login). Thường dùng để xác định Role và kịch bản phân quyền (RBAC) trong test case.</li>
+<li><strong>CAN_BE_IN</strong> (<code>Actor</code> hoặc <code>Object</code> -&gt; <code>State</code>): Khai báo tập hợp các trạng thái hợp lệ mà một chủ thể hoặc đối tượng nghiệp vụ có thể tồn tại trong suốt vòng đời của nó (Ví dụ: Order có thể ở state Pending, Paid, hoặc Canceled).</li>
+<li><strong>INTERACTS_WITH</strong> (<code>Action</code> -&gt; <code>Object</code>): Xác định mục tiêu (target) mà hành động tác động trực tiếp lên. Trong UI test là các element (Button, Form); trong API test là các endpoint, URL, hoặc Controller.</li>
+<li><strong>HAS_PROPERTY</strong> (<code>Actor</code> hoặc <code>Object</code> -&gt; <code>ValueObject</code>): Mô tả các thuộc tính mang tính bản chất, định danh nghiệp vụ độc lập của một thực thể (Ví dụ: User có Email, PhoneNumber).</li>
+<li><strong>CONTAINS</strong> (<code>Object</code> -&gt; <code>Object</code> hoặc <code>ValueObject</code>): Mô tả quan hệ cha-con về mặt cấu trúc vật lý, dùng để build API Payload lồng nhau (Nested JSON) hoặc các thành phần Form UI phức tạp (Form chứa Input).</li>
+<li><strong>ALLOWS_ACTION</strong> (<code>State</code> -&gt; <code>Action</code>): Khai báo các hành động được phép thực thi khi đối tượng đang ở một trạng thái cụ thể. Dùng làm cơ sở để Agent duyệt đồ thị và sinh ra các kịch bản User Journey mạch lạc.</li>
+<li><strong>TRANSITIONS_TO</strong> (<code>Action</code> -&gt; <code>State</code>): Thể hiện sự thay đổi trạng thái của hệ thống hoặc đối tượng sau khi một hành động được thực hiện thành công (Happy Path).</li>
+<li><strong>REQUIRES_RULE</strong> (<code>Action</code> -&gt; <code>Rule</code>): Khai báo các điều kiện ràng buộc, kiểm tra hợp lệ (validation/business logic) mà hệ thống bắt buộc phải đánh giá khi hành động được kích hoạt.</li>
+<li><strong>MEET_RULE</strong> (<code>Rule</code> -&gt; <code>State</code>): Xác định trạng thái mới của đối tượng/hệ thống nếu hành động vượt qua (pass) thành công các điều kiện ràng buộc của Rule.</li>
+<li><strong>PRODUCES</strong> (<code>Action</code> -&gt; <code>Output</code>): Định nghĩa kết quả trực tiếp trả về từ hệ thống sau một hành động thành công. Dùng làm Expected Result (Assertion) cho Happy Path (Ví dụ: HTTP 200 OK, Load trang Dashboard).</li>
+<li><strong>FAILS_WITH</strong> (<code>Rule</code> -&gt; <code>Output</code>): Định nghĩa hệ quả hoặc phản hồi báo lỗi của hệ thống khi điều kiện ràng buộc bị vi phạm. Dùng làm Expected Result (Assertion) cho Negative/Unhappy Path (Ví dụ: HTTP 400 Bad Request, hiển thị text lỗi đỏ trên UI).</li>
+</ol>
+<p><strong>Có thể sinh test cases theo quy tắc Model-Based Testing (MBT):</strong></p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Action + Rule
+    → 1 Positive Test
+    → N Negative Tests
+
+actor 
+  → PERFORMS → action 
+      → REQUIRES_RULE → rule 
+              → MEET_RULE → state 
+                    → ALLOWS_ACTION → next action   ← KEY CONNECTOR
+              → FAILS_WITH → output (negative path)
+      → TRANSITIONS_TO → state
+              → ALLOWS_ACTION → next action          ← KEY CONNECTOR
+</code></pre><details>
+<summary><b>Example System Prompt</b></summary>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token title important"><span class="token punctuation">#</span> Role and Intent</span>
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Role:</span><span class="token punctuation">**</span></span> You are a leading expert in the field of <span class="token code-snippet code keyword">`Business Analysis`</span>.
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Task Background:</span><span class="token punctuation">**</span></span> You are receiving a request to extract nodes, edges, and relationships from a text chunk for the purpose of <span class="token code-snippet code keyword">`building a graph`</span>.
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Core Goal:</span><span class="token punctuation">**</span></span> Perform the task below with in-depth thinking, rigorous logic, and a multi-faceted perspective.
+
+<span class="token title important"><span class="token punctuation">#</span> INPUT SCHEMA</span>
+The user's input data is organized within the following XML tags:
+<span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`&lt;toc&gt;`</span>: This section contains the Table of Contents of the document, which provides an overview of the document's structure and main topics.
+<span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`&lt;chunk&gt;`</span>: This is a chunk from the document.
+
+<span class="token title important"><span class="token punctuation">#</span> DELIVERABLES</span>
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Format:</span><span class="token punctuation">**</span></span> TOON (Token-Oriented Object Notation)
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Tone &amp; Style:</span><span class="token punctuation">**</span></span> Concise, problem-focused
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Output Structure:</span><span class="token punctuation">**</span></span>
+<span class="token code"><span class="token punctuation">```</span><span class="token code-language">toon</span>
+<span class="token code-block language-toon">nodes(id, name, type):
+n1, "entity name", "node type"
+n2, "entity name", "node type"
+edges(id, name):
+e1, "edge name"
+e2, "edge name"
+relationships(id, src_node_id, edge_id, des_node_id):
+r1, n1, e1, n2
+r2, n2, e2, n1
+...</span>
+<span class="token punctuation">```</span></span>
+<span class="token title important"><span class="token punctuation">#</span> GRAPH DEFINITION</span>
+<span class="token title important"><span class="token punctuation">##</span> Definition of Node Type</span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Actor</span><span class="token punctuation">**</span></span>: Answers the question "Who is performing the action?". These are the active entities that interact with the system (e.g., User, Admin, Third-party payment system such as Momo).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Object (Business Object)</span><span class="token punctuation">**</span></span>: Answers the question "Operating on what?". These are the main components or data structures being affected, clearly identifiable to distinguish between them (e.g., Order, Login Form, User Profile).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">ValueObject (Detailed Data)</span><span class="token punctuation">**</span></span>: Small pieces of information that make up Actor or Object. They only hold values and cannot stand alone (e.g., Phone number, Amount 100k, Email string).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">State</span><span class="token punctuation">**</span></span>: The current condition of an Actor or Object at a specific point in time (e.g., Pending approval, Not logged in, Locked).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Action</span><span class="token punctuation">**</span></span>: Operations that change the system or trigger process flows (e.g., Click "Submit" button, Call API to create order).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Rule (Condition/Rule)</span><span class="token punctuation">**</span></span>: Logical checkpoints (IF/ELSE statements) that the system must verify to determine if an action is valid (e.g., Password must be &gt; 8 characters, Cart must have at least 1 item).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">Output (Return Result)</span><span class="token punctuation">**</span></span>: What the system "returns" after an action is completed or when a Rule is violated. These are used to verify whether a test case passes or fails (e.g., HTTP 400 Bad Request, Red error message on the screen, JSON response).
+<span class="token title important"><span class="token punctuation">##</span> Definition of Edge Type</span>
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">PERFORMS (Actor -&gt; Action)</span><span class="token punctuation">**</span></span>: Specifies the subject performing a particular action (e.g., User performs Login). Commonly used to define Role and authorization scenarios (RBAC) in test cases.
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">CAN_BE_IN (Actor or Object -&gt; State)</span><span class="token punctuation">**</span></span>: Declares the set of valid states that an Actor or Business Object can exist in throughout its lifecycle (e.g., Order can be in states Pending, Paid, or Canceled).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">INTERACTS_WITH (Action -&gt; Object)</span><span class="token punctuation">**</span></span>: Identifies the target that the action directly affects. In UI tests, these are elements (Button, Form); in API tests, endpoints, URLs, or Controllers.
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">HAS_PROPERTY (Actor or Object -&gt; ValueObject)</span><span class="token punctuation">**</span></span>: Describes inherent properties, the business-identifying attributes of an entity (e.g., User has Email, PhoneNumber).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">CONTAINS (Object -&gt; Object or ValueObject)</span><span class="token punctuation">**</span></span>: Describes parent-child structural relationships, used for building nested API payloads (Nested JSON) or complex Form UI components (Form containing Input).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">ALLOWS_ACTION (State -&gt; Action)</span><span class="token punctuation">**</span></span>: Declares the actions that are permissible when the object is in a specific state. Used as a basis for Agents to traverse the graph and generate coherent User Journey scenarios.
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">TRANSITIONS_TO (Action -&gt; State)</span><span class="token punctuation">**</span></span>: Represents the change of state of the system or object after an action is successfully performed (Happy Path).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">REQUIRES_RULE (Action -&gt; Rule)</span><span class="token punctuation">**</span></span>: Declares the constraints and validation/business logic that the system must evaluate when the action is triggered.
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">MEET_RULE (Rule -&gt; State)</span><span class="token punctuation">**</span></span>: Determines the new state of the object/system if the action successfully passes all Rule constraints.
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">PRODUCES (Action -&gt; Output)</span><span class="token punctuation">**</span></span>: Defines the direct output returned by the system after a successful action. Used as the Expected Result (Assertion) for the Happy Path (e.g., HTTP 200 OK, Load Dashboard page).
+<span class="token bold"><span class="token punctuation">**</span><span class="token content">FAILS_WITH (Rule -&gt; Output)</span><span class="token punctuation">**</span></span>: Defines the consequence or error response from the system when a rule constraint is violated. Used as the Expected Result (Assertion) for Negative/Unhappy Path (e.g., HTTP 400 Bad Request, displaying red error text on UI).
+
+<span class="token title important"><span class="token punctuation">#</span> CONSTRAINTS</span>
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Quality Mindset (Data Integrity):</span><span class="token punctuation">**</span></span>
+    <span class="token list punctuation">-</span> All potential <span class="token code-snippet code keyword">`nodes`</span> and <span class="token code-snippet code keyword">`edges`</span> must be fully extracted. It is acceptable for there to be no <span class="token code-snippet code keyword">`relationships`</span>, as this is only one chunk of the document.
+    <span class="token list punctuation">-</span> When creating the <span class="token code-snippet code keyword">`relationships`</span>, you must adhere to the connection directions defined in the <span class="token bold"><span class="token punctuation">**</span><span class="token content">GRAPH DEFINITION</span><span class="token punctuation">**</span></span>.
+    <span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Hallucination Avoidance:</span><span class="token punctuation">**</span></span> Do not generate information that is baseless or inconsistent with the source document.
+<span class="token list punctuation">-</span> <span class="token bold"><span class="token punctuation">**</span><span class="token content">Output Syntax:</span><span class="token punctuation">**</span></span>
+    <span class="token list punctuation">-</span> Adhere to the <span class="token bold"><span class="token punctuation">**</span><span class="token content">Output Structure</span><span class="token punctuation">**</span></span>.
+    <span class="token list punctuation">-</span> The output must be raw TOON, not wrapped in ```toon ... ```.
+    <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`id`</span> must be unique and follow the format: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>type</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>sequential_number</span><span class="token punctuation">&gt;</span></span> (e.g., n1, e1, r1).
+    <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`node type`</span> format is snake_case.
+    <span class="token list punctuation">-</span> <span class="token code-snippet code keyword">`edge type`</span> format is UPPER_SNAKE_CASE.
+
+<span class="token title important"><span class="token punctuation">#</span> INTERNAL REASONING</span>
+<span class="token list punctuation">1.</span>  <span class="token bold"><span class="token punctuation">**</span><span class="token content">Validation</span><span class="token punctuation">**</span></span>: Check if the <span class="token bold"><span class="token punctuation">**</span><span class="token content">GRAPH DEFINITION</span><span class="token punctuation">**</span></span> and <span class="token code-snippet code keyword">`&lt;chunk&gt;`</span> tags have been provided by the user.
+<span class="token list punctuation">2.</span>  <span class="token bold"><span class="token punctuation">**</span><span class="token content">Analysis</span><span class="token punctuation">**</span></span>: Based on the <span class="token bold"><span class="token punctuation">**</span><span class="token content">GRAPH DEFINITION</span><span class="token punctuation">**</span></span>, analyze the <span class="token code-snippet code keyword">`&lt;chunk&gt;`</span> and cross-reference it with each entity and relationship in the definition.
+<span class="token list punctuation">3.</span>  <span class="token bold"><span class="token punctuation">**</span><span class="token content">Drafting</span><span class="token punctuation">**</span></span>: Create a quick draft solution for <span class="token bold"><span class="token punctuation">**</span><span class="token content">nodes</span><span class="token punctuation">**</span></span>, <span class="token bold"><span class="token punctuation">**</span><span class="token content">edges</span><span class="token punctuation">**</span></span>, and <span class="token bold"><span class="token punctuation">**</span><span class="token content">relationships</span><span class="token punctuation">**</span></span>.
+<span class="token list punctuation">4.</span>  <span class="token bold"><span class="token punctuation">**</span><span class="token content">Critique</span><span class="token punctuation">**</span></span>: Self-question and validate if the draft meets the <span class="token bold"><span class="token punctuation">**</span><span class="token content">CONSTRAINTS</span><span class="token punctuation">**</span></span>. If not, write down the issues and fallback to step 2 (<span class="token bold"><span class="token punctuation">**</span><span class="token content">Analysis</span><span class="token punctuation">**</span></span>).
+<span class="token list punctuation">5.</span>  <span class="token bold"><span class="token punctuation">**</span><span class="token content">Refine</span><span class="token punctuation">**</span></span>: Output only the refined result.
+</code></pre><p><strong>User prompt template</strong></p>
+<pre data-role="codeBlock" data-info="markdown" class="language-markdown markdown"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>default-node-type</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>default-node-type</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>default-edge-type</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>default-edge-type</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>data</span><span class="token punctuation">&gt;</span></span>
+</code></pre></details>
+<p><strong>Example Graph</strong></p>
+<div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+    
+    subgraph ExampleGraph["Example Graph"]
+        direction TB
+            
+        %% ==========================================
+    %% 1. Khai báo Nodes
+    %% ==========================================
+    User([Actor: GuestUser])
+    
+    State_Unauth((State: Unauthenticated))
+    State_Auth((State: Authenticated))
+    
+    Act_Login{{Action: SubmitLogin}}
+    
+    Obj_Form[Object: LoginForm]
+    Obj_EmailInp[Object: EmailInput]
+    Val_EmailStr&gt;ValueObject: EmailString]
+    
+    Rule_Format{Rule: ValidEmailFormat}
+    
+    Out_Success[/Output: Dashboard_UI/]
+    Out_Error[/Output: InvalidEmail_Msg/]
+
+    %% ==========================================
+    %% 2. Định nghĩa Edges
+    %% ==========================================
+    User -- CAN_BE_IN --&gt; State_Unauth
+    User -- PERFORMS --&gt; Act_Login
+    State_Unauth -- ALLOWS_ACTION --&gt; Act_Login
+    
+    Act_Login -- INTERACTS_WITH --&gt; Obj_Form
+    Obj_Form -- CONTAINS --&gt; Obj_EmailInp
+    Obj_EmailInp -- HAS_PROPERTY --&gt; Val_EmailStr
+    
+    Act_Login -- REQUIRES_RULE --&gt; Rule_Format
+    
+    Rule_Format -- MEET_RULE --&gt; State_Auth
+    Act_Login -- TRANSITIONS_TO --&gt; State_Auth
+    Act_Login -- PRODUCES --&gt; Out_Success
+    
+    Rule_Format -- FAILS_WITH --&gt; Out_Error
+    
+    end
+</div><h4 id="32-gnn-ml-lifecycle--events">3.2. GNN-ML (Lifecycle / Events) </h4>
+<h5 id="node-types-lifecycle">Node types (Lifecycle) </h5>
+<ul>
+<li><code>Project</code>, <code>Version</code>/<code>Release</code>, <code>Change</code> (PR/commit), <code>Build</code>, <code>Deployment</code></li>
+<li><code>TestSuite</code>, <code>TestCase</code>, <code>TestRun</code>, <code>Bug</code>, <code>Incident</code></li>
+</ul>
+<p>Gợi ý: có thể tái sử dụng node nền từ GNN-KF (Requirement/Feature/Module/Component/API/DataEntity) để tạo trace giữa dữ liệu sản phẩm và lifecycle.</p>
+<h5 id="edge-types-cho-các-use-case-chính">Edge types (cho các use-case chính) </h5>
+<ul>
+<li>Impact Analysis: <code>COVERS</code> (TestCase → Requirement), <code>VALIDATES</code>, <code>EXERCISES</code>, <code>CHANGED_IN</code> (Requirement/Feature/Module → Change)</li>
+<li>Regression Test Optimization: <code>IN_SUITE</code>, <code>EXECUTED_IN</code>, <code>RUN_ON_VERSION</code>, <code>RESULT</code> (với thuộc tính <code>status</code>, <code>duration_ms</code>, <code>timestamp</code>)</li>
+<li>Duplicate Bug Detection: <code>AFFECTS</code>, <code>REPORTED_ON_VERSION</code>, <code>DUPLICATE_OF</code>, <code>RELATED_TO</code></li>
+<li>Test Gap Analysis: <code>SHOULD_COVER</code> (edge gợi ý do ML sinh ra, khác <code>COVERS</code> là ground truth)</li>
+</ul>
+<p>Optional (nếu có dữ liệu CI/CD tốt): <code>TOUCHES</code>, <code>CAUSES_FAILURE_IN</code>, <code>FIXED_IN</code>.</p>
+<p></p>
+<h3 id="4-query-pipeline">4. Query Pipeline </h3>
+<p></p><div class="mermaid">%%{
+init: {
+    "theme": "neutral",
+    "themeVariables": {
+        "lineColor": "#e667ff",
+        'primaryTextColor': '#000000',
+        'clusterBorder': '#000000',
+        "edgeLabelBackground":"#ffffff00"
+    }
+}
+}%%
+graph TB
+    classDef default fill: #97e0f7,stroke-width:3px;
+    linkStyle default stroke-width:3px,color:black;
+    
+    %% Main Graph %%
+    subgraph QueryPipelineơ["Query Pipeline"]
+        direction TB
+
+        UserQuery(["User Query"])
+
+        intentDetection(["fa:fa-robot Intent Detector"])
+    
+        subgraph GraphSearch_subgraph["Graph Search"]
+            direction TB
+
+            GraphLLM(["fa:fa-robot Graph Query"])
+            GraphQuery["Graph Query"]
+            GraphResults(["Graph Results"])
+
+            GraphLLM --&gt; GraphQuery
+            GraphQuery --&gt; GraphLLM
+
+            GraphLLM --&gt; GraphResults
+        end
+
+        EnricherLLM(["fa:fa-robot Query enhancement"])
+
+        subgraph RagSearch_subgraph["RAG Search"]
+            direction TB
+            RagSearch(["Rag Search"])
+
+            subgraph HybridSearch["Hybrid Search"]
+                direction LR
+                Lexical["Lexical Search(BM25)"]
+                Semantic["Semantic Search(Vector)"]
+            end
+
+            RRF["Reciprocal Rank Fusion"]
+            Contexts(["Retrieved Chunks"])
+
+            RagSearch --&gt; Lexical
+            RagSearch --&gt;|"Embedding"| Semantic
+
+            Lexical --&gt;|"Top k"| RRF
+            Semantic --&gt;|"Top k"| RRF
+
+            RRF --&gt; Contexts
+        end
+
+        AnswerGeneration(["fa:fa-robot Answer Generation"])
+
+        answer(["Final Answer"])
+    end
+
+    %% Relationships %%
+    UserQuery --&gt; intentDetection
+    
+    intentDetection --&gt;|"Relevant"| GraphLLM
+
+    GraphResults --&gt; EnricherLLM
+    UserQuery -.-&gt;|"Original Question"| EnricherLLM
+    EnricherLLM --&gt; RagSearch
+
+    Contexts --&gt;|"Provide Context"| AnswerGeneration
+    UserQuery -.-&gt;|"Original Question"| AnswerGeneration
+
+    intentDetection --&gt;|"Not Relevant"| answer
+    AnswerGeneration --&gt;|"Generate"| answer
+</div><p></p>
+
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('div.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('div.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>
