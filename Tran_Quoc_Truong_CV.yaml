@@ -1,0 +1,142 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Tran Quoc Truong
+  headline: Python Developer | AI Engineer
+  location: Ho Chi Minh City, Vietnam
+  email: tranquoctruong20@gmail.com
+  photo:
+  phone:
+  website: https://truong51972.github.io/about-me/
+  social_networks:
+    - network: LinkedIn
+      username: truong51972
+    - network: GitHub
+      username: truong51972
+  custom_connections:
+  sections:
+    education:
+      - institution: FPT School of Business & Technology
+        area: Master of Software Engineering in AI (MSE AI)
+        degree: 
+        date:
+        start_date: 2026-05
+        end_date: present
+        location: Ho Chi Minh City, Vietnam
+        summary:
+        highlights:
+      - institution: FPT University
+        area: Bachelor of Artificial Intelligence
+        degree: 
+        date: 2021 - 2025
+        start_date: 
+        end_date: 
+        location: Ho Chi Minh City, Vietnam
+        summary:
+        highlights:
+    experience:
+      - company: FPT Software
+        position: AI Engineer & Automation Tester
+        date:
+        start_date: 2024-12
+        end_date: present
+        location: Ho Chi Minh City, Vietnam
+        summary:
+        highlights:
+          - Built Python-based backend services and agentic workflows using LangChain, LangGraph, LiteLLM, and Django.
+          - Designed event-driven and retrieval pipelines with Redis, Celery, Hybrid RAG, Knowledge Graphs (GraphSAGE), and Milvus to automate test generation and impact analysis.
+          - Delivered API, Web, and Mobile automation solutions that increased test coverage by 40% and reduced manual testing effort by up to 70%.
+          - Led an omnichannel automation PoC for a core banking system across Web, iOS, and Android, helping secure a ~20 man-month contract.
+      - company: FPT Software Academy
+        position: Full-Stack Developer (Intern)
+        date:
+        start_date: 2024-09
+        end_date: 2024-12
+        location: Ho Chi Minh City, Vietnam
+        summary:
+        highlights:
+          - Built Django-based web applications and deployed containerized services with Docker.
+          - Improved deployment security and performance via Cloudflare integration, reducing deployment cycle time by approximately 50%.
+    skills:
+      - label: Python & Backend
+        details: Python, Django, FastAPI, REST APIs, PostgreSQL, Redis, Celery, Docker
+      - label: AI & Machine Learning
+        details: LangChain, LangGraph, RAG, Knowledge Graphs, LoRA/QLoRA, PyTorch, TensorFlow, Hugging Face, Milvus
+      - label: Architecture & Tooling
+        details: Event-driven architecture, scalable backend design, Git, CI/CD, Nginx
+      - label: Testing
+        details: pytest, Postman, Katalon Studio, Appium, Selenium, JMeter, API/Web/Mobile Testing
+      - label: Languages
+        details: Vietnamese (Native), English (B1/IELTS 5.0), Japanese (N5/Basic)
+    projects:
+      - name: 'Omni-Agent - The AI Agent for Software Testing'
+        date:
+        start_date: 
+        end_date: 
+        location: 
+        summary: 'AI QA platform that automates test generation, duplicate bug detection, and change impact analysis from software documents.'
+        highlights:
+          - 'Built Python services for document-to-test-case generation, duplicate bug detection, and RAG-based Q&A over system documents.'
+          - 'Combined LangGraph, Milvus, and knowledge graphs to trace relationships between requirements, test cases, and defects.'
+          - 'Used Django, Redis, and Celery to support asynchronous document processing and scalable agent workflows.'
+      - name: 'APIT - Agent Programmatic Integration Testing'
+        date: 
+        start_date: 
+        end_date: 
+        location: 
+        summary: 'LLM-based system that analyzes API documentation and generates structured API test cases.'
+        highlights:
+          - 'Built the core AI agent and evaluated PEFT approaches such as LoRA and QLoRA for structured test generation.'
+          - 'Fine-tuned Qwen-2.5-3B achieved macro-F1 0.655, outperforming Llama-3.2-3B by 41.5%.'
+          - 'Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for output comparison.'
+      - name: 'E-Commerce AI Consultant & Recommendation'
+        date: 
+        start_date: 
+        end_date: 
+        location: 
+        summary: 'Python-based recommendation assistant for personalized product discovery and customer consultation.'
+        highlights:
+          - 'Built an AI recommendation workflow using LangChain, LangGraph, Milvus, Django, and PostgreSQL.'
+          - 'Pilot evaluation projected 75% lower customer service effort, 30% higher sales efficiency, and 65% higher engagement.'
+          - 'Integrated vector search and conversational workflows to return context-aware fashion recommendations in real time.'
+      - name: 'Eximbank Core Banking - Omnichannel Automation PoC'
+        date:
+        start_date:
+        end_date:
+        location:
+        summary: 'Automation PoC for a core banking system across Web, iOS, and Android to validate end-to-end testing feasibility.'
+        highlights:
+          - 'Built and executed cross-platform automation flows with Katalon and Appium for omnichannel regression coverage.'
+          - 'Demonstrated stronger coverage and efficiency than competing vendors, helping secure a ~20 man-month contract.'
+          - 'Validated critical business journeys consistently across Web, iOS, and Android channels in one test strategy.'
+      - name: 'Sacombank - Payment Hub Integration Testing'
+        date:
+        start_date:
+        end_date:
+        location:
+        summary: 'API and database testing project for payment hub integrations in a financial transaction system.'
+        highlights:
+          - 'Executed API, database, regression, and stress testing to validate transaction integrity and endpoint reliability.'
+          - 'Authored complex SQL validation queries (>1,500 lines), improved system stability by ~90%, and reduced manual QA effort by 70%.'
+          - 'Maintained full API endpoint coverage while verifying post-transaction data consistency for financial operations.'
+design:
+  theme: classic
+locale:
+  language: english
+settings:
+  current_date: today
+  render_command:
+    output_folder: rendercv_output
+    design:
+    locale:
+    typst_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.typ
+    pdf_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.pdf
+    markdown_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.md
+    html_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.html
+    png_path: OUTPUT_FOLDER/NAME_IN_SNAKE_CASE_CV.png
+    dont_generate_markdown: false
+    dont_generate_html: false
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: false
+  bold_keywords: []
+  pdf_title: Tran Quoc Truong - CV
