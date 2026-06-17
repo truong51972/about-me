@@ -2,7 +2,7 @@
 interface Props { group: { title: string; items: string[] } }
 const { group } = Astro.props;
 ---
-<div class="skill-box">
+<div class="card skill-box">
   <h3>{group.title}</h3>
   <div class="tag-row" style="padding-top:0">
     {group.items.map((item) => <span class="tag">{item}</span>)}

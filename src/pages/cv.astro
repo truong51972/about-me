@@ -45,12 +45,12 @@ const base = import.meta.env.BASE_URL;
       </article>
 
       <aside class="sidebar">
-        <div class="side-card">
+        <div class="card side-card">
           <h3>Contact</h3>
           <p>{site.location}</p>
           <p style="margin-top:8px"><a href={`mailto:${site.email}`}>{site.email}</a></p>
         </div>
-        <div class="side-card">
+        <div class="card side-card">
           <h3>Education</h3>
           {education.map((item) => (
             <div style="border-top:1px solid var(--line);padding-top:12px;margin-top:12px">

@@ -37,7 +37,7 @@ const [omni, apit, banking, selfDriving] = cases;
     <div class="container">
       <div class="metrics">
         {metrics.map((metric) => (
-          <article class="metric">
+          <article class="card metric-card">
             <div class="metric-value">{metric.value}</div>
             <div class="metric-label">{metric.label}</div>
             <p>{metric.detail}</p>
@@ -50,9 +50,9 @@ const [omni, apit, banking, selfDriving] = cases;
   <section class="section" id="positioning">
     <div class="container">
       <SectionHead eyebrow="Positioning" title="AI work presented as systems, decisions, and evidence." body="The portfolio is structured like a casebook: each project explains the context, constraints, technical choices, trade-offs, and proof of outcome." />
-      <div class="case-grid">
+      <div class="card-grid">
         {baseStrengths.map((item) => (
-          <article class="decision-card">
+          <article class="card decision-card">
             <div class="eyebrow">{item.eyebrow}</div>
             <h3 style="margin-top:12px">{item.title}</h3>
             <p>{item.body}</p>
@@ -91,7 +91,7 @@ const [omni, apit, banking, selfDriving] = cases;
   <section class="section">
     <div class="container">
       <SectionHead eyebrow="Selected cases" title="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." body="APIT proves the Agentic QA research angle, banking automation proves industry delivery, and the self-driving paper shows the earlier applied-AI foundation." />
-      <div class="case-grid">
+      <div class="card-grid">
         <CaseCard item={apit} />
         <CaseCard item={banking} />
         <CaseCard item={selfDriving} />
@@ -109,7 +109,7 @@ const [omni, apit, banking, selfDriving] = cases;
   </section>
 
   <section class="section">
-    <div class="container evidence-grid">
+    <div class="container media-proof-row">
       <img class="award-photo" src={`${base}images/second-prize-award.webp`} alt="Tran Quoc Truong receiving a second prize research award" />
       <article class="panel award-copy">
         <div>
@@ -144,7 +144,7 @@ const [omni, apit, banking, selfDriving] = cases;
   </section>
 
   <section class="section tight">
-    <div class="container panel cta">
+    <div class="container card cta-card">
       <div>
         <div class="eyebrow">Contact</div>
         <h2>Interested in Applied AI, Agentic QA, or RAG backend work?</h2>
