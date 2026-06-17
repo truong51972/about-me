@@ -1,10 +1,10 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+
 cv:
   name: Tran Quoc Truong
-  headline: Python Developer | AI Engineer
+  headline: Applied AI Engineer | Agentic QA & RAG Systems | Python Backend
   location: Ho Chi Minh City, Vietnam
   email: tranquoctruong20@gmail.com
-  photo:
   phone:
   website: https://truong51972.github.io/about-me/
   social_networks:
@@ -12,116 +12,111 @@ cv:
       username: truong51972
     - network: GitHub
       username: truong51972
-  custom_connections:
+
   sections:
-    education:
-      - institution: FPT School of Business & Technology
-        area: Master of Software Engineering in AI (MSE AI)
-        degree: 
-        date:
-        start_date: 2026-05
-        end_date: present
-        location: Ho Chi Minh City, Vietnam
-        summary:
-        highlights:
-      - institution: FPT University
-        area: Bachelor of Artificial Intelligence
-        degree: 
-        date: 2021 - 2025
-        start_date: 
-        end_date: 
-        location: Ho Chi Minh City, Vietnam
-        summary:
-        highlights:
+    summary:
+      - Applied AI Engineer building enterprise Agentic QA, RAG, and document-intelligence systems with production-oriented Python backends.
+      - Strong in Django/DRF, FastAPI, LangGraph, LangChain, LiteLLM, Redis/Celery, PostgreSQL, vector databases, MCP tool integration, and QA automation.
+
     experience:
       - company: FPT Software
-        position: AI Engineer & Automation Tester
-        date:
+        position: Applied AI Engineer & QA Automation Engineer
         start_date: 2024-12
         end_date: present
         location: Ho Chi Minh City, Vietnam
-        summary:
         highlights:
-          - Built Python-based backend services and agentic workflows using LangChain, LangGraph, LiteLLM, and Django.
-          - Designed event-driven and retrieval pipelines with Redis, Celery, Hybrid RAG, Knowledge Graphs (GraphSAGE), and Milvus to automate test generation and impact analysis.
+          - Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
+          - Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.
+          - Developed document-processing flows for OCR/preview generation, enhanced OCR strategy, version commit, chunk generation, artifact storage, and vector indexing.
           - Delivered API, Web, and Mobile automation solutions that increased test coverage by 40% and reduced manual testing effort by up to 70%.
-          - Led an omnichannel automation PoC for a core banking system across Web, iOS, and Android, helping secure a ~20 man-month contract.
+          - Led an omnichannel Core Banking automation PoC across Web, iOS, and Android, helping secure a ~20 man-month contract.
+          - Executed banking QA work across Core Banking and Payment Hub domains, including API testing, SQL validation, regression testing, and stress testing.
+
       - company: FPT Software Academy
-        position: Full-Stack Developer (Intern)
-        date:
+        position: Full-Stack Developer Intern
         start_date: 2024-09
         end_date: 2024-12
         location: Ho Chi Minh City, Vietnam
-        summary:
         highlights:
           - Built Django-based web applications and deployed containerized services with Docker.
-          - Improved deployment security and performance via Cloudflare integration, reducing deployment cycle time by approximately 50%.
-    skills:
-      - label: Python & Backend
-        details: Python, Django, FastAPI, REST APIs, PostgreSQL, Redis, Celery, Docker
-      - label: AI & Machine Learning
-        details: LangChain, LangGraph, RAG, Knowledge Graphs, LoRA/QLoRA, PyTorch, TensorFlow, Hugging Face, Milvus
-      - label: Architecture & Tooling
-        details: Event-driven architecture, scalable backend design, Git, CI/CD, Nginx
-      - label: Testing
-        details: pytest, Postman, Katalon Studio, Appium, Selenium, JMeter, API/Web/Mobile Testing
-      - label: Languages
-        details: Vietnamese (Native), English (B1/IELTS 5.0), Japanese (N5/Basic)
+          - Improved deployment reliability through production-oriented configuration and Cloudflare integration.
+          - Reduced deployment cycle time by approximately 50% through cleaner containerized delivery workflows.
+
     projects:
-      - name: 'Omni-Agent - The AI Agent for Software Testing'
-        date:
-        start_date: 
-        end_date: 
-        location: 
-        summary: 'AI QA platform that automates test generation, duplicate bug detection, and change impact analysis from software documents.'
+      - name: Omni-Agent - Enterprise AI Platform for Agentic QA
+        summary: Enterprise AI platform for turning documents, requirements, bugs, and test assets into searchable, traceable, and automatable QA workflows.
         highlights:
-          - 'Built Python services for document-to-test-case generation, duplicate bug detection, and RAG-based Q&A over system documents.'
-          - 'Combined LangGraph, Milvus, and knowledge graphs to trace relationships between requirements, test cases, and defects.'
-          - 'Used Django, Redis, and Celery to support asynchronous document processing and scalable agent workflows.'
-      - name: 'APIT - Agent Programmatic Integration Testing'
-        date: 
-        start_date: 
-        end_date: 
-        location: 
-        summary: 'LLM-based system that analyzes API documentation and generates structured API test cases.'
+          - Designed a multi-service architecture with Django/DRF as the control plane, async workers as the processing plane, and separate boundaries for document processing, retrieval, storage, graph analysis, and LLM orchestration.
+          - Modeled backend domains for Documents, Document Versions, Processing Artifacts, Chunks, and Platform Jobs, keeping API endpoints thin and workflow logic in service layers.
+          - Implemented versioned document workflows covering baseline upload, OCR/preview generation, enhanced OCR strategy, commit flow, chunk generation, artifact storage, and vector indexing.
+          - Integrated RAG infrastructure with vector databases, LiteLLM model routing, MCP wrapper/tool integration, LangGraph/LangChain workflows, and observability/evaluation patterns.
+          - Built Agentic QA capabilities for document-to-test-case generation, RAG Q&A, duplicate bug detection, requirement/test/defect traceability, and change impact analysis.
+          - Prototyped React/Vite frontend workflows with AI-assisted development, including project navigation, document workspace UI, preview tabs, version dropdowns, and processing status views.
+
+      - name: APIT - Agent Programmatic Integration Testing
+        summary: LLM-based system that analyzes API documentation and generates structured API test cases.
         highlights:
-          - 'Built the core AI agent and evaluated PEFT approaches such as LoRA and QLoRA for structured test generation.'
-          - 'Fine-tuned Qwen-2.5-3B achieved macro-F1 0.655, outperforming Llama-3.2-3B by 41.5%.'
-          - 'Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for output comparison.'
-      - name: 'E-Commerce AI Consultant & Recommendation'
-        date: 
-        start_date: 
-        end_date: 
-        location: 
-        summary: 'Python-based recommendation assistant for personalized product discovery and customer consultation.'
+          - Built the core AI agent for API document understanding, structured test-case generation, and automated output evaluation.
+          - Evaluated LoRA and QLoRA approaches for domain-specific structured test document generation.
+          - Fine-tuned Qwen-2.5-3B achieved macro-F1 0.655, outperforming Llama-3.2-3B by 41.5% in the evaluation setup.
+          - Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for generated output comparison.
+
+      - name: Eximbank Core Banking - Omnichannel Automation PoC
+        summary: Automation PoC for validating end-to-end Core Banking workflows across Web, iOS, and Android.
         highlights:
-          - 'Built an AI recommendation workflow using LangChain, LangGraph, Milvus, Django, and PostgreSQL.'
-          - 'Pilot evaluation projected 75% lower customer service effort, 30% higher sales efficiency, and 65% higher engagement.'
-          - 'Integrated vector search and conversational workflows to return context-aware fashion recommendations in real time.'
-      - name: 'Eximbank Core Banking - Omnichannel Automation PoC'
-        date:
-        start_date:
-        end_date:
-        location:
-        summary: 'Automation PoC for a core banking system across Web, iOS, and Android to validate end-to-end testing feasibility.'
+          - Built cross-platform automation flows with Katalon and Appium for omnichannel regression coverage.
+          - Validated critical business journeys consistently across Web, iOS, and Android under one automation strategy.
+          - Demonstrated stronger coverage and execution efficiency than competing vendors, helping secure a ~20 man-month contract.
+
+      - name: Sacombank - Payment Hub Integration Testing
+        summary: API, database, regression, and stress testing project for financial transaction integrations.
         highlights:
-          - 'Built and executed cross-platform automation flows with Katalon and Appium for omnichannel regression coverage.'
-          - 'Demonstrated stronger coverage and efficiency than competing vendors, helping secure a ~20 man-month contract.'
-          - 'Validated critical business journeys consistently across Web, iOS, and Android channels in one test strategy.'
-      - name: 'Sacombank - Payment Hub Integration Testing'
-        date:
-        start_date:
-        end_date:
-        location:
-        summary: 'API and database testing project for payment hub integrations in a financial transaction system.'
-        highlights:
-          - 'Executed API, database, regression, and stress testing to validate transaction integrity and endpoint reliability.'
-          - 'Authored complex SQL validation queries (>1,500 lines), improved system stability by ~90%, and reduced manual QA effort by 70%.'
-          - 'Maintained full API endpoint coverage while verifying post-transaction data consistency for financial operations.'
+          - Executed API testing, database testing, regression testing, and stress testing to validate transaction integrity and endpoint reliability.
+          - Authored more than 1,500 lines of SQL validation queries to verify post-transaction data consistency across payment integration flows.
+          - Reduced manual QA effort by 70% through reusable validation scripts, regression scenarios, and repeatable API/database checks.
+          - Maintained full API endpoint coverage while validating financial operation correctness across integration flows.
+
+    skills:
+      - label: Applied AI, Agents & RAG
+        details: LangGraph, LangChain, MCP wrapper, RAG, Hybrid RAG, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, LoRA/QLoRA
+
+      - label: Backend & AI Systems
+        details: Python, Django/DRF, FastAPI, PostgreSQL, Redis/Celery, Docker, REST APIs, async workers, service layers, domain boundaries
+
+      - label: QA Automation & Banking Domain
+        details: Agentic QA, API Testing, Web/Mobile Automation, Katalon, Appium, Postman, JMeter, SQL validation, Core Banking, Payment Hub
+
+      - label: Full-stack AI Prototyping
+        details: React, Vite, Tailwind CSS, shadcn/ui, AI-assisted development, dashboard UI, document workspace UI
+
+    education:
+      - institution: FPT School of Business & Technology
+        area: Master of Software Engineering in AI
+        start_date: 2026-05
+        end_date: present
+        location: Ho Chi Minh City, Vietnam
+
+      - institution: FPT University
+        area: Bachelor of Artificial Intelligence
+        date: 2021 - 2025
+        location: Ho Chi Minh City, Vietnam
+
+    languages:
+      - label: Vietnamese
+        details: Native
+
+      - label: English
+        details: Working proficiency
+
+      - label: Japanese
+        details: N5 / Basic
+
 design:
   theme: classic
+
 locale:
   language: english
+
 settings:
   current_date: today
   render_command:
@@ -138,5 +133,41 @@ settings:
     dont_generate_typst: false
     dont_generate_pdf: false
     dont_generate_png: false
-  bold_keywords: []
+  bold_keywords:
+    - Applied AI Engineer
+    - Agentic QA
+    - AI-assisted QA
+    - AI agent
+    - RAG
+    - Hybrid RAG
+    - LLM Evaluation
+    - LLM-as-a-Judge
+    - LangGraph
+    - LangChain
+    - LiteLLM
+    - MCP wrapper
+    - tool integration
+    - Django/DRF
+    - FastAPI
+    - PostgreSQL
+    - Redis/Celery
+    - control plane
+    - async workers
+    - service layers
+    - domain boundaries
+    - Platform Jobs
+    - vector databases
+    - document processing
+    - OCR
+    - chunking
+    - test-case generation
+    - duplicate bug detection
+    - traceability
+    - change impact analysis
+    - API Testing
+    - Core Banking
+    - Payment Hub
+    - SQL validation
+    - React/Vite
+    - AI-assisted development
   pdf_title: Tran Quoc Truong - CV
