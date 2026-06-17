@@ -14,11 +14,8 @@
   padding: 42px 0;
 }
 
+/* ─────── Section heads ─────── */
 .section-head {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.58fr);
-  gap: 40px;
-  align-items: end;
   margin-bottom: 34px;
 }
 
@@ -29,8 +26,54 @@
   letter-spacing: -0.055em;
 }
 
-.section-head p {
+.section-head .section-head-body {
   font-size: 1rem;
+}
+
+/* split — headline left, body right (original) */
+.section-head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.58fr);
+  gap: 40px;
+  align-items: end;
+}
+
+/* stack — headline stacked above body */
+.section-head--stack {
+  display: block;
+  max-width: 720px;
+}
+
+.section-head--stack h2 {
+  margin-top: 8px;
+}
+
+.section-head--stack .section-head-body {
+  margin-top: 14px;
+  color: var(--muted);
+}
+
+/* compact — minimal, no extra space */
+.section-head--compact h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.section-head--compact .eyebrow {
+  margin-bottom: 4px;
+}
+
+/* center — centered, max-width constrained */
+.section-head--center {
+  text-align: center;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-head--center h2 {
+  margin-top: 8px;
 }
 
 /* ─────── Header / Nav ─────── */
@@ -279,7 +322,7 @@
   .media-proof-row,
   .evidence-grid,
   .content-grid,
-  .section-head,
+  .section-head--split,
   .cta {
     grid-template-columns: 1fr;
   }

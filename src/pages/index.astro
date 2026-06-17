@@ -13,31 +13,30 @@ const [omni, apit, banking, selfDriving] = cases;
 <BaseLayout>
   <section class="hero">
     <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">{site.location}</div>
+      <div class="rise">
         <h1>Applied AI Engineer for LLM systems, RAG, and automation.</h1>
         <p class="hero-lede">{site.summary}</p>
         <div class="hero-actions">
-          <a class="btn primary" href={withBase("projects/omni-agent/")}>Read Omni-Agent case</a>
-          <a class="btn" href={withBase("projects/")}>View all cases</a>
-          <a class="btn ghost" href={withBase("cv/")}>View CV</a>
-        </div>
-        <div class="micro-list">
-          <span>Django/DRF control plane</span>
-          <span>Agentic QA workflows</span>
-          <span>RAG & document intelligence</span>
-          <span>LLM evaluation</span>
+          <a class="btn primary" href={withBase("projects/omni-agent/")}>Case study →</a>
+          <a class="btn ghost" href={withBase("projects/")}>View projects →</a>
         </div>
       </div>
       <SystemMap />
     </div>
   </section>
 
+  <!-- Proof strip: micro-list moved out of hero, now below it -->
   <section class="section tight">
     <div class="container">
+      <div class="micro-list">
+        <span>Django/DRF control plane</span>
+        <span>Agentic QA workflows</span>
+        <span>RAG & document intelligence</span>
+        <span>LLM evaluation</span>
+      </div>
       <div class="metrics">
         {metrics.map((metric) => (
-          <article class="card metric-card">
+          <article class="card metric-card rise">
             <div class="metric-value">{metric.value}</div>
             <div class="metric-label">{metric.label}</div>
             <p>{metric.detail}</p>
@@ -49,7 +48,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section" id="positioning">
     <div class="container">
-      <SectionHead eyebrow="Positioning" title="AI work presented as systems, decisions, and evidence." body="The portfolio is structured like a casebook: each project explains the context, constraints, technical choices, trade-offs, and proof of outcome." />
+      <SectionHead title="AI work presented as systems, decisions, and evidence." body="The portfolio is structured like a casebook: each project explains the context, constraints, technical choices, trade-offs, and proof of outcome." variant="stack" />
       <div class="card-grid">
         {baseStrengths.map((item) => (
           <article class="card decision-card">
@@ -64,7 +63,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section" id="work">
     <div class="container">
-      <SectionHead eyebrow="Flagship case" title="Omni-Agent is the main proof of engineering depth." body="A production-oriented AI platform case focused on document workflows, versioned artifacts, async processing, and Agentic QA boundaries." />
+      <SectionHead eyebrow="Flagship case" title="Omni-Agent is the main proof of engineering depth." body="A production-oriented AI platform case focused on document workflows, versioned artifacts, async processing, and Agentic QA boundaries." variant="stack" />
       <div class="case-feature">
         <article class="panel case-hero-card">
           <div>
@@ -80,7 +79,7 @@ const [omni, apit, banking, selfDriving] = cases;
             <div class="case-footer">
               <p class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</p>
               <a class="case-study-link" href={withBase(omni.href)}>
-                Read case study <span aria-hidden="true">→</span>
+                Read case <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -92,7 +91,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section">
     <div class="container">
-      <SectionHead eyebrow="Selected cases" title="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." body="APIT proves the Agentic QA research angle, banking automation proves industry delivery, and the self-driving paper shows the earlier applied-AI foundation." />
+      <SectionHead eyebrow="Selected cases" title="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." body="APIT proves the Agentic QA research angle, banking automation proves industry delivery, and the self-driving paper shows the earlier applied-AI foundation." variant="stack" />
       <div class="card-grid">
         <CaseCard item={apit} />
         <CaseCard item={banking} />
@@ -103,9 +102,9 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section" id="decisions">
     <div class="container">
-      <SectionHead eyebrow="Decision log" title="The portfolio emphasizes why the system is built this way." body="These are the kinds of trade-offs that make the work interviewable: the decision, the constraint, and the cost of that choice." />
+      <SectionHead title="The portfolio emphasizes why the system is built this way." body="These are the kinds of trade-offs that make the work interviewable: the decision, the constraint, and the cost of that choice." variant="stack" />
       <div class="decision-grid">
-        {decisions.map((item) => <DecisionCard item={item} />)}
+        {decisions.map((item) => (<DecisionCard item={item} />))}
       </div>
     </div>
   </section>
@@ -115,13 +114,13 @@ const [omni, apit, banking, selfDriving] = cases;
       <img class="award-photo" src={withBase("images/second-prize-award.webp")} alt="Tran Quoc Truong receiving a second prize research award" />
       <article class="panel award-copy">
         <div>
-          <div class="eyebrow">Earlier AI research & award</div>
+          <div class="eyebrow">Proof / Recognition</div>
           <h3>Second Prize proof from the self-driving car research paper.</h3>
           <p>The earlier research work combined Unity simulation, YOLOv8 traffic sign classification, YOLOv8 lane segmentation, and PID-based control. It is intentionally placed as earlier evidence, not the main positioning, so the portfolio remains focused on Applied AI systems and Agentic QA.</p>
         </div>
         <div class="hero-actions">
-          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case</a>
-          <a class="btn" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
+          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case →</a>
+          <a class="btn ghost" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
         </div>
       </article>
     </div>
@@ -129,7 +128,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section" id="skills">
     <div class="container">
-      <SectionHead eyebrow="System profile" title="Where AI workflows meet backend constraints." body="A compact map of the stack: LLM workflows and evaluation on one side, backend orchestration and QA automation on the other." />
+      <SectionHead eyebrow="System profile" title="Where AI workflows meet backend constraints." body="A compact map of the stack: LLM workflows and evaluation on one side, backend orchestration and QA automation on the other." variant="stack" />
       <div class="skills-grid">
         {skillGroups.map((group) => <SkillBox group={group} />)}
       </div>
@@ -138,7 +137,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section" id="experience">
     <div class="container">
-      <SectionHead eyebrow="Experience" title="Recent work and delivery context." />
+      <SectionHead title="Recent work and delivery context." variant="compact" />
       <div class="timeline">
         {timeline.map((item) => <TimelineItem item={item} />)}
       </div>
@@ -148,14 +147,12 @@ const [omni, apit, banking, selfDriving] = cases;
   <section class="section tight">
     <div class="container card cta-card">
       <div>
-        <div class="eyebrow">Contact</div>
         <h2>Interested in Applied AI, Agentic QA, or RAG backend work?</h2>
         <p>The fastest way to understand my work is to start with Omni-Agent, then APIT, then the banking QA automation case.</p>
       </div>
       <div class="cta-actions">
         <a class="btn primary" href={`mailto:${site.email}`}>Email me</a>
-        <a class="btn" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn ghost" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
   </section>

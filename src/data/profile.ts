@@ -8,7 +8,7 @@ export const site = {
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build production-oriented AI workflows around Agentic QA, RAG, document intelligence, and Python backend control planes. My strongest edge is connecting LLM workflows with typed domain models, async workers, versioned artifacts, evaluation loops, and QA automation in banking contexts."
+    "I build production AI workflows around Agentic QA, RAG, document intelligence, and Python backend control planes, connecting LLM workflows with typed domain models, async workers, and evaluation loops."
 };
 
 export const baseStrengths = [

@@ -1,11 +1,15 @@
 ---
-interface Props { eyebrow: string; title: string; body?: string }
-const { eyebrow, title, body } = Astro.props;
+interface Props {
+  eyebrow?: string;
+  title: string;
+  body?: string;
+  variant?: "split" | "stack" | "compact" | "center";
+}
+const { eyebrow, title, body, variant = "split" } = Astro.props;
+const cls = `section-head section-head--${variant}`;
 ---
-<div class="section-head">
-  <div>
-    <div class="eyebrow">{eyebrow}</div>
-    <h2>{title}</h2>
-  </div>
-  {body && <p>{body}</p>}
+<div class={cls}>
+  {eyebrow && <div class="eyebrow">{eyebrow}</div>}
+  <h2>{title}</h2>
+  {body && <p class="section-head-body">{body}</p>}
 </div>
