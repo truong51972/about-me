@@ -2,18 +2,17 @@
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimelineItem from "../components/TimelineItem.astro";
-import SkillBox from "../components/SkillBox.astro";
 import { site, timeline, education, skillGroups, cases } from "../data/profile";
 ---
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong." >
   <section class="page-hero">
-    <div class="container">
-      <div class="eyebrow">CV</div>
+    <div class="container page-hero-inner">
+      <div class="case-index">CV</div>
       <h1>{site.name}</h1>
       <p class="page-summary">{site.role} · {site.tagline}. {site.summary}</p>
       <div class="hero-actions">
         <a class="btn primary" href={withBase("Tran_Quoc_Truong_CV.yaml")} target="_blank" rel="noreferrer">Open CV YAML</a>
-        <a class="btn" href={`mailto:${site.email}`}>Email</a>
+        <a class="btn ghost" href={`mailto:${site.email}`}>Email</a>
         <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </div>
@@ -45,12 +44,12 @@ import { site, timeline, education, skillGroups, cases } from "../data/profile";
       </article>
 
       <aside class="sidebar">
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Contact</h3>
           <p>{site.location}</p>
-          <p style="margin-top:8px"><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p style="margin-top:8px"><a href={`mailto:${site.email}`} style="color:var(--accent)">{site.email}</a></p>
         </div>
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Education</h3>
           {education.map((item) => (
             <div style="border-top:1px solid var(--line);padding-top:12px;margin-top:12px">
@@ -66,8 +65,15 @@ import { site, timeline, education, skillGroups, cases } from "../data/profile";
 
   <section class="section tight">
     <div class="container">
-      <div class="skills-grid">
-        {skillGroups.map((group) => <SkillBox group={group} />)}
+      <div class="skill-list">
+        {skillGroups.map((group) => (
+          <div class="skill-list-group">
+            <h3>{group.title}</h3>
+            <div class="skill-items">
+              {group.items.map((item) => <span class="tag">{item}</span>)}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>

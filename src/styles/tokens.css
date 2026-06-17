@@ -1,51 +1,41 @@
 :root {
   color-scheme: dark;
 
-  /* Original tokens */
-  --bg: #08111f;
-  --bg-2: #0c1728;
-  --panel: rgba(15, 27, 45, 0.72);
-  --panel-strong: rgba(20, 35, 58, 0.92);
-  --panel-soft: rgba(255, 255, 255, 0.045);
-  --line: rgba(148, 163, 184, 0.18);
-  --line-strong: rgba(148, 163, 184, 0.32);
-  --text: #eef5ff;
-  --muted: #9aa9bd;
-  --muted-2: #718096;
-  --brand: #68e1fd;
-  --brand-2: #a78bfa;
-  --brand-3: #7dd3fc;
-  --green: #9ff3c8;
-  --warning: #f8d786;
-  --shadow: 0 24px 80px rgba(6, 24, 44, 0.42);
-  --radius: 28px;
-  --radius-sm: 18px;
+  /* ── Quiet Editorial Dark palette ── */
+  --bg: #0a0a0c;              /* deep warm black */
+  --bg-2: #121214;            /* surface dark */
+  --panel: rgba(18, 18, 20, 0.85);
+  --panel-strong: rgba(24, 24, 28, 0.95);
+  --panel-soft: rgba(255, 255, 255, 0.03);
+  --line: rgba(200, 200, 210, 0.1);
+  --line-strong: rgba(200, 200, 210, 0.2);
+  --text: #f0efe9;            /* ivory warm white */
+  --text-secondary: #a8a69f;  /* muted warm slate */
+  --muted: #7a7872;           /* quiet grey */
+  --muted-2: #5f5d58;        /* quieter grey */
+  --accent: #7a9eb3;          /* desaturated steel blue — single refined accent */
+  --accent-dim: rgba(122, 158, 179, 0.12);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  --radius: 16px;             /* editorial, not SaaS */
+  --radius-sm: 10px;
   --max: 1120px;
-  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --page-max: 1120px;
+
+  /* ── Typography ── */
+  --font-display: "Instrument Serif", "Georgia", "Times New Roman", serif;
+  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --mono: "SFMono-Regular", "Cascadia Code", "Liberation Mono", Consolas, monospace;
 
-  /* Future-facing aliases */
-  --color-bg: #08111f;
-  --color-surface: rgba(15, 27, 45, 0.72);
-  --color-text: #eef5ff;
-  --color-muted: #9aa9bd;
-  --color-brand: #68e1fd;
-  --color-brand-strong: #a78bfa;
-  --radius-card: 28px;
-  --radius-pill: 999px;
-  --spacing-section: 74px;
-  --spacing-section-tight: 42px;
+  /* ── Spacing ── */
+  --spacing-section: 80px;
+  --spacing-section-tight: 48px;
   --spacing-grid: 16px;
-  --page-max: 1120px;
-  --font-display: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  /* Motion tokens */
+  /* ── Motion tokens ── */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --duration-fast: 160ms;
-  --duration-normal: 400ms;
-  --duration-slow: 700ms;
-  --rise-from: translateY(16px);
+  --duration-fast: 180ms;
+  --duration-normal: 500ms;
+  --duration-slow: 800ms;
+  --rise-from: translateY(14px);
   --fade-from: opacity(0);
 }

@@ -2,104 +2,87 @@
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHead from "../components/SectionHead.astro";
-import CaseCard from "../components/CaseCard.astro";
 import DecisionCard from "../components/DecisionCard.astro";
 import SystemMap from "../components/SystemMap.astro";
 import TimelineItem from "../components/TimelineItem.astro";
-import SkillBox from "../components/SkillBox.astro";
-import { site, baseStrengths, metrics, cases, decisions, timeline, skillGroups } from "../data/profile";
+import { site, metrics, cases, decisions, timeline, skillGroups } from "../data/profile";
 const [omni, apit, banking, selfDriving] = cases;
+const otherCases = [apit, banking, selfDriving];
 ---
+
 <BaseLayout>
+  <!-- Hero — editorial text block -->
   <section class="hero">
-    <div class="container hero-grid">
-      <div class="rise">
-        <h1>Applied AI Engineer for LLM systems, RAG, and automation.</h1>
-        <p class="hero-lede">{site.summary}</p>
-        <div class="hero-actions">
-          <a class="btn primary" href={withBase("projects/omni-agent/")}>Case study →</a>
-          <a class="btn ghost" href={withBase("projects/")}>View projects →</a>
-        </div>
+    <div class="container hero-inner rise">
+      <h1>Applied AI Engineer for LLM systems, RAG, and automation.</h1>
+      <p class="hero-lede">{site.summary}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href={withBase("projects/omni-agent/")}>Read Omni-Agent case</a>
+        <a class="btn ghost" href={withBase("projects/")}>View all projects</a>
       </div>
-      <SystemMap />
     </div>
   </section>
 
-  <!-- Proof strip: micro-list moved out of hero, now below it -->
+  <!-- Metrics — quiet stat row -->
   <section class="section tight">
     <div class="container">
-      <div class="micro-list">
-        <span>Django/DRF control plane</span>
-        <span>Agentic QA workflows</span>
-        <span>RAG & document intelligence</span>
-        <span>LLM evaluation</span>
-      </div>
       <div class="metrics">
         {metrics.map((metric) => (
-          <article class="card metric-card rise">
-            <div class="metric-value">{metric.value}</div>
-            <div class="metric-label">{metric.label}</div>
-            <p>{metric.detail}</p>
-          </article>
+          <div class="metric-block">
+            <span class="metric-value">{metric.value}</span>
+            <span class="metric-label">{metric.label}</span>
+            <span class="metric-detail">{metric.detail}</span>
+          </div>
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section" id="positioning">
-    <div class="container">
-      <SectionHead title="AI work presented as systems, decisions, and evidence." body="The portfolio is structured like a casebook: each project explains the context, constraints, technical choices, trade-offs, and proof of outcome." variant="stack" />
-      <div class="card-grid">
-        {baseStrengths.map((item) => (
-          <article class="card decision-card">
-            <div class="eyebrow">{item.eyebrow}</div>
-            <h3 style="margin-top:12px">{item.title}</h3>
-            <p>{item.body}</p>
-          </article>
-        ))}
-      </div>
-    </div>
-  </section>
-
+  <!-- Omni-Agent editorial spread -->
   <section class="section" id="work">
     <div class="container">
-      <SectionHead eyebrow="Flagship case" title="Omni-Agent is the main proof of engineering depth." body="A production-oriented AI platform case focused on document workflows, versioned artifacts, async processing, and Agentic QA boundaries." variant="stack" />
-      <div class="case-feature">
-        <article class="panel case-hero-card">
-          <div>
-            <div class="case-index">{omni.label}</div>
-            <h3>{omni.title}</h3>
-            <h4>{omni.subtitle}</h4>
-            <p>{omni.summary}</p>
+      <div class="editorial-spread">
+        <div class="editorial-spread-body">
+          <div class="eyebrow">Featured case</div>
+          <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-0.03em;font-weight:400;margin:0">
+            {omni.title} — {omni.subtitle}
+          </h2>
+          <p style="color:var(--text-secondary);font-size:1rem;line-height:1.55">{omni.summary}</p>
+          <div style="display:grid;gap:12px;margin-top:4px">
+            <p style="color:var(--muted);font-size:0.88rem"><strong style="color:var(--text-secondary)">Role:</strong> {omni.role}</p>
+            <p style="color:var(--muted);font-size:0.88rem"><strong style="color:var(--text-secondary)">Proof:</strong> {omni.outcome}</p>
           </div>
-          <div>
-            <div class="tag-row">
-              {omni.tags.map((tag) => <span class="tag">{tag}</span>)}
-            </div>
-            <div class="case-footer">
-              <p class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</p>
-              <a class="case-study-link" href={withBase(omni.href)}>
-                Read case <span aria-hidden="true">→</span>
-              </a>
-            </div>
+          <div style="margin-top:8px">
+            <a class="editorial-link" href={withBase(omni.href)}>
+              Read the full case →
+            </a>
           </div>
-        </article>
-        <SystemMap compact />
+        </div>
+        <div>
+          <SystemMap compact />
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <!-- Project index — refined 2-up grid -->
+  <section class="section tight">
     <div class="container">
-      <SectionHead eyebrow="Selected cases" title="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." body="APIT proves the Agentic QA research angle, banking automation proves industry delivery, and the self-driving paper shows the earlier applied-AI foundation." variant="stack" />
-      <div class="card-grid">
-        <CaseCard item={apit} />
-        <CaseCard item={banking} />
-        <CaseCard item={selfDriving} />
+      <SectionHead title="Selected projects" body="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." variant="stack" />
+      <div class="project-index" style="margin-top:8px">
+        {otherCases.map((item) => (
+          <a class="project-index-item" href={withBase(item.href)}>
+            <div class="project-index-meta">{item.label}</div>
+            <h3>{item.title}</h3>
+            <p class="project-index-desc">{item.summary}</p>
+            <div class="project-index-stat">{item.outcome}</div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
+  <!-- Decisions — kept grid structure -->
   <section class="section" id="decisions">
     <div class="container">
       <SectionHead title="The portfolio emphasizes why the system is built this way." body="These are the kinds of trade-offs that make the work interviewable: the decision, the constraint, and the cost of that choice." variant="stack" />
@@ -109,32 +92,25 @@ const [omni, apit, banking, selfDriving] = cases;
     </div>
   </section>
 
+  <!-- Award / Recognition -->
   <section class="section">
     <div class="container media-proof-row">
       <img class="award-photo" src={withBase("images/second-prize-award.webp")} alt="Tran Quoc Truong receiving a second prize research award" />
       <article class="panel award-copy">
         <div>
-          <div class="eyebrow">Proof / Recognition</div>
+          <div class="eyebrow">Recognition</div>
           <h3>Second Prize proof from the self-driving car research paper.</h3>
           <p>The earlier research work combined Unity simulation, YOLOv8 traffic sign classification, YOLOv8 lane segmentation, and PID-based control. It is intentionally placed as earlier evidence, not the main positioning, so the portfolio remains focused on Applied AI systems and Agentic QA.</p>
         </div>
         <div class="hero-actions">
-          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case →</a>
+          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case</a>
           <a class="btn ghost" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
         </div>
       </article>
     </div>
   </section>
 
-  <section class="section" id="skills">
-    <div class="container">
-      <SectionHead eyebrow="System profile" title="Where AI workflows meet backend constraints." body="A compact map of the stack: LLM workflows and evaluation on one side, backend orchestration and QA automation on the other." variant="stack" />
-      <div class="skills-grid">
-        {skillGroups.map((group) => <SkillBox group={group} />)}
-      </div>
-    </div>
-  </section>
-
+  <!-- Experience timeline -->
   <section class="section" id="experience">
     <div class="container">
       <SectionHead title="Recent work and delivery context." variant="compact" />
@@ -144,6 +120,24 @@ const [omni, apit, banking, selfDriving] = cases;
     </div>
   </section>
 
+  <!-- Skills — compact text treatment -->
+  <section class="section tight" id="skills">
+    <div class="container">
+      <SectionHead title="Stack and capabilities." body="A compact map of the tooling across AI workflows, backend systems, QA automation, and full-stack prototyping." variant="stack" />
+      <div class="skill-list">
+        {skillGroups.map((group) => (
+          <div class="skill-list-group">
+            <h3>{group.title}</h3>
+            <div class="skill-items">
+              {group.items.map((item) => <span class="tag">{item}</span>)}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA — editorial close -->
   <section class="section tight">
     <div class="container card cta-card">
       <div>
@@ -152,7 +146,6 @@ const [omni, apit, banking, selfDriving] = cases;
       </div>
       <div class="cta-actions">
         <a class="btn primary" href={`mailto:${site.email}`}>Email me</a>
-        <a class="btn ghost" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </div>
   </section>

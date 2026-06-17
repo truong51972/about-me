@@ -13,16 +13,13 @@ interface Props { item: CaseItem }
 import { withBase } from "../lib/paths";
 const { item } = Astro.props;
 ---
-<a class="card project-card" href={withBase(item.href)}>
+<a class="project-card" href={withBase(item.href)}>
   <div>
     <div class="case-index">{item.label}</div>
-    <h3 class="card-title">{item.title}</h3>
-    <h4 class="card-subtitle">{item.subtitle}</h4>
-    <p class="card-description">{item.summary}</p>
-    <p class="card-outcome" style="margin-top:14px"><strong style="color:var(--text)">Role:</strong> {item.role}</p>
-    <p class="card-outcome" style="margin-top:8px"><strong style="color:var(--text)">Proof:</strong> {item.outcome}</p>
-  </div>
-  <div class="tag-row">
-    {item.tags.slice(0, 6).map((tag) => <span class="tag">{tag}</span>)}
+    <h3>{item.title}</h3>
+    <h4>{item.subtitle}</h4>
+    <p>{item.summary}</p>
+    <p class="card-outcome" style="margin-top:14px"><strong>Role:</strong> {item.role}</p>
+    <p class="card-outcome" style="margin-top:8px"><strong>Proof:</strong> {item.outcome}</p>
   </div>
 </a>

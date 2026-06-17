@@ -8,16 +8,13 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
 ---
 <BaseLayout title="Omni-Agent" description="Omni-Agent case study by Tran Quoc Truong." >
   <section class="page-hero">
-    <div class="container">
-      <div class="page-kicker">
-        <span class="tag">{item.label}</span>
-        <span class="tag">{item.role}</span>
-      </div>
+    <div class="container page-hero-inner">
+      <div class="case-index">{item.label}</div>
       <h1>Omni-Agent: enterprise AI platform for Agentic QA and document intelligence.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
         <a class="btn primary" href="https://github.com/truong51972" target="_blank" rel="noreferrer">View GitHub</a>
-        <a class="btn" href={withBase("projects/")}>Back to projects</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
@@ -33,7 +30,6 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         </section>
 
         <section class="block">
-          <div class="eyebrow">Architecture</div>
           <h2>Control plane, workers, artifacts, and retrieval are separated.</h2>
           <div class="diagram">
             <div class="diagram-step"><b>Project console</b><span>React UI for documents, versions, preview, jobs, and review actions.</span></div>
@@ -45,14 +41,12 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         </section>
 
         <section class="block">
-          <div class="eyebrow">Core modeling</div>
           <h2>DocumentVersion and ProcessingArtifact make AI output auditable.</h2>
           <p>The document flow is modeled around versions and artifacts: source file, OCR markdown, parsed document JSON, enhanced OCR, committed text, chunk artifacts, and chunk-version mappings. This makes RAG traceability easier because every retrieval unit can be connected back to a committed document version.</p>
           <p>This model is more verbose than a simple "upload file → embed text" flow, but it gives better control over review, rollback, preview, reprocessing, and debugging.</p>
         </section>
 
         <section class="block">
-          <div class="eyebrow">Product decisions</div>
           <h2>Engineering decisions worth discussing in interviews.</h2>
           <div class="decision-grid">
             {decisions.slice(0, 3).map((decision) => <DecisionCard item={decision} />)}
@@ -62,13 +56,13 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
 
       <aside class="sidebar">
         <SystemMap compact />
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Stack</h3>
           <div class="tag-row" style="padding-top:0">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </div>
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Case proof</h3>
           <p>{item.outcome}</p>
         </div>

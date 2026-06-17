@@ -6,15 +6,12 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
 ---
 <BaseLayout title="Banking QA Automation" description="Banking QA automation case study." >
   <section class="page-hero">
-    <div class="container">
-      <div class="page-kicker">
-        <span class="tag">{item.label}</span>
-        <span class="tag">{item.role}</span>
-      </div>
+    <div class="container page-hero-inner">
+      <div class="case-index">{item.label}</div>
       <h1>Banking QA automation across Core Banking and Payment Hub systems.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
-        <a class="btn" href={withBase("projects/")}>Back to projects</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
@@ -48,11 +45,11 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
       </article>
 
       <aside class="sidebar">
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Proof</h3>
           <p>{item.outcome}</p>
         </div>
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Stack</h3>
           <div class="tag-row" style="padding-top:0">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}

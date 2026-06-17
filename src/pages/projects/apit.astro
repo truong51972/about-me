@@ -6,17 +6,13 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
 ---
 <BaseLayout title="APIT" description="APIT AI Capstone project case study." >
   <section class="page-hero">
-    <div class="container">
-      <div class="page-kicker">
-        <span class="tag">{item.label}</span>
-        <span class="tag">Role: {item.role}</span>
-        <span class="tag">3-member team</span>
-      </div>
+    <div class="container page-hero-inner">
+      <div class="case-index">{item.label}</div>
       <h1>APIT: LLM-powered API test generation as an AI capstone.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
         <a class="btn primary" href={withBase("docs/apit-capstone.pdf")} target="_blank" rel="noreferrer">Open capstone PDF</a>
-        <a class="btn" href={withBase("projects/")}>Back to projects</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
@@ -64,17 +60,17 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
       </article>
 
       <aside class="sidebar">
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Result</h3>
           <p>Qwen-2.5-3B LoRA achieved 0.655 macro-F1 on structured API test generation, outperforming the Llama-3.2-3B LoRA baseline under the same setup.</p>
         </div>
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Stack</h3>
           <div class="tag-row" style="padding-top:0">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </div>
-        <div class="card side-card">
+        <div class="side-card">
           <h3>Spec</h3>
           <dl class="spec-list">
             <div><dt>Role</dt><dd>{item.role}</dd></div>
