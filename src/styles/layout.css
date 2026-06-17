@@ -19,9 +19,9 @@
 
 .section-head h2 {
   margin: 12px 0 0;
-  font-size: clamp(2rem, 4vw, 3.7rem);
-  line-height: 0.98;
-  letter-spacing: -0.065em;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.055em;
 }
 
 .section-head p { font-size: 1rem; }
@@ -104,9 +104,9 @@
 .hero h1, .page-hero h1 {
   margin: 18px 0 20px;
   max-width: 870px;
-  font-size: clamp(3rem, 7vw, 6.7rem);
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  font-size: clamp(2.9rem, 5.8vw, 5.6rem);
+  line-height: 0.92;
+  letter-spacing: -0.065em;
 }
 
 .hero h1 .accent, .page-hero h1 .accent { color: var(--brand); }

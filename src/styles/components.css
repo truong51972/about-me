@@ -106,7 +106,9 @@
 }
 
 .case-index { color: var(--brand); font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.16em; font-weight: 800; }
-.case-hero-card h3, .project-card h3, .case-card h3 { margin: 14px 0 10px; font-size: clamp(2rem, 4vw, 4.1rem); line-height: 0.92; letter-spacing: -0.07em; }
+.case-hero-card h3 { margin: 14px 0 10px; font-size: clamp(2rem, 4vw, 4.1rem); line-height: 0.92; letter-spacing: -0.07em; }
+.project-card h3,
+.case-card h3 { margin: 12px 0 8px; font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1.02; letter-spacing: -0.045em; }
 .case-hero-card h4, .project-card h4, .case-card h4 { margin: 0 0 18px; color: #dce8f8; font-size: 1.05rem; font-weight: 700; }
 .case-hero-card p { max-width: 660px; font-size: 1.02rem; }
 
@@ -145,7 +147,7 @@ ul.clean li { margin: 8px 0; }
 /* ─────── Award proof ─────── */
 .award-photo { height: 100%; min-height: 430px; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--line); box-shadow: var(--shadow); }
 .award-copy { padding: 30px; display:flex; flex-direction:column; justify-content:space-between; }
-.award-copy h3 { margin: 12px 0 14px; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 0.95; letter-spacing: -0.065em; }
+.award-copy h3 { margin: 12px 0 14px; font-size: clamp(1.85rem, 3vw, 2.7rem); line-height: 0.95; letter-spacing: -0.065em; }
 
 /* ─────── Skills ─────── */
 .skill-box { border-radius: 22px; padding: 20px; }
@@ -223,7 +225,7 @@ ul.clean li { margin: 8px 0; }
   align-items: center;
 }
 .cta-card h2,
-.cta h2 { margin: 0 0 10px; font-size: clamp(2rem, 4vw, 3.4rem); line-height: 0.96; letter-spacing: -0.065em; }
+.cta h2 { margin: 0 0 10px; font-size: clamp(1.9rem, 3.2vw, 2.8rem); line-height: 0.96; letter-spacing: -0.065em; }
 .cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 /* ─────── Side cards ─────── */
