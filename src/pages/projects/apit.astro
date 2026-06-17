@@ -46,6 +46,13 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
         </section>
 
         <section class="block">
+          <div class="eyebrow">Agent Testing Connection</div>
+          <h2>APIT as evidence for the Agent Testing / Evaluation direction.</h2>
+          <p>APIT demonstrates the evaluation methodology that feeds into <strong>Omni-Agent's ATA module</strong>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
+          <p>The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows in the Omni-Agent platform.</p>
+        </section>
+
+        <section class="block">
           <div class="eyebrow">Stack</div>
           <div class="tag-row" style="padding-top:0;margin-top:10px">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}

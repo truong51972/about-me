@@ -8,7 +8,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
   <section class="page-hero">
     <div class="container page-hero-inner">
       <div class="case-index">{item.label}</div>
-      <h1>Omni-Agent: enterprise AI platform for Agentic QA and document intelligence.</h1>
+      <h1>{item.title}: {item.subtitle}</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
         <a class="btn primary" href="https://github.com/truong51972" target="_blank" rel="noreferrer">View GitHub</a>
@@ -20,28 +20,107 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
   <section class="section tight">
     <div class="container content-grid">
       <article class="article">
+        <!-- Overview -->
         <section class="block">
-          <div class="eyebrow">Problem</div>
-          <h2>Governing the workflow around RAG, not just calling an LLM.</h2>
-          <p>Omni-Agent is designed as an enterprise console where Knowledge Builder and Agentic QA workflows live under project-level boundaries. The hard part is making documents, versions, artifacts, jobs, chunks, vector records, and evaluation traces behave like a reliable product surface.</p>
-          <p>Django owns domain state, worker services perform technical jobs, and result envelopes return evidence that can be stored, reviewed, retried, or indexed.</p>
+          <div class="eyebrow">Overview</div>
+          <h2>An AI Agent Hub powered by a Django/DRF control plane.</h2>
+          <p>Omni-Agent is a Django/DRF-based AI Agent Hub — a project-centric console where multiple AI agent products live under shared project, job, artifact, and permission foundations. The main Django backend owns product logic, domain state, workflow rules, and API contracts. External workers and services execute technical AI tasks as stateless executors.</p>
+          <p>Two product modules are under development: <strong>Knowledge Builder</strong> (versioned document processing pipeline) and <strong>ATA</strong> — Agent Test & Audit (evaluation and regression for RAG and LLM-agent workflows). The architecture is designed so that additional modules can be added without changing the platform core.</p>
         </section>
 
+        <!-- Architecture -->
         <section class="block">
           <div class="eyebrow">Architecture</div>
-          <h2>Control plane, workers, artifacts, and retrieval are separated.</h2>
-          <div class="diagram">
-            <div class="diagram-step"><b>Project console</b><span>React UI for documents, versions, preview, jobs, and review actions.</span></div>
-            <div class="diagram-step"><b>Django API</b><span>Domain models, permissions, jobs, source-of-truth state, and presigned artifact access.</span></div>
-            <div class="diagram-step"><b>Stateless workers</b><span>OCR, chunking, document conversion, and indexing commands via queue/result envelopes.</span></div>
-            <div class="diagram-step"><b>RAG layer</b><span>Chunks, vector DB sync, retrieval traces, and Agentic QA workflows.</span></div>
-          </div>
+          <h2>Django owns the domain. Workers and services execute technical tasks.</h2>
+          <p>The separation is explicit: the Django/DRF backend is the authoritative source of domain state and business rules, while stateless workers and REST services perform CPU/GPU-heavy or AI-specific operations.</p>
+
+          <h3>Django/DRF backend owns:</h3>
+          <ul class="clean">
+            <li>Product logic and module boundaries</li>
+            <li>Project context and permissions</li>
+            <li>Domain models and workflow rules</li>
+            <li>Job lifecycle and task orchestration</li>
+            <li>Artifact metadata and storage keys</li>
+            <li>Document/version state management</li>
+            <li>API contracts and result persistence</li>
+          </ul>
+
+          <h3>Stateless workers/services execute:</h3>
+          <ul class="clean">
+            <li>OCR and document parsing</li>
+            <li>Text chunking and preprocessing</li>
+            <li>Embedding generation and vector DB sync</li>
+            <li>Retrieval and RAG pipeline execution</li>
+            <li>Evaluation and metric computation</li>
+            <li>Other CPU/GPU-heavy or technical AI tasks</li>
+          </ul>
         </section>
 
+        <!-- Product Modules -->
         <section class="block">
-          <div class="eyebrow">Key highlights</div>
-          <ul class="clean" style="margin-top:0">
-            {item.highlights.map((h) => <li>{h}</li>)}
+          <div class="eyebrow">Product Modules</div>
+          <h2>Omni-Agent as a hub with swappable product modules.</h2>
+          <p>Each product module is a Django app within the same backend, sharing common infrastructure for projects, jobs, artifacts, and permissions.</p>
+          <pre style="background:var(--bg);padding:16px;border-radius:var(--radius-sm);border:1px solid var(--line);font-size:0.85rem;line-height:1.6;overflow-x:auto;color:var(--text-secondary)">Omni-Agent
+├── Knowledge Builder
+│   ├── Document versioning
+│   ├── OCR/chunking
+│   ├── Artifact storage
+│   ├── RAG
+│   └── Source traceability
+│
+└── ATA — Agent Test & Audit
+    ├── Eval datasets
+    ├── Judge / Critic / Meta-Judge
+    ├── RAG and agent evaluation
+    ├── Regression reports
+    └── QA-oriented audit workflows</pre>
+        </section>
+
+        <!-- Knowledge Builder -->
+        <section class="block">
+          <div class="eyebrow">Knowledge Builder</div>
+          <h2>The first product module: versioned document processing pipeline.</h2>
+          <p>Knowledge Builder is the first product module built on the Omni-Agent platform. It supports a complete versioned document workflow:</p>
+          <ul class="clean">
+            <li>Baseline document upload with version tracking</li>
+            <li>OCR and document parsing via stateless workers</li>
+            <li>Chunking pipeline with configurable strategies</li>
+            <li>S3-compatible artifact storage with metadata indexing</li>
+            <li>Presigned preview and download URLs for private artifacts</li>
+            <li>RAG foundations with vector DB sync and retrieval</li>
+            <li>Traceable source citation for all retrieval results</li>
+          </ul>
+        </section>
+
+        <!-- ATA -->
+        <section class="block">
+          <div class="eyebrow">ATA — Agent Test & Audit</div>
+          <h2>Proposed evaluation and audit layer for RAG and LLM-agent workflows.</h2>
+          <p>ATA is proposed as the evaluation and audit module for the Omni-Agent platform. It applies QA-style review to AI agent outputs through structured evaluation pipelines:</p>
+          <ul class="clean">
+            <li>Eval datasets for RAG and agent workflow benchmarking</li>
+            <li>LLM-as-a-Judge patterns with configurable rubrics</li>
+            <li>Judge → Critic → Meta-Judge evaluation chains</li>
+            <li>Regression reports for tracking quality over time</li>
+            <li>Quality gates and pass/fail criteria for automated review</li>
+            <li>QA-oriented audit workflows inspired by banking automation experience</li>
+          </ul>
+        </section>
+
+        <!-- Technical Decisions -->
+        <section class="block">
+          <div class="eyebrow">Technical Decisions</div>
+          <h2>Engineering trade-offs and design rationale.</h2>
+          <ul class="clean">
+            <li><strong>Django/DRF as main backend/domain owner</strong> — The backend is the single source of truth for all domain state, business rules, and product logic. This avoids logic leaking into stateless workers.</li>
+            <li><strong>Workers/services are stateless executors</strong> — Workers receive typed command envelopes, execute technical tasks, and return result envelopes. They have no domain state of their own.</li>
+            <li><strong>API owns state transitions</strong> — All state changes go through the Django API. Workers cannot mutate domain state directly.</li>
+            <li><strong>Jobs represent async task lifecycle</strong> — Each async operation is modeled as a Job with defined states: queued, running, completed, failed. Jobs carry metadata for observability and retry.</li>
+            <li><strong>Artifacts as metadata + S3 storage keys</strong> — File contents live in S3-compatible storage. Django stores metadata, content hashes, and storage keys for auditability.</li>
+            <li><strong>Presigned URLs for private artifact access</strong> — Artifacts are never exposed directly. The API issues time-limited presigned URLs for preview and download.</li>
+            <li><strong>Result handling persists domain results back to Django</strong> — Worker outputs are stored as domain objects in PostgreSQL, not left in ephemeral storage.</li>
+            <li><strong>Product modules share common foundation</strong> — All modules reuse the same project, context, job, and artifact infrastructure, making new modules additive rather than reconstructive.</li>
           </ul>
         </section>
 
@@ -61,6 +140,11 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <div class="side-card">
           <h3>Evidence</h3>
           <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Modules</h3>
+          <p style="margin-top:0"><strong>Knowledge Builder</strong> — Built</p>
+          <p><strong>ATA</strong> — Proposed</p>
         </div>
       </aside>
     </div>

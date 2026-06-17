@@ -1,14 +1,14 @@
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Applied AI / Python Backend Engineer",
-  tagline: "RAG · Agentic QA · Django · LLM Systems",
+  role: "Applied AI Backend Engineer",
+  tagline: "AI Agent Hub · RAG · Agent Testing · Django/DRF",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build RAG, Agentic QA, and document-intelligence systems with Django, async workers, LLM workflows, and QA automation experience."
+    "I build Django/DRF-based AI agent systems, RAG workflows, and agent testing/evaluation platforms. I combine backend engineering, QA automation, and LLM evaluation to build traceable, testable AI workflows."
 };
 
 export const cases = [
@@ -16,18 +16,29 @@ export const cases = [
     slug: "omni-agent",
     label: "Flagship project",
     title: "Omni-Agent",
-    subtitle: "Enterprise AI Platform for Agentic QA & RAG",
+    subtitle: "Django/DRF AI Agent Hub for Knowledge Builder & Agent Testing",
     summary:
-      "A production-oriented platform for document intelligence, Agentic QA workflows, RAG, versioned artifacts, async workers, and evaluation.",
+      "A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.",
     role: "Solo architecture and implementation",
     outcome:
       "Designed domain boundaries, version control, document processing flow, worker contracts, and backend/frontend product surfaces.",
     href: "projects/omni-agent/",
-    tags: ["Django/DRF", "RAG", "Celery", "S3", "Vector DB", "LangGraph", "Document intelligence"],
+    tags: [
+      "Django/DRF",
+      "AI Agent Hub",
+      "Agent Testing",
+      "RAG",
+      "Async Workers",
+      "S3 Artifacts",
+      "PostgreSQL",
+      "React/Vite"
+    ],
     highlights: [
-      "Versioned document processing pipeline with OCR, chunking, and artifact storage",
-      "Async worker architecture with typed command/result envelopes",
-      "RAG layer with vector sync and retrieval tracing"
+      "Designed Omni-Agent as the main Django/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.",
+      "Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned preview/download URLs, and traceable RAG foundations.",
+      "Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.",
+      "Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through eval datasets, judge/critic/meta-judge patterns, and regression reports.",
+      "Prototyped React/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility."
     ]
   },
   {
@@ -55,7 +66,7 @@ export const cases = [
     summary:
       "Automation and integration testing across Core Banking and financial transaction systems.",
     role: "Applied AI & QA Automation Engineer",
-    outcome: "Delivered Payment Hub API, database, regression, and stress testing workflows.",
+    outcome: "40% test coverage increase, 70% manual effort reduction, ~20 man-month omnichannel contract.",
     href: "projects/banking-automation/",
     tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
     highlights: [
@@ -122,19 +133,58 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "Applied AI / RAG / Agents",
-    items: ["LangGraph", "LangChain", "RAG", "Hybrid RAG", "LLM evaluation", "LLM-as-Judge", "LoRA/QLoRA"]
+    title: "Applied AI & Agent Evaluation",
+    items: [
+      "RAG",
+      "Hybrid RAG",
+      "LangGraph",
+      "LangChain",
+      "LiteLLM",
+      "Langfuse",
+      "LLM Evaluation",
+      "LLM-as-a-Judge",
+      "eval datasets",
+      "judge/critic/meta-judge patterns"
+    ]
   },
   {
-    title: "Backend / Systems",
-    items: ["Python", "Django/DRF", "FastAPI", "PostgreSQL", "Redis/Celery", "Docker", "REST APIs", "async workers"]
+    title: "Backend & Systems",
+    items: [
+      "Python",
+      "Django/DRF",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis/Celery",
+      "Docker",
+      "REST APIs",
+      "async workers",
+      "service layers",
+      "domain modeling"
+    ]
   },
   {
-    title: "QA Automation / Banking",
-    items: ["Agentic QA", "API Testing", "Katalon", "Postman", "JMeter", "SQL validation", "Core Banking", "Payment Hub"]
+    title: "QA Automation & Banking",
+    items: [
+      "Agentic QA",
+      "Agent Testing",
+      "API Testing",
+      "Postman",
+      "Katalon",
+      "Appium",
+      "JMeter",
+      "SQL validation",
+      "Core Banking",
+      "Payment Hub"
+    ]
   },
   {
     title: "Frontend Prototyping",
-    items: ["React", "Vite", "Tailwind CSS", "shadcn/ui", "AI-assisted development"]
+    items: [
+      "React",
+      "Vite",
+      "Tailwind CSS",
+      "internal dashboard UI",
+      "AI-assisted development"
+    ]
   }
 ];
