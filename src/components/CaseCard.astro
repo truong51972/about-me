@@ -10,10 +10,10 @@ interface CaseItem {
   tags: string[];
 }
 interface Props { item: CaseItem }
+import { withBase } from "../lib/paths";
 const { item } = Astro.props;
-const base = import.meta.env.BASE_URL;
 ---
-<a class="card project-card" href={`${base}${item.href}`}>
+<a class="card project-card" href={withBase(item.href)}>
   <div>
     <div class="case-index">{item.label}</div>
     <h3 class="card-title">{item.title}</h3>

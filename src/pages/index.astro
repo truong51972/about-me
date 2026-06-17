@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionHead from "../components/SectionHead.astro";
 import CaseCard from "../components/CaseCard.astro";
@@ -7,7 +8,6 @@ import SystemMap from "../components/SystemMap.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import SkillBox from "../components/SkillBox.astro";
 import { site, baseStrengths, metrics, cases, decisions, timeline, skillGroups } from "../data/profile";
-const base = import.meta.env.BASE_URL;
 const [omni, apit, banking, selfDriving] = cases;
 ---
 <BaseLayout>
@@ -18,9 +18,9 @@ const [omni, apit, banking, selfDriving] = cases;
         <h1>Applied AI engineer building <span class="accent">Agentic QA</span>, RAG, and backend control planes.</h1>
         <p class="hero-lede">{site.summary}</p>
         <div class="hero-actions">
-          <a class="btn primary" href={`${base}projects/omni-agent/`}>Read Omni-Agent case</a>
-          <a class="btn" href={`${base}projects/`}>View all cases</a>
-          <a class="btn ghost" href={`${base}cv/`}>View CV</a>
+          <a class="btn primary" href={withBase("projects/omni-agent/")}>Read Omni-Agent case</a>
+          <a class="btn" href={withBase("projects/")}>View all cases</a>
+          <a class="btn ghost" href={withBase("cv/")}>View CV</a>
         </div>
         <div class="micro-list">
           <span>Django/DRF control plane</span>
@@ -79,7 +79,7 @@ const [omni, apit, banking, selfDriving] = cases;
             </div>
             <div class="case-footer">
               <div class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</div>
-              <a class="btn primary" href={`${base}${omni.href}`}>Open case study</a>
+              <a class="btn primary" href={withBase(omni.href)}>Open case study</a>
             </div>
           </div>
         </article>
@@ -110,7 +110,7 @@ const [omni, apit, banking, selfDriving] = cases;
 
   <section class="section">
     <div class="container media-proof-row">
-      <img class="award-photo" src={`${base}images/second-prize-award.webp`} alt="Tran Quoc Truong receiving a second prize research award" />
+      <img class="award-photo" src={withBase("images/second-prize-award.webp")} alt="Tran Quoc Truong receiving a second prize research award" />
       <article class="panel award-copy">
         <div>
           <div class="eyebrow">Earlier AI research & award</div>
@@ -118,8 +118,8 @@ const [omni, apit, banking, selfDriving] = cases;
           <p>The earlier research work combined Unity simulation, YOLOv8 traffic sign classification, YOLOv8 lane segmentation, and PID-based control. It is intentionally placed as earlier evidence, not the main positioning, so the portfolio remains focused on Applied AI systems and Agentic QA.</p>
         </div>
         <div class="hero-actions">
-          <a class="btn primary" href={`${base}projects/self-driving-car/`}>Read research case</a>
-          <a class="btn" href={`${base}docs/self-driving-car-problem.pdf`} target="_blank" rel="noreferrer">Open paper PDF</a>
+          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case</a>
+          <a class="btn" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
         </div>
       </article>
     </div>

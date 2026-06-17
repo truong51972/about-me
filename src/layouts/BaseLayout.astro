@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import "../styles/global.css";
+import { withBase } from "../lib/paths";
 import { site } from "../data/profile";
 
 interface Props {
@@ -9,7 +10,6 @@ interface Props {
   description?: string;
 }
 
-const base = import.meta.env.BASE_URL;
 const title = Astro.props.title ? `${Astro.props.title} · ${site.name}` : `${site.name} · ${site.tagline}`;
 const description = Astro.props.description ?? site.summary;
 ---
@@ -21,7 +21,7 @@ const description = Astro.props.description ?? site.summary;
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#08111f" />
-    <link rel="icon" href={`${base}favicon.svg`} />
+    <link rel="icon" href={withBase("favicon.svg")} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />

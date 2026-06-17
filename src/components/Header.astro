@@ -1,10 +1,10 @@
 ---
+import { withBase } from "../lib/paths";
 import { site } from "../data/profile";
-const base = import.meta.env.BASE_URL;
 ---
 <header class="site-header">
   <div class="container nav">
-    <a class="brand" href={base} aria-label="Home">
+    <a class="brand" href={withBase()} aria-label="Home">
       <span class="brand-mark">TQ</span>
       <span>
         <span class="brand-name">{site.name}</span>
@@ -12,10 +12,10 @@ const base = import.meta.env.BASE_URL;
       </span>
     </a>
     <nav class="nav-links" aria-label="Main navigation">
-      <a href={`${base}#work`}>Work</a>
-      <a href={`${base}projects/`}>Projects</a>
-      <a href={`${base}#decisions`}>Decisions</a>
-      <a href={`${base}cv/`}>CV</a>
+      <a href={withBase("#work")}>Work</a>
+      <a href={withBase("projects/")}>Projects</a>
+      <a href={withBase("#decisions")}>Decisions</a>
+      <a href={withBase("cv/")}>CV</a>
     </nav>
     <div class="nav-actions">
       <a class="pill-link" href={site.github} target="_blank" rel="noreferrer">GitHub</a>

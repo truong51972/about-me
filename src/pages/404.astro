@@ -1,6 +1,6 @@
 ---
+import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="Not found">
   <section class="page-hero">
@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL;
         <h1>Page not found.</h1>
         <p class="page-summary">The case study you are looking for may have moved.</p>
       </div>
-      <a class="btn primary" href={base}>Back home</a>
+      <a class="btn primary" href={withBase()}>Back home</a>
     </div>
   </section>
 </BaseLayout>

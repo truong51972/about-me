@@ -1,9 +1,9 @@
 ---
+import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import SkillBox from "../components/SkillBox.astro";
 import { site, timeline, education, skillGroups, cases } from "../data/profile";
-const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong." >
   <section class="page-hero">
@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL;
       <h1>{site.name}</h1>
       <p class="page-summary">{site.role} · {site.tagline}. {site.summary}</p>
       <div class="hero-actions">
-        <a class="btn primary" href={`${base}Tran_Quoc_Truong_CV.yaml`} target="_blank" rel="noreferrer">Open CV YAML</a>
+        <a class="btn primary" href={withBase("Tran_Quoc_Truong_CV.yaml")} target="_blank" rel="noreferrer">Open CV YAML</a>
         <a class="btn" href={`mailto:${site.email}`}>Email</a>
         <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
       </div>

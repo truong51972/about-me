@@ -1,7 +1,7 @@
 ---
+import { withBase } from "../../lib/paths";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { cases } from "../../data/profile";
-const base = import.meta.env.BASE_URL;
 const item = cases.find((caseItem) => caseItem.slug === "apit")!;
 ---
 <BaseLayout title="APIT" description="APIT AI Capstone project case study." >
@@ -15,8 +15,8 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
       <h1>APIT: LLM-powered API test generation as an AI capstone.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
-        <a class="btn primary" href={`${base}docs/apit-capstone.pdf`} target="_blank" rel="noreferrer">Open capstone PDF</a>
-        <a class="btn" href={`${base}projects/`}>Back to projects</a>
+        <a class="btn primary" href={withBase("docs/apit-capstone.pdf")} target="_blank" rel="noreferrer">Open capstone PDF</a>
+        <a class="btn" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
