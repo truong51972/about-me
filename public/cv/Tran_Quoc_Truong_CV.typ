@@ -88,7 +88,7 @@
 
 = Tran Quoc Truong
 
-  #headline([#strong[Applied AI Engineer] | #strong[Agentic QA] & #strong[RAG] Systems | Python Backend])
+  #headline([Applied AI Backend Engineer | Agentic QA & RAG Systems])
 
 #connections(
   [#connection-with-icon("location-dot")[Ho Chi Minh City, Vietnam]],
@@ -101,27 +101,23 @@
 
 == Summary
 
-#strong[Applied AI Engineer] building enterprise #strong[Agentic QA], #strong[RAG], and document-intelligence systems with production-oriented Python backends.
+Applied AI Backend Engineer focused on building AI agent workflows, RAG systems, and agent testing\/evaluation platforms using Python, Django\/DRF, FastAPI, async workers, and vector databases.
 
-Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[LangChain], #strong[LiteLLM], #strong[Redis\/Celery], #strong[PostgreSQL], #strong[vector databases], MCP #strong[tool integration], and QA automation.
+Combines QA automation experience in Core Banking and Payment Hub domains with LLM evaluation, traceable retrieval, and production-oriented backend workflows.
 
 == Experience
 
 #regular-entry(
   [
-    #strong[FPT Software], #strong[Applied AI Engineer] & QA Automation Engineer
+    #strong[FPT Software], Applied AI Engineer & QA Automation Engineer
 
-    - Built #strong[AI-assisted QA] workflows for document understanding, #strong[RAG] Q&A, #strong[test-case generation], #strong[duplicate bug detection], #strong[traceability], and #strong[change impact analysis].
+    - Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
 
-    - Designed backend orchestration with #strong[Django\/DRF], #strong[FastAPI], #strong[Redis\/Celery], #strong[PostgreSQL], #strong[async workers], #strong[service layers], and clear #strong[domain boundaries].
-
-    - Developed document-processing flows for #strong[OCR]\/preview generation, enhanced #strong[OCR] strategy, version commit, chunk generation, artifact storage, and vector indexing.
+    - Designed Python backend orchestration with Django\/DRF, FastAPI, Redis\/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.
 
     - Delivered API, Web, and Mobile automation solutions that increased test coverage by 40\% and reduced manual testing effort by up to 70\%.
 
-    - Led an omnichannel #strong[Core Banking] automation PoC across Web, iOS, and Android, helping secure a \~20 man-month contract.
-
-    - Executed banking QA work across #strong[Core Banking] and #strong[Payment Hub] domains, including API testing, #strong[SQL validation], regression testing, and stress testing.
+    - Led an omnichannel Core Banking automation PoC across Web, iOS, and Android, helping secure a \~20 man-month contract.
 
   ],
   [
@@ -163,21 +159,19 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
 
 #regular-entry(
   [
-    #strong[Omni-Agent - Enterprise AI Platform for ]Agentic QA#sym.ast.basic#h(0pt, weak: true) #sym.ast.basic#h(0pt, weak: true) #sym.ast.basic#h(0pt, weak: true) #sym.ast.basic#h(0pt, weak: true)
+    #strong[Omni-Agent — Django\/DRF AI Agent Hub for Knowledge Builder & Agent Testing]
 
-    #summary[Enterprise AI platform for turning documents, requirements, bugs, and test assets into searchable, traceable, and automatable QA workflows.]
+    #summary[A Django\/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.]
 
-    - Designed a multi-service architecture with #strong[Django\/DRF] as the #strong[control plane], #strong[async workers] as the processing plane, and separate boundaries for #strong[document processing], retrieval, storage, graph analysis, and LLM orchestration.
+    - Designed Omni-Agent as the main Django\/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.
 
-    - Modeled backend domains for Documents, Document Versions, Processing Artifacts, Chunks, and #strong[Platform Jobs], keeping API endpoints thin and workflow logic in #strong[service layers].
+    - Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR\/chunking pipelines, S3-compatible artifacts, presigned preview\/download URLs, and traceable RAG foundations.
 
-    - Implemented versioned document workflows covering baseline upload, #strong[OCR]\/preview generation, enhanced #strong[OCR] strategy, commit flow, chunk generation, artifact storage, and vector indexing.
+    - Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.
 
-    - Integrated #strong[RAG] infrastructure with #strong[vector databases], #strong[LiteLLM] model routing, #strong[MCP wrapper]\/#strong[tool integration], #strong[LangGraph]\/#strong[LangChain] workflows, and observability\/evaluation patterns.
+    - Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through eval datasets, judge\/critic\/meta-judge patterns, and regression reports.
 
-    - Built #strong[Agentic QA] capabilities for document-to-#strong[test-case generation], #strong[RAG] Q&A, #strong[duplicate bug detection], requirement\/test\/defect #strong[traceability], and #strong[change impact analysis].
-
-    - Prototyped #strong[React\/Vite] frontend workflows with #strong[AI-assisted development], including project navigation, document workspace UI, preview tabs, version dropdowns, and processing status views.
+    - Prototyped React\/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility.
 
   ],
   [
@@ -186,17 +180,17 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
 
 #regular-entry(
   [
-    #strong[APIT - Agent Programmatic Integration Testing]
+    #strong[APIT — Agent Programmatic Integration Testing]
 
-    #summary[LLM-based system that analyzes API documentation and generates structured API test cases.]
+    #summary[An LLM-based system that analyzes API documentation and generates structured API test cases.]
 
-    - Built the core #strong[AI agent] for API document understanding, structured #strong[test-case generation], and automated output evaluation.
+    - Built the core AI agent for API document understanding, structured test-case generation, and automated output evaluation.
 
     - Evaluated LoRA and QLoRA approaches for domain-specific structured test document generation.
 
-    - Fine-tuned Qwen-2.5-3B achieved macro-F1 0.655, outperforming Llama-3.2-3B by 41.5\% in the evaluation setup.
+    - Fine-tuned Qwen-2.5-3B, achieving macro-F1 0.655 and outperforming Llama-3.2-3B by 41.5\% in the evaluation setup.
 
-    - Implemented #strong[FastAPI]-based model evaluation workflows and #strong[LLM-as-a-Judge] experiments for generated output comparison.
+    - Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for generated output comparison.
 
   ],
   [
@@ -205,34 +199,17 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
 
 #regular-entry(
   [
-    #strong[Eximbank ]Core Banking#strong[ - Omnichannel Automation PoC]
+    #strong[Banking QA Automation — Core Banking & Payment Hub]
 
-    #summary[Automation PoC for validating end-to-end #strong[Core Banking] workflows across Web, iOS, and Android.]
+    #summary[Automation and validation work for Core Banking omnichannel flows and Payment Hub transaction integrations.]
 
-    - Built cross-platform automation flows with Katalon and Appium for omnichannel regression coverage.
+    - Built cross-platform automation flows with Katalon and Appium for Web, iOS, and Android regression coverage.
 
     - Validated critical business journeys consistently across Web, iOS, and Android under one automation strategy.
 
-    - Demonstrated stronger coverage and execution efficiency than competing vendors, helping secure a \~20 man-month contract.
-
-  ],
-  [
-  ],
-)
-
-#regular-entry(
-  [
-    #strong[Sacombank - ]Payment Hub#strong[ Integration Testing]
-
-    #summary[API, database, regression, and stress testing project for financial transaction integrations.]
-
-    - Executed API testing, database testing, regression testing, and stress testing to validate transaction integrity and endpoint reliability.
-
-    - Authored more than 1,500 lines of #strong[SQL validation] queries to verify post-transaction data consistency across payment integration flows.
+    - Authored more than 1,500 lines of SQL validation queries to verify post-transaction data consistency across payment integration flows.
 
     - Reduced manual QA effort by 70\% through reusable validation scripts, regression scenarios, and repeatable API\/database checks.
-
-    - Maintained full API endpoint coverage while validating financial operation correctness across integration flows.
 
   ],
   [
@@ -241,13 +218,13 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
 
 == Skills
 
-#strong[Applied AI, Agents & ]RAG#strong[:] #strong[LangGraph], #strong[LangChain], #strong[MCP wrapper], #strong[RAG], #strong[Hybrid RAG], #strong[LiteLLM], Langfuse, #strong[LLM Evaluation], #strong[LLM-as-a-Judge], LoRA\/QLoRA
+#strong[Applied AI & Agent Evaluation:] RAG, Hybrid RAG, LangGraph, LangChain, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, eval datasets, judge\/critic\/meta-judge patterns
 
-#strong[Backend & AI Systems:] Python, #strong[Django\/DRF], #strong[FastAPI], #strong[PostgreSQL], #strong[Redis\/Celery], Docker, REST APIs, #strong[async workers], #strong[service layers], #strong[domain boundaries]
+#strong[Backend & Systems:] Python, Django\/DRF, FastAPI, PostgreSQL, Redis\/Celery, Docker, REST APIs, async workers, service layers, domain modeling
 
-#strong[QA Automation & Banking Domain:] #strong[Agentic QA], #strong[API Testing], Web\/Mobile Automation, Katalon, Appium, Postman, JMeter, #strong[SQL validation], #strong[Core Banking], #strong[Payment Hub]
+#strong[QA Automation & Banking:] Agentic QA, Agent Testing, API Testing, Postman, Katalon, Appium, JMeter, SQL validation, Core Banking, Payment Hub
 
-#strong[Full-stack AI Prototyping:] React, Vite, Tailwind CSS, shadcn\/ui, #strong[AI-assisted development], dashboard UI, document workspace UI
+#strong[Frontend Prototyping:] React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development
 
 == Education
 
@@ -275,7 +252,7 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
   [
     Ho Chi Minh City, Vietnam
 
-    2021 - 2025
+    2021 – 2025
 
   ],
   degree-column: [
@@ -288,5 +265,3 @@ Strong in #strong[Django\/DRF], #strong[FastAPI], #strong[LangGraph], #strong[La
 #strong[Vietnamese:] Native
 
 #strong[English:] Working proficiency
-
-#strong[Japanese:] N5 \/ Basic

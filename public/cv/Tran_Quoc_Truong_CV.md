@@ -8,12 +8,12 @@
 
 
 # Summary
-**Applied AI Engineer** building enterprise **Agentic QA**, **RAG**, and document-intelligence systems with production-oriented Python backends.
+Applied AI Backend Engineer focused on building AI agent workflows, RAG systems, and agent testing/evaluation platforms using Python, Django/DRF, FastAPI, async workers, and vector databases.
 
-Strong in **Django/DRF**, **FastAPI**, **LangGraph**, **LangChain**, **LiteLLM**, **Redis/Celery**, **PostgreSQL**, **vector databases**, MCP **tool integration**, and QA automation.
+Combines QA automation experience in Core Banking and Payment Hub domains with LLM evaluation, traceable retrieval, and production-oriented backend workflows.
 
 # Experience
-## **FPT Software**, **Applied AI Engineer** & QA Automation Engineer
+## **FPT Software**, Applied AI Engineer & QA Automation Engineer
 
 Ho Chi Minh City, Vietnam
 
@@ -23,17 +23,13 @@ Dec 2024 – present
 
 1 year 7 months
 
-- Built **AI-assisted QA** workflows for document understanding, **RAG** Q&A, **test-case generation**, **duplicate bug detection**, **traceability**, and **change impact analysis**.
+- Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
 
-- Designed backend orchestration with **Django/DRF**, **FastAPI**, **Redis/Celery**, **PostgreSQL**, **async workers**, **service layers**, and clear **domain boundaries**.
-
-- Developed document-processing flows for **OCR**/preview generation, enhanced **OCR** strategy, version commit, chunk generation, artifact storage, and vector indexing.
+- Designed Python backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.
 
 - Delivered API, Web, and Mobile automation solutions that increased test coverage by 40% and reduced manual testing effort by up to 70%.
 
-- Led an omnichannel **Core Banking** automation PoC across Web, iOS, and Android, helping secure a ~20 man-month contract.
-
-- Executed banking QA work across **Core Banking** and **Payment Hub** domains, including API testing, **SQL validation**, regression testing, and stress testing.
+- Led an omnichannel Core Banking automation PoC across Web, iOS, and Android, helping secure a ~20 man-month contract.
 
 
 
@@ -56,72 +52,58 @@ Sept 2024 – Dec 2024
 
 
 # Projects
-## **Omni-Agent - Enterprise AI Platform for **Agentic QA****
+## **Omni-Agent — Django/DRF AI Agent Hub for Knowledge Builder & Agent Testing**
 
-Enterprise AI platform for turning documents, requirements, bugs, and test assets into searchable, traceable, and automatable QA workflows.
+A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.
 
-- Designed a multi-service architecture with **Django/DRF** as the **control plane**, **async workers** as the processing plane, and separate boundaries for **document processing**, retrieval, storage, graph analysis, and LLM orchestration.
+- Designed Omni-Agent as the main Django/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.
 
-- Modeled backend domains for Documents, Document Versions, Processing Artifacts, Chunks, and **Platform Jobs**, keeping API endpoints thin and workflow logic in **service layers**.
+- Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned preview/download URLs, and traceable RAG foundations.
 
-- Implemented versioned document workflows covering baseline upload, **OCR**/preview generation, enhanced **OCR** strategy, commit flow, chunk generation, artifact storage, and vector indexing.
+- Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.
 
-- Integrated **RAG** infrastructure with **vector databases**, **LiteLLM** model routing, **MCP wrapper**/**tool integration**, **LangGraph**/**LangChain** workflows, and observability/evaluation patterns.
+- Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through eval datasets, judge/critic/meta-judge patterns, and regression reports.
 
-- Built **Agentic QA** capabilities for document-to-**test-case generation**, **RAG** Q&A, **duplicate bug detection**, requirement/test/defect **traceability**, and **change impact analysis**.
-
-- Prototyped **React/Vite** frontend workflows with **AI-assisted development**, including project navigation, document workspace UI, preview tabs, version dropdowns, and processing status views.
+- Prototyped React/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility.
 
 
 
-## **APIT - Agent Programmatic Integration Testing**
+## **APIT — Agent Programmatic Integration Testing**
 
-LLM-based system that analyzes API documentation and generates structured API test cases.
+An LLM-based system that analyzes API documentation and generates structured API test cases.
 
-- Built the core **AI agent** for API document understanding, structured **test-case generation**, and automated output evaluation.
+- Built the core AI agent for API document understanding, structured test-case generation, and automated output evaluation.
 
 - Evaluated LoRA and QLoRA approaches for domain-specific structured test document generation.
 
-- Fine-tuned Qwen-2.5-3B achieved macro-F1 0.655, outperforming Llama-3.2-3B by 41.5% in the evaluation setup.
+- Fine-tuned Qwen-2.5-3B, achieving macro-F1 0.655 and outperforming Llama-3.2-3B by 41.5% in the evaluation setup.
 
-- Implemented **FastAPI**-based model evaluation workflows and **LLM-as-a-Judge** experiments for generated output comparison.
+- Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for generated output comparison.
 
 
 
-## **Eximbank **Core Banking** - Omnichannel Automation PoC**
+## **Banking QA Automation — Core Banking & Payment Hub**
 
-Automation PoC for validating end-to-end **Core Banking** workflows across Web, iOS, and Android.
+Automation and validation work for Core Banking omnichannel flows and Payment Hub transaction integrations.
 
-- Built cross-platform automation flows with Katalon and Appium for omnichannel regression coverage.
+- Built cross-platform automation flows with Katalon and Appium for Web, iOS, and Android regression coverage.
 
 - Validated critical business journeys consistently across Web, iOS, and Android under one automation strategy.
 
-- Demonstrated stronger coverage and execution efficiency than competing vendors, helping secure a ~20 man-month contract.
-
-
-
-## **Sacombank - **Payment Hub** Integration Testing**
-
-API, database, regression, and stress testing project for financial transaction integrations.
-
-- Executed API testing, database testing, regression testing, and stress testing to validate transaction integrity and endpoint reliability.
-
-- Authored more than 1,500 lines of **SQL validation** queries to verify post-transaction data consistency across payment integration flows.
+- Authored more than 1,500 lines of SQL validation queries to verify post-transaction data consistency across payment integration flows.
 
 - Reduced manual QA effort by 70% through reusable validation scripts, regression scenarios, and repeatable API/database checks.
-
-- Maintained full API endpoint coverage while validating financial operation correctness across integration flows.
 
 
 
 # Skills
-**Applied AI, Agents & **RAG**:** **LangGraph**, **LangChain**, **MCP wrapper**, **RAG**, **Hybrid RAG**, **LiteLLM**, Langfuse, **LLM Evaluation**, **LLM-as-a-Judge**, LoRA/QLoRA
+**Applied AI & Agent Evaluation:** RAG, Hybrid RAG, LangGraph, LangChain, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, eval datasets, judge/critic/meta-judge patterns
 
-**Backend & AI Systems:** Python, **Django/DRF**, **FastAPI**, **PostgreSQL**, **Redis/Celery**, Docker, REST APIs, **async workers**, **service layers**, **domain boundaries**
+**Backend & Systems:** Python, Django/DRF, FastAPI, PostgreSQL, Redis/Celery, Docker, REST APIs, async workers, service layers, domain modeling
 
-**QA Automation & Banking Domain:** **Agentic QA**, **API Testing**, Web/Mobile Automation, Katalon, Appium, Postman, JMeter, **SQL validation**, **Core Banking**, **Payment Hub**
+**QA Automation & Banking:** Agentic QA, Agent Testing, API Testing, Postman, Katalon, Appium, JMeter, SQL validation, Core Banking, Payment Hub
 
-**Full-stack AI Prototyping:** React, Vite, Tailwind CSS, shadcn/ui, **AI-assisted development**, dashboard UI, document workspace UI
+**Frontend Prototyping:** React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development
 
 # Education
 ## **FPT School of Business & Technology**, Master of Software Engineering in AI
@@ -144,7 +126,7 @@ May 2026 – present
 Ho Chi Minh City, Vietnam
 
 
-2021 - 2025
+2021 – 2025
 
 
 
@@ -152,5 +134,3 @@ Ho Chi Minh City, Vietnam
 **Vietnamese:** Native
 
 **English:** Working proficiency
-
-**Japanese:** N5 / Basic
