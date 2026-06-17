@@ -15,7 +15,7 @@ const [omni, apit, banking, selfDriving] = cases;
     <div class="container hero-grid">
       <div>
         <div class="eyebrow">{site.location}</div>
-        <h1>Applied AI engineer building <span class="accent">Agentic QA</span>, RAG, and backend control planes.</h1>
+        <h1>Applied AI Engineer for LLM systems, RAG, and automation.</h1>
         <p class="hero-lede">{site.summary}</p>
         <div class="hero-actions">
           <a class="btn primary" href={withBase("projects/omni-agent/")}>Read Omni-Agent case</a>
@@ -78,8 +78,10 @@ const [omni, apit, banking, selfDriving] = cases;
               {omni.tags.map((tag) => <span class="tag">{tag}</span>)}
             </div>
             <div class="case-footer">
-              <div class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</div>
-              <a class="btn primary" href={withBase(omni.href)}>Open case study</a>
+              <p class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</p>
+              <a class="case-study-link" href={withBase(omni.href)}>
+                Read case study <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </article>
