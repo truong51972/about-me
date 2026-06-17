@@ -1,133 +1,112 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import SectionHead from "../components/SectionHead.astro";
-import DecisionCard from "../components/DecisionCard.astro";
-import SystemMap from "../components/SystemMap.astro";
-import TimelineItem from "../components/TimelineItem.astro";
-import { site, metrics, cases, decisions, timeline, skillGroups } from "../data/profile";
+import { site, cases, skillGroups } from "../data/profile";
 const [omni, apit, banking, selfDriving] = cases;
-const otherCases = [apit, banking, selfDriving];
+const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
+const featured = [omni, apit, banking];
 ---
 
 <BaseLayout>
-  <!-- Hero — editorial text block -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="container hero-inner rise">
-      <h1>Applied AI Engineer for LLM systems, RAG, and automation.</h1>
-      <p class="hero-lede">{site.summary}</p>
+    <div class="container hero-inner">
+      <h1 class="hero-name">{site.name}</h1>
+      <p class="hero-role">{site.role}</p>
+      <p class="hero-summary">{site.summary}</p>
       <div class="hero-actions">
-        <a class="btn primary" href={withBase("projects/omni-agent/")}>Read Omni-Agent case</a>
-        <a class="btn ghost" href={withBase("projects/")}>View all projects</a>
+        <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV</a>
+        <a class="btn ghost" href={withBase("projects/")}>View Projects</a>
+        <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn ghost" href={`mailto:${site.email}`}>Email</a>
       </div>
     </div>
   </section>
 
-  <!-- Metrics — quiet stat row -->
-  <section class="section tight">
-    <div class="container">
-      <div class="metrics">
-        {metrics.map((metric) => (
-          <div class="metric-block">
-            <span class="metric-value">{metric.value}</span>
-            <span class="metric-label">{metric.label}</span>
-            <span class="metric-detail">{metric.detail}</span>
-          </div>
-        ))}
-      </div>
+  <!-- About -->
+  <section class="section" id="about">
+    <div class="container content-compact">
+      <p class="about-text">
+        I am an Applied AI Engineer focused on backend systems around LLM workflows, document processing, RAG, and QA automation.
+      </p>
+      <p class="about-text">
+        My background includes banking QA automation at FPT Software, AI model evaluation and fine-tuning research, and an active personal platform project called Omni-Agent.
+      </p>
     </div>
   </section>
 
-  <!-- Omni-Agent editorial spread -->
-  <section class="section" id="work">
+  <!-- Featured Projects -->
+  <section class="section" id="projects">
     <div class="container">
-      <div class="editorial-spread">
-        <div class="editorial-spread-body">
-          <div class="eyebrow">Featured case</div>
-          <h2 style="font-family:var(--font-display);font-size:clamp(1.8rem,3.2vw,2.8rem);line-height:1.1;letter-spacing:-0.03em;font-weight:400;margin:0">
-            {omni.title} — {omni.subtitle}
-          </h2>
-          <p style="color:var(--text-secondary);font-size:1rem;line-height:1.55">{omni.summary}</p>
-          <div style="display:grid;gap:12px;margin-top:4px">
-            <p style="color:var(--muted);font-size:0.88rem"><strong style="color:var(--text-secondary)">Role:</strong> {omni.role}</p>
-            <p style="color:var(--muted);font-size:0.88rem"><strong style="color:var(--text-secondary)">Proof:</strong> {omni.outcome}</p>
-          </div>
-          <div style="margin-top:8px">
-            <a class="editorial-link" href={withBase(omni.href)}>
-              Read the full case →
-            </a>
-          </div>
-        </div>
-        <div>
-          <SystemMap compact />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project index — refined 2-up grid -->
-  <section class="section tight">
-    <div class="container">
-      <SectionHead title="Selected projects" body="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." variant="stack" />
-      <div class="project-index" style="margin-top:8px">
-        {otherCases.map((item) => (
-          <a class="project-index-item" href={withBase(item.href)}>
-            <div class="project-index-meta">{item.label}</div>
-            <h3>{item.title}</h3>
-            <p class="project-index-desc">{item.summary}</p>
-            <div class="project-index-stat">{item.outcome}</div>
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="project-cards">
+        {featured.map((item) => (
+          <a class="project-card" href={withBase(item.href)}>
+            <div class="project-card-label">{item.label}</div>
+            <h3 class="project-card-title">{item.title}</h3>
+            <p class="project-card-sub">{item.subtitle}</p>
+            <div class="project-card-body">
+              <p>{item.summary}</p>
+              <ul>
+                {item.highlights.map((h) => <li>{h}</li>)}
+              </ul>
+            </div>
+            <div class="project-card-stack">
+              {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
           </a>
         ))}
       </div>
-    </div>
-  </section>
 
-  <!-- Decisions — kept grid structure -->
-  <section class="section" id="decisions">
-    <div class="container">
-      <SectionHead title="The portfolio emphasizes why the system is built this way." body="These are the kinds of trade-offs that make the work interviewable: the decision, the constraint, and the cost of that choice." variant="stack" />
-      <div class="decision-grid">
-        {decisions.map((item) => (<DecisionCard item={item} />))}
+      <!-- Earlier research sub-section -->
+      <div class="earlier-research">
+        <h3 class="earlier-heading">Earlier AI Research</h3>
+        <a class="earlier-item" href={withBase(selfDriving.href)}>
+          <strong>{selfDriving.title}</strong>
+          <span>— {selfDriving.summary}</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Award / Recognition -->
-  <section class="section">
-    <div class="container media-proof-row">
-      <img class="award-photo" src={withBase("images/second-prize-award.webp")} alt="Tran Quoc Truong receiving a second prize research award" />
-      <article class="panel award-copy">
-        <div>
-          <div class="eyebrow">Recognition</div>
-          <h3>Second Prize proof from the self-driving car research paper.</h3>
-          <p>The earlier research work combined Unity simulation, YOLOv8 traffic sign classification, YOLOv8 lane segmentation, and PID-based control. It is intentionally placed as earlier evidence, not the main positioning, so the portfolio remains focused on Applied AI systems and Agentic QA.</p>
-        </div>
-        <div class="hero-actions">
-          <a class="btn primary" href={withBase("projects/self-driving-car/")}>Read research case</a>
-          <a class="btn ghost" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- Experience timeline -->
+  <!-- Experience -->
   <section class="section" id="experience">
     <div class="container">
-      <SectionHead title="Recent work and delivery context." variant="compact" />
-      <div class="timeline">
-        {timeline.map((item) => <TimelineItem item={item} />)}
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-list">
+        <div class="experience-item">
+          <div class="experience-head">
+            <h3>FPT Software — Applied AI Engineer & QA Automation Engineer</h3>
+            <span class="experience-period">Dec 2024 — Present</span>
+          </div>
+          <ul class="experience-bullets">
+            <li>Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.</li>
+            <li>Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and domain boundaries.</li>
+            <li>Delivered API, Web, and Mobile automation solutions in banking QA contexts.</li>
+          </ul>
+        </div>
+        <div class="experience-item">
+          <div class="experience-head">
+            <h3>FPT Software Academy — Full-stack Developer Intern</h3>
+            <span class="experience-period">Sep 2024 — Dec 2024</span>
+          </div>
+          <ul class="experience-bullets">
+            <li>Built Django-based web applications and deployed containerized services with Docker.</li>
+            <li>Improved deployment reliability through production-oriented configuration and Cloudflare integration.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills — compact text treatment -->
-  <section class="section tight" id="skills">
+  <!-- Skills -->
+  <section class="section" id="skills">
     <div class="container">
-      <SectionHead title="Stack and capabilities." body="A compact map of the tooling across AI workflows, backend systems, QA automation, and full-stack prototyping." variant="stack" />
+      <h2 class="section-title">Skills</h2>
       <div class="skill-list">
         {skillGroups.map((group) => (
           <div class="skill-list-group">
-            <h3>{group.title}</h3>
+            <h3 class="skill-group-title">{group.title}</h3>
             <div class="skill-items">
               {group.items.map((item) => <span class="tag">{item}</span>)}
             </div>
@@ -137,15 +116,16 @@ const otherCases = [apit, banking, selfDriving];
     </div>
   </section>
 
-  <!-- CTA — editorial close -->
-  <section class="section tight">
-    <div class="container card cta-card">
-      <div>
-        <h2>Interested in Applied AI, Agentic QA, or RAG backend work?</h2>
-        <p>The fastest way to understand my work is to start with Omni-Agent, then APIT, then the banking QA automation case.</p>
-      </div>
-      <div class="cta-actions">
-        <a class="btn primary" href={`mailto:${site.email}`}>Email me</a>
+  <!-- Contact CTA -->
+  <section class="section cta-section">
+    <div class="container content-compact cta-content">
+      <h2>Interested in Applied AI, Agentic QA, or Python backend work?</h2>
+      <div class="cta-links">
+        <a href={`mailto:${site.email}`} class="cta-link">Email me</a>
+        <span class="cta-sep">·</span>
+        <a href={site.github} target="_blank" rel="noreferrer" class="cta-link">GitHub</a>
+        <span class="cta-sep">·</span>
+        <a href={site.linkedin} target="_blank" rel="noreferrer" class="cta-link">LinkedIn</a>
       </div>
     </div>
   </section>

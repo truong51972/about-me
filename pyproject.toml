@@ -1,13 +1,9 @@
 [project]
 name = "about-me"
 version = "0.1.0"
-description = "Add your description here"
+description = "Applied AI Engineer portfolio and CV"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "poethepoet>=0.46.0",
     "rendercv[full]>=2.8",
 ]
-
-[tool.poe.tasks]
-render-cv = "rendercv render 'Tran_Quoc_Truong_CV.yaml'"

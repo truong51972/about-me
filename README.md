@@ -1,106 +1,69 @@
-# About Me — Portfolio & CV
+# Tran Quoc Truong — Portfolio & CV
 
-This repository contains two related projects:
+Static Astro portfolio for Applied AI / Python Backend / Agentic QA roles.
 
-1. **Portfolio website** — Built with [Astro](https://astro.build/), hosted at [truong51972.github.io/about-me](https://truong51972.github.io/about-me)
-2. **CV generator** — Uses [renderCV](https://github.com/rendercv/rendercv) to generate CV in PDF, PNG, Markdown, and HTML formats
+## Live site
 
----
+https://truong51972.github.io/about-me/
 
-## Prerequisites
+## Stack
 
-- **Node.js** (v20+)
-- **Python** (3.12+)
-- **npm**
-- **uv** (Python package manager, optional but recommended)
+- Astro
+- TypeScript
+- RenderCV
+- GitHub Pages
 
----
-
-## Portfolio (npm)
-
-### Install dependencies
+## Development
 
 ```bash
 npm install
-```
-
-### Development server
-
-```bash
+uv sync
 npm run dev
 ```
 
-Starts a local dev server at `http://localhost:4321` with hot-reload.
-
-### Build for production
+## Build
 
 ```bash
 npm run build
 ```
 
-Generates a static site in the `dist/` directory.
+This runs RenderCV to generate CV files into `public/cv/`, then builds the Astro static site into `dist/`.
 
-### Preview production build
+## CV
 
-```bash
-npm run preview
-```
-
----
-
-## CV Generator (Python / Poethepoet)
-
-### Set up Python environment
+`Tran_Quoc_Truong_CV.yaml` is the source of truth. Render generated outputs into `public/cv/`:
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-uv pip install -e .
+uv run rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv
 ```
 
-Or if using uv directly:
+Or use the npm script:
 
 ```bash
-uv sync
+npm run render:cv
 ```
 
-### Render CV
+Generated files:
+- `public/cv/Tran_Quoc_Truong_CV.pdf`
+- `public/cv/Tran_Quoc_Truong_CV.html`
+- `public/cv/Tran_Quoc_Truong_CV.md`
+- `public/cv/Tran_Quoc_Truong_CV.typ`
+- `public/cv/Tran_Quoc_Truong_CV_*.png`
 
-After activating the virtual environment:
-
-```bash
-source .venv/bin/activate
-poe render-cv
-```
-
-The `render-cv` task is defined in `pyproject.toml` and runs:
-
-```
-rendercv render "Tran_Quoc_Truong_CV.yaml"
-```
-
-Outputs are generated in `rendercv_output/`:
-
-- `Tran_Quoc_Truong_CV.pdf`
-- `Tran_Quoc_Truong_CV.typ`
-- `Tran_Quoc_Truong_CV_1.png`, `Tran_Quoc_Truong_CV_2.png`, `Tran_Quoc_Truong_CV_3.png`
-- `Tran_Quoc_Truong_CV.md`
-- `Tran_Quoc_Truong_CV.html`
-
----
-
-## Project Structure
+## Project structure
 
 ```
 .
-├── astro.config.mjs         # Astro configuration
-├── package.json             # npm dependencies & scripts
-├── pyproject.toml           # Python dependencies & poe tasks
-├── Tran_Quoc_Truong_CV.yaml # CV data source
-├── rendercv_output/         # Generated CV files
-├── src/                     # Astro portfolio source
+├── astro.config.mjs
+├── package.json
+├── pyproject.toml
+├── Tran_Quoc_Truong_CV.yaml
+├── public/
+│   └── cv/           # Generated CV files (rendered + committed)
+├── src/
 │   ├── components/
+│   ├── data/
 │   ├── layouts/
-│   └── pages/
-├── public/                  # Static assets
-└── dist/                    # Build output (gitignored)
+│   ├── pages/
+│   └── styles/
+└── dist/             # Build output (gitignored)

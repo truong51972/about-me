@@ -3,17 +3,21 @@ import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimelineItem from "../components/TimelineItem.astro";
 import { site, timeline, education, skillGroups, cases } from "../data/profile";
+const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
+const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
+const yamlPath = withBase("Tran_Quoc_Truong_CV.yaml");
+const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
 ---
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong." >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <div class="case-index">CV</div>
       <h1>{site.name}</h1>
-      <p class="page-summary">{site.role} · {site.tagline}. {site.summary}</p>
+      <p class="page-summary">{site.role} · {site.tagline}.</p>
       <div class="hero-actions">
-        <a class="btn primary" href={withBase("Tran_Quoc_Truong_CV.yaml")} target="_blank" rel="noreferrer">Open CV YAML</a>
-        <a class="btn ghost" href={`mailto:${site.email}`}>Email</a>
-        <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+        <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV PDF</a>
+        <a class="btn ghost" href={htmlPath} target="_blank" rel="noreferrer">Open HTML CV</a>
+        <a class="btn ghost" href={yamlPath} target="_blank" rel="noreferrer">View YAML source</a>
       </div>
     </div>
   </section>
@@ -23,8 +27,8 @@ import { site, timeline, education, skillGroups, cases } from "../data/profile";
       <article class="article">
         <section class="block">
           <div class="eyebrow">Positioning</div>
-          <h2>Applied AI Engineer focused on Agentic QA, RAG systems, and Python backend.</h2>
-          <p>My profile combines AI workflow design with backend control-plane engineering and QA automation. The main story is not only model usage, but how AI outputs become traceable product workflows.</p>
+          <h2>Applied AI Engineer focused on RAG systems, Agentic QA, and Python backend.</h2>
+          <p>My profile combines AI workflow design with backend engineering and QA automation, building systems where AI outputs become traceable product workflows.</p>
         </section>
 
         <section class="block">
@@ -58,6 +62,14 @@ import { site, timeline, education, skillGroups, cases } from "../data/profile";
               <p>{item.period}</p>
             </div>
           ))}
+        </div>
+        <div class="side-card">
+          <h3>Download</h3>
+          <ul class="clean" style="display:grid;gap:6px">
+            <li><a href={pdfPath} target="_blank" rel="noreferrer" style="color:var(--accent)">PDF</a></li>
+            <li><a href={mdPath} target="_blank" rel="noreferrer" style="color:var(--accent)">Markdown</a></li>
+            <li><a href={htmlPath} target="_blank" rel="noreferrer" style="color:var(--accent)">HTML</a></li>
+          </ul>
         </div>
       </aside>
     </div>

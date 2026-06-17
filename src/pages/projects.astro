@@ -1,20 +1,36 @@
 ---
+import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import CaseCard from "../components/CaseCard.astro";
 import { cases } from "../data/profile";
 ---
-<BaseLayout title="Projects" description="Selected case studies by Tran Quoc Truong." >
+<BaseLayout title="Projects" description="Selected projects by Tran Quoc Truong." >
   <section class="page-hero">
     <div class="container">
-      <div class="eyebrow">Case studies</div>
-      <h1>Projects structured around context, decisions, and proof.</h1>
-      <p class="page-summary">The order is intentional: Omni-Agent is the flagship systems case, APIT is the AI capstone and LLM evaluation proof, Banking QA is industry delivery proof, and Self-driving Car Problem is earlier award-winning AI research.</p>
+      <div class="eyebrow">Projects</div>
+      <h1>Selected work across AI systems, evaluation, and automation.</h1>
+      <p class="page-summary">Omni-Agent is the flagship platform. APIT demonstrates LLM evaluation and fine-tuning. Banking QA shows industry delivery. Self-driving Car is earlier award-winning research.</p>
     </div>
   </section>
   <section class="section tight">
     <div class="container">
       <div class="card-grid two">
-        {cases.map((item) => <CaseCard item={item} />)}
+        {cases.map((item) => {
+          const CardComponent = item.slug === "self-driving-car" ? "div" : "a";
+          const href = item.slug === "self-driving-car" ? undefined : withBase(item.href);
+          const extraClass = item.slug === "self-driving-car" ? " card-earlier" : "";
+          return (
+            <CardComponent class={"case-card" + extraClass} href={href}>
+              <div class="case-card-label">{item.label}</div>
+              <h3 class="case-card-title">{item.title}</h3>
+              <p class="case-card-sub">{item.subtitle}</p>
+              <p class="case-card-desc">{item.summary}</p>
+              <div class="case-card-stat">{item.outcome}</div>
+              <div class="project-card-stack" style="margin-top:10px">
+                {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+              </div>
+            </CardComponent>
+          );
+        })}
       </div>
     </div>
   </section>

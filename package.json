@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro check && astro build",
+    "dev:cv": "uv run rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv",
+    "render:cv": "uv run rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv",
+    "build": "npm run render:cv && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check"
   },
