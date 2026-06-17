@@ -1,57 +1,106 @@
-<a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/" target="_blank"><img src="https://themes.3rdwavemedia.com/wp-content/uploads/2018/07/free-bootstrap-portfolio-theme-for-web-developers.jpg" alt="Developer Theme" width="750" /></a>
+# About Me — Portfolio & CV
 
-## Theme Details & Demo
+This repository contains two related projects:
 
-**Demo:** https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/
+1. **Portfolio website** — Built with [Astro](https://astro.build/), hosted at [truong51972.github.io/about-me](https://truong51972.github.io/about-me)
+2. **CV generator** — Uses [renderCV](https://github.com/rendercv/rendercv) to generate CV in PDF, PNG, Markdown, and HTML formats
 
-Developer is a free Bootstrap 5 template designed to **help developers promote their work**. 
-It can be used as a **professional portal** to your other online portfolios or websites (eg. Linkedin, Blog, GitHub etc) **in a modular fashion**. 
-The template comes with all of the **source SCSS files included** so the styling/colour can easily be customised to your taste.
+---
 
-**New Feature - Dark Mode**
-<a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/" target="_blank"><img src="https://themes.3rdwavemedia.com/wp-content/uploads/2021/07/developer-template-BS5-darkmode.gif" alt="Developer Theme Dark Mode" width="750" /></a>
+## Prerequisites
 
+- **Node.js** (v20+)
+- **Python** (3.12+)
+- **npm**
+- **uv** (Python package manager, optional but recommended)
 
-## Author & License
+---
 
-This Bootstrap template is made by UX/UI designer [Xiaoying Riley](https://twitter.com/3rdwave_themes) for developers and is 100% FREE as long as you **keep the footer attribution link**. You do not have the rights to resell, sublicense or redistribute (even for free) the template on its own or as a separate attachment from any of your work.
+## Portfolio (npm)
 
-If you'd like to **use the template without the footer attribution link**, you can [buy the **commercial license** via the theme website](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/)
+### Install dependencies
 
-#### Follow Xiaoying
+```bash
+npm install
+```
 
-[X](https://x.com/3rdwave_themes)
+### Development server
 
-[Facebook](https://www.facebook.com/3rdwavethemes/)
+```bash
+npm run dev
+```
 
-[Dribbble](https://dribbble.com/Xiaoying)
+Starts a local dev server at `http://localhost:4321` with hot-reload.
 
-[Medium](https://medium.com/@3rdwave_themes)
+### Build for production
 
-[Linkedin](https://uk.linkedin.com/in/xiaoying)
+```bash
+npm run build
+```
 
+Generates a static site in the `dist/` directory.
 
-## Latest Version
-**Bootstrap 5 v3.2* - 2024-09-16
+### Preview production build
 
-[Changelog](https://themes.3rdwavemedia.com/bootstrap-templates/resume/free-bootstrap-theme-for-web-developers/?target=changelog)
+```bash
+npm run preview
+```
 
+---
 
-## Features
+## CV Generator (Python / Poethepoet)
 
--  Fully Responsive
--  Light/Dark Mode
--  HTML5 + CSS3
--  Built on Bootstrap 5
--  **SCSS** source files included
--  FontAwesome icons
+### Set up Python environment
 
+```bash
+python -m venv .venv
+source .venv/bin/activate
+uv pip install -e .
+```
 
-## Credits
-- [Bootstrap](http://getbootstrap.com/)
-- [FontAwesome](http://fortawesome.github.io/Font-Awesome/)
-- [GitHub Activity Stream](http://caseyscarborough.com/projects/github-activity/)
-- [GitHub Calendar Plugin](https://github.com/IonicaBizau/github-calendar)
-- [Vanilla RSS](https://github.com/sdepold/jquery-rss)
-- Profile image: [Ben Smith](https://www.flickr.com/photos/dotbenjamin/2577394151)
-# about-me
+Or if using uv directly:
+
+```bash
+uv sync
+```
+
+### Render CV
+
+After activating the virtual environment:
+
+```bash
+source .venv/bin/activate
+poe render-cv
+```
+
+The `render-cv` task is defined in `pyproject.toml` and runs:
+
+```
+rendercv render "Tran_Quoc_Truong_CV.yaml"
+```
+
+Outputs are generated in `rendercv_output/`:
+
+- `Tran_Quoc_Truong_CV.pdf`
+- `Tran_Quoc_Truong_CV.typ`
+- `Tran_Quoc_Truong_CV_1.png`, `Tran_Quoc_Truong_CV_2.png`, `Tran_Quoc_Truong_CV_3.png`
+- `Tran_Quoc_Truong_CV.md`
+- `Tran_Quoc_Truong_CV.html`
+
+---
+
+## Project Structure
+
+```
+.
+├── astro.config.mjs         # Astro configuration
+├── package.json             # npm dependencies & scripts
+├── pyproject.toml           # Python dependencies & poe tasks
+├── Tran_Quoc_Truong_CV.yaml # CV data source
+├── rendercv_output/         # Generated CV files
+├── src/                     # Astro portfolio source
+│   ├── components/
+│   ├── layouts/
+│   └── pages/
+├── public/                  # Static assets
+└── dist/                    # Build output (gitignored)
