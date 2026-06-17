@@ -1,0 +1,19 @@
+---
+interface Props { item: { period: string; title: string; org: string; bullets: string[] } }
+const { item } = Astro.props;
+---
+<article class="timeline-item">
+  <span class="timeline-dot"></span>
+  <div class="timeline-card">
+    <div class="timeline-top">
+      <div>
+        <h3>{item.title}</h3>
+        <div class="org">{item.org}</div>
+      </div>
+      <div class="period">{item.period}</div>
+    </div>
+    <ul class="clean">
+      {item.bullets.map((bullet) => <li>{bullet}</li>)}
+    </ul>
+  </div>
+</article>

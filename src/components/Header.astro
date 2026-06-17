@@ -1,0 +1,25 @@
+---
+import { site } from "../data/profile";
+const base = import.meta.env.BASE_URL;
+---
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href={base} aria-label="Home">
+      <span class="brand-mark">TQ</span>
+      <span>
+        <span class="brand-name">{site.name}</span>
+        <span class="brand-sub">{site.tagline}</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href={`${base}#work`}>Work</a>
+      <a href={`${base}projects/`}>Projects</a>
+      <a href={`${base}#decisions`}>Decisions</a>
+      <a href={`${base}cv/`}>CV</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="pill-link" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+      <a class="btn small primary" href={`mailto:${site.email}`}>Contact</a>
+    </div>
+  </div>
+</header>

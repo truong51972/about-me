@@ -1,0 +1,82 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+const base = import.meta.env.BASE_URL;
+const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
+---
+<BaseLayout title="Self-driving Car Problem" description="Award-winning self-driving car research paper case study." >
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-kicker">
+        <span class="tag">{item.label}</span>
+        <span class="tag">Second Prize</span>
+        <span class="tag">Computer Vision</span>
+      </div>
+      <h1>Self-driving Car Problem: earlier AI research with real award proof.</h1>
+      <p class="page-summary">{item.summary}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href={`${base}docs/self-driving-car-problem.pdf`} target="_blank" rel="noreferrer">Open paper PDF</a>
+        <a class="btn" href={`${base}projects/`}>Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container content-grid">
+      <article class="article">
+        <section class="block">
+          <div class="eyebrow">Why this case is included</div>
+          <h2>It shows the early applied-AI foundation before the LLM/backend work.</h2>
+          <p>This case should not replace Omni-Agent or APIT as the main story. It is included as earlier evidence: an award-winning research paper that shows computer vision, simulation, model training, control logic, and technical writing experience.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">System</div>
+          <h2>Unity simulation, YOLOv8 perception, and PID control.</h2>
+          <div class="diagram">
+            <div class="diagram-step"><b>Simulation</b><span>Unity environment with lane markings, stop lines, signs, shadows, snow, and obstacles.</span></div>
+            <div class="diagram-step"><b>Traffic signs</b><span>Color filtering crops signs, then YOLOv8 Classifier predicts seven sign classes.</span></div>
+            <div class="diagram-step"><b>Lane segmentation</b><span>YOLOv8 Segmentation detects lane masks from VIA and self-labeled data.</span></div>
+            <div class="diagram-step"><b>Controller</b><span>Lane midpoint and PID-style control steer the vehicle through the course.</span></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Data and result</div>
+          <h2>The result is useful, but framed honestly.</h2>
+          <p>The traffic sign task used 18k+ images across seven classes. The lane segmentation task used roughly 8k provided images and 1.5k self-labeled images from the simulation environment, with augmentation.</p>
+          <p>The system completed the simulation benchmark in 125.8 seconds with full marks. The paper also clearly documents limitations: color-filter robustness, simulation-only evaluation, and primitive controller assumptions.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Award proof</div>
+          <h2>Second Prize evidence.</h2>
+          <p>The award image is included as proof, but this case remains in the “Earlier AI Research” tier so the portfolio does not drift away from Applied AI systems, Agentic QA, and backend control-plane work.</p>
+          <img src={`${base}images/second-prize-award-wide.webp`} alt="Second Prize award proof" style="border-radius:22px;border:1px solid var(--line);margin-top:18px" />
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h3>Proof</h3>
+          <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Stack</h3>
+          <div class="tag-row" style="padding-top:0">
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
+        <div class="side-card">
+          <h3>Spec</h3>
+          <dl class="spec-list">
+            <div><dt>Paper</dt><dd>Self-driving Car Problem</dd></div>
+            <div><dt>Award</dt><dd>Second Prize</dd></div>
+            <div><dt>Result</dt><dd>125.8s, 5/5 marks</dd></div>
+            <div><dt>Models</dt><dd>YOLOv8 Classifier & Segmentation</dd></div>
+          </dl>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

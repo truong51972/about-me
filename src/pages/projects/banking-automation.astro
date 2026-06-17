@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+const base = import.meta.env.BASE_URL;
+const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
+---
+<BaseLayout title="Banking QA Automation" description="Banking QA automation case study." >
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-kicker">
+        <span class="tag">{item.label}</span>
+        <span class="tag">{item.role}</span>
+      </div>
+      <h1>Banking QA automation across Core Banking and Payment Hub systems.</h1>
+      <p class="page-summary">{item.summary}</p>
+      <div class="hero-actions">
+        <a class="btn" href={`${base}projects/`}>Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container content-grid">
+      <article class="article">
+        <section class="block">
+          <div class="eyebrow">Context</div>
+          <h2>Banking QA creates strong constraints for Applied AI.</h2>
+          <p>Unlike toy QA examples, banking workflows involve transaction correctness, regression coverage, multiple channels, auditability, API contracts, database state, and failure classification. This is why the banking work strengthens the Agentic QA positioning.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Core Banking PoC</div>
+          <h2>Cross-platform automation proof.</h2>
+          <p>The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal and showing practical delivery across channels.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Payment Hub</div>
+          <h2>API, database, regression, and stress testing.</h2>
+          <p>The Payment Hub integration work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. This project is the practical QA-domain anchor behind the Agentic QA story.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Why it matters</div>
+          <h2>This is the domain bridge from QA automation to Agentic QA.</h2>
+          <p>Omni-Agent and APIT are more convincing because they sit on top of real QA experience: how testers validate flows, how regression breaks, how API docs drift, and why generated test cases need traceable evaluation.</p>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h3>Proof</h3>
+          <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Stack</h3>
+          <div class="tag-row" style="padding-top:0">
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

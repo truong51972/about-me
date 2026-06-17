@@ -1,0 +1,34 @@
+---
+interface Props { compact?: boolean }
+---
+<div class="panel system-card">
+  <div class="system-header">
+    <div>
+      <div class="eyebrow">System map</div>
+      <div class="system-title">AI workflow control plane</div>
+      <div class="system-sub">How the portfolio is framed: not prompts alone, but productized AI workflow boundaries.</div>
+    </div>
+    <div class="system-badge">case-study-first</div>
+  </div>
+  <div class="system-map">
+    <div class="layer">
+      <strong>Product surface</strong>
+      <small>Projects, documents, versions, review flows, dashboard UI, and QA workflows.</small>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="layer">
+      <strong>Control plane</strong>
+      <small>Django/DRF, domain models, permissions, jobs, state transitions, service layers.</small>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="layer">
+      <strong>Async execution</strong>
+      <small>Celery/Redis queues, stateless workers, result envelopes, OCR/chunking/indexing tasks.</small>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="layer">
+      <strong>AI and retrieval</strong>
+      <small>LLM orchestration, RAG, vector DB, evaluation traces, artifacts, and generated test evidence.</small>
+    </div>
+  </div>
+</div>

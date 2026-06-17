@@ -1,0 +1,160 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionHead from "../components/SectionHead.astro";
+import CaseCard from "../components/CaseCard.astro";
+import DecisionCard from "../components/DecisionCard.astro";
+import SystemMap from "../components/SystemMap.astro";
+import TimelineItem from "../components/TimelineItem.astro";
+import SkillBox from "../components/SkillBox.astro";
+import { site, baseStrengths, metrics, cases, decisions, timeline, skillGroups } from "../data/profile";
+const base = import.meta.env.BASE_URL;
+const [omni, apit, banking, selfDriving] = cases;
+---
+<BaseLayout>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">{site.location}</div>
+        <h1>Applied AI engineer building <span class="accent">Agentic QA</span>, RAG, and backend control planes.</h1>
+        <p class="hero-lede">{site.summary}</p>
+        <div class="hero-actions">
+          <a class="btn primary" href={`${base}projects/omni-agent/`}>Read Omni-Agent case</a>
+          <a class="btn" href={`${base}projects/`}>View all cases</a>
+          <a class="btn ghost" href={`${base}cv/`}>View CV</a>
+        </div>
+        <div class="micro-list">
+          <span>Django/DRF control plane</span>
+          <span>Agentic QA workflows</span>
+          <span>RAG & document intelligence</span>
+          <span>LLM evaluation</span>
+        </div>
+      </div>
+      <SystemMap />
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container">
+      <div class="metrics">
+        {metrics.map((metric) => (
+          <article class="metric">
+            <div class="metric-value">{metric.value}</div>
+            <div class="metric-label">{metric.label}</div>
+            <p>{metric.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="positioning">
+    <div class="container">
+      <SectionHead eyebrow="Positioning" title="AI work presented as systems, decisions, and evidence." body="The portfolio is structured like a casebook: each project explains the context, constraints, technical choices, trade-offs, and proof of outcome." />
+      <div class="case-grid">
+        {baseStrengths.map((item) => (
+          <article class="decision-card">
+            <div class="eyebrow">{item.eyebrow}</div>
+            <h3 style="margin-top:12px">{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="work">
+    <div class="container">
+      <SectionHead eyebrow="Flagship case" title="Omni-Agent is the main proof of engineering depth." body="A production-oriented AI platform case focused on document workflows, versioned artifacts, async processing, and Agentic QA boundaries." />
+      <div class="case-feature">
+        <article class="panel case-hero-card">
+          <div>
+            <div class="case-index">{omni.label}</div>
+            <h3>{omni.title}</h3>
+            <h4>{omni.subtitle}</h4>
+            <p>{omni.summary}</p>
+          </div>
+          <div>
+            <div class="tag-row">
+              {omni.tags.map((tag) => <span class="tag">{tag}</span>)}
+            </div>
+            <div class="case-footer">
+              <div class="case-role"><strong>Case focus:</strong> domain modeling, worker boundaries, document version control, artifact lifecycle, queue/result contracts, and RAG traceability.</div>
+              <a class="btn primary" href={`${base}${omni.href}`}>Open case study</a>
+            </div>
+          </div>
+        </article>
+        <SystemMap compact />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHead eyebrow="Selected cases" title="Supporting proof across LLM fine-tuning, QA automation, and earlier CV research." body="APIT proves the Agentic QA research angle, banking automation proves industry delivery, and the self-driving paper shows the earlier applied-AI foundation." />
+      <div class="case-grid">
+        <CaseCard item={apit} />
+        <CaseCard item={banking} />
+        <CaseCard item={selfDriving} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="decisions">
+    <div class="container">
+      <SectionHead eyebrow="Decision log" title="The portfolio emphasizes why the system is built this way." body="These are the kinds of trade-offs that make the work interviewable: the decision, the constraint, and the cost of that choice." />
+      <div class="decision-grid">
+        {decisions.map((item) => <DecisionCard item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container evidence-grid">
+      <img class="award-photo" src={`${base}images/second-prize-award.webp`} alt="Tran Quoc Truong receiving a second prize research award" />
+      <article class="panel award-copy">
+        <div>
+          <div class="eyebrow">Earlier AI research & award</div>
+          <h3>Second Prize proof from the self-driving car research paper.</h3>
+          <p>The earlier research work combined Unity simulation, YOLOv8 traffic sign classification, YOLOv8 lane segmentation, and PID-based control. It is intentionally placed as earlier evidence, not the main positioning, so the portfolio remains focused on Applied AI systems and Agentic QA.</p>
+        </div>
+        <div class="hero-actions">
+          <a class="btn primary" href={`${base}projects/self-driving-car/`}>Read research case</a>
+          <a class="btn" href={`${base}docs/self-driving-car-problem.pdf`} target="_blank" rel="noreferrer">Open paper PDF</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <SectionHead eyebrow="System profile" title="Where AI workflows meet backend constraints." body="A compact map of the stack: LLM workflows and evaluation on one side, backend orchestration and QA automation on the other." />
+      <div class="skills-grid">
+        {skillGroups.map((group) => <SkillBox group={group} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <SectionHead eyebrow="Experience" title="Recent work and delivery context." />
+      <div class="timeline">
+        {timeline.map((item) => <TimelineItem item={item} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container panel cta">
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h2>Interested in Applied AI, Agentic QA, or RAG backend work?</h2>
+        <p>The fastest way to understand my work is to start with Omni-Agent, then APIT, then the banking QA automation case.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn primary" href={`mailto:${site.email}`}>Email me</a>
+        <a class="btn" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  item: { title: string; context: string; decision: string; tradeoff: string };
+}
+const { item } = Astro.props;
+---
+<article class="decision-card">
+  <h3>{item.title}</h3>
+  <dl>
+    <div>
+      <dt>Context</dt>
+      <dd>{item.context}</dd>
+    </div>
+    <div>
+      <dt>Decision</dt>
+      <dd>{item.decision}</dd>
+    </div>
+    <div>
+      <dt>Trade-off</dt>
+      <dd>{item.tradeoff}</dd>
+    </div>
+  </dl>
+</article>
