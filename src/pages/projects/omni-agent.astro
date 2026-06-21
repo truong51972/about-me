@@ -7,7 +7,10 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
 <BaseLayout title="Omni-Agent" description="Omni-Agent case study by Tran Quoc Truong." >
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <div class="case-index">{item.label}</div>
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
       <h1>{item.title}: {item.subtitle}</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
@@ -61,7 +64,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <div class="eyebrow">Product Modules</div>
           <h2>Omni-Agent as a hub with swappable product modules.</h2>
           <p>Each product module is a Django app within the same backend, sharing common infrastructure for projects, jobs, artifacts, and permissions.</p>
-          <pre style="background:var(--bg);padding:16px;border-radius:var(--radius-sm);border:1px solid var(--line);font-size:0.85rem;line-height:1.6;overflow-x:auto;color:var(--text-secondary)">Omni-Agent
+          <pre class="code-block">Omni-Agent
 ├── Knowledge Builder
 │   ├── Document versioning
 │   ├── OCR/chunking
@@ -126,7 +129,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
 
         <section class="block">
           <div class="eyebrow">Stack</div>
-          <div class="tag-row" style="padding-top:0;margin-top:10px">
+          <div class="tag-row">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
@@ -143,7 +146,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         </div>
         <div class="side-card">
           <h3>Modules</h3>
-          <p style="margin-top:0"><strong>Knowledge Builder</strong> — Built</p>
+          <p><strong>Knowledge Builder</strong> — Built</p>
           <p><strong>ATA</strong> — Proposed</p>
         </div>
       </aside>

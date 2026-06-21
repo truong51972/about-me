@@ -10,7 +10,7 @@ interface Props {
   description?: string;
 }
 
-const title = Astro.props.title ? `${Astro.props.title} · ${site.name}` : `${site.name} · ${site.tagline}`;
+const title = Astro.props.title ? `${Astro.props.title} · ${site.name}` : `${site.name} · ${site.role}`;
 const description = Astro.props.description ?? site.summary;
 ---
 <!doctype html>
@@ -27,8 +27,9 @@ const description = Astro.props.description ?? site.summary;
     <meta property="og:type" content="website" />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

@@ -1,37 +1,68 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { cases } from "../data/profile";
+import { cases, type ProjectGroup } from "../data/profile";
+
+const projectHref = (slug: string) => withBase(`projects/${slug}/`);
+
+const groups: Array<{ id: ProjectGroup; title: string; summary: string }> = [
+  {
+    id: "featured-systems",
+    title: "Featured systems",
+    summary: "The strongest evidence for Applied AI backend engineering, LLM evaluation, and production QA discipline."
+  },
+  {
+    id: "applied-ai-systems",
+    title: "Applied AI systems",
+    summary: "End-to-end AI application work with retrieval, agents, services, persistence, and containerized infrastructure."
+  },
+  {
+    id: "earlier-ai-research",
+    title: "Earlier AI research",
+    summary: "Computer-vision and model-training work that shows the foundation behind the current applied AI direction."
+  }
+];
 ---
-<BaseLayout title="Projects" description="Selected projects by Tran Quoc Truong." >
+
+<BaseLayout title="Projects" description="Applied AI, backend, evaluation, and computer-vision projects by Tran Quoc Truong.">
   <section class="page-hero">
-    <div class="container">
+    <div class="container page-hero-inner">
       <div class="eyebrow">Projects</div>
-      <h1>Selected work across AI agent systems, evaluation, and automation.</h1>
-      <p class="page-summary">Omni-Agent is the flagship AI Agent Hub. APIT demonstrates LLM evaluation and fine-tuning with agent testing methodology. Banking QA shows industry delivery. Self-driving Car is earlier award-winning research.</p>
+      <h1>Applied AI systems, evaluation work, and earlier machine-learning research.</h1>
+      <p class="page-summary">Omni-Agent is the flagship backend system. APIT and Banking QA show evaluation and industry delivery. The supporting projects expand the evidence across retrieval, agents, and computer vision.</p>
     </div>
   </section>
+
   <section class="section tight">
-    <div class="container">
-      <div class="card-grid two">
-        {cases.map((item) => {
-          const CardComponent = item.slug === "self-driving-car" ? "div" : "a";
-          const href = item.slug === "self-driving-car" ? undefined : withBase(item.href);
-          const extraClass = item.slug === "self-driving-car" ? " card-earlier" : "";
-          return (
-            <CardComponent class={"case-card" + extraClass} href={href}>
-              <div class="case-card-label">{item.label}</div>
-              <h3 class="case-card-title">{item.title}</h3>
-              <p class="case-card-sub">{item.subtitle}</p>
-              <p class="case-card-desc">{item.summary}</p>
-              <div class="case-card-stat">{item.outcome}</div>
-              <div class="project-card-stack" style="margin-top:10px">
-                {item.tags.map((tag) => <span class="tag">{tag}</span>)}
-              </div>
-            </CardComponent>
-          );
-        })}
-      </div>
+    <div class="container project-groups">
+      {groups.map((group) => {
+        const groupCases = cases.filter((item) => item.group === group.id);
+        return (
+          <section class={`project-group ${group.id}`}>
+            <div class="project-group-head">
+              <h2>{group.title}</h2>
+              <p>{group.summary}</p>
+            </div>
+            <div class={`project-tier-grid count-${groupCases.length}`}>
+              {groupCases.map((item) => (
+                <a class={`case-card tier-${item.visualTier}`} href={projectHref(item.slug)}>
+                  <div class="case-card-meta">
+                    <div class="case-card-label">{item.label}</div>
+                    {item.period && <div class="project-period">{item.period}</div>}
+                  </div>
+                  <h3 class="case-card-title">{item.title}</h3>
+                  <p class="case-card-sub">{item.subtitle}</p>
+                  <p class="case-card-desc">{item.summary}</p>
+                  {item.outcome && <div class="case-card-stat">{item.outcome}</div>}
+                  <div class="project-card-stack">
+                    {item.tags.slice(0, item.visualTier === "flagship" ? 8 : 6).map((tag) => <span class="tag">{tag}</span>)}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </div>
   </section>
 </BaseLayout>

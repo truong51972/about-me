@@ -1,0 +1,87 @@
+---
+import { withBase } from "../../lib/paths";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+
+const item = cases.find((caseItem) => caseItem.slug === "plant-disease-detection")!;
+const repoUrl = item.repoUrl!;
+---
+
+<BaseLayout title="Leaf-Based Plant Disease Detection" description="Leaf-Based Plant Disease Detection case study by Tran Quoc Truong.">
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
+      <h1>{item.title}: {item.subtitle}</h1>
+      <p class="page-summary">{item.summary}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container content-grid">
+      <article class="article">
+        <section class="block">
+          <div class="eyebrow">Overview</div>
+          <h2>A computer-vision pipeline for leaf-image analysis.</h2>
+          <p>This project implements a plant-disease analysis prototype around leaf images. The service accepts image payloads, checks whether the input is a leaf, runs disease classification for supported plant models, and returns prediction metadata with an explanation image.</p>
+          <p>The current service configuration includes disease models for tomato and potato, plus a separate leaf-versus-non-leaf classifier.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">System flow</div>
+          <h2>Preprocessing, inference, explanation, and persisted analysis.</h2>
+          <div class="diagram compact-diagram">
+            <div class="diagram-step"><b>Image input</b><span>FastAPI receives a base64 image with garden and plant metadata.</span></div>
+            <div class="diagram-step"><b>Leaf check</b><span>A classifier filters non-leaf inputs before disease inference.</span></div>
+            <div class="diagram-step"><b>Inference</b><span>SAM-assisted preprocessing feeds ResNet-based disease classifiers.</span></div>
+            <div class="diagram-step"><b>Explanation</b><span>Grad-CAM++ produces heatmaps and the service persists analysis data.</span></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Technical contribution</div>
+          <h2>Training and serving are both represented in the repository.</h2>
+          <ul class="clean">
+            {item.highlights.map((h) => <li>{h}</li>)}
+            <li>Used cross-entropy loss, SGD optimization, StepLR scheduling, and multiclass accuracy evaluation in the training pipeline.</li>
+            <li>Exposed analysis, garden, user, history, and statistics workflows through FastAPI and SQLite-backed data access.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Limitations</div>
+          <h2>Results are framed without unsupported performance claims.</h2>
+          <p>The repository supports model training, inference, explainability, and API integration, but it does not provide enough public evidence for a specific accuracy, dataset size, production deployment, mobile deployment, or real agricultural usage claim.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Stack</div>
+          <div class="tag-row">
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h3>Role</h3>
+          <p>{item.role}</p>
+        </div>
+        <div class="side-card">
+          <h3>Outcome</h3>
+          <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Repository</h3>
+          <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/Leaf-Based_Plant_Disease_Detection</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

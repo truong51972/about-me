@@ -97,6 +97,32 @@ ul.clean li {
   line-height: 1.45;
 }
 
+ul.clean strong {
+  color: var(--text);
+}
+
+.clean-flush {
+  margin-top: 0;
+}
+
+.link-list {
+  display: grid;
+  gap: 6px;
+}
+
+.link-list a,
+.side-card-link a {
+  color: var(--accent);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.link-list a:hover,
+.side-card-link a:hover {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
 /* ─────── Buttons ─────── */
 .btn {
   display: inline-flex;
@@ -110,13 +136,17 @@ ul.clean li {
   border: 1px solid var(--line-strong);
   color: var(--text);
   background: transparent;
-  transition: border-color var(--duration-fast) ease, background var(--duration-fast) ease, color var(--duration-fast) ease;
+  transition: border-color var(--duration-fast) ease, background var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) ease;
 }
 
 .btn:hover {
   border-color: var(--accent);
   background: var(--accent-dim);
   color: var(--text);
+}
+
+.btn:active {
+  transform: translateY(1px);
 }
 
 .btn.primary {
@@ -193,6 +223,17 @@ ul.clean li {
   line-height: 1.5;
 }
 
+.side-card-section {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+.side-card-link {
+  margin-top: 8px;
+  overflow-wrap: anywhere;
+}
+
 /* ─────── Article / blocks ─────── */
 .article {
   display: grid;
@@ -229,6 +270,35 @@ ul.clean li {
 
 .block p + p {
   margin-top: 10px;
+}
+
+.block-note {
+  margin-top: 12px;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.code-block {
+  margin: 18px 0 0;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.proof-image {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
 }
 
 /* ─────── Case index badge ─────── */
@@ -276,6 +346,10 @@ ul.clean li {
   line-height: 1.4;
 }
 
+.compact-diagram {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 /* ─────── Spec list ─────── */
 .spec-list {
   display: grid;
@@ -307,7 +381,8 @@ ul.clean li {
 
 /* ─────── Mobile overrides ─────── */
 @media (max-width: 760px) {
-  .diagram {
+  .diagram,
+  .compact-diagram {
     grid-template-columns: repeat(2, 1fr);
   }
 

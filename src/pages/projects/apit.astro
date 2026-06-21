@@ -7,11 +7,14 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
 <BaseLayout title="APIT" description="APIT AI capstone project case study." >
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <div class="case-index">{item.label}</div>
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
       <h1>APIT: LLM-powered API test generation.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
-        <a class="btn primary" href={withBase("docs/apit-capstone.pdf")} target="_blank" rel="noreferrer">Open capstone PDF</a>
+        {item.docsUrl && <a class="btn primary" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open capstone PDF</a>}
         <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
@@ -54,7 +57,7 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
 
         <section class="block">
           <div class="eyebrow">Stack</div>
-          <div class="tag-row" style="padding-top:0;margin-top:10px">
+          <div class="tag-row">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
@@ -63,7 +66,7 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
       <aside class="sidebar">
         <div class="side-card">
           <h3>Result</h3>
-          <p><strong style="color:var(--text)">0.655 macro-F1</strong> on structured API test generation with Qwen-2.5-3B LoRA.</p>
+          <p><strong>0.655 macro-F1</strong> on structured API test generation with Qwen-2.5-3B LoRA.</p>
         </div>
         <div class="side-card">
           <h3>Spec</h3>

@@ -1,0 +1,87 @@
+---
+import { withBase } from "../../lib/paths";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+
+const item = cases.find((caseItem) => caseItem.slug === "e-commerce-ai")!;
+const repoUrl = item.repoUrl!;
+---
+
+<BaseLayout title="E-Commerce AI Assistant" description="E-Commerce AI Assistant case study by Tran Quoc Truong.">
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
+      <h1>{item.title}: {item.subtitle}</h1>
+      <p class="page-summary">{item.summary}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container content-grid">
+      <article class="article">
+        <section class="block">
+          <div class="eyebrow">Overview</div>
+          <h2>Conversational product discovery backed by vector retrieval.</h2>
+          <p>E-Commerce AI Assistant is a prototype shopping assistant for natural-language product search and consultation. The backend exposes product retrieval flows through FastAPI, while a Streamlit frontend provides a simple chat surface for users.</p>
+          <p>The system focuses on two retrieval paths: direct context search with metadata filters, and agent search where retrieved product records become context for an LLM response.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">System flow</div>
+          <h2>Two search modes share the same retrieval foundation.</h2>
+          <div class="diagram compact-diagram">
+            <div class="diagram-step"><b>Query</b><span>User describes the desired product in natural language.</span></div>
+            <div class="diagram-step"><b>Embedding</b><span>The query is converted into a vector representation.</span></div>
+            <div class="diagram-step"><b>Milvus</b><span>Cosine similarity search retrieves product records with optional category and price filters.</span></div>
+            <div class="diagram-step"><b>Answer</b><span>Agent search sends the query and retrieved product context into an LLM.</span></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Technical contribution</div>
+          <h2>Backend, retrieval, and infrastructure are designed as one system.</h2>
+          <ul class="clean">
+            {item.highlights.map((h) => <li>{h}</li>)}
+            <li>Used SQLModel-style backend structure with repository and service layers for product and conversation workflows.</li>
+            <li>Integrated Google Generative AI embeddings and chat models through LangChain-based service abstractions.</li>
+          </ul>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Limitations</div>
+          <h2>Prototype scope, not a production claim.</h2>
+          <p>The repository supports a containerized AI assistant prototype. It does not provide evidence for production deployment, revenue impact, real-time performance guarantees, or customer-service reduction metrics, so those claims are intentionally excluded.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Stack</div>
+          <div class="tag-row">
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h3>Role</h3>
+          <p>{item.role}</p>
+        </div>
+        <div class="side-card">
+          <h3>Outcome</h3>
+          <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Repository</h3>
+          <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/E_commerce_AI</a></p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

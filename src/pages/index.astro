@@ -1,106 +1,89 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, cases, skillGroups } from "../data/profile";
-const [omni, apit, banking, selfDriving] = cases;
+import { site, cases, skillGroups, supportingTools, timeline } from "../data/profile";
+
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
-const featured = [omni, apit, banking];
+const featured = cases.filter((item) => item.homepageFeatured);
+const projectHref = (slug: string) => withBase(`projects/${slug}/`);
 ---
 
 <BaseLayout>
-  <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="top">
     <div class="container hero-inner">
-      <h1 class="hero-name">{site.name}</h1>
-      <p class="hero-role">{site.role}</p>
-      <p class="hero-tagline">{site.tagline}</p>
-      <p class="hero-summary">{site.summary}</p>
-      <div class="hero-actions">
-        <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV</a>
-        <a class="btn ghost" href={withBase("projects/")}>View Projects</a>
-        <a class="btn ghost" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
-        <a class="btn ghost" href={`mailto:${site.email}`}>Email</a>
+      <figure class="hero-portrait">
+        <img
+          src={withBase("images/portrait-photo.png")}
+          alt="Portrait of Tran Quoc Truong"
+          width="941"
+          height="1672"
+          loading="eager"
+        />
+      </figure>
+
+      <div class="hero-copy">
+        <h1 class="hero-name">{site.name}</h1>
+        <p class="hero-role">{site.role}</p>
+        <p class="hero-summary">{site.summary}</p>
+        <div class="hero-actions">
+          <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV</a>
+          <a class="btn ghost" href={withBase("projects/")}>View projects</a>
+          <a class="btn ghost" href={`mailto:${site.email}`}>Email</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container content-compact">
-      <p class="about-text">
-        Applied AI Backend Engineer building Django/DRF-based AI agent systems, RAG workflows, and agent testing/evaluation platforms. I combine backend engineering, QA automation, and LLM evaluation to build traceable, testable AI workflows.
-      </p>
-      <p class="about-text">
-        My work includes Omni-Agent — a Django/DRF AI Agent Hub — alongside APIT (LLM-based API test generation), banking QA automation at FPT Software, and earlier award-winning AI research.
-      </p>
-    </div>
-  </section>
-
-  <!-- Featured Projects -->
   <section class="section" id="projects">
     <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="project-cards">
+      <div class="section-kicker">FEATURED PROJECTS</div>
+      <div class="section-heading-row">
+        <h3 class="section-title">Applied AI, backend systems, and quality engineering.</h3>
+        <a class="section-text-link" href={withBase("projects/")}>View all projects -&gt;</a>
+      </div>
+      <div class="featured-projects">
         {featured.map((item) => (
-          <a class="project-card" href={withBase(item.href)}>
-            <div class="project-card-label">{item.label}</div>
+          <a class={`project-card tier-${item.visualTier}`} href={projectHref(item.slug)}>
+            <div class="project-card-meta">
+              <div class="project-card-label">{item.label}</div>
+              {item.period && <div class="project-period">{item.period}</div>}
+            </div>
             <h3 class="project-card-title">{item.title}</h3>
             <p class="project-card-sub">{item.subtitle}</p>
             <div class="project-card-body">
               <p>{item.summary}</p>
               <ul>
-                {item.highlights.map((h) => <li>{h}</li>)}
+                {item.highlights.slice(0, item.visualTier === "flagship" ? 3 : 2).map((h) => <li>{h}</li>)}
               </ul>
             </div>
             <div class="project-card-stack">
-              {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+              {item.tags.slice(0, item.visualTier === "flagship" ? 7 : 5).map((tag) => <span class="tag">{tag}</span>)}
             </div>
           </a>
         ))}
       </div>
-
-      <!-- Earlier research sub-section -->
-      <div class="earlier-research">
-        <h3 class="earlier-heading">Earlier AI Research</h3>
-        <a class="earlier-item" href={withBase(selfDriving.href)}>
-          <strong>{selfDriving.title}</strong>
-          <span>— {selfDriving.summary}</span>
-        </a>
-      </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section class="section" id="experience">
     <div class="container">
       <h2 class="section-title">Experience</h2>
       <div class="experience-list">
-        <div class="experience-item">
-          <div class="experience-head">
-            <h3>FPT Software — Applied AI Engineer & QA Automation Engineer</h3>
-            <span class="experience-period">Dec 2024 — Present</span>
+        {timeline.map((item) => (
+          <div class="experience-item">
+            <div class="experience-head">
+              <h3>{item.org.split(" · ")[0]} - {item.title}</h3>
+              <span class="experience-period">{item.period}</span>
+            </div>
+            <ul class="experience-bullets">
+              {item.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
           </div>
-          <ul class="experience-bullets">
-            <li>Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.</li>
-            <li>Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and domain boundaries.</li>
-            <li>Delivered API, Web, and Mobile automation solutions in banking QA contexts.</li>
-          </ul>
-        </div>
-        <div class="experience-item">
-          <div class="experience-head">
-            <h3>FPT Software Academy — Full-stack Developer Intern</h3>
-            <span class="experience-period">Sep 2024 — Dec 2024</span>
-          </div>
-          <ul class="experience-bullets">
-            <li>Built Django-based web applications and deployed containerized services with Docker.</li>
-            <li>Improved deployment reliability through production-oriented configuration and Cloudflare integration.</li>
-          </ul>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
   <section class="section" id="skills">
     <div class="container">
       <h2 class="section-title">Skills</h2>
@@ -108,24 +91,20 @@ const featured = [omni, apit, banking];
         {skillGroups.map((group) => (
           <div class="skill-list-group">
             <h3 class="skill-group-title">{group.title}</h3>
-            <div class="skill-items">
-              {group.items.map((item) => <span class="tag">{item}</span>)}
-            </div>
+            <p class="skill-line">{group.items.join(", ")}</p>
           </div>
         ))}
       </div>
+      <p class="supporting-tools">Supporting tools: {supportingTools.join(", ")}.</p>
     </div>
   </section>
 
-  <!-- Contact CTA -->
   <section class="section cta-section">
     <div class="container content-compact cta-content">
-      <h2>Interested in Applied AI Backend, Agent Hub architecture, or Agent Testing work?</h2>
+      <h2>Interested in Applied AI backend or evaluation work?</h2>
       <div class="cta-links">
         <a href={`mailto:${site.email}`} class="cta-link">Email me</a>
-        <span class="cta-sep">·</span>
         <a href={site.github} target="_blank" rel="noreferrer" class="cta-link">GitHub</a>
-        <span class="cta-sep">·</span>
         <a href={site.linkedin} target="_blank" rel="noreferrer" class="cta-link">LinkedIn</a>
       </div>
     </div>

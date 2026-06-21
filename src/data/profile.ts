@@ -1,95 +1,179 @@
+export type ProjectGroup =
+  | "featured-systems"
+  | "applied-ai-systems"
+  | "earlier-ai-research";
+
+export type ProjectVisualTier = "flagship" | "featured" | "supporting" | "compact";
+
+export interface ProjectCase {
+  slug: string;
+  title: string;
+  label: string;
+  subtitle: string;
+  summary: string;
+  group: ProjectGroup;
+  visualTier: ProjectVisualTier;
+  homepageFeatured: boolean;
+  period?: string;
+  repoUrl?: string;
+  docsUrl?: string;
+  tags: string[];
+  highlights: string[];
+  role?: string;
+  outcome?: string;
+}
+
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
   role: "Applied AI Backend Engineer",
-  tagline: "AI Agent Hub · RAG · Agent Testing · Django/DRF",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build Django/DRF-based AI agent systems, RAG workflows, and agent testing/evaluation platforms. I combine backend engineering, QA automation, and LLM evaluation to build traceable, testable AI workflows."
+    "I design and build production-oriented Python systems for applied AI, spanning agentic workflows, RAG, evaluation, and machine learning services."
 };
 
-export const cases = [
+export const cases: ProjectCase[] = [
   {
     slug: "omni-agent",
-    label: "Flagship project",
+    label: "Flagship system",
     title: "Omni-Agent",
-    subtitle: "Django/DRF AI Agent Hub for Knowledge Builder & Agent Testing",
+    subtitle: "Django/DRF AI Agent Hub for Knowledge Builder and Agent Testing",
     summary:
-      "A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.",
+      "A Django/DRF AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs while stateless workers execute technical AI tasks.",
+    group: "featured-systems",
+    visualTier: "flagship",
+    homepageFeatured: true,
+    period: "2026-Present",
     role: "Solo architecture and implementation",
     outcome:
-      "Designed domain boundaries, version control, document processing flow, worker contracts, and backend/frontend product surfaces.",
-    href: "projects/omni-agent/",
+      "Designed domain boundaries, versioned document workflows, worker contracts, artifact handling, and backend/frontend product surfaces.",
     tags: [
       "Django/DRF",
       "AI Agent Hub",
-      "Agent Testing",
       "RAG",
+      "Agent Testing",
       "Async Workers",
       "S3 Artifacts",
       "PostgreSQL",
       "React/Vite"
     ],
     highlights: [
-      "Designed Omni-Agent as the main Django/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.",
-      "Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned preview/download URLs, and traceable RAG foundations.",
-      "Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.",
-      "Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through eval datasets, judge/critic/meta-judge patterns, and regression reports.",
-      "Prototyped React/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility."
+      "Designed Omni-Agent as the main Django/DRF backend for project-centric AI products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and module boundaries.",
+      "Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned URLs, and traceable RAG foundations.",
+      "Modeled external workers and REST services as stateless executors for OCR, document parsing, chunking, embedding, retrieval, and evaluation tasks.",
+      "Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through datasets, judge/critic patterns, and regression reports.",
+      "Prototyped React/Vite console workflows for project navigation, product switching, document review, version selection, preview tabs, and processing status visibility."
     ]
   },
   {
     slug: "apit",
     label: "AI evaluation",
     title: "APIT",
-    subtitle: "Agent Programmatic Integration Testing",
+    subtitle: "LLM-based API test-case generation and evaluation",
     summary:
-      "Analyzes API documentation and generates structured test cases using data synthesis, LoRA fine-tuning, RAG, and automated evaluation.",
+      "An LLM-based system that analyzes API documentation and generates structured API test cases using controlled data synthesis, LoRA fine-tuning, RAG, and automated evaluation.",
+    group: "featured-systems",
+    visualTier: "featured",
+    homepageFeatured: true,
+    period: "2025",
+    docsUrl: "docs/apit-capstone.pdf",
     role: "System Architect",
     outcome: "Qwen-2.5-3B LoRA reached 0.655 macro-F1 on structured API test generation.",
-    href: "projects/apit/",
     tags: ["LLM fine-tuning", "LoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
     highlights: [
-      "1,258 controlled synthetic samples for bilingual API testing",
-      "LoRA/QLoRA evaluation pipeline with structured metrics",
-      "LLM-as-judge rubric for generated test quality"
+      "Built a controlled bilingual synthetic dataset with 1,258 API testing samples.",
+      "Compared Qwen and Llama small-model fine-tuning with LoRA/QLoRA-style evaluation workflows.",
+      "Evaluated structured outputs with precision, recall, macro-F1, fuzzy matching, and LLM-as-a-Judge experiments."
     ]
   },
   {
     slug: "banking-automation",
     label: "Industry delivery",
     title: "Banking QA Automation",
-    subtitle: "Core Banking & Payment Hub validation",
+    subtitle: "Core Banking, Payment Hub, API, database, web, and mobile validation",
     summary:
-      "Automation and integration testing across Core Banking and financial transaction systems.",
-    role: "Applied AI & QA Automation Engineer",
-    outcome: "40% test coverage increase, 70% manual effort reduction, ~20 man-month omnichannel contract.",
-    href: "projects/banking-automation/",
+      "Enterprise QA automation and integration testing across Core Banking, Payment Hub, API, database, web, and mobile systems.",
+    group: "featured-systems",
+    visualTier: "featured",
+    homepageFeatured: true,
+    period: "2024-2026",
+    role: "Applied AI and QA Automation Engineer",
+    outcome:
+      "Delivered confidential banking QA automation work across transaction integrity, regression, API, database, web, and mobile validation.",
     tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
     highlights: [
-      "1,500+ SQL validations for Payment Hub integration",
-      "API, Web, and Mobile automation delivery",
-      "Regression and stress testing across banking domains"
+      "Built API, web, and mobile automation coverage for complex banking journeys.",
+      "Validated financial transaction behavior through API assertions, SQL checks, and regression scenarios.",
+      "Used Katalon, Appium, Postman, and JMeter across omnichannel banking QA contexts."
+    ]
+  },
+  {
+    slug: "e-commerce-ai",
+    label: "Applied AI system",
+    title: "E-Commerce AI Assistant",
+    subtitle: "Vector search and conversational product discovery",
+    summary:
+      "An end-to-end AI shopping assistant that combines filtered vector search and agent-driven conversational retrieval for natural-language product discovery.",
+    group: "applied-ai-systems",
+    visualTier: "supporting",
+    homepageFeatured: false,
+    period: "2025",
+    repoUrl: "https://github.com/truong51972/E_commerce_AI",
+    role: "Implementation-focused system build",
+    outcome:
+      "Delivered a containerized prototype covering semantic search, conversational consultation, persistence, caching, and service orchestration.",
+    tags: ["FastAPI", "LangGraph", "LangChain", "Milvus", "PostgreSQL", "Redis", "Streamlit", "Docker"],
+    highlights: [
+      "Implemented semantic product retrieval with Milvus, cosine similarity, embeddings, category filters, and price filters.",
+      "Built an agent search flow that supplies retrieved product records to an LLM for context-aware consultation.",
+      "Structured the system as FastAPI, Streamlit, PostgreSQL, Redis, Milvus, Nginx, and Docker Compose services."
     ]
   },
   {
     slug: "self-driving-car",
     label: "Earlier AI research",
     title: "Self-driving Car Problem",
-    subtitle: "Second prize computer vision research",
+    subtitle: "YOLOv8 perception, lane segmentation, and PID control in simulation",
     summary:
-      "Award-winning research paper on a simulated self-driving pipeline combining Unity, YOLOv8, and PID control.",
+      "A simulated autonomous-driving pipeline combining YOLOv8-based perception, lane segmentation, OpenCV processing, and PID steering control inside a Unity environment.",
+    group: "earlier-ai-research",
+    visualTier: "compact",
+    homepageFeatured: false,
+    period: "2024",
+    repoUrl: "https://github.com/truong51972/self_driving_car",
+    docsUrl: "docs/self-driving-car-problem.pdf",
     role: "Primary author and implementer",
     outcome: "Completed the simulation benchmark in 125.8 seconds with full marks.",
-    href: "projects/self-driving-car/",
-    tags: ["YOLOv8", "Computer Vision", "Unity", "Segmentation", "PID", "Research Paper"],
+    tags: ["YOLOv8", "PyTorch", "OpenCV", "Computer Vision", "Segmentation", "PID Control", "Unity"],
     highlights: [
-      "Second prize award in research paper competition",
-      "YOLOv8 traffic sign classification and lane segmentation",
-      "PID-based control in Unity simulation environment"
+      "Second prize award in a research-paper competition.",
+      "Built YOLOv8 traffic-sign classification and lane segmentation workflows.",
+      "Implemented bird-view lane processing and PID-based steering control in a Unity simulation loop."
+    ]
+  },
+  {
+    slug: "plant-disease-detection",
+    label: "Earlier computer vision system",
+    title: "Leaf-Based Plant Disease Detection",
+    subtitle: "PyTorch classification with segmentation-assisted preprocessing and visual explanations",
+    summary:
+      "A PyTorch computer-vision pipeline for plant disease classification that combines image preprocessing, CNN inference, class-specific thresholds, and Grad-CAM++ explanations behind a FastAPI service.",
+    group: "earlier-ai-research",
+    visualTier: "compact",
+    homepageFeatured: false,
+    period: "2024",
+    repoUrl: "https://github.com/truong51972/Leaf-Based_Plant_Disease_Detection",
+    role: "Implementation-focused prototype",
+    outcome:
+      "Implemented an end-to-end computer-vision prototype covering data loading, training, inference, explainability, and API integration.",
+    tags: ["PyTorch", "Torchvision", "ResNet", "Grad-CAM", "FastAPI", "SQLite", "Pandas", "NumPy"],
+    highlights: [
+      "Built train, validation, and test pipelines with PyTorch ImageFolder and DataLoader.",
+      "Trained and served ResNet-based classifiers for tomato and potato disease categories.",
+      "Combined SAM-assisted preprocessing with Grad-CAM++ to produce interpretable prediction heatmaps."
     ]
   }
 ];
@@ -97,12 +181,12 @@ export const cases = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Applied AI Engineer & QA Automation Engineer",
+    title: "Applied AI Engineer and QA Automation Engineer",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
       "Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.",
       "Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.",
-      "Delivered API, Web, and Mobile automation solutions that increased test coverage and reduced manual regression effort."
+      "Delivered API, web, and mobile automation solutions in confidential banking QA contexts."
     ]
   },
   {
@@ -133,58 +217,55 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "Applied AI & Agent Evaluation",
+    title: "Applied AI and machine learning",
     items: [
-      "RAG",
-      "Hybrid RAG",
-      "LangGraph",
-      "LangChain",
-      "LiteLLM",
-      "Langfuse",
-      "LLM Evaluation",
-      "LLM-as-a-Judge",
-      "eval datasets",
-      "judge/critic/meta-judge patterns"
+      "PyTorch",
+      "Model training and evaluation",
+      "Computer Vision",
+      "Data analysis and EDA",
+      "Dataset curation",
+      "OpenCV and YOLOv8",
+      "LoRA/QLoRA"
     ]
   },
   {
-    title: "Backend & Systems",
+    title: "LLM systems and retrieval",
+    items: [
+      "RAG and hybrid retrieval",
+      "Agentic workflows",
+      "Vector search",
+      "LangGraph",
+      "LLM evaluation",
+      "Agent evaluation and testing",
+      "Milvus/Qdrant",
+      "Langfuse"
+    ]
+  },
+  {
+    title: "Backend and AI infrastructure",
     items: [
       "Python",
       "Django/DRF",
       "FastAPI",
       "PostgreSQL",
       "Redis/Celery",
-      "Docker",
-      "REST APIs",
-      "async workers",
-      "service layers",
-      "domain modeling"
+      "Async workers",
+      "S3-compatible storage",
+      "Docker"
     ]
   },
   {
-    title: "QA Automation & Banking",
+    title: "Quality engineering",
     items: [
-      "Agentic QA",
-      "Agent Testing",
-      "API Testing",
-      "Postman",
+      "API and integration testing",
+      "SQL validation",
+      "Regression testing",
+      "Performance testing",
       "Katalon",
       "Appium",
-      "JMeter",
-      "SQL validation",
-      "Core Banking",
-      "Payment Hub"
-    ]
-  },
-  {
-    title: "Frontend Prototyping",
-    items: [
-      "React",
-      "Vite",
-      "Tailwind CSS",
-      "internal dashboard UI",
-      "AI-assisted development"
+      "Postman and JMeter"
     ]
   }
 ];
+
+export const supportingTools = ["React", "Astro", "Streamlit"];

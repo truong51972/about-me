@@ -7,11 +7,15 @@ const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
 <BaseLayout title="Self-driving Car Problem" description="Award-winning self-driving car research paper case study." >
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <div class="case-index">{item.label}</div>
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
       <h1>Self-driving Car Problem: earlier AI research with real award proof.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
-        <a class="btn primary" href={withBase("docs/self-driving-car-problem.pdf")} target="_blank" rel="noreferrer">Open paper PDF</a>
+        {item.docsUrl && <a class="btn primary" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open paper PDF</a>}
+        {item.repoUrl && <a class="btn ghost" href={item.repoUrl} target="_blank" rel="noreferrer">View repository</a>}
         <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
@@ -48,7 +52,7 @@ const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
           <div class="eyebrow">Award proof</div>
           <h2>Second Prize evidence.</h2>
           <p>The award image is included as proof, but this case remains in the "Earlier AI Research" tier so the portfolio does not drift away from Applied AI systems, Agentic QA, and backend control-plane work.</p>
-          <img src={withBase("images/second-prize-award-wide.webp")} alt="Second Prize award proof" style="border-radius:var(--radius-sm);border:1px solid var(--line);margin-top:16px" />
+          <img class="proof-image" src={withBase("images/second-prize-award-wide.webp")} alt="Second Prize award proof" />
         </section>
       </article>
 
@@ -59,7 +63,7 @@ const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
         </div>
         <div class="side-card">
           <h3>Stack</h3>
-          <div class="tag-row" style="padding-top:0">
+          <div class="tag-row">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </div>

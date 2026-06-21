@@ -7,7 +7,10 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
 <BaseLayout title="Banking QA Automation" description="Banking QA automation case study." >
   <section class="page-hero">
     <div class="container page-hero-inner">
-      <div class="case-index">{item.label}</div>
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
       <h1>Banking QA automation across Core Banking and Payment Hub.</h1>
       <p class="page-summary">{item.summary}</p>
       <div class="hero-actions">
@@ -29,21 +32,21 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
           <div class="eyebrow">What I built</div>
           <h2>Core Banking PoC and Payment Hub integration testing.</h2>
           <p>The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal across channels.</p>
-          <p>The Payment Hub work involved Postman API testing, over 1,500 SQL validation queries, regression testing, and JMeter stress testing. These efforts increased test coverage by 40% and reduced manual QA effort by up to 70%.</p>
+          <p>The Payment Hub work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. Internal delivery metrics are treated as verified but private, so this public case study emphasizes the engineering scope rather than headline numbers.</p>
           <p>This QA automation experience is the practical foundation behind the <strong>Agent Testing (ATA)</strong> direction in Omni-Agent — applying structured evaluation, regression reporting, and QA discipline to AI agent and RAG workflows.</p>
         </section>
 
         <section class="block">
           <div class="eyebrow">Key highlights</div>
-          <ul class="clean" style="margin-top:0">
+          <ul class="clean clean-flush">
             {item.highlights.map((h) => <li>{h}</li>)}
           </ul>
-          <p style="margin-top:12px"><strong style="color:var(--text)">Outcome:</strong> {item.outcome}</p>
+          <p class="block-note"><strong>Outcome:</strong> {item.outcome}</p>
         </section>
 
         <section class="block">
           <div class="eyebrow">Stack</div>
-          <div class="tag-row" style="padding-top:0;margin-top:10px">
+          <div class="tag-row">
             {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>

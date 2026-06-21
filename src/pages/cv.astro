@@ -7,13 +7,15 @@ const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
 const yamlPath = withBase("Tran_Quoc_Truong_CV.yaml");
 const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
+const cvProjectSlugs = ["omni-agent", "apit", "banking-automation"];
+const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
 ---
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong." >
   <section class="page-hero">
     <div class="container page-hero-inner">
       <div class="case-index">CV</div>
       <h1>{site.name}</h1>
-      <p class="page-summary">{site.role} · {site.tagline}.</p>
+      <p class="page-summary">{site.role}. {site.summary}</p>
       <div class="hero-actions">
         <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV PDF</a>
         <a class="btn ghost" href={htmlPath} target="_blank" rel="noreferrer">Open HTML CV</a>
@@ -27,8 +29,8 @@ const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
       <article class="article">
         <section class="block">
           <div class="eyebrow">Positioning</div>
-          <h2>Applied AI Backend Engineer focused on AI agent workflows, RAG, and agent testing/evaluation.</h2>
-          <p>My profile combines Django/DRF backend engineering, AI agent system design, and QA automation, building systems where AI outputs become traceable, testable product workflows.</p>
+          <h2>Applied AI Backend Engineer focused on Python systems, retrieval, evaluation, and machine learning services.</h2>
+          <p>My profile combines backend engineering, applied AI system design, and QA automation, building workflows where AI outputs become traceable and testable product behavior.</p>
         </section>
 
         <section class="block">
@@ -42,7 +44,7 @@ const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
           <div class="eyebrow">Selected projects</div>
           <h2>Projects</h2>
           <ul class="clean">
-            {cases.map((item) => <li><strong style="color:var(--text)">{item.title}</strong> — {item.summary}</li>)}
+            {cvProjects.map((item) => <li><strong>{item.title}</strong> - {item.summary}</li>)}
           </ul>
         </section>
       </article>
@@ -51,12 +53,12 @@ const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
         <div class="side-card">
           <h3>Contact</h3>
           <p>{site.location}</p>
-          <p style="margin-top:8px"><a href={`mailto:${site.email}`} style="color:var(--accent)">{site.email}</a></p>
+          <p class="side-card-link"><a href={`mailto:${site.email}`}>{site.email}</a></p>
         </div>
         <div class="side-card">
           <h3>Education</h3>
           {education.map((item) => (
-            <div style="border-top:1px solid var(--line);padding-top:12px;margin-top:12px">
+            <div class="side-card-section">
               <strong>{item.degree}</strong>
               <p>{item.org}</p>
               <p>{item.period}</p>
@@ -65,10 +67,10 @@ const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
         </div>
         <div class="side-card">
           <h3>Download</h3>
-          <ul class="clean" style="display:grid;gap:6px">
-            <li><a href={pdfPath} target="_blank" rel="noreferrer" style="color:var(--accent)">PDF</a></li>
-            <li><a href={mdPath} target="_blank" rel="noreferrer" style="color:var(--accent)">Markdown</a></li>
-            <li><a href={htmlPath} target="_blank" rel="noreferrer" style="color:var(--accent)">HTML</a></li>
+          <ul class="clean link-list">
+            <li><a href={pdfPath} target="_blank" rel="noreferrer">PDF</a></li>
+            <li><a href={mdPath} target="_blank" rel="noreferrer">Markdown</a></li>
+            <li><a href={htmlPath} target="_blank" rel="noreferrer">HTML</a></li>
           </ul>
         </div>
       </aside>
