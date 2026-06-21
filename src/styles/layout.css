@@ -460,6 +460,58 @@
   margin: 6px 0;
 }
 
+/* ─────── Education ─────── */
+.education-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.education-item {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+  background: var(--bg-2);
+}
+
+.education-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.education-head h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.education-org,
+.education-note {
+  margin: 0;
+  color: var(--muted);
+}
+
+.education-org {
+  margin-top: 8px;
+  font-size: 0.92rem;
+}
+
+.education-period {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted-2);
+  white-space: nowrap;
+}
+
+.education-note {
+  margin-top: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 /* ─────── Skill list ─────── */
 .skill-list {
   display: grid;
@@ -821,6 +873,15 @@ a.case-card:hover {
   .experience-head {
     flex-direction: column;
     gap: 4px;
+  }
+
+  .education-list {
+    grid-template-columns: 1fr;
+  }
+
+  .education-head {
+    flex-direction: column;
+    gap: 6px;
   }
 
   .footer-row {
