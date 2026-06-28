@@ -281,10 +281,54 @@
 }
 
 .featured-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.project-row {
   display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(280px, 0.78fr);
-  gap: 16px;
-  align-items: stretch;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) auto;
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: clamp(20px, 2.6vw, 30px);
+  background: var(--bg);
+  transition: border-color var(--duration-fast) ease, background var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.project-row:hover {
+  border-color: var(--line-strong);
+  background: var(--panel-soft);
+  transform: translateY(-1px);
+}
+
+.project-row:hover .project-row-arrow {
+  color: var(--text);
+  transform: translateX(3px);
+}
+
+.project-row-head {
+  min-width: 0;
+}
+
+.project-row-body {
+  min-width: 0;
+}
+
+.project-row-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.project-row-arrow {
+  font-family: var(--mono);
+  font-size: 1.2rem;
+  color: var(--muted-2);
+  transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
 }
 
 .project-card {
@@ -792,6 +836,15 @@ a.case-card:hover {
   .case-card.tier-flagship {
     grid-row: auto;
     grid-column: auto;
+  }
+
+  .project-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-row-arrow {
+    display: none;
   }
 
   .skill-list {

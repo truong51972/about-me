@@ -69,6 +69,40 @@ export const cases: ProjectCase[] = [
     ]
   },
   {
+    slug: "ata",
+    label: "AI validation platform",
+    title: "ATA — Agent Test Agent",
+    subtitle: "AI-native validation and audit layer for agentic systems",
+    summary:
+      "An independent validation and audit platform for AI agent systems. ATA sits at the model-provider boundary, captures every agent–model interaction as auditable evidence, then scores it across 10 quality dimensions with a multi-agent judge to produce deployment-ready quality verdicts.",
+    group: "featured-systems",
+    visualTier: "featured",
+    homepageFeatured: true,
+    period: "2026",
+    role: "Solo architecture and implementation",
+    outcome:
+      "Built a working end-to-end MVP across API, capture gateway, validation worker, and web dashboard — from record capture to 10-dimension validation and Workflow Quality Gate verdicts.",
+    tags: [
+      "Agent Evaluation",
+      "LLM-as-a-Judge",
+      "FastAPI",
+      "Celery",
+      "LiteLLM Gateway",
+      "Redis",
+      "PostgreSQL",
+      "LangChain",
+      "React/Vite",
+      "Docker"
+    ],
+    highlights: [
+      "Designed ATA as an independent validation and audit layer that sits at the model-provider boundary (Target Agent System → ATA Gateway → Model Provider), capturing every agent–LLM interaction as auditable evidence without modifying the system under test.",
+      "Built a multi-service architecture — FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and a React/Vite operational dashboard — over shared SQLAlchemy ORM and contract packages in a uv-managed monorepo.",
+      "Engineered a per-record multi-agent validator (Planner → Judge → Critic → Meta Judge) that scores 10 quality dimensions including context, tool-calling, reasoning, security, compliance, and business outcome.",
+      "Implemented a Workflow Quality Gate that turns record-score distributions (P10/P35/P50, mean, deviation) and critical blockers into PASS/WARN/FAIL/BLOCK deployment verdicts under a \"No Average Hiding\" principle.",
+      "Enforced security by design: ATA-prefixed recording credentials, a fail-closed gateway, and provider secrets kept request-local — never written to Redis, PostgreSQL, logs, or UI."
+    ]
+  },
+  {
     slug: "apit",
     label: "AI evaluation",
     title: "APIT",

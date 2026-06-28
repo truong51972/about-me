@@ -1,0 +1,162 @@
+---
+import { withBase } from "../../lib/paths";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+const item = cases.find((caseItem) => caseItem.slug === "ata")!;
+---
+<BaseLayout title="ATA — Agent Test Agent" description="ATA, an AI-native validation and audit layer for agentic systems, by Tran Quoc Truong." >
+  <section class="page-hero">
+    <div class="container page-hero-inner">
+      <div class="case-hero-meta">
+        <div class="case-index">{item.label}</div>
+        {item.period && <div class="case-period">{item.period}</div>}
+      </div>
+      <h1>{item.title}: {item.subtitle}</h1>
+      <p class="page-summary">{item.summary}</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="https://github.com/truong51972" target="_blank" rel="noreferrer">View GitHub</a>
+        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="container content-grid">
+      <article class="article">
+        <!-- Overview -->
+        <section class="block">
+          <div class="eyebrow">Overview</div>
+          <h2>Bringing QA discipline to AI agents.</h2>
+          <p>Traditional test automation asserts UI and API output. That is not enough for AI agents, whose behavior is probabilistic and evidence-based: a correct answer in one run does not prove the agent used the right context, called the right tools, reasoned soundly, or stayed within security and compliance limits.</p>
+          <p><strong>ATA (Agent Test Agent)</strong> is an independent validation and audit layer for agentic systems. It records every interaction between a target agent and its model provider as auditable evidence, then runs an AI-native review that scores each interaction across 10 quality dimensions and turns the results into deployment-ready quality verdicts.</p>
+          <p>ATA reuses the rigor of my banking QA automation work — evidence, regression, blockers, audit trails — and applies it to LLM-agent behavior.</p>
+        </section>
+
+        <!-- Boundary -->
+        <section class="block">
+          <div class="eyebrow">How it captures evidence</div>
+          <h2>A capture layer at the model-provider boundary.</h2>
+          <p>ATA inserts itself between the system under test and the model provider, so any OpenAI-compatible agent can route traffic through it with no code changes — only a base URL and an ATA-prefixed API key.</p>
+          <pre class="code-block">Target Agent System  →  ATA Gateway  →  Model Provider
+                              │
+                              └─ captures each interaction as an auditable Record</pre>
+          <p>The gateway is intentionally narrow: it parses credentials, admits or rejects requests, forwards provider traffic, and emits evidence events. It never scores, finalizes, or runs validator logic — keeping the capture path fast and the responsibilities clean.</p>
+        </section>
+
+        <!-- Architecture -->
+        <section class="block">
+          <div class="eyebrow">Architecture</div>
+          <h2>A monorepo of independent services with a shared core.</h2>
+          <p>ATA is built as separate deployable services over shared internal packages, so capture, control, validation, and presentation each scale and fail independently.</p>
+          <ul class="clean">
+            <li><strong>API (FastAPI, SQLAlchemy async, Alembic)</strong> — the public control plane and single source of durable state; owns projects, workflow runs, analysis lifecycle, and runtime commands.</li>
+            <li><strong>Gateway (LiteLLM plugin)</strong> — credential admission and record-event capture at the provider boundary.</li>
+            <li><strong>Worker (Celery, LangChain)</strong> — finalizes captured events into durable records and runs asynchronous, per-record validation.</li>
+            <li><strong>Web (React, TypeScript, Vite, TanStack Query)</strong> — an operational dashboard for projects, workflow runs, records, and analysis reports.</li>
+            <li><strong>Shared packages</strong> — a canonical SQLAlchemy ORM plus event contracts and domain rules, consumed by both API and Worker so there is one model, not per-app copies.</li>
+            <li><strong>PostgreSQL + Redis</strong> — PostgreSQL owns durable state; Redis owns live runtime coordination and acts as the Celery broker. Local Compose wires every service together end to end.</li>
+          </ul>
+        </section>
+
+        <!-- Validation method -->
+        <section class="block">
+          <div class="eyebrow">Validation method</div>
+          <h2>Record-first, evidence-based validation across 10 dimensions.</h2>
+          <p>The evaluation unit is the <strong>record</strong> — a normalized snapshot of one provider interaction (request, context, tool calls and results, response, usage, and runtime metadata). Each record is a clean evidence package that can be audited, replayed, and regression-tested. Every record is scored against the dimensions that actually apply; missing evidence is marked <code>N/A</code> rather than guessed.</p>
+          <pre class="code-block">1. Context Quality        6. Security        (blocker)
+2. Prompt Quality         7. Compliance      (blocker)
+3. Tool Call Quality (b)  8. Operations
+4. Reasoning Quality      9. Human Validation
+5. Output Quality        10. Business Outcome</pre>
+          <p>Semantic dimensions are evaluated by an LLM judge; Operations, Human Validation, and Business Outcome are deterministic. Security, Compliance, and Tool Call Quality are blocker dimensions that can stop a deployment outright.</p>
+        </section>
+
+        <!-- Validator -->
+        <section class="block">
+          <div class="eyebrow">Multi-agent validator</div>
+          <h2>Planner → Judge → Critic → Meta Judge, per record.</h2>
+          <p>Each record runs through a plan-and-execute validator agent system rather than a single LLM call. This adversarial, self-checking structure is what makes the scores trustworthy.</p>
+          <ul class="clean">
+            <li><strong>Planner</strong> — analyzes the record's evidence and risk surface to select applicable dimensions and mark the rest <code>N/A</code>; it never blindly runs all 10.</li>
+            <li><strong>Judge</strong> — produces an initial score, rationale, and evidence references for each selected dimension against the rubric.</li>
+            <li><strong>Critic</strong> — attacks the Judge's output to find unsupported conclusions, ignored evidence, logic gaps, or missed risks.</li>
+            <li><strong>Meta Judge</strong> — resolves Judge vs. Critic disagreement into a final result and flags low-confidence or high-risk records for human review.</li>
+          </ul>
+          <p>The judge is never treated as an oracle: when evidence is weak the Meta Judge must lower confidence or return <code>N/A</code>, and high-risk decisions use self-consistency and human sampling for calibration.</p>
+        </section>
+
+        <!-- Scoring -->
+        <section class="block">
+          <div class="eyebrow">Scoring &amp; quality gate</div>
+          <h2>From metric scores to a deployment verdict.</h2>
+          <p>Scoring is bottom-up — metric → dimension → record → workflow — under a <strong>No Average Hiding</strong> principle, so a high average can never bury a weak dimension or a critical blocker.</p>
+          <pre class="code-block">Metric score (0–100)
+  → Dimension score
+  → Record score   (0.6 × median + 0.4 × weakest dimension)
+  → Workflow Quality Gate (P10/P35/P50, mean, deviation, blockers)
+  → Verdict: PASS · WARN · FAIL · BLOCK</pre>
+          <p>The Workflow Quality Gate is the single decision point: it judges the <em>distribution</em> of record scores, not just the mean, so weak low-tail records and critical blockers correctly prevent a <code>PASS</code>. Repeatable analysis runs and a reproduce/compare flow make quality measurable over time.</p>
+        </section>
+
+        <!-- Security -->
+        <section class="block">
+          <div class="eyebrow">Security &amp; data handling</div>
+          <h2>Fail-closed by default; provider secrets stay request-local.</h2>
+          <ul class="clean">
+            <li>Recording uses a scoped credential format <code>ata-&lt;run-tag&gt;--&lt;provider-secret&gt;</code>; the gateway fails closed for malformed, unknown, inactive, or unavailable runtime states.</li>
+            <li>The provider secret is request-local only and is never written to Redis, PostgreSQL, logs, traces, analysis results, or UI state.</li>
+            <li>Validator calls use separate configured credentials and can never reuse a target's recording token.</li>
+            <li>Captured request/response payloads are treated as sensitive evidence, not public telemetry.</li>
+          </ul>
+        </section>
+
+        <!-- Decisions -->
+        <section class="block">
+          <div class="eyebrow">Engineering decisions</div>
+          <h2>Trade-offs and design rationale.</h2>
+          <ul class="clean">
+            <li><strong>Capture-only gateway</strong> — keeping scoring out of the request path makes capture cheap and lets validation evolve independently.</li>
+            <li><strong>API owns state; Worker owns side effects</strong> — all state transitions flow through the API; the worker handles async finalization and validation with idempotent upserts and bounded retries.</li>
+            <li><strong>One shared ORM</strong> — a single canonical persistence model removes drift between the API and worker.</li>
+            <li><strong>Single product vocabulary</strong> — <code>workflow_run</code> is used end to end across DB, API, and UI, with one squashed Alembic baseline for the pre-release schema.</li>
+            <li><strong>MVP focus</strong> — deterministic, demo-ready scoring with production calibration, streaming capture, tenancy, and continuous-learning loops deliberately deferred.</li>
+          </ul>
+        </section>
+
+        <!-- Roadmap -->
+        <section class="block">
+          <div class="eyebrow">Status &amp; roadmap</div>
+          <h2>A standalone MVP today; an Omni-Agent module next.</h2>
+          <p>ATA currently runs as an independent, pre-release MVP focused on a correct, working end-to-end demo. The roadmap is to integrate it into <a href={withBase("projects/omni-agent/")}>Omni-Agent</a> as its evaluation and audit module, reusing Omni-Agent's shared project, job, and artifact foundations so validation becomes a first-class part of the AI Agent Hub rather than a separate tool.</p>
+        </section>
+
+        <section class="block">
+          <div class="eyebrow">Stack</div>
+          <div class="tag-row">
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </section>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h3>Role</h3>
+          <p>{item.role}</p>
+        </div>
+        <div class="side-card">
+          <h3>Evidence</h3>
+          <p>{item.outcome}</p>
+        </div>
+        <div class="side-card">
+          <h3>Status</h3>
+          <p><strong>Standalone MVP</strong> — built</p>
+          <p><strong>Omni-Agent module</strong> — planned</p>
+        </div>
+        <div class="side-card">
+          <h3>Validator flow</h3>
+          <p>Planner → Judge → Critic → Meta Judge</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

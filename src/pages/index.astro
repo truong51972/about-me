@@ -43,22 +43,22 @@ const projectHref = (slug: string) => withBase(`projects/${slug}/`);
       </div>
       <div class="featured-projects">
         {featured.map((item) => (
-          <a class={`project-card tier-${item.visualTier}`} href={projectHref(item.slug)}>
-            <div class="project-card-meta">
-              <div class="project-card-label">{item.label}</div>
-              {item.period && <div class="project-period">{item.period}</div>}
+          <a class="project-row" href={projectHref(item.slug)}>
+            <div class="project-row-head">
+              <div class="project-card-meta">
+                <div class="project-card-label">{item.label}</div>
+                {item.period && <div class="project-period">{item.period}</div>}
+              </div>
+              <h3 class="project-card-title">{item.title}</h3>
+              <p class="project-card-sub">{item.subtitle}</p>
             </div>
-            <h3 class="project-card-title">{item.title}</h3>
-            <p class="project-card-sub">{item.subtitle}</p>
-            <div class="project-card-body">
-              <p>{item.summary}</p>
-              <ul>
-                {item.highlights.slice(0, item.visualTier === "flagship" ? 3 : 2).map((h) => <li>{h}</li>)}
-              </ul>
+            <div class="project-row-body">
+              <p class="project-row-desc">{item.summary}</p>
+              <div class="project-card-stack">
+                {item.tags.slice(0, 6).map((tag) => <span class="tag">{tag}</span>)}
+              </div>
             </div>
-            <div class="project-card-stack">
-              {item.tags.slice(0, item.visualTier === "flagship" ? 7 : 5).map((tag) => <span class="tag">{tag}</span>)}
-            </div>
+            <span class="project-row-arrow" aria-hidden="true">→</span>
           </a>
         ))}
       </div>
