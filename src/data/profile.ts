@@ -40,32 +40,35 @@ export const cases: ProjectCase[] = [
     slug: "omni-agent",
     label: "Flagship system",
     title: "Omni-Agent",
-    subtitle: "Django/DRF AI Agent Hub for Knowledge Builder and Agent Testing",
+    subtitle: "Project-centric AI platform for document intelligence and hybrid RAG + knowledge-graph retrieval",
     summary:
-      "A Django/DRF AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs while stateless workers execute technical AI tasks.",
+      "A Python monorepo AI platform where a Django/DRF control plane owns domain logic and a fleet of stateless Celery workers handle OCR, chunking, and knowledge-graph analysis. It pairs versioned document processing with hybrid RAG + graph retrieval for QA-focused use cases such as test-case generation and bug intelligence.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
     period: "2026-Present",
     role: "Solo architecture and implementation",
     outcome:
-      "Designed domain boundaries, versioned document workflows, worker contracts, artifact handling, and backend/frontend product surfaces.",
+      "Designed domain boundaries, a generic PlatformJob control-plane, worker command/result contracts, versioned document workflows, and the hybrid RAG + graph retrieval direction across a multi-app monorepo.",
     tags: [
       "Django/DRF",
-      "AI Agent Hub",
-      "RAG",
-      "Agent Testing",
-      "Async Workers",
-      "S3 Artifacts",
+      "Celery",
+      "Hybrid RAG + Graph",
+      "Knowledge Graph / GNN",
+      "LangGraph",
+      "Docling OCR",
+      "Milvus",
       "PostgreSQL",
-      "React/Vite"
+      "MinIO / S3",
+      "React 19 / Vite",
+      "Langfuse"
     ],
     highlights: [
-      "Designed Omni-Agent as the main Django/DRF backend for project-centric AI products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and module boundaries.",
-      "Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned URLs, and traceable RAG foundations.",
-      "Modeled external workers and REST services as stateless executors for OCR, document parsing, chunking, embedding, retrieval, and evaluation tasks.",
-      "Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through datasets, judge/critic patterns, and regression reports.",
-      "Prototyped React/Vite console workflows for project navigation, product switching, document review, version selection, preview tabs, and processing status visibility."
+      "Architected Omni-Agent as a Python monorepo — a Django/DRF control plane (omni-api), stateless data-plane services for document processing, Docling OCR, and graph analysis, a React console, and shared contract/worker packages — with app-local dependencies and no root-workspace coupling.",
+      "Built Knowledge Builder, the first capability: project-scoped versioned document processing with a job-centric pipeline (DocumentVersion lifecycle, Docling OCR, chunking, committed-text snapshots) writing artifacts to S3-compatible storage.",
+      "Designed a hybrid RAG + knowledge-graph retrieval layer with a graph-builder pipeline and GNN-oriented QA intelligence — change-impact analysis, duplicate-bug detection, and test-gap analysis — as the core product direction.",
+      "Established a generic PlatformJob control-plane for async work keyed by project, job type, and resource, with typed worker command/result envelopes in a shared contracts package and internal/presigned S3 storage boundaries.",
+      "Wired a production-style stack — PostgreSQL, Redis, MinIO, Milvus, a LiteLLM + Ollama model gateway, and Langfuse observability — behind a Google-Cloud-Console-like React 19 console (TanStack Query, Tailwind, Sigma graph visualization)."
     ]
   },
   {
@@ -266,9 +269,10 @@ export const skillGroups = [
     title: "LLM systems and retrieval",
     items: [
       "RAG and hybrid retrieval",
+      "Knowledge graphs (RAG + Graph)",
       "Agentic workflows",
       "Vector search",
-      "LangGraph",
+      "LangChain/LangGraph",
       "LLM evaluation",
       "Agent evaluation and testing",
       "Milvus/Qdrant",
