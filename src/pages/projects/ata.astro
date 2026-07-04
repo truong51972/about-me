@@ -29,7 +29,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
           <h2>Bringing QA discipline to AI agents.</h2>
           <p>Traditional test automation asserts UI and API output. That is not enough for AI agents, whose behavior is probabilistic and evidence-based: a correct answer in one run does not prove the agent used the right context, called the right tools, reasoned soundly, or stayed within security and compliance limits.</p>
           <p><strong>ATA (Agent Test Agent)</strong> is an independent validation and audit layer for agentic systems. It records every interaction between a target agent and its model provider as auditable evidence, then runs an AI-native review that scores each interaction across 10 quality dimensions and turns the results into deployment-ready quality verdicts.</p>
-          <p>ATA reuses the rigor of my banking QA automation work — evidence, regression, blockers, audit trails — and applies it to LLM-agent behavior.</p>
+          <p>ATA reuses the rigor of banking quality work - evidence, regression, blockers, and audit trails - and applies it to LLM-agent behavior.</p>
         </section>
 
         <!-- Boundary -->
@@ -118,7 +118,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
             <li><strong>Capture-only gateway</strong> — keeping scoring out of the request path makes capture cheap and lets validation evolve independently.</li>
             <li><strong>API owns state; Worker owns side effects</strong> — all state transitions flow through the API; the worker handles async finalization and validation with idempotent upserts and bounded retries.</li>
             <li><strong>One shared ORM</strong> — a single canonical persistence model removes drift between the API and worker.</li>
-            <li><strong>Single product vocabulary</strong> — <code>workflow_run</code> is used end to end across DB, API, and UI, with one squashed Alembic baseline for the pre-release schema.</li>
+            <li><strong>Single product vocabulary</strong> — <code>workflow_run</code> is used end to end across DB, API, and UI, with one squashed Alembic baseline for the MVP schema.</li>
             <li><strong>MVP focus</strong> — deterministic, demo-ready scoring with production calibration, streaming capture, tenancy, and continuous-learning loops deliberately deferred.</li>
           </ul>
         </section>
@@ -126,8 +126,8 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
         <!-- Roadmap -->
         <section class="block">
           <div class="eyebrow">Status &amp; roadmap</div>
-          <h2>A standalone MVP today; an Omni-Agent module next.</h2>
-          <p>ATA currently runs as an independent, pre-release MVP focused on a correct, working end-to-end demo. The roadmap is to integrate it into <a href={withBase("projects/omni-agent/")}>Omni-Agent</a> as its evaluation and audit module, reusing Omni-Agent's shared project, job, and artifact foundations so validation becomes a first-class part of the AI Agent Hub rather than a separate tool.</p>
+          <h2>A completed standalone MVP today; an Omni-Agent module next.</h2>
+          <p>ATA runs as an independent completed MVP focused on a correct, working end-to-end validation flow. The roadmap is to integrate it into <a href={withBase("projects/omni-agent/")}>Omni-Agent</a> as its evaluation and audit module, reusing Omni-Agent's shared project, job, and artifact foundations so validation becomes a first-class part of the AI Agent Hub rather than a separate tool.</p>
         </section>
 
         <section class="block">

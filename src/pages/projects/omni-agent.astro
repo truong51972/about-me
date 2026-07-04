@@ -28,7 +28,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <div class="eyebrow">Overview</div>
           <h2>A project-centric AI platform with a clean control-plane / data-plane split.</h2>
           <p>Omni-Agent is an event-driven AI platform built as a Python monorepo. Everything is scoped to a <strong>Project</strong>, and a Django/DRF control plane owns the domain — projects, documents, jobs, and graph metadata — while a fleet of stateless workers executes the heavy technical work: OCR, chunking, and knowledge-graph analysis.</p>
-          <p>The product direction is QA-focused document intelligence: turn requirement and specification documents into a queryable knowledge base, then use <strong>hybrid RAG + knowledge-graph retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence — applying my QA-automation background to an AI platform.</p>
+          <p>The product direction is evaluation-focused document intelligence: turn requirement and specification documents into a queryable knowledge base, then use <strong>hybrid RAG + knowledge-graph retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence.</p>
         </section>
 
         <!-- Architecture -->
@@ -126,7 +126,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <section class="block">
           <div class="eyebrow">Agent Testing &amp; Operations</div>
           <h2>Where ATA fits in.</h2>
-          <p>Agent Testing &amp; Operations is a durable product direction for Omni-Agent. That direction is now being built out separately as <a href={withBase("projects/ata/")}>ATA — Agent Test Agent</a>, an independent validation and audit MVP, with planned integration back into Omni-Agent as its evaluation module once the platform's backend support expands.</p>
+          <p>Agent Testing &amp; Operations is a durable product direction for Omni-Agent. That direction now exists as <a href={withBase("projects/ata/")}>ATA — Agent Test Agent</a>, a completed standalone validation and audit MVP, with planned integration back into Omni-Agent as its evaluation module once the platform's backend support expands.</p>
         </section>
 
         <!-- Technical Decisions -->

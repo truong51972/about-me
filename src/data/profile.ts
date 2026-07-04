@@ -1,6 +1,7 @@
 export type ProjectGroup =
   | "featured-systems"
   | "applied-ai-systems"
+  | "supporting-delivery"
   | "earlier-ai-research";
 
 export type ProjectVisualTier = "flagship" | "featured" | "supporting" | "compact";
@@ -26,13 +27,13 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Applied AI Backend Engineer",
+  role: "Applied AI Backend Engineer | Agent Evaluation & RAG Systems",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I design and build production-oriented Python systems for applied AI, spanning agentic workflows, RAG, evaluation, and machine learning services."
+    "I design production-oriented Python systems for applied AI, including ATA for agent validation, RAG workflows, evaluation pipelines, and backend orchestration."
 };
 
 export const cases: ProjectCase[] = [
@@ -42,7 +43,7 @@ export const cases: ProjectCase[] = [
     title: "Omni-Agent",
     subtitle: "Project-centric AI platform for document intelligence and hybrid RAG + knowledge-graph retrieval",
     summary:
-      "A Python monorepo AI platform where a Django/DRF control plane owns domain logic and a fleet of stateless Celery workers handle OCR, chunking, and knowledge-graph analysis. It pairs versioned document processing with hybrid RAG + graph retrieval for QA-focused use cases such as test-case generation and bug intelligence.",
+      "A Python monorepo AI platform where a Django/DRF control plane owns domain logic and a fleet of stateless Celery workers handle OCR, chunking, and knowledge-graph analysis. It pairs versioned document processing with hybrid RAG + graph retrieval for evaluation-oriented workflows such as test-case generation, change-impact analysis, and bug intelligence.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
@@ -66,7 +67,7 @@ export const cases: ProjectCase[] = [
     highlights: [
       "Architected Omni-Agent as a Python monorepo — a Django/DRF control plane (omni-api), stateless data-plane services for document processing, Docling OCR, and graph analysis, a React console, and shared contract/worker packages — with app-local dependencies and no root-workspace coupling.",
       "Built Knowledge Builder, the first capability: project-scoped versioned document processing with a job-centric pipeline (DocumentVersion lifecycle, Docling OCR, chunking, committed-text snapshots) writing artifacts to S3-compatible storage.",
-      "Designed a hybrid RAG + knowledge-graph retrieval layer with a graph-builder pipeline and GNN-oriented QA intelligence — change-impact analysis, duplicate-bug detection, and test-gap analysis — as the core product direction.",
+      "Designed a hybrid RAG + knowledge-graph retrieval layer with a graph-builder pipeline and GNN-oriented quality intelligence — change-impact analysis, duplicate-bug detection, and test-gap analysis — as the core product direction.",
       "Established a generic PlatformJob control-plane for async work keyed by project, job type, and resource, with typed worker command/result envelopes in a shared contracts package and internal/presigned S3 storage boundaries.",
       "Wired a production-style stack — PostgreSQL, Redis, MinIO, Milvus, a LiteLLM + Ollama model gateway, and Langfuse observability — behind a Google-Cloud-Console-like React 19 console (TanStack Query, Tailwind, Sigma graph visualization)."
     ]
@@ -77,7 +78,7 @@ export const cases: ProjectCase[] = [
     title: "ATA — Agent Test Agent",
     subtitle: "AI-native validation and audit layer for agentic systems",
     summary:
-      "An independent validation and audit platform for AI agent systems. ATA sits at the model-provider boundary, captures every agent–model interaction as auditable evidence, then scores it across 10 quality dimensions with a multi-agent judge to produce deployment-ready quality verdicts.",
+      "A completed standalone validation and audit platform for AI agent systems. ATA sits at the model-provider boundary, captures every agent-model interaction as auditable evidence, then scores it across 10 quality dimensions with a multi-agent judge to produce deployment-ready quality verdicts.",
     group: "featured-systems",
     visualTier: "featured",
     homepageFeatured: true,
@@ -130,21 +131,21 @@ export const cases: ProjectCase[] = [
     slug: "banking-automation",
     label: "Industry delivery",
     title: "Banking QA Automation",
-    subtitle: "Core Banking, Payment Hub, API, database, web, and mobile validation",
+    subtitle: "Historical Core Banking and Payment Hub validation work",
     summary:
-      "Enterprise QA automation and integration testing across Core Banking, Payment Hub, API, database, web, and mobile systems.",
-    group: "featured-systems",
-    visualTier: "featured",
-    homepageFeatured: true,
+      "Historical enterprise QA automation and integration validation across Core Banking, Payment Hub, API, database, web, and mobile systems; kept as supporting domain evidence behind the current AI evaluation direction.",
+    group: "supporting-delivery",
+    visualTier: "supporting",
+    homepageFeatured: false,
     period: "2024-2026",
-    role: "Applied AI and QA Automation Engineer",
+    role: "Applied AI and Quality Engineering contributor",
     outcome:
-      "Delivered confidential banking QA automation work across transaction integrity, regression, API, database, web, and mobile validation.",
+      "Delivered confidential banking validation work across transaction integrity, regression, API, database, web, and mobile systems.",
     tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
     highlights: [
-      "Built API, web, and mobile automation coverage for complex banking journeys.",
+      "Built API, web, and mobile validation coverage for complex banking journeys.",
       "Validated financial transaction behavior through API assertions, SQL checks, and regression scenarios.",
-      "Used Katalon, Appium, Postman, and JMeter across omnichannel banking QA contexts."
+      "Used Katalon, Appium, Postman, and JMeter across omnichannel banking delivery contexts."
     ]
   },
   {
@@ -218,12 +219,12 @@ export const cases: ProjectCase[] = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Applied AI Engineer and QA Automation Engineer",
+    title: "Automation Tester & Applied AI Engineer",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.",
+      "Built applied AI workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.",
       "Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.",
-      "Delivered API, web, and mobile automation solutions in confidential banking QA contexts."
+      "Applied banking quality experience to agent evaluation, evidence capture, and backend validation workflows."
     ]
   },
   {
@@ -248,7 +249,7 @@ export const education = [
     degree: "Bachelor of Artificial Intelligence",
     org: "FPT University",
     period: "2021 — 2025",
-    note: "Computer vision, machine learning, QA automation, and LLM systems."
+    note: "Computer vision, machine learning, AI evaluation, and LLM systems."
   }
 ];
 
@@ -293,15 +294,16 @@ export const skillGroups = [
     ]
   },
   {
-    title: "Quality engineering",
+    title: "Agent evaluation and AI quality",
     items: [
+      "Agent testing",
+      "Workflow quality gates",
+      "Evidence capture",
+      "LLM-as-a-Judge",
       "API and integration testing",
       "SQL validation",
       "Regression testing",
-      "Performance testing",
-      "Katalon",
-      "Appium",
-      "Postman and JMeter"
+      "Core Banking / Payment Hub"
     ]
   }
 ];

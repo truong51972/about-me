@@ -6,7 +6,7 @@
   name: "Tran Quoc Truong",
   title: "Tran Quoc Truong - CV",
   footer: context { [#emph[Tran Quoc Truong -- #str(here().page())\/#str(counter(page).final().first())]] },
-  top-note: [ #emph[Last updated in June 2026] ],
+  top-note: [ #emph[Last updated in July 2026] ],
   locale-catalog-language: "en",
   text-direction: ltr,
   page-size: "us-letter",
@@ -80,15 +80,15 @@
   entries-highlights-space-between-bullet-and-text: 0.5em,
   date: datetime(
     year: 2026,
-    month: 6,
-    day: 21,
+    month: 7,
+    day: 4,
   ),
 )
 
 
 = Tran Quoc Truong
 
-  #headline([Applied AI Backend Engineer | Agentic QA & RAG Systems])
+  #headline([Applied AI Backend Engineer | Agent Evaluation & RAG Systems])
 
 #connections(
   [#connection-with-icon("location-dot")[Ho Chi Minh City, Vietnam]],
@@ -101,23 +101,23 @@
 
 == Summary
 
-Applied AI Backend Engineer focused on building AI agent workflows, RAG systems, and agent testing\/evaluation platforms using Python, Django\/DRF, FastAPI, async workers, and vector databases.
+Applied AI Backend Engineer focused on building AI agent workflows, RAG systems, and agent evaluation platforms using Python, Django\/DRF, FastAPI, async workers, and vector databases.
 
-Combines QA automation experience in Core Banking and Payment Hub domains with LLM evaluation, traceable retrieval, and production-oriented backend workflows.
+Built ATA, an AI-native validation and audit platform for agentic systems, combining traceable model-provider capture, LLM evaluation, quality gates, and production-oriented backend workflows.
 
 == Experience
 
 #regular-entry(
   [
-    #strong[FPT Software], Applied AI Engineer & QA Automation Engineer
+    #strong[FPT Software], Automation Tester & Applied AI Engineer
 
-    - Built AI-assisted QA workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
+    - Built applied AI workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
 
     - Designed Python backend orchestration with Django\/DRF, FastAPI, Redis\/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.
 
-    - Delivered API, Web, and Mobile automation solutions that increased test coverage by 40\% and reduced manual testing effort by up to 70\%.
+    - Developed LLM evaluation, RAG validation, and agent-quality patterns using judge\/critic\/meta-judge workflows, evidence capture, and regression-oriented reporting.
 
-    - Led an omnichannel Core Banking automation PoC across Web, iOS, and Android, helping secure a \~20 man-month contract.
+    - Applied banking QA domain experience to AI quality systems, preserving auditability, transaction integrity, and blocker-based validation in backend workflows.
 
   ],
   [
@@ -127,7 +127,7 @@ Combines QA automation experience in Core Banking and Payment Hub domains with L
 
     
 
-    1 year 7 months
+    1 year 8 months
 
   ],
 )
@@ -169,9 +169,30 @@ Combines QA automation experience in Core Banking and Payment Hub domains with L
 
     - Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.
 
-    - Proposed ATA as an Agent Testing and Audit module for evaluating RAG and LLM-agent workflows through eval datasets, judge\/critic\/meta-judge patterns, and regression reports.
+    - Positioned ATA as a completed standalone validation platform that can become Omni-Agent's Agent Testing and Audit module for evaluating RAG and LLM-agent workflows.
 
     - Prototyped React\/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility.
+
+  ],
+  [
+  ],
+)
+
+#regular-entry(
+  [
+    #strong[ATA — Agent Test Agent]
+
+    #summary[Independent validation and audit layer for AI agent systems that captures model-provider interactions, scores records across 10 dimensions, and produces PASS\/WARN\/FAIL\/BLOCK workflow verdicts.]
+
+    - Built a completed standalone MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React\/Vite dashboard.
+
+    - Used shared SQLAlchemy ORM, domain contracts, PostgreSQL, and Redis to keep API, gateway, worker, and dashboard state consistent across services.
+
+    - Implemented a Planner\/Judge\/Critic\/Meta Judge validator that scores records across context, tools, reasoning, security, compliance, operations, human validation, and business outcome dimensions.
+
+    - Designed a distribution-based Workflow Quality Gate using P10\/P35\/P50, mean, deviation, and blocker dimensions to prevent weak low-tail records from being hidden by averages.
+
+    - Enforced fail-closed credential handling with ATA-prefixed recording keys and request-local provider secrets that are never persisted to Redis, PostgreSQL, logs, or UI state.
 
   ],
   [
@@ -197,32 +218,13 @@ Combines QA automation experience in Core Banking and Payment Hub domains with L
   ],
 )
 
-#regular-entry(
-  [
-    #strong[Banking QA Automation — Core Banking & Payment Hub]
-
-    #summary[Automation and validation work for Core Banking omnichannel flows and Payment Hub transaction integrations.]
-
-    - Built cross-platform automation flows with Katalon and Appium for Web, iOS, and Android regression coverage.
-
-    - Validated critical business journeys consistently across Web, iOS, and Android under one automation strategy.
-
-    - Authored more than 1,500 lines of SQL validation queries to verify post-transaction data consistency across payment integration flows.
-
-    - Reduced manual QA effort by 70\% through reusable validation scripts, regression scenarios, and repeatable API\/database checks.
-
-  ],
-  [
-  ],
-)
-
 == Skills
 
 #strong[Applied AI & Agent Evaluation:] RAG, Hybrid RAG, LangGraph, LangChain, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, eval datasets, judge\/critic\/meta-judge patterns
 
 #strong[Backend & Systems:] Python, Django\/DRF, FastAPI, PostgreSQL, Redis\/Celery, Docker, REST APIs, async workers, service layers, domain modeling
 
-#strong[QA Automation & Banking:] Agentic QA, Agent Testing, API Testing, Postman, Katalon, Appium, JMeter, SQL validation, Core Banking, Payment Hub
+#strong[Agent Evaluation & AI Quality:] Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis, Core Banking, Payment Hub
 
 #strong[Frontend Prototyping:] React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development
 

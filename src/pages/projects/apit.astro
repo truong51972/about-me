@@ -45,14 +45,14 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
           <div class="eyebrow">Evaluation</div>
           <h2>Structured output quality measured with reference-based metrics.</h2>
           <p>Generated test cases were evaluated with precision, recall, and F1 using fuzzy string similarity, numeric tolerance, and categorical matching. Qwen-2.5-3B LoRA achieved 0.655 macro-F1, outperforming the Llama-3.2-3B baseline.</p>
-          <p>Reasoning quality was assessed through logical validity, coherence, and groundedness — aligning with the Agentic QA direction.</p>
+          <p>Reasoning quality was assessed through logical validity, coherence, and groundedness, aligning with the agent evaluation direction.</p>
         </section>
 
         <section class="block">
           <div class="eyebrow">Agent Testing Connection</div>
           <h2>APIT as evidence for the Agent Testing / Evaluation direction.</h2>
-          <p>APIT demonstrates the evaluation methodology that feeds into <strong>Omni-Agent's ATA module</strong>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
-          <p>The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows in the Omni-Agent platform.</p>
+          <p>APIT demonstrates the evaluation methodology behind <a href={withBase("projects/ata/")}>ATA</a>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
+          <p>The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows as a completed standalone validation platform.</p>
         </section>
 
         <section class="block">
