@@ -1,7 +1,6 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TimelineItem from "../components/TimelineItem.astro";
 import { site, timeline, education, skillGroups, cases } from "../data/profile";
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
@@ -11,80 +10,109 @@ const cvProjectSlugs = ["omni-agent", "ata", "apit"];
 const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
 ---
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong." >
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="case-index">CV</div>
-      <h1>{site.name}</h1>
-      <p class="page-summary">{site.role}. {site.summary}</p>
-      <div class="hero-actions">
-        <a class="btn primary" href={pdfPath} target="_blank" rel="noreferrer">Download CV PDF</a>
-        <a class="btn ghost" href={htmlPath} target="_blank" rel="noreferrer">Open HTML CV</a>
-        <a class="btn ghost" href={yamlPath} target="_blank" rel="noreferrer">View YAML source</a>
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl relative z-10">
+      <div class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted mb-6 border border-white/10">Curriculum Vitae</div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{site.name}</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{site.role}. {site.summary}</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors" href={pdfPath} target="_blank" rel="noreferrer">Download CV PDF</a>
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={htmlPath} target="_blank" rel="noreferrer">Open HTML CV</a>
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={yamlPath} target="_blank" rel="noreferrer">View YAML source</a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container content-grid">
-      <article class="article">
-        <section class="block">
-          <div class="eyebrow">Positioning</div>
-          <h2>Applied AI Backend Engineer focused on Python systems, retrieval, evaluation, and machine learning services.</h2>
-          <p>My profile combines backend engineering, applied AI systems, and agent evaluation, building workflows where AI outputs become traceable, auditable, and testable product behavior.</p>
-        </section>
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+        <article class="lg:col-span-2 space-y-20">
+          <section>
+            <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Positioning</h2>
+            <h3 class="text-2xl font-bold text-white mb-4">Applied AI Backend Engineer focused on Python systems, retrieval, evaluation, and machine learning services.</h3>
+            <p class="text-text-muted leading-relaxed">My profile combines backend engineering, applied AI systems, and agent evaluation, building workflows where AI outputs become traceable, auditable, and testable product behavior.</p>
+          </section>
 
-        <section class="block">
-          <div class="eyebrow">Experience</div>
-          <div class="timeline">
-            {timeline.map((item) => <TimelineItem item={item} />)}
-          </div>
-        </section>
-
-        <section class="block">
-          <div class="eyebrow">Selected projects</div>
-          <h2>Projects</h2>
-          <ul class="clean">
-            {cvProjects.map((item) => <li><strong>{item.title}</strong> - {item.summary}</li>)}
-          </ul>
-        </section>
-      </article>
-
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Contact</h3>
-          <p>{site.location}</p>
-          <p class="side-card-link"><a href={`mailto:${site.email}`}>{site.email}</a></p>
-        </div>
-        <div class="side-card">
-          <h3>Education</h3>
-          {education.map((item) => (
-            <div class="side-card-section">
-              <strong>{item.degree}</strong>
-              <p>{item.org}</p>
-              <p>{item.period}</p>
+          <section>
+            <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-8">Experience</h2>
+            <div class="space-y-12 pl-4 border-l border-white/10">
+              {timeline.map((item) => (
+                <div class="relative">
+                  <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-brand-500 ring-4 ring-bg-base"></div>
+                  <div class="flex flex-col mb-4">
+                    <h3 class="text-xl font-bold text-white">{item.org.split(" · ")[0]} <span class="text-brand-400">| {item.title}</span></h3>
+                    <span class="text-sm font-medium text-text-muted/80">{item.period}</span>
+                  </div>
+                  <ul class="space-y-3 text-text-muted">
+                    {item.bullets.map((bullet) => (
+                      <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-white/20">{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div class="side-card">
-          <h3>Download</h3>
-          <ul class="clean link-list">
-            <li><a href={pdfPath} target="_blank" rel="noreferrer">PDF</a></li>
-            <li><a href={mdPath} target="_blank" rel="noreferrer">Markdown</a></li>
-            <li><a href={htmlPath} target="_blank" rel="noreferrer">HTML</a></li>
-          </ul>
-        </div>
-      </aside>
+          </section>
+
+          <section>
+            <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-6">Selected Projects</h2>
+            <ul class="space-y-6">
+              {cvProjects.map((item) => (
+                <li class="glass-panel p-6 rounded-xl">
+                  <strong class="block text-lg text-white mb-2">{item.title}</strong>
+                  <span class="text-text-muted">{item.summary}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        </article>
+
+        <aside class="space-y-8">
+          <div class="glass-panel p-8 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-4">Contact</h3>
+            <p class="text-text-muted mb-2">{site.location}</p>
+            <p><a class="text-brand-400 hover:text-brand-300 transition-colors" href={`mailto:${site.email}`}>{site.email}</a></p>
+          </div>
+          
+          <div class="glass-panel p-8 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-6">Education</h3>
+            <div class="space-y-6">
+              {education.map((item) => (
+                <div>
+                  <strong class="block text-white mb-1">{item.degree}</strong>
+                  <p class="text-sm text-text-muted">{item.org}</p>
+                  <p class="text-xs text-brand-400/80 mt-1">{item.period}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div class="glass-panel p-8 rounded-2xl">
+            <h3 class="text-lg font-bold text-white mb-4">Download</h3>
+            <ul class="space-y-3">
+              <li><a class="text-text-muted hover:text-white transition-colors flex items-center gap-2" href={pdfPath} target="_blank" rel="noreferrer"><span class="w-1.5 h-1.5 bg-brand-500 rounded-full"></span> PDF</a></li>
+              <li><a class="text-text-muted hover:text-white transition-colors flex items-center gap-2" href={mdPath} target="_blank" rel="noreferrer"><span class="w-1.5 h-1.5 bg-brand-500 rounded-full"></span> Markdown</a></li>
+              <li><a class="text-text-muted hover:text-white transition-colors flex items-center gap-2" href={htmlPath} target="_blank" rel="noreferrer"><span class="w-1.5 h-1.5 bg-brand-500 rounded-full"></span> HTML</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container">
-      <div class="skill-list">
+  <section class="py-24 bg-bg-surface/30 border-t border-white/5">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl">
+      <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
+        <span class="w-8 h-[2px] bg-brand-500"></span> Technical Skills
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {skillGroups.map((group) => (
-          <div class="skill-list-group">
-            <h3>{group.title}</h3>
-            <div class="skill-items">
-              {group.items.map((item) => <span class="tag">{item}</span>)}
+          <div class="glass-panel p-6 rounded-xl">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider mb-4 h-10">{group.title}</h3>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span class="inline-flex items-center rounded bg-white/5 px-2 py-1 text-xs font-medium text-text-muted border border-white/5">{item}</span>
+              ))}
             </div>
           </div>
         ))}

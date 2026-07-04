@@ -5,34 +5,34 @@ import { cases } from "../../data/profile";
 const item = cases.find((caseItem) => caseItem.slug === "apit")!;
 ---
 <BaseLayout title="APIT" description="APIT AI capstone project case study." >
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="case-hero-meta">
-        <div class="case-index">{item.label}</div>
-        {item.period && <div class="case-period">{item.period}</div>}
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden"><div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted border border-white/10">{item.label}</span>
+        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
-      <h1>APIT: LLM-powered API test generation.</h1>
-      <p class="page-summary">{item.summary}</p>
-      <div class="hero-actions">
-        {item.docsUrl && <a class="btn primary" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open capstone PDF</a>}
-        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">APIT: LLM-powered API test generation.</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <div class="flex flex-wrap gap-4">
+        {item.docsUrl && <a class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open capstone PDF</a>}
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container content-grid">
-      <article class="article">
-        <section class="block">
-          <div class="eyebrow">Problem</div>
-          <h2>Manual API test design does not scale.</h2>
-          <p>Execution tools like Postman and JMeter still depend on manually designed test cases. APIT demonstrates LLM-based test generation: it reads API documentation, defines test scope, generates structured test cases, executes them, and reports pass/fail outcomes.</p>
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <article class="lg:col-span-2 space-y-16">
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Problem</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Manual API test design does not scale.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">Execution tools like Postman and JMeter still depend on manually designed test cases. APIT demonstrates LLM-based test generation: it reads API documentation, defines test scope, generates structured test cases, executes them, and reports pass/fail outcomes.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">What I built</div>
-          <h2>Controlled data synthesis and small-model fine-tuning pipeline.</h2>
-          <p>Manual API documents were distilled into prompts, used to generate 1,258 bilingual English/Vietnamese samples, and converted into structured test-case outputs with reasoning. Qwen-2.5-3B and Llama-3.2-3B were fine-tuned with LoRA/4-bit training under identical hyperparameters.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">What I built</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Controlled data synthesis and small-model fine-tuning pipeline.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">Manual API documents were distilled into prompts, used to generate 1,258 bilingual English/Vietnamese samples, and converted into structured test-case outputs with reasoning. Qwen-2.5-3B and Llama-3.2-3B were fine-tuned with LoRA/4-bit training under identical hyperparameters.</p>
           <div class="diagram">
             <div class="diagram-step"><b>Document preprocessing</b><span>Standardize API docs from OpenAPI, Swagger, PDF, or structured text.</span></div>
             <div class="diagram-step"><b>Test scope</b><span>Select requirements, endpoints, and value/risk boundaries for generation.</span></div>
@@ -41,35 +41,35 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
           </div>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Evaluation</div>
-          <h2>Structured output quality measured with reference-based metrics.</h2>
-          <p>Generated test cases were evaluated with precision, recall, and F1 using fuzzy string similarity, numeric tolerance, and categorical matching. Qwen-2.5-3B LoRA achieved 0.655 macro-F1, outperforming the Llama-3.2-3B baseline.</p>
-          <p>Reasoning quality was assessed through logical validity, coherence, and groundedness, aligning with the agent evaluation direction.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Evaluation</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Structured output quality measured with reference-based metrics.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">Generated test cases were evaluated with precision, recall, and F1 using fuzzy string similarity, numeric tolerance, and categorical matching. Qwen-2.5-3B LoRA achieved 0.655 macro-F1, outperforming the Llama-3.2-3B baseline.</p>
+          <p class="text-text-muted leading-relaxed mb-6">Reasoning quality was assessed through logical validity, coherence, and groundedness, aligning with the agent evaluation direction.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Agent Testing Connection</div>
-          <h2>APIT as evidence for the Agent Testing / Evaluation direction.</h2>
-          <p>APIT demonstrates the evaluation methodology behind <a href={withBase("projects/ata/")}>ATA</a>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
-          <p>The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows as a completed standalone validation platform.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Agent Testing Connection</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">APIT as evidence for the Agent Testing / Evaluation direction.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">APIT demonstrates the evaluation methodology behind <a href={withBase("projects/ata/")}>ATA</a>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows as a completed standalone validation platform.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Stack</div>
-          <div class="tag-row">
-            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
           </div>
         </section>
       </article>
 
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Result</h3>
-          <p><strong>0.655 macro-F1</strong> on structured API test generation with Qwen-2.5-3B LoRA.</p>
+      <aside class="space-y-8">
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Result</h3>
+          <p class="text-text-muted leading-relaxed mb-6"><strong class="text-white">0.655 macro-F1</strong> on structured API test generation with Qwen-2.5-3B LoRA.</p>
         </div>
-        <div class="side-card">
-          <h3>Spec</h3>
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Spec</h3>
           <dl class="spec-list">
             <div><dt>Role</dt><dd>{item.role}</dd></div>
             <div><dt>Dataset</dt><dd>1,258 samples</dd></div>

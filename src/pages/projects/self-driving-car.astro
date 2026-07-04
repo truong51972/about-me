@@ -5,34 +5,34 @@ import { cases } from "../../data/profile";
 const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
 ---
 <BaseLayout title="Self-driving Car Problem" description="Award-winning self-driving car research paper case study." >
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="case-hero-meta">
-        <div class="case-index">{item.label}</div>
-        {item.period && <div class="case-period">{item.period}</div>}
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden"><div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted border border-white/10">{item.label}</span>
+        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
-      <h1>Self-driving Car Problem: earlier AI research with real award proof.</h1>
-      <p class="page-summary">{item.summary}</p>
-      <div class="hero-actions">
-        {item.docsUrl && <a class="btn primary" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open paper PDF</a>}
-        {item.repoUrl && <a class="btn ghost" href={item.repoUrl} target="_blank" rel="noreferrer">View repository</a>}
-        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">Self-driving Car Problem: earlier AI research with real award proof.</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <div class="flex flex-wrap gap-4">
+        {item.docsUrl && <a class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors" href={withBase(item.docsUrl)} target="_blank" rel="noreferrer">Open paper PDF</a>}
+        {item.repoUrl && <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={item.repoUrl} target="_blank" rel="noreferrer">View repository</a>}
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container content-grid">
-      <article class="article">
-        <section class="block">
-          <div class="eyebrow">Why this case is included</div>
-          <h2>It shows the early applied-AI foundation before the LLM/backend work.</h2>
-          <p>This case should not replace Omni-Agent or APIT as the main story. It is included as earlier evidence: an award-winning research paper that shows computer vision, simulation, model training, control logic, and technical writing experience.</p>
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <article class="lg:col-span-2 space-y-16">
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Why this case is included</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">It shows the early applied-AI foundation before the LLM/backend work.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">This case should not replace Omni-Agent or APIT as the main story. It is included as earlier evidence: an award-winning research paper that shows computer vision, simulation, model training, control logic, and technical writing experience.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">System</div>
-          <h2>Unity simulation, YOLOv8 perception, and PID control.</h2>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">System</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Unity simulation, YOLOv8 perception, and PID control.</h3>
           <div class="diagram">
             <div class="diagram-step"><b>Simulation</b><span>Unity environment with lane markings, stop lines, signs, shadows, snow, and obstacles.</span></div>
             <div class="diagram-step"><b>Traffic signs</b><span>Color filtering crops signs, then YOLOv8 Classifier predicts seven sign classes.</span></div>
@@ -41,34 +41,34 @@ const item = cases.find((caseItem) => caseItem.slug === "self-driving-car")!;
           </div>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Data and result</div>
-          <h2>The result is useful, but framed honestly.</h2>
-          <p>The traffic sign task used 18k+ images across seven classes. The lane segmentation task used roughly 8k provided images and 1.5k self-labeled images from the simulation environment, with augmentation.</p>
-          <p>The system completed the simulation benchmark in 125.8 seconds with full marks. The paper also clearly documents limitations: color-filter robustness, simulation-only evaluation, and primitive controller assumptions.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Data and result</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">The result is useful, but framed honestly.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">The traffic sign task used 18k+ images across seven classes. The lane segmentation task used roughly 8k provided images and 1.5k self-labeled images from the simulation environment, with augmentation.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The system completed the simulation benchmark in 125.8 seconds with full marks. The paper also clearly documents limitations: color-filter robustness, simulation-only evaluation, and primitive controller assumptions.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Award proof</div>
-          <h2>Second Prize evidence.</h2>
-          <p>The award image is included as proof, but this case remains in the "Earlier AI Research" tier so the portfolio does not drift away from Applied AI systems, agent evaluation, and backend control-plane work.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Award proof</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Second Prize evidence.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">The award image is included as proof, but this case remains in the "Earlier AI Research" tier so the portfolio does not drift away from Applied AI systems, agent evaluation, and backend control-plane work.</p>
           <img class="proof-image" src={withBase("images/second-prize-award-wide.webp")} alt="Second Prize award proof" />
         </section>
       </article>
 
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Proof</h3>
-          <p>{item.outcome}</p>
+      <aside class="space-y-8">
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Proof</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
         </div>
-        <div class="side-card">
-          <h3>Stack</h3>
-          <div class="tag-row">
-            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Stack</h3>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
           </div>
         </div>
-        <div class="side-card">
-          <h3>Spec</h3>
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Spec</h3>
           <dl class="spec-list">
             <div><dt>Paper</dt><dd>Self-driving Car Problem</dd></div>
             <div><dt>Award</dt><dd>Second Prize</dd></div>

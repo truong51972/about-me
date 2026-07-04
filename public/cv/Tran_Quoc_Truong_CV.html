@@ -86,41 +86,35 @@
         </ul>
         <h1>Projects</h1>
         <h2><strong>Omni-Agent — Django/DRF AI Agent Hub for Knowledge Builder &amp; Agent Testing</strong></h2>
-        <p>A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.</p>
+        <p>A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, and APIs, while stateless workers execute technical AI tasks.</p>
         <ul>
         <li>
-        <p>Designed Omni-Agent as the main Django/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.</p>
+        <p>Architected the main Django/DRF backend, managing domain logic, job lifecycles, and artifact metadata for project-centric AI agent products.</p>
         </li>
         <li>
-        <p>Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned preview/download URLs, and traceable RAG foundations.</p>
+        <p>Built Knowledge Builder module, supporting versioned document workflows, OCR/chunking pipelines, and traceable RAG foundations with S3-compatible artifacts.</p>
         </li>
         <li>
-        <p>Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.</p>
+        <p>Orchestrated external workers and REST services as stateless executors for OCR, embedding, and retrieval, persisting domain results in Django.</p>
         </li>
         <li>
-        <p>Positioned ATA as a completed standalone validation platform that can become Omni-Agent's Agent Testing and Audit module for evaluating RAG and LLM-agent workflows.</p>
-        </li>
-        <li>
-        <p>Prototyped React/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility.</p>
+        <p>Prototyped React/Vite console workflows for project navigation, document workspace review, and processing status visibility.</p>
         </li>
         </ul>
         <h2><strong>ATA — Agent Test Agent</strong></h2>
-        <p>Independent validation and audit layer for AI agent systems that captures model-provider interactions, scores records across 10 dimensions, and produces PASS/WARN/FAIL/BLOCK workflow verdicts.</p>
+        <p>Independent validation and audit layer for AI agent systems that scores records across 10 dimensions to produce deployment-ready quality verdicts.</p>
         <ul>
         <li>
-        <p>Built a completed standalone MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React/Vite dashboard.</p>
+        <p>Built an end-to-end MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React/Vite dashboard.</p>
         </li>
         <li>
-        <p>Used shared SQLAlchemy ORM, domain contracts, PostgreSQL, and Redis to keep API, gateway, worker, and dashboard state consistent across services.</p>
+        <p>Engineered a multi-agent validator (Planner/Judge/Critic/Meta Judge) that scores 10 dimensions including context, tool-calling, security, and business outcome.</p>
         </li>
         <li>
-        <p>Implemented a Planner/Judge/Critic/Meta Judge validator that scores records across context, tools, reasoning, security, compliance, operations, human validation, and business outcome dimensions.</p>
+        <p>Designed a Workflow Quality Gate using P10/P35/P50 metrics and blocker dimensions to prevent low-tail anomalies from being hidden by averages.</p>
         </li>
         <li>
-        <p>Designed a distribution-based Workflow Quality Gate using P10/P35/P50, mean, deviation, and blocker dimensions to prevent weak low-tail records from being hidden by averages.</p>
-        </li>
-        <li>
-        <p>Enforced fail-closed credential handling with ATA-prefixed recording keys and request-local provider secrets that are never persisted to Redis, PostgreSQL, logs, or UI state.</p>
+        <p>Enforced fail-closed credential security with ATA-prefixed recording keys and request-local provider secrets.</p>
         </li>
         </ul>
         <h2><strong>APIT — Agent Programmatic Integration Testing</strong></h2>
@@ -142,8 +136,9 @@
         <h1>Skills</h1>
         <p><strong>Applied AI &amp; Agent Evaluation:</strong> RAG, Hybrid RAG, LangGraph, LangChain, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, eval datasets, judge/critic/meta-judge patterns</p>
         <p><strong>Backend &amp; Systems:</strong> Python, Django/DRF, FastAPI, PostgreSQL, Redis/Celery, Docker, REST APIs, async workers, service layers, domain modeling</p>
-        <p><strong>Agent Evaluation &amp; AI Quality:</strong> Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis, Core Banking, Payment Hub</p>
+        <p><strong>Agent Evaluation &amp; AI Quality:</strong> Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis</p>
         <p><strong>Frontend Prototyping:</strong> React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development</p>
+        <p><strong>Domain Knowledge:</strong> Core Banking, Payment Hub, E-Commerce, QA Automation</p>
         <h1>Education</h1>
         <h2><strong>FPT School of Business &amp; Technology</strong>, Master of Software Engineering in AI</h2>
         <p>Ho Chi Minh City, Vietnam</p>

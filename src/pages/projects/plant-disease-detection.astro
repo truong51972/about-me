@@ -8,34 +8,34 @@ const repoUrl = item.repoUrl!;
 ---
 
 <BaseLayout title="Leaf-Based Plant Disease Detection" description="Leaf-Based Plant Disease Detection case study by Tran Quoc Truong.">
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="case-hero-meta">
-        <div class="case-index">{item.label}</div>
-        {item.period && <div class="case-period">{item.period}</div>}
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden"><div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted border border-white/10">{item.label}</span>
+        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
-      <h1>{item.title}: {item.subtitle}</h1>
-      <p class="page-summary">{item.summary}</p>
-      <div class="hero-actions">
-        <a class="btn primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
-        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container content-grid">
-      <article class="article">
-        <section class="block">
-          <div class="eyebrow">Overview</div>
-          <h2>A computer-vision pipeline for leaf-image analysis.</h2>
-          <p>This project implements a plant-disease analysis prototype around leaf images. The service accepts image payloads, checks whether the input is a leaf, runs disease classification for supported plant models, and returns prediction metadata with an explanation image.</p>
-          <p>The current service configuration includes disease models for tomato and potato, plus a separate leaf-versus-non-leaf classifier.</p>
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <article class="lg:col-span-2 space-y-16">
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">A computer-vision pipeline for leaf-image analysis.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">This project implements a plant-disease analysis prototype around leaf images. The service accepts image payloads, checks whether the input is a leaf, runs disease classification for supported plant models, and returns prediction metadata with an explanation image.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The current service configuration includes disease models for tomato and potato, plus a separate leaf-versus-non-leaf classifier.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">System flow</div>
-          <h2>Preprocessing, inference, explanation, and persisted analysis.</h2>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">System flow</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Preprocessing, inference, explanation, and persisted analysis.</h3>
           <div class="diagram compact-diagram">
             <div class="diagram-step"><b>Image input</b><span>FastAPI receives a base64 image with garden and plant metadata.</span></div>
             <div class="diagram-step"><b>Leaf check</b><span>A classifier filters non-leaf inputs before disease inference.</span></div>
@@ -44,41 +44,41 @@ const repoUrl = item.repoUrl!;
           </div>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Technical contribution</div>
-          <h2>Training and serving are both represented in the repository.</h2>
-          <ul class="clean">
-            {item.highlights.map((h) => <li>{h}</li>)}
-            <li>Used cross-entropy loss, SGD optimization, StepLR scheduling, and multiclass accuracy evaluation in the training pipeline.</li>
-            <li>Exposed analysis, garden, user, history, and statistics workflows through FastAPI and SQLite-backed data access.</li>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Technical contribution</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Training and serving are both represented in the repository.</h3>
+          <ul class="space-y-4 text-text-muted mb-6">
+            {item.highlights.map((h) => <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">{h}</li>)}
+            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Used cross-entropy loss, SGD optimization, StepLR scheduling, and multiclass accuracy evaluation in the training pipeline.</li>
+            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Exposed analysis, garden, user, history, and statistics workflows through FastAPI and SQLite-backed data access.</li>
           </ul>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Limitations</div>
-          <h2>Results are framed without unsupported performance claims.</h2>
-          <p>The repository supports model training, inference, explainability, and API integration, but it does not provide enough public evidence for a specific accuracy, dataset size, production deployment, mobile deployment, or real agricultural usage claim.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Limitations</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Results are framed without unsupported performance claims.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">The repository supports model training, inference, explainability, and API integration, but it does not provide enough public evidence for a specific accuracy, dataset size, production deployment, mobile deployment, or real agricultural usage claim.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Stack</div>
-          <div class="tag-row">
-            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
           </div>
         </section>
       </article>
 
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Role</h3>
-          <p>{item.role}</p>
+      <aside class="space-y-8">
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
         </div>
-        <div class="side-card">
-          <h3>Outcome</h3>
-          <p>{item.outcome}</p>
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
         </div>
-        <div class="side-card">
-          <h3>Repository</h3>
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Repository</h3>
           <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/Leaf-Based_Plant_Disease_Detection</a></p>
         </div>
       </aside>

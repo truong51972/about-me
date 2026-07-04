@@ -30,37 +30,55 @@ const groups: Array<{ id: ProjectGroup; title: string; summary: string }> = [
 ---
 
 <BaseLayout title="Projects" description="Applied AI, backend, evaluation, and computer-vision projects by Tran Quoc Truong.">
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="eyebrow">Projects</div>
-      <h1>Applied AI systems, evaluation work, and earlier machine-learning research.</h1>
-      <p class="page-summary">Omni-Agent is the flagship backend system, and ATA is a completed AI-native validation and audit layer for agentic systems. APIT shows structured LLM evaluation, while supporting delivery work keeps the quality-engineering background visible without making automation the headline.</p>
+  <!-- PAGE HERO -->
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-brand-500/5 blur-[100px] pointer-events-none"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+      <div class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted mb-6 border border-white/10">Projects</div>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">Applied AI systems, evaluation work, and earlier machine-learning research.</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed">Omni-Agent is the flagship backend system, and ATA is a completed AI-native validation and audit layer for agentic systems. APIT shows structured LLM evaluation, while supporting delivery work keeps the quality-engineering background visible without making automation the headline.</p>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container project-groups">
+  <!-- PROJECTS LIST -->
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl space-y-32">
       {groups.map((group) => {
         const groupCases = cases.filter((item) => item.group === group.id);
+        if (groupCases.length === 0) return null;
         return (
-          <section class={`project-group ${group.id}`}>
-            <div class="project-group-head">
-              <h2>{group.title}</h2>
-              <p>{group.summary}</p>
+          <section>
+            <div class="mb-12 border-b border-white/10 pb-6">
+              <h2 class="text-3xl font-bold text-white mb-3">{group.title}</h2>
+              <p class="text-text-muted text-lg">{group.summary}</p>
             </div>
-            <div class={`project-tier-grid count-${groupCases.length}`}>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
               {groupCases.map((item) => (
-                <a class={`case-card tier-${item.visualTier}`} href={projectHref(item.slug)}>
-                  <div class="case-card-meta">
-                    <div class="case-card-label">{item.label}</div>
-                    {item.period && <div class="project-period">{item.period}</div>}
+                <a class={`group block glass-panel card-hover rounded-2xl p-8 flex flex-col h-full relative overflow-hidden ${item.visualTier === 'flagship' ? 'md:col-span-2' : ''}`} href={projectHref(item.slug)}>
+                  <div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity text-brand-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
                   </div>
-                  <h3 class="case-card-title">{item.title}</h3>
-                  <p class="case-card-sub">{item.subtitle}</p>
-                  <p class="case-card-desc">{item.summary}</p>
-                  {item.outcome && <div class="case-card-stat">{item.outcome}</div>}
-                  <div class="project-card-stack">
-                    {item.tags.slice(0, item.visualTier === "flagship" ? 8 : 6).map((tag) => <span class="tag">{tag}</span>)}
+                  <div class="flex items-center gap-3 mb-6">
+                    <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-semibold text-brand-500 border border-brand-500/20">{item.label}</span>
+                    {item.period && <span class="text-xs text-text-muted font-medium">{item.period}</span>}
+                  </div>
+                  <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-400 transition-colors">{item.title}</h3>
+                  <p class="text-sm font-medium text-brand-400/80 mb-6">{item.subtitle}</p>
+                  
+                  <div class="flex-grow space-y-4 mb-8">
+                    <p class="text-text-muted leading-relaxed">{item.summary}</p>
+                    {item.outcome && (
+                      <div class="bg-white/5 p-4 rounded-lg border-l-2 border-brand-500 text-sm text-text-muted">
+                        <strong class="text-white">Outcome:</strong> {item.outcome}
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div class="flex flex-wrap gap-2 mt-auto">
+                    {item.tags.slice(0, item.visualTier === "flagship" ? 8 : 6).map((tag) => (
+                      <span class="inline-flex items-center rounded bg-bg-surface px-2 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>
+                    ))}
                   </div>
                 </a>
               ))}

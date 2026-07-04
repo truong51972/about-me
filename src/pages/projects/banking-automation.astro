@@ -5,61 +5,61 @@ import { cases } from "../../data/profile";
 const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
 ---
 <BaseLayout title="Banking QA Automation" description="Banking QA automation case study." >
-  <section class="page-hero">
-    <div class="container page-hero-inner">
-      <div class="case-hero-meta">
-        <div class="case-index">{item.label}</div>
-        {item.period && <div class="case-period">{item.period}</div>}
+  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden"><div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted border border-white/10">{item.label}</span>
+        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
-      <h1>Historical banking validation across Core Banking and Payment Hub.</h1>
-      <p class="page-summary">{item.summary}</p>
-      <div class="hero-actions">
-        <a class="btn ghost" href={withBase("projects/")}>Back to projects</a>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">Historical banking validation across Core Banking and Payment Hub.</h1>
+      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <div class="flex flex-wrap gap-4">
+        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
 
-  <section class="section tight">
-    <div class="container content-grid">
-      <article class="article">
-        <section class="block">
-          <div class="eyebrow">Problem</div>
-          <h2>Banking QA creates strong constraints for automation.</h2>
-          <p>Unlike toy QA examples, banking workflows involve transaction correctness, regression coverage, multiple channels, auditability, API contracts, database state, and failure classification.</p>
+  <section class="py-24">
+    <div class="container mx-auto px-6 lg:px-8 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+      <article class="lg:col-span-2 space-y-16">
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Problem</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Banking QA creates strong constraints for automation.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">Unlike toy QA examples, banking workflows involve transaction correctness, regression coverage, multiple channels, auditability, API contracts, database state, and failure classification.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">What I built</div>
-          <h2>Core Banking PoC and Payment Hub integration testing.</h2>
-          <p>The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal across channels.</p>
-          <p>The Payment Hub work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. Internal delivery metrics are treated as verified but private, so this public case study emphasizes the engineering scope rather than headline numbers.</p>
-          <p>This delivery experience is the practical foundation behind <a href={withBase("projects/ata/")}>ATA</a> - applying structured evaluation, regression reporting, and quality discipline to AI agent and RAG workflows.</p>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">What I built</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Core Banking PoC and Payment Hub integration testing.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal across channels.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The Payment Hub work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. Internal delivery metrics are treated as verified but private, so this public case study emphasizes the engineering scope rather than headline numbers.</p>
+          <p class="text-text-muted leading-relaxed mb-6">This delivery experience is the practical foundation behind <a href={withBase("projects/ata/")}>ATA</a> - applying structured evaluation, regression reporting, and quality discipline to AI agent and RAG workflows.</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Key highlights</div>
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Key highlights</h2>
           <ul class="clean clean-flush">
-            {item.highlights.map((h) => <li>{h}</li>)}
+            {item.highlights.map((h) => <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">{h}</li>)}
           </ul>
-          <p class="block-note"><strong>Outcome:</strong> {item.outcome}</p>
+          <p class="block-note"><strong class="text-white">Outcome:</strong> {item.outcome}</p>
         </section>
 
-        <section class="block">
-          <div class="eyebrow">Stack</div>
-          <div class="tag-row">
-            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
           </div>
         </section>
       </article>
 
-      <aside class="sidebar">
-        <div class="side-card">
-          <h3>Evidence</h3>
-          <p>{item.outcome}</p>
+      <aside class="space-y-8">
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Evidence</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
         </div>
-        <div class="side-card">
-          <h3>Role</h3>
-          <p>{item.role}</p>
+        <div class="glass-panel p-8 rounded-2xl">
+          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
         </div>
       </aside>
     </div>

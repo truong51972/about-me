@@ -54,33 +54,29 @@ Sept 2024 – Dec 2024
 # Projects
 ## **Omni-Agent — Django/DRF AI Agent Hub for Knowledge Builder & Agent Testing**
 
-A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, workflow rules, jobs, artifacts, and APIs, while stateless workers and services execute technical AI tasks.
+A Django/DRF-based AI Agent Hub where the main backend owns product logic, domain state, and APIs, while stateless workers execute technical AI tasks.
 
-- Designed Omni-Agent as the main Django/DRF backend for project-centric AI agent products, owning domain logic, permissions, workflow state, job lifecycle, artifact metadata, and product module boundaries.
+- Architected the main Django/DRF backend, managing domain logic, job lifecycles, and artifact metadata for project-centric AI agent products.
 
-- Built Knowledge Builder as the first product module, supporting versioned document workflows, OCR/chunking pipelines, S3-compatible artifacts, presigned preview/download URLs, and traceable RAG foundations.
+- Built Knowledge Builder module, supporting versioned document workflows, OCR/chunking pipelines, and traceable RAG foundations with S3-compatible artifacts.
 
-- Modeled external workers and REST services as stateless executors for technical tasks such as OCR, document parsing, chunking, embedding, retrieval, and evaluation, with Django persisting domain results.
+- Orchestrated external workers and REST services as stateless executors for OCR, embedding, and retrieval, persisting domain results in Django.
 
-- Positioned ATA as a completed standalone validation platform that can become Omni-Agent's Agent Testing and Audit module for evaluating RAG and LLM-agent workflows.
-
-- Prototyped React/Vite console workflows for project navigation, product switching, document workspace review, version selection, preview tabs, and processing status visibility.
+- Prototyped React/Vite console workflows for project navigation, document workspace review, and processing status visibility.
 
 
 
 ## **ATA — Agent Test Agent**
 
-Independent validation and audit layer for AI agent systems that captures model-provider interactions, scores records across 10 dimensions, and produces PASS/WARN/FAIL/BLOCK workflow verdicts.
+Independent validation and audit layer for AI agent systems that scores records across 10 dimensions to produce deployment-ready quality verdicts.
 
-- Built a completed standalone MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React/Vite dashboard.
+- Built an end-to-end MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React/Vite dashboard.
 
-- Used shared SQLAlchemy ORM, domain contracts, PostgreSQL, and Redis to keep API, gateway, worker, and dashboard state consistent across services.
+- Engineered a multi-agent validator (Planner/Judge/Critic/Meta Judge) that scores 10 dimensions including context, tool-calling, security, and business outcome.
 
-- Implemented a Planner/Judge/Critic/Meta Judge validator that scores records across context, tools, reasoning, security, compliance, operations, human validation, and business outcome dimensions.
+- Designed a Workflow Quality Gate using P10/P35/P50 metrics and blocker dimensions to prevent low-tail anomalies from being hidden by averages.
 
-- Designed a distribution-based Workflow Quality Gate using P10/P35/P50, mean, deviation, and blocker dimensions to prevent weak low-tail records from being hidden by averages.
-
-- Enforced fail-closed credential handling with ATA-prefixed recording keys and request-local provider secrets that are never persisted to Redis, PostgreSQL, logs, or UI state.
+- Enforced fail-closed credential security with ATA-prefixed recording keys and request-local provider secrets.
 
 
 
@@ -103,9 +99,11 @@ An LLM-based system that analyzes API documentation and generates structured API
 
 **Backend & Systems:** Python, Django/DRF, FastAPI, PostgreSQL, Redis/Celery, Docker, REST APIs, async workers, service layers, domain modeling
 
-**Agent Evaluation & AI Quality:** Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis, Core Banking, Payment Hub
+**Agent Evaluation & AI Quality:** Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis
 
 **Frontend Prototyping:** React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development
+
+**Domain Knowledge:** Core Banking, Payment Hub, E-Commerce, QA Automation
 
 # Education
 ## **FPT School of Business & Technology**, Master of Software Engineering in AI
