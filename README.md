@@ -34,10 +34,16 @@ This runs RenderCV to generate CV files into `public/cv/`, then builds the Astro
 `Tran_Quoc_Truong_CV.yaml` is the source of truth. Render generated outputs into `public/cv/`:
 
 ```bash
+uv run poe update-cv
+```
+
+The Poe task runs:
+
+```bash
 uv run rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv
 ```
 
-Or use the npm script:
+You can also use the npm script:
 
 ```bash
 npm run render:cv
