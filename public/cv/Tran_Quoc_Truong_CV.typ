@@ -88,7 +88,7 @@
 
 = Tran Quoc Truong
 
-  #headline([Applied AI Backend Engineer | Agent Evaluation & RAG Systems])
+  #headline([Applied AI Engineer | QA Automation & AI Evaluation])
 
 #connections(
   [#connection-with-icon("location-dot")[Ho Chi Minh City, Vietnam]],
@@ -101,23 +101,23 @@
 
 == Summary
 
-Applied AI Backend Engineer focused on building AI agent workflows, RAG systems, and agent evaluation platforms using Python, Django\/DRF, FastAPI, async workers, and vector databases.
+Applied AI Engineer with a QA automation and Python backend background, building RAG, document-intelligence, and LLM\/agent evaluation systems.
 
-Built ATA, an AI-native validation and audit platform for agentic systems, combining traceable model-provider capture, LLM evaluation, quality gates, and production-oriented backend workflows.
+Delivered AI-assisted QA workflows that increased test coverage by approximately 40\% and reduced manual analysis effort by up to 70\%, with an emphasis on traceable, testable, and reliable AI systems.
 
 == Experience
 
 #regular-entry(
   [
-    #strong[FPT Software], Automation Tester & Applied AI Engineer
+    #strong[FPT Software], Automation Tester
 
-    - Built applied AI workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.
+    - Built AI-assisted QA workflows for document analysis, test-case generation, duplicate-defect detection, and change-impact analysis, increasing test coverage by approximately 40\% and reducing manual analysis effort by up to 70\% across banking projects.
 
-    - Designed Python backend orchestration with Django\/DRF, FastAPI, Redis\/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.
+    - Designed Django\/DRF and FastAPI services with PostgreSQL, Redis\/Celery, and asynchronous workers, separating domain state from long-running AI processing.
 
-    - Developed LLM evaluation, RAG validation, and agent-quality patterns using judge\/critic\/meta-judge workflows, evidence capture, and regression-oriented reporting.
+    - Developed LLM evaluation and RAG validation pipelines with evidence capture, quality gates, and regression reporting to identify inconsistent or low-confidence outputs.
 
-    - Applied banking QA domain experience to AI quality systems, preserving auditability, transaction integrity, and blocker-based validation in backend workflows.
+    - Built and presented technical demonstrations that contributed to approximately 20 person-months of follow-on delivery work.
 
   ],
   [
@@ -136,11 +136,9 @@ Built ATA, an AI-native validation and audit platform for agentic systems, combi
   [
     #strong[FPT Software Academy], Full-Stack Developer Intern
 
-    - Built Django-based web applications and deployed containerized services with Docker.
+    - Built Django-based web applications and containerized services with Docker.
 
-    - Improved deployment reliability through production-oriented configuration and Cloudflare integration.
-
-    - Reduced deployment cycle time by approximately 50\% through cleaner containerized delivery workflows.
+    - Standardized deployment configuration and Cloudflare integration, reducing deployment cycle time by approximately 50\%.
 
   ],
   [
@@ -155,21 +153,19 @@ Built ATA, an AI-native validation and audit platform for agentic systems, combi
   ],
 )
 
-== Projects
+== Selected Projects
 
 #regular-entry(
   [
-    #strong[Omni-Agent — Django\/DRF AI Agent Hub for Knowledge Builder & Agent Testing]
+    #strong[Omni-Agent — AI Agent Hub]
 
-    #summary[A Django\/DRF-based AI Agent Hub where the main backend owns product logic, domain state, and APIs, while stateless workers execute technical AI tasks.]
+    #summary[Independent AI platform for versioned document knowledge workflows and agent evaluation, coordinated through a Django\/DRF control plane.]
 
-    - Architected the main Django\/DRF backend, managing domain logic, job lifecycles, and artifact metadata for project-centric AI agent products.
+    - Designed a project-centric Django\/DRF control plane for permissions, document state, job lifecycles, workflow rules, APIs, and artifact lineage.
 
-    - Built Knowledge Builder module, supporting versioned document workflows, OCR\/chunking pipelines, and traceable RAG foundations with S3-compatible artifacts.
+    - Implemented versioned document ingestion, OCR, chunking, and traceable RAG workflows using PostgreSQL and S3-compatible object storage.
 
-    - Orchestrated external workers and REST services as stateless executors for OCR, embedding, and retrieval, persisting domain results in Django.
-
-    - Prototyped React\/Vite console workflows for project navigation, document workspace review, and processing status visibility.
+    - Integrated stateless processing workers while keeping domain state and lifecycle decisions within the main backend.
 
   ],
   [
@@ -178,17 +174,17 @@ Built ATA, an AI-native validation and audit platform for agentic systems, combi
 
 #regular-entry(
   [
-    #strong[ATA — Agent Test Agent]
+    #strong[Core Banking & Payment Hub QA Automation]
 
-    #summary[Independent validation and audit layer for AI agent systems that scores records across 10 dimensions to produce deployment-ready quality verdicts.]
+    #summary[Client delivery work at FPT Software covering omnichannel core banking and financial transaction integrations across API, database, regression, and automation testing.]
 
-    - Built an end-to-end MVP with a FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and React\/Vite dashboard.
+    - Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.
 
-    - Engineered a multi-agent validator (Planner\/Judge\/Critic\/Meta Judge) that scores 10 dimensions including context, tool-calling, security, and business outcome.
+    - Validated end-to-end financial transaction flows through API testing, SQL-based database verification, regression testing, and stress testing.
 
-    - Designed a Workflow Quality Gate using P10\/P35\/P50 metrics and blocker dimensions to prevent low-tail anomalies from being hidden by averages.
+    - Authored more than 1,500 lines of reusable SQL validation queries and maintained coverage across all in-scope API endpoints.
 
-    - Enforced fail-closed credential security with ATA-prefixed recording keys and request-local provider secrets.
+    - Reduced manual QA effort by approximately 70\% through reusable automation and transaction-validation workflows.
 
   ],
   [
@@ -197,34 +193,49 @@ Built ATA, an AI-native validation and audit platform for agentic systems, combi
 
 #regular-entry(
   [
-    #strong[APIT — Agent Programmatic Integration Testing]
+    #strong[ATA — AI Agent Evaluation Platform]
 
-    #summary[An LLM-based system that analyzes API documentation and generates structured API test cases.]
+    #summary[Hackathon MVP for independently validating captured AI-agent runs and producing auditable quality verdicts; its evaluation design later informed Omni-Agent's Agent Testing module.]
 
-    - Built the core AI agent for API document understanding, structured test-case generation, and automated output evaluation.
+    - Built an end-to-end evaluation platform with a FastAPI control plane, LiteLLM capture gateway, Celery workers, and React\/Vite dashboard.
 
-    - Evaluated LoRA and QLoRA approaches for domain-specific structured test document generation.
+    - Designed a multi-stage evaluator using Planner, Judge, Critic, and Meta-Judge roles to assess context use, tool calling, security, and business outcomes.
 
-    - Fine-tuned Qwen-2.5-3B, achieving macro-F1 0.655 and outperforming Llama-3.2-3B by 41.5\% in the evaluation setup.
-
-    - Implemented FastAPI-based model evaluation workflows and LLM-as-a-Judge experiments for generated output comparison.
+    - Implemented percentile-based quality gates using P10\/P35\/P50 metrics and blocker dimensions to expose low-tail failures, together with fail-closed isolation of provider credentials.
 
   ],
   [
   ],
 )
 
-== Skills
+#regular-entry(
+  [
+    #strong[APIT — LLM-Based API Test Generation]
 
-#strong[Applied AI & Agent Evaluation:] RAG, Hybrid RAG, LangGraph, LangChain, LiteLLM, Langfuse, LLM Evaluation, LLM-as-a-Judge, eval datasets, judge\/critic\/meta-judge patterns
+    #summary[Graduation project that analyzes API documentation and generates structured API test cases with LLMs.]
 
-#strong[Backend & Systems:] Python, Django\/DRF, FastAPI, PostgreSQL, Redis\/Celery, Docker, REST APIs, async workers, service layers, domain modeling
+    - Built an AI workflow for API-document understanding, structured test-case generation, and automated output evaluation.
 
-#strong[Agent Evaluation & AI Quality:] Agent testing, AI quality gates, evidence capture, API validation, SQL validation, regression analysis
+    - Evaluated LoRA and QLoRA approaches and fine-tuned Qwen2.5-3B, achieving macro-F1 0.655, a 41.5\% relative improvement over a Llama-3.2-3B baseline in the same evaluation setup.
 
-#strong[Frontend Prototyping:] React, Vite, Tailwind CSS, internal dashboard UI, AI-assisted development
+    - Implemented FastAPI-based evaluation workflows and LLM-as-a-Judge experiments for comparing generated outputs.
 
-#strong[Domain Knowledge:] Core Banking, Payment Hub, E-Commerce, QA Automation
+  ],
+  [
+  ],
+)
+
+== Technical Skills
+
+#strong[Applied AI & Evaluation:] RAG, Hybrid Retrieval, Agentic Workflows, LLM Evaluation, LLM-as-a-Judge, Evaluation Datasets, Judge\/Critic\/Meta-Judge Patterns, LoRA\/QLoRA
+
+#strong[AI Tooling & Observability:] LangGraph, LangChain, LiteLLM, Langfuse, Qdrant, Docling, OCR and Document Processing
+
+#strong[Backend & API Engineering:] Python, Django\/DRF, FastAPI, REST APIs, OpenAPI, Asynchronous Workers, Service Layers, Domain Modeling, Job Lifecycle Management
+
+#strong[Data, Storage & Infrastructure:] PostgreSQL, Redis, Celery, S3\/MinIO, Docker, Docker Compose, Nginx, Cloudflare, Presigned URLs
+
+#strong[Quality Engineering & Domain:] API Validation, SQL Validation, Regression Testing, Test Automation, CI\/CD, Git, Core Banking, Payment Hub, E-Commerce
 
 == Education
 
