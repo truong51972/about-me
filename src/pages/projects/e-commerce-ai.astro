@@ -8,24 +8,24 @@ const repoUrl = item.repoUrl!;
 ---
 
 <BaseLayout title="E-Commerce AI Assistant" description="E-Commerce AI Assistant case study by Tran Quoc Truong.">
-  <section class="pt-32 pb-16 md:pt-40 md:pb-24 border-b border-white/5 relative overflow-hidden"><div class="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-500/10 rounded-full blur-[100px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
-    <div class="container mx-auto px-6 lg:px-8 max-w-5xl relative z-10">
+  <section class="border-b border-white/10 pb-16 pt-28 md:pb-24 md:pt-36">
+    <div class="site-shell">
       <div class="flex items-center gap-3 mb-6">
-        <span class="inline-block rounded-full bg-white/5 px-3 py-1 text-sm font-medium text-text-muted border border-white/10">{item.label}</span>
+        <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
         {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
       <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
       <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
       <div class="flex flex-wrap gap-4">
-        <a class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
-        <a class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors" href={withBase("projects/")}>Back to projects</a>
+        <a class="btn-primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
+        <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
       </div>
     </div>
   </section>
 
   <section class="py-24">
-    <div class="container mx-auto px-6 lg:px-8 max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
-      <article class="lg:col-span-2 space-y-16">
+    <div class="case-study-shell">
+      <article class="case-article">
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
           <h3 class="text-2xl font-bold text-white mb-6">Conversational product discovery backed by vector retrieval.</h3>
@@ -68,16 +68,16 @@ const repoUrl = item.repoUrl!;
         </section>
       </article>
 
-      <aside class="space-y-8">
-        <div class="glass-panel p-8 rounded-2xl">
+      <aside class="case-aside">
+        <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Role</h3>
           <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
         </div>
-        <div class="glass-panel p-8 rounded-2xl">
+        <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
           <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
         </div>
-        <div class="glass-panel p-8 rounded-2xl">
+        <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Repository</h3>
           <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/E_commerce_AI</a></p>
         </div>

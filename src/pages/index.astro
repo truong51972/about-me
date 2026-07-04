@@ -6,83 +6,90 @@ import { site, cases, education, skillGroups, supportingTools, timeline } from "
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const featured = cases.filter((item) => item.homepageFeatured);
 const projectHref = (slug: string) => withBase(`projects/${slug}/`);
+const projectImages: Record<string, string> = {
+  "omni-agent": "images/project-omni-panel.png",
+  ata: "images/project-ata-panel.png",
+  apit: "images/project-apit-panel.png"
+};
 ---
 
 <BaseLayout>
-  <!-- HERO SECTION -->
-  <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden" id="top">
-    <!-- Glow effect behind hero -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-500/20 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
-    
-    <div class="container mx-auto px-6 lg:px-8 relative z-10 max-w-5xl">
-      <div class="flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
-        <div class="flex-1 text-center md:text-left space-y-8">
-          <div class="inline-block rounded-full bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-500 border border-brand-500/20 mb-4">
-            Available for new opportunities
-          </div>
-          <h1 class="whitespace-nowrap text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
-            {site.name}
-          </h1>
-          <p class="text-xl md:text-2xl font-medium text-brand-500 text-glow">
-            {site.role}
-          </p>
-          <p class="text-lg text-text-muted max-w-2xl leading-relaxed">
-            {site.summary}
-          </p>
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-            <a href={pdfPath} target="_blank" rel="noreferrer" class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-brand-500/50 hover:bg-brand-500 transition-colors">
-              Download CV
-            </a>
-            <a href={withBase("projects/")} class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-              View projects
-            </a>
-            <a href={`mailto:${site.email}`} class="inline-flex justify-center items-center rounded-lg glass-panel px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-colors">
-              Contact Me
-            </a>
+  <section class="relative overflow-hidden pb-20 pt-28 md:pb-28 md:pt-36" id="top">
+    <div class="site-shell relative z-10">
+      <div class="grid gap-8 lg:grid-cols-12 lg:items-center">
+        <div class="lg:col-span-5 lg:order-1">
+          <div class="media-panel relative aspect-[4/5] max-h-[640px] bg-bg-surface">
+            <img
+              src={withBase("images/portrait-photo.png")}
+              alt="Portrait of Tran Quoc Truong"
+              class="object-cover object-[50%_52%]"
+              loading="eager"
+            />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-bg-base/88 to-transparent p-5">
+              <p class="text-sm font-medium text-white">{site.location}</p>
+            </div>
           </div>
         </div>
-        
-        <div class="relative w-48 h-48 md:w-72 md:h-72 flex-shrink-0">
-          <div class="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-500 to-purple-600 animate-spin-slow opacity-50 blur-xl"></div>
-          <img
-            src={withBase("images/portrait-photo.png")}
-            alt="Portrait of Tran Quoc Truong"
-            class="relative z-10 w-full h-full object-cover rounded-full border-2 border-white/10 shadow-2xl bg-bg-surface"
-            loading="eager"
-          />
+
+        <div class="lg:col-span-7 lg:order-2">
+          <div class="eyebrow mb-7">Available for new opportunities</div>
+          <h1 class="max-w-5xl text-5xl font-semibold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            {site.name}
+          </h1>
+          <p class="mt-7 max-w-4xl text-2xl font-medium leading-tight text-brand-300 md:text-3xl">
+            {site.role}
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a class="tag px-3 py-1.5 text-sm font-semibold text-white hover:border-brand-400/35 hover:bg-white/[0.08]" href={site.github} target="_blank" rel="noreferrer">GitHub</a>
+            <a class="tag px-3 py-1.5 text-sm font-semibold text-white hover:border-brand-400/35 hover:bg-white/[0.08]" href={site.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="tag px-3 py-1.5 text-sm font-semibold text-white hover:border-brand-400/35 hover:bg-white/[0.08]" href={`mailto:${site.email}`}>Email</a>
+          </div>
+          <p class="measure mt-7 text-lg leading-8 text-text-muted md:text-xl md:leading-9">
+            {site.summary}
+          </p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href={pdfPath} target="_blank" rel="noreferrer" class="btn-primary">Download CV</a>
+            <a href={withBase("projects/")} class="btn-secondary">View projects</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURED PROJECTS -->
-  <section class="py-24 bg-bg-surface/50 border-y border-white/5" id="projects">
-    <div class="container mx-auto px-6 lg:px-8 max-w-5xl">
-      <div class="mb-16">
-        <h2 class="text-brand-500 font-semibold tracking-wider uppercase text-sm mb-3">Featured Projects</h2>
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <h3 class="text-3xl md:text-4xl font-bold text-white max-w-2xl">Applied AI, backend systems, and quality engineering.</h3>
-          <a class="text-brand-500 hover:text-brand-400 font-medium transition-colors" href={withBase("projects/")}>View all projects &rarr;</a>
+  <section class="border-y border-white/10 bg-bg-surface/35 py-20 md:py-24" id="projects">
+    <div class="site-shell">
+      <div class="mb-10 grid gap-6 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-5">
+          <h2 class="section-label mb-4">Featured projects</h2>
+          <p class="max-w-3xl text-3xl font-semibold leading-tight text-white md:text-5xl">
+            Systems that prove the direction.
+          </p>
+        </div>
+        <div class="lg:col-span-7 lg:text-right">
+          <a class="font-semibold text-brand-300 hover:text-white" href={withBase("projects/")}>View all projects</a>
         </div>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <div class="grid grid-cols-1 gap-5 lg:grid-cols-12">
         {featured.map((item) => (
-          <a href={projectHref(item.slug)} class="group block h-full">
-            <article class="glass-panel card-hover h-full flex flex-col p-8 rounded-2xl relative overflow-hidden">
-              <div class="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-100 transition-opacity text-brand-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          <a
+            href={projectHref(item.slug)}
+            class={`group block ${item.visualTier === "flagship" ? "lg:col-span-7 lg:row-span-2" : "lg:col-span-5"}`}
+          >
+            <article class="project-card">
+              <div class="project-art mb-6">
+                <img src={withBase(projectImages[item.slug])} alt={`${item.title} abstract technical panel`} loading="lazy" />
               </div>
-              <div class="flex items-center gap-3 mb-6">
-                <span class="inline-flex items-center rounded-full bg-brand-500/10 px-2.5 py-0.5 text-xs font-semibold text-brand-500 border border-brand-500/20">{item.label}</span>
-                {item.period && <span class="text-xs text-text-muted font-medium">{item.period}</span>}
+              <div class="mb-5 flex flex-wrap items-center gap-2">
+                <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
+                {item.period && <span class="tag">{item.period}</span>}
               </div>
-              <h3 class="text-2xl font-bold text-white mb-2 group-hover:text-brand-400 transition-colors">{item.title}</h3>
-              <p class="text-sm text-text-muted/80 mb-6 font-medium">{item.subtitle}</p>
-              <p class="text-text-muted flex-grow mb-8 line-clamp-3">{item.summary}</p>
-              <div class="flex flex-wrap gap-2 mt-auto">
-                {item.tags.slice(0, 5).map((tag) => (
-                  <span class="inline-flex items-center rounded bg-white/5 px-2 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>
+              <h3>{item.title}</h3>
+              <p class="mt-3 text-sm font-medium text-brand-300/85">{item.subtitle}</p>
+              <p class={`mt-5 ${item.visualTier === "flagship" ? "text-base" : "text-sm"}`}>{item.summary}</p>
+              <div class="mt-7 flex flex-wrap gap-2">
+                {item.tags.slice(0, item.visualTier === "flagship" ? 8 : 5).map((tag) => (
+                  <span class="tag">{tag}</span>
                 ))}
               </div>
             </article>
@@ -92,107 +99,114 @@ const projectHref = (slug: string) => withBase(`projects/${slug}/`);
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="py-24" id="experience">
-    <div class="container mx-auto px-6 lg:px-8 max-w-5xl">
-      <h2 class="text-3xl font-bold text-white mb-12 flex items-center gap-4">
-        <span class="w-8 h-[2px] bg-brand-500"></span> Experience
-      </h2>
-      <div class="space-y-12 pl-4 border-l border-white/10 relative">
-        {timeline.map((item) => (
-          <div class="relative">
-            <!-- Timeline dot -->
-            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-brand-500 ring-4 ring-bg-base"></div>
-            
-            <div class="flex flex-col md:flex-row md:items-baseline md:justify-between mb-4 gap-2">
-              <h3 class="text-xl font-bold text-white">
-                {item.org.split(" · ")[0]} <span class="text-text-muted font-normal mx-2">|</span> <span class="text-brand-400">{item.title}</span>
-              </h3>
-              <span class="text-sm font-medium text-text-muted/80 shrink-0">{item.period}</span>
-            </div>
-            <ul class="space-y-3 text-text-muted">
-              {item.bullets.map((bullet) => (
-                <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-white/20">
-                  {bullet}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+  <section class="py-20 md:py-28" id="experience">
+    <div class="site-shell grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="section-label mb-4">Experience</h2>
+        <p class="measure-tight text-3xl font-semibold leading-tight text-white md:text-4xl">
+          QA discipline, applied to AI systems.
+        </p>
+        <p class="mt-5 text-base leading-7 text-text-muted">
+          Banking validation experience now informs agent evaluation, backend orchestration, and evidence-first workflows.
+        </p>
       </div>
-    </div>
-  </section>
-
-  <!-- EDUCATION & SKILLS -->
-  <section class="py-24 bg-bg-surface/30 border-t border-white/5" id="education-skills">
-    <div class="container mx-auto px-6 lg:px-8 max-w-5xl">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <!-- Education -->
-        <div>
-          <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-4">
-            <span class="w-8 h-[2px] bg-brand-500"></span> Education
-          </h2>
-          <div class="space-y-8">
-            {education.map((item) => (
-              <article class="glass-panel p-6 rounded-xl relative">
-                <div class="flex flex-col mb-3">
-                  <h3 class="text-lg font-bold text-white leading-tight mb-1">{item.degree}</h3>
-                  <p class="text-brand-400 font-medium text-sm">{item.org}</p>
+      <div class="lg:col-span-8">
+        <div class="space-y-5">
+          {timeline.map((item) => (
+            <article class="bento-card">
+              <div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_12rem]">
+                <div>
+                  <p class="text-sm font-medium text-brand-300">{item.org}</p>
+                  <h3 class="mt-2">{item.title}</h3>
                 </div>
-                <div class="mb-4">
-                  <span class="inline-flex items-center rounded-full bg-white/5 px-2.5 py-0.5 text-xs font-medium text-text-muted">{item.period}</span>
-                </div>
-                <p class="text-sm text-text-muted">{item.note}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <!-- Skills -->
-        <div>
-          <h2 class="text-3xl font-bold text-white mb-10 flex items-center gap-4">
-            <span class="w-8 h-[2px] bg-brand-500"></span> Technical Skills
-          </h2>
-          <div class="space-y-8">
-            {skillGroups.map((group) => (
-              <div>
-                <h3 class="text-base font-semibold text-white mb-3 tracking-wide">{group.title}</h3>
-                <div class="flex flex-wrap gap-2">
-                  {group.items.map((item) => (
-                    <span class="inline-flex items-center rounded-md bg-white/5 px-3 py-1.5 text-sm font-medium text-text-muted/90 border border-white/5 hover:border-brand-500/30 hover:text-white transition-colors cursor-default">
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <div class="font-mono text-sm text-text-muted md:text-right">{item.period}</div>
               </div>
-            ))}
-            <div class="pt-4 border-t border-white/10">
-              <p class="text-sm text-text-muted"><span class="font-semibold text-white">Supporting tools:</span> {supportingTools.join(", ")}.</p>
-            </div>
-          </div>
+              <ul class="mt-6 grid gap-3 text-sm leading-7 text-text-muted md:grid-cols-3">
+                {item.bullets.map((bullet) => (
+                  <li class="border-t border-white/10 pt-3">{bullet}</li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-32 relative overflow-hidden">
-    <div class="absolute inset-0 bg-brand-600/5"></div>
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gradient-to-t from-bg-base to-transparent"></div>
-    <div class="container mx-auto px-6 lg:px-8 max-w-3xl relative z-10 text-center">
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-8">Ready to collaborate?</h2>
-      <p class="text-xl text-text-muted mb-10 max-w-2xl mx-auto">Whether you're interested in Applied AI backend, evaluation pipelines, or just want to chat about agentic workflows.</p>
-      <div class="flex flex-wrap items-center justify-center gap-4">
-        <a href={`mailto:${site.email}`} class="inline-flex justify-center items-center rounded-lg bg-brand-600 px-8 py-4 text-base font-semibold text-white shadow-lg shadow-brand-500/25 hover:bg-brand-500 transition-colors">
-          Get in touch
-        </a>
-        <div class="flex gap-4 ml-2">
-          <a href={site.github} target="_blank" rel="noreferrer" class="p-4 rounded-lg glass-panel text-white hover:text-brand-400 hover:bg-white/10 transition-colors" aria-label="GitHub">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-          </a>
-          <a href={site.linkedin} target="_blank" rel="noreferrer" class="p-4 rounded-lg glass-panel text-white hover:text-brand-400 hover:bg-white/10 transition-colors" aria-label="LinkedIn">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"/></svg>
-          </a>
+  <section class="border-y border-white/10 bg-bg-surface/25 py-20 md:py-28">
+    <div class="site-shell grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="section-label mb-4">Education</h2>
+        <p class="measure-tight text-3xl font-semibold leading-tight text-white md:text-4xl">
+          Formal AI and software engineering training.
+        </p>
+        <p class="mt-5 text-base leading-7 text-text-muted">
+          Academic foundation for applied AI, computer vision, model evaluation, and production-oriented software systems.
+        </p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="space-y-5">
+          {education.map((item) => (
+            <article class="bento-card">
+              <div class="grid gap-4 md:grid-cols-[minmax(0,1fr)_12rem]">
+                <div>
+                  <p class="text-sm font-medium text-brand-300">{item.org}</p>
+                  <h3 class="mt-2">{item.degree}</h3>
+                </div>
+                <div class="font-mono text-sm text-text-muted md:text-right">{item.period}</div>
+              </div>
+              <p class="mt-6 border-t border-white/10 pt-4 text-sm leading-7 text-text-muted">{item.note}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28" id="education-skills">
+    <div class="site-shell grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-4">
+        <h2 class="section-label mb-4">Technical skills</h2>
+        <p class="measure-tight text-3xl font-semibold leading-tight text-white md:text-4xl">
+          Stack for AI backend work.
+        </p>
+        <p class="mt-5 text-base leading-7 text-text-muted">
+          Python services, retrieval systems, agent evaluation, and quality workflows for applied AI products.
+        </p>
+        <p class="mt-6 border-t border-white/10 pt-5 text-sm leading-7 text-text-muted">
+          <span class="font-semibold text-white">Supporting tools:</span> {supportingTools.join(", ")}.
+        </p>
+      </div>
+      <div class="lg:col-span-8">
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {skillGroups.map((group) => (
+            <article class="bento-card">
+              <h3>{group.title}</h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span class="tag">{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 md:py-28">
+    <div class="site-shell">
+      <div class="surface-panel grid gap-8 rounded-2xl p-7 md:p-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+        <div>
+          <h2 class="text-3xl font-semibold leading-tight text-white md:text-5xl">Build, evaluate, and ship AI workflows with evidence.</h2>
+          <p class="measure mt-5 text-lg leading-8 text-text-muted">
+            Available for applied AI backend, RAG, agent evaluation, and Python service work.
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-3 lg:justify-end">
+          <a href={`mailto:${site.email}`} class="btn-primary">Get in touch</a>
+          <a href={site.github} target="_blank" rel="noreferrer" class="btn-secondary">GitHub</a>
+          <a href={site.linkedin} target="_blank" rel="noreferrer" class="btn-secondary">LinkedIn</a>
         </div>
       </div>
     </div>

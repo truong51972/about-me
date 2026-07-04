@@ -2,24 +2,24 @@
 import { withBase } from "../lib/paths";
 import { site } from "../data/profile";
 ---
-<header class="fixed top-0 left-0 w-full z-50 glass-panel border-x-0 border-t-0 shadow-lg shadow-black/20">
-  <div class="container mx-auto px-6 lg:px-8 max-w-7xl h-16 flex items-center justify-between">
-    <a class="flex items-center gap-3 text-white hover:text-brand-400 transition-colors" href={withBase()} aria-label="Home">
-      <span class="flex items-center justify-center w-8 h-8 rounded-md bg-brand-500 text-white font-bold text-sm">
+<header class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-bg-base/82 backdrop-blur-xl">
+  <div class="site-shell flex h-16 items-center justify-between gap-5">
+    <a class="flex min-w-0 items-center gap-3 text-white hover:text-brand-300" href={withBase()} aria-label="Home">
+      <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-brand-300/25 bg-brand-500/15 text-sm font-bold text-brand-300">
         {site.shortName || "TQT"}
       </span>
-      <span class="font-semibold hidden sm:block">
+      <span class="hidden truncate text-sm font-semibold sm:block">
         {site.name}
       </span>
     </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-text-muted" aria-label="Main navigation">
-      <a class="hover:text-white transition-colors" href={withBase("#top")}>Overview</a>
-      <a class="hover:text-white transition-colors" href={withBase("#projects")}>Projects</a>
-      <a class="hover:text-white transition-colors" href={withBase("#experience")}>Experience</a>
-      <a class="hover:text-white transition-colors" href={withBase("#education-skills")}>Skills</a>
+    <nav class="hidden items-center gap-7 whitespace-nowrap text-sm font-medium text-text-muted md:flex" aria-label="Main navigation">
+      <a class="hover:text-white" href={withBase("#top")}>Overview</a>
+      <a class="hover:text-white" href={withBase("#projects")}>Projects</a>
+      <a class="hover:text-white" href={withBase("#experience")}>Experience</a>
+      <a class="hover:text-white" href={withBase("#education-skills")}>Skills</a>
     </nav>
-    <div class="flex items-center gap-4">
-      <a class="text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors" href={`mailto:${site.email}`}>Email</a>
+    <div class="flex shrink-0 items-center gap-4">
+      <a class="rounded-lg border border-white/10 bg-white/[0.045] px-3.5 py-2 text-sm font-semibold text-white hover:border-brand-400/35 hover:bg-white/[0.08]" href={`mailto:${site.email}`}>Email</a>
     </div>
   </div>
 </header>

@@ -1,39 +1,221 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --color-brand-300: #93c5fd;
-  --color-brand-400: #60a5fa;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-bg-base: #050505;
-  --color-bg-surface: #121212;
-  --color-text-base: #ededed;
-  --color-text-muted: #a1a1aa;
-  --animate-spin-slow: spin 12s linear infinite;
+  --font-sans: "Geist", "Aptos", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "SFMono-Regular", Consolas, ui-monospace, monospace;
+  --color-brand-300: #8fd3ff;
+  --color-brand-400: #4fb7ec;
+  --color-brand-500: #2298d7;
+  --color-brand-600: #1378b4;
+  --color-bg-base: #06080a;
+  --color-bg-surface: #10151a;
+  --color-text-base: #edf4f8;
+  --color-text-muted: #9ba8b3;
 }
 
 @layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-[var(--color-bg-base)] text-[var(--color-text-base)] font-sans antialiased selection:bg-brand-500 selection:text-white;
+    background-image:
+      radial-gradient(circle at 18% 8%, rgba(34, 152, 215, 0.14), transparent 34rem),
+      radial-gradient(circle at 86% 18%, rgba(143, 211, 255, 0.07), transparent 28rem),
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: auto, auto, 42px 42px, 42px 42px;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.32;
+    background-image:
+      linear-gradient(120deg, rgba(255, 255, 255, 0.055), transparent 26%),
+      radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.04), transparent 30rem);
+    mask-image: linear-gradient(to bottom, black, transparent 74%);
+  }
+
+  a,
+  button {
+    @apply outline-none transition-colors duration-200;
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    @apply ring-2 ring-brand-300 ring-offset-2 ring-offset-bg-base;
+  }
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  code {
+    @apply rounded bg-white/[0.07] px-1.5 py-0.5 font-mono text-[0.9em] text-brand-300;
   }
 }
 
 @layer utilities {
+  .site-shell {
+    @apply mx-auto w-full max-w-[88rem] px-5 sm:px-6 lg:px-8;
+  }
+
+  .site-shell-readable {
+    @apply mx-auto w-full max-w-[76rem] px-5 sm:px-6 lg:px-8;
+  }
+
+  .measure {
+    @apply max-w-[68ch];
+  }
+
+  .measure-tight {
+    @apply max-w-[58ch];
+  }
+
   .text-glow {
-    text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+    text-shadow: 0 0 20px rgba(79, 183, 236, 0.28);
   }
+
+  .soft-divider {
+    @apply border-white/10;
+  }
+
+  .surface-panel {
+    @apply border border-white/10 bg-white/[0.045] shadow-2xl shadow-black/20;
+  }
+
   .glass-panel {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply border border-white/10 bg-white/[0.055] shadow-2xl shadow-black/20 backdrop-blur-xl;
   }
+
   .card-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-500/20 hover:border-white/20;
+    @apply transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-400/35 hover:bg-white/[0.075] hover:shadow-brand-600/10;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg bg-brand-600 px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-600/25 transition duration-200 hover:bg-brand-500 active:translate-y-px;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-lg border border-white/10 bg-white/[0.055] px-5 py-3 text-sm font-semibold text-white transition duration-200 hover:border-brand-400/35 hover:bg-white/[0.09] active:translate-y-px;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center rounded-md border border-brand-400/25 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-300;
+  }
+
+  .tag {
+    @apply inline-flex items-center rounded-md border border-white/10 bg-white/[0.055] px-2.5 py-1 text-xs font-medium text-text-muted;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-brand-300;
   }
 }
 
 @layer components {
+  .media-panel {
+    @apply overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] shadow-2xl shadow-black/25;
+  }
+
+  .media-panel img {
+    @apply h-full w-full object-cover;
+  }
+
+  .project-art {
+    @apply aspect-[16/10] overflow-hidden rounded-xl border border-white/10 bg-bg-surface;
+  }
+
+  .project-art img {
+    @apply h-full w-full object-cover opacity-90 transition duration-500 group-hover:scale-[1.035] group-hover:opacity-100;
+  }
+
+  .bento-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.045] p-6 shadow-2xl shadow-black/20 transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-400/35 hover:bg-white/[0.075] hover:shadow-brand-600/10 md:p-7;
+  }
+
+  .bento-card h3 {
+    @apply text-xl font-semibold leading-tight text-white;
+  }
+
+  .project-card {
+    @apply relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.045] p-5 shadow-2xl shadow-black/20 transition duration-300 ease-out hover:-translate-y-1 hover:border-brand-400/35 hover:bg-white/[0.075] hover:shadow-brand-600/10;
+  }
+
+  .project-card h3 {
+    @apply text-2xl font-semibold leading-tight text-white transition-colors group-hover:text-brand-300;
+  }
+
+  .project-card p {
+    @apply leading-relaxed text-text-muted;
+  }
+
+  .case-study-shell {
+    @apply mx-auto grid w-full max-w-[88rem] grid-cols-1 gap-12 px-5 py-20 sm:px-6 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16 lg:px-8 lg:py-24;
+  }
+
+  .case-article {
+    @apply min-w-0 space-y-16;
+  }
+
+  .case-article > section {
+    @apply max-w-none;
+  }
+
+  .case-article h2 {
+    @apply mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-brand-300;
+  }
+
+  .case-article h3 {
+    @apply mb-6 text-2xl font-semibold leading-tight text-white md:text-3xl;
+  }
+
+  .case-article p {
+    @apply mb-6 max-w-[88ch] leading-8 text-text-muted;
+  }
+
+  .case-article ul {
+    @apply mb-6 space-y-4 leading-7 text-text-muted;
+  }
+
+  .case-article pre {
+    @apply mb-6 max-w-full overflow-x-auto rounded-2xl border border-white/10 bg-black/30 p-5 font-mono text-sm leading-7 text-brand-300 shadow-inner shadow-black/30;
+  }
+
+  .case-aside {
+    @apply space-y-5 lg:sticky lg:top-24 lg:self-start;
+  }
+
+  .evidence-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.045] p-6 shadow-xl shadow-black/15;
+  }
+
+  .evidence-card h3 {
+    @apply mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-brand-300;
+  }
+
+  .evidence-card p {
+    @apply mb-0 leading-7 text-text-muted;
+  }
+
   .diagram {
-    @apply grid grid-cols-1 md:grid-cols-2 gap-4 my-8;
+    @apply my-8 grid grid-cols-1 gap-4 md:grid-cols-2;
   }
 
   .compact-diagram {
@@ -41,11 +223,11 @@
   }
 
   .diagram-step {
-    @apply rounded-xl border border-white/10 bg-white/5 p-5 text-sm text-text-muted backdrop-blur-md;
+    @apply rounded-xl border border-white/10 bg-white/[0.045] p-5 text-sm text-text-muted;
   }
 
   .diagram-step b {
-    @apply block text-white font-semibold mb-2;
+    @apply mb-2 block font-semibold text-white;
   }
 
   .diagram-step span {
@@ -61,11 +243,11 @@
   }
 
   .spec-list dt {
-    @apply text-text-muted mb-1;
+    @apply mb-1 text-text-muted;
   }
 
   .spec-list dd {
-    @apply text-white font-medium;
+    @apply font-medium text-white;
   }
 
   .clean {
@@ -77,15 +259,26 @@
   }
 
   .block-note {
-    @apply rounded-xl border border-white/10 border-l-2 border-l-brand-500 bg-white/5 p-4 text-sm text-text-muted backdrop-blur-md;
+    @apply rounded-xl border border-white/10 border-l-2 border-l-brand-500 bg-white/[0.045] p-4 text-sm text-text-muted;
   }
 
   .side-card-link a,
   article a {
-    @apply text-brand-400 hover:text-brand-300 transition-colors;
+    @apply text-brand-300 transition-colors hover:text-white;
   }
 
   .proof-image {
     @apply w-full rounded-2xl border border-white/10 shadow-2xl shadow-black/30;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
