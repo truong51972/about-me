@@ -13,7 +13,7 @@ Applied AI Engineer with a QA automation and Python backend background, building
 Delivered AI-assisted QA workflows that increased test coverage by approximately 40% and reduced manual analysis effort by up to 70%, with an emphasis on traceable, testable, and reliable AI systems.
 
 # Experience
-## **FPT Software**, Automation Tester
+## **FPT Software**, Applied AI Engineer | QA Automation & AI Evaluation
 
 Ho Chi Minh City, Vietnam
 
@@ -76,7 +76,7 @@ Client delivery work at FPT Software covering omnichannel core banking and finan
 
 
 
-## **ATA — AI Agent Evaluation Platform**
+## **ATA — Agent Test Agent**
 
 Hackathon MVP for independently validating captured AI-agent runs and producing auditable quality verdicts; its evaluation design later informed Omni-Agent's Agent Testing module.
 
@@ -88,7 +88,7 @@ Hackathon MVP for independently validating captured AI-agent runs and producing 
 
 
 
-## **APIT — LLM-Based API Test Generation**
+## **APIT — Agent Programmatic Intelligence Testing**
 
 Graduation project that analyzes API documentation and generates structured API test cases with LLMs.
 

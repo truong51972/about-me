@@ -109,7 +109,7 @@ Delivered AI-assisted QA workflows that increased test coverage by approximately
 
 #regular-entry(
   [
-    #strong[FPT Software], Automation Tester
+    #strong[FPT Software], Applied AI Engineer | QA Automation & AI Evaluation
 
     - Built AI-assisted QA workflows for document analysis, test-case generation, duplicate-defect detection, and change-impact analysis, increasing test coverage by approximately 40\% and reducing manual analysis effort by up to 70\% across banking projects.
 
@@ -193,7 +193,7 @@ Delivered AI-assisted QA workflows that increased test coverage by approximately
 
 #regular-entry(
   [
-    #strong[ATA — AI Agent Evaluation Platform]
+    #strong[ATA — Agent Test Agent]
 
     #summary[Hackathon MVP for independently validating captured AI-agent runs and producing auditable quality verdicts; its evaluation design later informed Omni-Agent's Agent Testing module.]
 
@@ -210,7 +210,7 @@ Delivered AI-assisted QA workflows that increased test coverage by approximately
 
 #regular-entry(
   [
-    #strong[APIT — LLM-Based API Test Generation]
+    #strong[APIT — Agent Programmatic Intelligence Testing]
 
     #summary[Graduation project that analyzes API documentation and generates structured API test cases with LLMs.]
 

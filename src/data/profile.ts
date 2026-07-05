@@ -27,7 +27,7 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Applied AI Backend Engineer | Agent Evaluation & RAG Systems",
+  role: "Applied AI Engineer | QA Automation & AI Evaluation",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
@@ -122,6 +122,7 @@ export const cases: ProjectCase[] = [
     outcome: "Qwen-2.5-3B LoRA reached 0.655 macro-F1 on structured API test generation.",
     tags: ["LLM fine-tuning", "LoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
     highlights: [
+      "Named as a strategic play on words: while the immediate scope executes 'API Testing', the system architecture establishes a foundation for 'Agent Programmatic Intelligence Testing'.",
       "Built a controlled bilingual synthetic dataset with 1,258 API testing samples.",
       "Compared Qwen and Llama small-model fine-tuning with LoRA/QLoRA-style evaluation workflows.",
       "Evaluated structured outputs with precision, recall, macro-F1, fuzzy matching, and LLM-as-a-Judge experiments."

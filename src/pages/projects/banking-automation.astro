@@ -11,7 +11,7 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
         <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
         {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">Historical banking validation across Core Banking and Payment Hub.</h1>
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
       <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
       <div class="flex flex-wrap gap-4">
         <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
