@@ -19,7 +19,7 @@ cv:
 
     experience:
       - company: FPT Software
-        position: Automation Tester
+        position: Applied AI Engineer | QA Automation & AI Evaluation
         start_date: 2024-12
         end_date: present
         location: Ho Chi Minh City, Vietnam
@@ -54,14 +54,14 @@ cv:
           - Authored more than 1,500 lines of reusable SQL validation queries and maintained coverage across all in-scope API endpoints.
           - Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows.
 
-      - name: ATA — AI Agent Evaluation Platform
+      - name: ATA — Agent Test Agent
         summary: Hackathon MVP for independently validating captured AI-agent runs and producing auditable quality verdicts; its evaluation design later informed Omni-Agent's Agent Testing module.
         highlights:
           - Built an end-to-end evaluation platform with a FastAPI control plane, LiteLLM capture gateway, Celery workers, and React/Vite dashboard.
           - Designed a multi-stage evaluator using Planner, Judge, Critic, and Meta-Judge roles to assess context use, tool calling, security, and business outcomes.
           - Implemented percentile-based quality gates using P10/P35/P50 metrics and blocker dimensions to expose low-tail failures, together with fail-closed isolation of provider credentials.
 
-      - name: APIT — LLM-Based API Test Generation
+      - name: APIT — Agent Programmatic Intelligence Testing
         summary: Graduation project that analyzes API documentation and generates structured API test cases with LLMs.
         highlights:
           - Built an AI workflow for API-document understanding, structured test-case generation, and automated output evaluation.

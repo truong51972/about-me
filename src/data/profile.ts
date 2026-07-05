@@ -40,7 +40,7 @@ export const cases: ProjectCase[] = [
   {
     slug: "omni-agent",
     label: "Flagship system",
-    title: "Omni-Agent",
+    title: "Omni-Agent — AI Agent Hub",
     subtitle: "Project-centric AI platform for document intelligence and hybrid RAG + knowledge-graph retrieval",
     summary:
       "A Python monorepo AI platform where a Django/DRF control plane owns domain logic and a fleet of stateless Celery workers handle OCR, chunking, and knowledge-graph analysis. It pairs versioned document processing with hybrid RAG + graph retrieval for evaluation-oriented workflows such as test-case generation, change-impact analysis, and bug intelligence.",
@@ -109,8 +109,8 @@ export const cases: ProjectCase[] = [
   {
     slug: "apit",
     label: "AI evaluation",
-    title: "APIT",
-    subtitle: "LLM-based API test-case generation and evaluation",
+    title: "APIT — Agent Programmatic Intelligence Testing",
+    subtitle: "LLM-based test-case generation and evaluation",
     summary:
       "An LLM-based system that analyzes API documentation and generates structured API test cases using controlled data synthesis, LoRA fine-tuning, RAG, and automated evaluation.",
     group: "featured-systems",
@@ -130,7 +130,7 @@ export const cases: ProjectCase[] = [
   {
     slug: "banking-automation",
     label: "Industry delivery",
-    title: "Banking QA Automation",
+    title: "Core Banking & Payment Hub QA Automation",
     subtitle: "Historical Core Banking and Payment Hub validation work",
     summary:
       "Historical enterprise QA automation and integration validation across Core Banking, Payment Hub, API, database, web, and mobile systems; kept as supporting domain evidence behind the current AI evaluation direction.",
@@ -219,7 +219,7 @@ export const cases: ProjectCase[] = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Automation Tester & Applied AI Engineer",
+    title: "Applied AI Engineer | QA Automation & AI Evaluation",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
       "Built applied AI workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.",
