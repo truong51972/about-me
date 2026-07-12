@@ -46,7 +46,7 @@ const item = cases.find((caseItem) => caseItem.slug === "iqp")!;
 
   <section class="py-16 md:py-20">
     <div class="case-study-shell">
-      <article class="case-article">
+      <article class="case-article col-span-full max-w-4xl mx-auto">
         <!-- Overview -->
         <section id="overview">
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
@@ -70,8 +70,8 @@ const item = cases.find((caseItem) => caseItem.slug === "iqp")!;
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">MCP integration</strong> — Provides a Model Context Protocol server, enabling AI coding agents to retrieve precise code and specification snippets contextually.</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Visual graph exploration</strong> — Interactive portal interface showcasing feature dependencies, code references, and test coverage paths.</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Workspace and access management</strong> — Secures isolated environments for client codebases, user roles, and team configurations.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Code and test traceability</strong> — Identifies direct pathways from a requirement flow down to the concrete code functions and automated tests.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Quality-analysis insights</strong> — Delivers flow-centric analysis highlighting untested business flows or missing validations.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Code and test traceability</strong> — Supports traceability between product concepts, implementation context, and related test assets.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Quality-analysis insights</strong> — Provides quality-analysis insights across product, implementation, and test artifacts.</li>
           </ul>
         </section>
 
@@ -117,28 +117,6 @@ const item = cases.find((caseItem) => caseItem.slug === "iqp")!;
           </p>
         </section>
       </article>
-
-      <aside class="case-aside">
-        <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
-        </div>
-        <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
-        </div>
-        <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Ingestion</strong> — Ingests specification documents</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Code Intelligence</strong> — Parses code dependencies via AST</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Hybrid Retrieval</strong> — Combined semantic, keyword, and graph traversal</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">MCP API</strong> — Exposes context to AI tools securely</p>
-        </div>
-        <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Service Design</h3>
-          <p class="text-text-muted leading-relaxed mb-6">FastAPI backend · Qdrant vector store · PostgreSQL logical graph · React portal</p>
-        </div>
-      </aside>
     </div>
   </section>
 </BaseLayout>

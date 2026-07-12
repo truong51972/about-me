@@ -84,7 +84,7 @@ export const cases: ProjectCase[] = [
     group: "featured-systems",
     visualTier: "featured",
     homepageFeatured: true,
-    period: "2025–Present",
+    period: "2026",
     role:
       "Backend engineering, retrieval, code intelligence, and product integration",
     outcome:
@@ -166,7 +166,7 @@ export const cases: ProjectCase[] = [
     title: "Core Banking & Payment Hub QA Automation",
     subtitle: "Historical Core Banking and Payment Hub validation work",
     summary:
-      "Historical enterprise QA automation and integration validation across Core Banking, Payment Hub, API, database, web, and mobile systems; kept as supporting domain evidence behind the current AI evaluation direction.",
+      "Client delivery work covering Core Banking and Payment Hub integrations across API, database, web, mobile, regression, and automation testing.",
     group: "quality-delivery",
     visualTier: "supporting",
     homepageFeatured: false,
