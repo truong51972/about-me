@@ -7,6 +7,7 @@ const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const featured = cases.filter((item) => item.homepageFeatured);
 const projectHref = (slug: string) => withBase(`projects/${slug}/`);
 const projectImages: Record<string, string> = {
+  iqp: "images/project-iqp-panel.jpg",
   "omni-agent": "images/project-omni-panel.png",
   ata: "images/project-ata-panel.png",
   apit: "images/project-apit-panel.png"
@@ -47,9 +48,14 @@ const projectImages: Record<string, string> = {
           <p class="measure mt-7 text-lg leading-8 text-text-muted md:text-xl md:leading-9">
             {site.summary}
           </p>
+          {site.about && (
+            <p class="measure mt-4 text-base leading-7 text-text-muted/80">
+              {site.about}
+            </p>
+          )}
           <div class="mt-9 flex flex-wrap gap-3">
-            <a href={pdfPath} target="_blank" rel="noreferrer" class="btn-primary">Download CV</a>
-            <a href={withBase("projects/")} class="btn-secondary">View projects</a>
+            <a href={withBase("projects/")} class="btn-primary">View projects</a>
+            <a href={pdfPath} target="_blank" rel="noreferrer" class="btn-secondary">Download CV</a>
           </div>
         </div>
       </div>
@@ -104,10 +110,10 @@ const projectImages: Record<string, string> = {
       <div class="lg:col-span-4">
         <h2 class="section-label mb-4">Experience</h2>
         <p class="measure-tight text-3xl font-semibold leading-tight text-white md:text-4xl">
-          QA discipline, applied to AI systems.
+          Backend systems and applied AI scope.
         </p>
         <p class="mt-5 text-base leading-7 text-text-muted">
-          Banking validation experience now informs agent evaluation, backend orchestration, and evidence-first workflows.
+          Integrating backend architecture and model workflows with a robust focus on reliability and software quality.
         </p>
       </div>
       <div class="lg:col-span-8">
@@ -200,7 +206,7 @@ const projectImages: Record<string, string> = {
         <div>
           <h2 class="text-3xl font-semibold leading-tight text-white md:text-5xl">Build, evaluate, and ship AI workflows with evidence.</h2>
           <p class="measure mt-5 text-lg leading-8 text-text-muted">
-            Available for applied AI backend, RAG, agent evaluation, and Python service work.
+            Open to Product Engineer, Backend Engineer, AI Product Engineer, and Applied AI Engineer opportunities.
           </p>
         </div>
         <div class="flex flex-wrap gap-3 lg:justify-end">

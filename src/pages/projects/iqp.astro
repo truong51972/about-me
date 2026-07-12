@@ -1,0 +1,152 @@
+---
+import { withBase } from "../../lib/paths";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { cases } from "../../data/profile";
+const item = cases.find((caseItem) => caseItem.slug === "iqp")!;
+---
+<BaseLayout title="Intelligent Quality Platform" description="Intelligent Quality Platform case study by Tran Quoc Truong." >
+  <section class="border-b border-white/10 pb-14 pt-28 md:pb-20 md:pt-36">
+    <div class="site-shell grid gap-10 lg:grid-cols-12 lg:items-center">
+      <div class="lg:col-span-7">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
+          {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
+        </div>
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}</h1>
+        <p class="text-lg text-brand-300 font-medium mb-4">{item.subtitle}</p>
+        <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+        <div class="flex flex-wrap gap-4">
+          <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
+        </div>
+      </div>
+
+      <aside class="lg:col-span-5">
+        <div class="surface-panel overflow-hidden rounded-2xl">
+          <div class="project-art rounded-none border-0">
+            <img src={withBase("images/project-iqp-panel.jpg")} alt="Knowledge graph and codebase analysis dashboard for Intelligent Quality Platform" loading="eager" />
+          </div>
+          <div class="grid gap-0 divide-y divide-white/10">
+            <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Role</span>
+              <span class="text-sm leading-6 text-text-muted">{item.role}</span>
+            </div>
+            <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Architecture</span>
+              <span class="text-sm leading-6 text-text-muted">Distributed services, Central Orchestration API, MCP context delivery</span>
+            </div>
+            <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Core Stack</span>
+              <span class="text-sm leading-6 text-text-muted">FastAPI, Qdrant vector store, PostgreSQL 16, Redis + Celery, React Portal</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-20">
+    <div class="case-study-shell">
+      <article class="case-article">
+        <!-- Overview -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Unifying Product Requirements, Implementation, and Verification.</h3>
+          <p class="text-text-muted leading-relaxed mb-6">Product knowledge, implementation details, and test assets are often distributed across documents, repositories, and separate engineering tools. This makes context discovery, change analysis, and quality assessment time-consuming.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The Intelligent Quality Platform (IQP) is designed to resolve these inefficiencies. By linking product specifications, application codebase graphs, and test execution details, the platform delivers context retrieval, trace visualization, and flow-based coverage analysis in a unified engineering environment.</p>
+        </section>
+
+        <!-- Product Capabilities -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Core Capabilities</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">High-Level Platform Features</h3>
+          <ul class="space-y-4 text-text-muted mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Product Knowledge Ingestion</strong> — Converts raw product specification files into structured logical concepts.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Knowledge &amp; Code Graph Indexing</strong> — Constructs multi-layered relationships connecting features, source files, and test files.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Semantic &amp; Lexical Context Retrieval</strong> — Combines vector-based semantics with exact matching for reliable concept query answers.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">MCP Integration</strong> — Provides a Model Context Protocol server, enabling AI coding agents to retrieve precise code and specification snippets contextually.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Visual Graph Exploration</strong> — Interactive portal interface showcasing feature dependencies, code references, and test coverage paths.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Workspace &amp; Access Management</strong> — Secures isolated environments for client codebases, user roles, and team configurations.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Code &amp; Test Traceability</strong> — Identifies direct pathways from a requirement flow down to the concrete code functions and automated tests.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Quality &amp; Coverage Insights</strong> — Delivers flow-centric analysis highlighting untested business flows or missing validations.</li>
+          </ul>
+        </section>
+
+        <!-- Architecture Overview -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Architecture</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Service Topography</h3>
+          <p class="text-text-muted leading-relaxed mb-6">To maintain clean separation of concerns, the architecture splits client-facing portals, orchestration backends, graph ingestion processing, code intelligence, and context access layers.</p>
+          <pre class="bg-bg-base p-6 rounded-xl border border-white/5 text-sm font-mono text-brand-400 overflow-x-auto mb-6">Web Portal / Engineering Tools
+             |
+     Backend & Orchestration (FastAPI central gateway, workspace roles, state)
+             |
+   --------------------------------------------------------------
+   | Knowledge Services     | Code Intelligence                 |
+   | (Ingestion / Graph DB) | (AST parsing, repository indexing)|
+   |                        |                                   |
+   | AI Context Retrieval   | Quality Analysis                  |
+   | (Semantic/Lexical RAG) | (Traceability & coverage engine)   |
+   --------------------------------------------------------------
+             |
+   Data, Vector and Queue Services (PostgreSQL 16, Qdrant, Celery + Redis)</pre>
+        </section>
+
+        <!-- Engineering Contributions -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Engineering Contributions</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Direct technical responsibilities</h3>
+          <ul class="space-y-4 text-text-muted mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Backend Orchestration</strong> — Designed and developed backend boundaries managing workspace states, access credentials, service coordination, and API routing.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Knowledge and Code Intelligence</strong> — Formulated the logic constructing relational graph layers representing product specifications, source tree structures, and automated tests.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">AI Context Retrieval</strong> — Designed and tuned the retrieval algorithms blending semantic distance, lexical tokens, and graph connectivity to serve context requests.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Asynchronous Processing</strong> — Built task routing using Redis and Celery to process document parses, repository AST scans, and graph indexing in the background.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Product Integration</strong> — Built RESTful interfaces hooking the FastAPI server with a React portal for graph exploration, and optimized a Model Context Protocol (MCP) server endpoint for dev tools.</li>
+          </ul>
+        </section>
+
+        <!-- Technical Decisions -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Technical Decisions</h2>
+          <h3 class="text-2xl font-bold text-white mb-6">Design patterns &amp; architecture choices</h3>
+          <ul class="space-y-4 text-text-muted mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Separation of Ingestion and Query Workloads</strong> — Kept resource-heavy document parsing and code indexing isolated from prompt-response query paths, preserving fast response times for users.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Centralized Gateway Orchestration</strong> — Managed all workspace boundaries, permissions, and service-to-service proxies behind a central FastAPI gatekeeper rather than leaving services directly accessible.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">MCP Server for Agent Context</strong> — Used a dedicated, token-validated Model Context Protocol server. This allows external AI assistants to retrieve precise subgraphs matching current editing scopes without overwhelming context windows.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Multi-Signal Retrieval</strong> — Integrated dense vector similarity (Qdrant) with lexical indices and relational graph lookups, which prevents hallucinations on specialized domain jargon.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Task Isolation</strong> — Offloaded AST code parses, markdown node extraction, and database-cleaning tasks to Celery task queues with explicit memory limits.</li>
+          </ul>
+        </section>
+
+        <!-- Stack -->
+        <section>
+          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <div class="flex flex-wrap gap-2 mt-4">
+            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
+          </div>
+        </section>
+      </article>
+
+      <aside class="case-aside">
+        <div class="evidence-card">
+          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
+        </div>
+        <div class="evidence-card">
+          <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
+          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
+        </div>
+        <div class="evidence-card">
+          <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Ingestion</strong> — Ingests specification documents</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Code Intelligence</strong> — Parses code dependencies via AST</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Hybrid Retrieval</strong> — Combined semantic, keyword, and graph traversal</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">MCP API</strong> — Exposes context to AI tools securely</p>
+        </div>
+        <div class="evidence-card">
+          <h3 class="text-lg font-bold text-white mb-4">Service Design</h3>
+          <p class="text-text-muted leading-relaxed mb-6">FastAPI backend · Qdrant vector store · PostgreSQL logical graph · React portal</p>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
