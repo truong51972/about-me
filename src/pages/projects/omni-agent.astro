@@ -32,11 +32,11 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
               <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Shape</span>
-              <span class="text-sm leading-6 text-text-muted">Python monorepo, 5 apps, 2 shared packages</span>
+              <span class="text-sm leading-6 text-text-muted">Multi-service Python monorepo with independently deployable applications and shared typed contracts</span>
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
               <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Core</span>
-              <span class="text-sm leading-6 text-text-muted">Django control plane, Celery workers, hybrid RAG + graph retrieval</span>
+              <span class="text-sm leading-6 text-text-muted">Django control plane, asynchronous workers, versioned knowledge workflows, hybrid and graph-based retrieval, and integrated Agent Testing</span>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
           <h3 class="text-2xl font-bold text-white mb-6">A project-centric AI platform with a clean control-plane / data-plane split.</h3>
           <p class="text-text-muted leading-relaxed mb-6">Omni-Agent is an event-driven AI platform built as a Python monorepo. Everything is scoped to a <strong class="text-white">Project</strong>, and a Django/DRF control plane owns the domain — projects, documents, jobs, and graph metadata — while a fleet of stateless workers executes the heavy technical work: OCR, chunking, and knowledge-graph analysis.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The product direction is evaluation-focused document intelligence: turn requirement and specification documents into a queryable knowledge base, then use <strong class="text-white">hybrid RAG + knowledge-graph retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The platform provides evaluation-focused document intelligence: it converts requirement and specification documents into a queryable knowledge base, then uses <strong class="text-white">hybrid and graph-based retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence.</p>
         </section>
 
         <!-- Architecture -->
@@ -110,7 +110,7 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <!-- Knowledge Graph -->
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Knowledge Graph</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Hybrid RAG + graph retrieval for QA intelligence</h3>
+          <h3 class="text-2xl font-bold text-white mb-6">Knowledge Graph and hybrid retrieval</h3>
           <p class="text-text-muted leading-relaxed mb-6">Beyond document chunks, Omni-Agent builds a project knowledge graph linking requirements, rules, test cases, and bugs. Combining vector retrieval with graph traversal gives the LLM both semantic recall and structural reasoning that pure RAG misses.</p>
           <p class="text-text-muted leading-relaxed mb-6">The graph-builder pipeline (build &rarr; validate &rarr; merge &rarr; metadata export) is orchestrated with LangGraph and networkx, with the React console rendering the graph via Sigma.</p>
 
@@ -196,12 +196,12 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Builder</strong> — Built and actively evolving</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Graph and retrieval</strong> — In development</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Graph and retrieval</strong> — Implemented; ranking, graph modeling, and analysis workflows continue to evolve</p>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Agent Testing</strong> — Integrated into the platform core</p>
         </div>
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Shape</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Python monorepo · 5 apps · 2 shared packages</p>
+          <p class="text-text-muted leading-relaxed mb-6">Multi-service Python monorepo with independently deployable applications and shared typed contracts</p>
         </div>
       </aside>
     </div>

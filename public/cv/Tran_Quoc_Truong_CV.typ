@@ -155,7 +155,7 @@ My quality engineering background strengthens how I design clear domain boundari
   ],
 )
 
-== Featured Project
+== Featured Projects
 
 #regular-entry(
   [

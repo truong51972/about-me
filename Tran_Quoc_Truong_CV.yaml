@@ -40,7 +40,7 @@ cv:
           - Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel.
 
 
-    featured_project:
+    featured_projects:
       - name: Omni-Agent — Applied AI Platform
         summary: A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.
         highlights:

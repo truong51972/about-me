@@ -44,9 +44,9 @@ export const cases: ProjectCase[] = [
     label: "Flagship platform",
     title: "Omni-Agent — Applied AI Platform",
     subtitle:
-      "Versioned knowledge workflows, AI services, and integrated agent evaluation",
+      "Versioned knowledge workflows, hybrid and graph retrieval, and integrated agent evaluation",
     summary:
-      "A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.",
+      "A project-centric Applied AI platform combining versioned document knowledge, hybrid and graph-based retrieval, AI workflows, and integrated agent evaluation through a shared backend control plane.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
@@ -62,9 +62,10 @@ export const cases: ProjectCase[] = [
       "S3/MinIO",
       "Docling",
       "Qdrant",
+      "Hybrid Retrieval",
+      "Knowledge Graph",
       "Agent Evaluation",
-      "React/Vite",
-      "Langfuse"
+      "React/Vite"
     ],
     highlights: [
       "Designed a Django/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.",

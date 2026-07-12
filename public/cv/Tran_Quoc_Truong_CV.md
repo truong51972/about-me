@@ -51,7 +51,7 @@ Sept 2024 – Dec 2024
 
 
 
-# Featured Project
+# Featured Projects
 ## **Omni-Agent — Applied AI Platform**
 
 A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.
