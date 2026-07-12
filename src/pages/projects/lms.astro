@@ -16,6 +16,7 @@ const item = cases.find((caseItem) => caseItem.slug === "lms")!;
         <p class="text-lg text-brand-300 font-medium mb-4">{item.subtitle}</p>
         <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
         <div class="flex flex-wrap gap-4">
+          <a class="btn-primary" href="https://github.com/truong51972/LMS" target="_blank" rel="noreferrer">Personal implementation</a>
           <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
         </div>
       </div>
@@ -50,7 +51,7 @@ const item = cases.find((caseItem) => caseItem.slug === "lms")!;
         <!-- Overview -->
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Full-Lifecycle Product Development: From Standalone MVC to Extended Modular Platform.</h3>
+          <h3 class="text-2xl font-bold text-white mb-6">Full-Lifecycle Product Development: From Solo Prototype to Team Platform.</h3>
           <p class="text-text-muted leading-relaxed mb-6">LMS is a full-stack learning and assessment platform designed to support course administration, structured learning content, learner enrollment, online quizzes, assessment reporting, and role-based operations.</p>
           <p class="text-text-muted leading-relaxed mb-6">The application was initially designed and developed independently during my internship. After the standalone implementation was positively received, its core concepts and features were carried into a larger team project, where I continued as a primary developer.</p>
           <p class="text-text-muted leading-relaxed mb-6">The project was an early opportunity to work across the complete product lifecycle: defining the domain model, implementing backend and user-facing workflows, integrating an AI-assisted service, and deploying the system through a containerized environment.</p>
@@ -86,7 +87,7 @@ Nginx reverse proxy
 |                                             |
 Django LMS Application (State, Users, Quiz)   FastAPI Service (PyTorch model)
 |                                             |
-SQLite/MySQL Database                         Face-presence & proctoring inference</pre>
+Database                                      Face-presence signals for assessment monitoring</pre>
         </section>
 
         <!-- Engineering Decisions -->
@@ -96,8 +97,8 @@ SQLite/MySQL Database                         Face-presence & proctoring inferen
           <ul class="space-y-4 text-text-muted mb-6">
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Isolate Compute-Oriented Inference</strong> — Placed face detection behind an independent FastAPI service. This separated stateful workflows from GPU-dependent runtimes and model load overhead, keeping the core Django server lightweight and responsive.</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Model the Learning Domain Explicitly</strong> — Represented courses using strict, structured database hierarchies instead of flat content strings. This supported unified course management for instructors and structured linear navigation for learners.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">State Preservation for Audit Trails</strong> — Persisted proctoring metrics alongside raw answers. Attempt records serve as comprehensive evidence reports containing duration, scores, tab-blur counts, and face-detection logs.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Standardized Service Orchestration</strong> — Orchestrated services (Django, FastAPI, Nginx, Cloudflare Tunnel) using Docker Compose to ensure local development configurations perfectly matched the deployed target.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">State Preservation for Audit Trails</strong> — Persisted assessment monitoring metrics alongside raw answers. Attempt records serve as comprehensive evidence reports containing duration, scores, tab-blur counts, and face-detection logs.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Standardized Service Orchestration</strong> — Orchestrated services (Django, FastAPI, Nginx, Cloudflare Tunnel) using Docker Compose to reduce environment drift between local development and deployment.</li>
           </ul>
         </section>
 
@@ -114,7 +115,6 @@ SQLite/MySQL Database                         Face-presence & proctoring inferen
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Timeline</h3>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Period:</strong> {item.period}</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Last Commit:</strong> Oct 28, 2024</p>
         </div>
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Role</h3>
@@ -127,7 +127,7 @@ SQLite/MySQL Database                         Face-presence & proctoring inferen
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Course Management</strong> — Structured hierarchical curriculum mapping</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">AI Proctoring</strong> — Independent computer-vision service for behavioral logs</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">AI-assisted monitoring</strong> — Independent computer-vision service for exam monitoring</p>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Assessment</strong> — Quizzes, configuration limits, multi-answer scoring</p>
           <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Data Utilities</strong> — Spreadsheet transformations and multi-set generation</p>
         </div>

@@ -1,14 +1,21 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, timeline, education, skillGroups, cases } from "../data/profile";
+import { site, timeline, education, skillGroups, cases, type ProjectCase } from "../data/profile";
 
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
 const yamlPath = withBase("Tran_Quoc_Truong_CV.yaml");
 const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
-const cvProjectSlugs = ["omni-agent", "ata", "apit"];
-const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
+const cvProjectSlugs = [
+  "omni-agent",
+  "iqp",
+  "banking-automation",
+  "apit"
+];
+const cvProjects = cvProjectSlugs
+  .map((slug) => cases.find((item) => item.slug === slug))
+  .filter((item): item is ProjectCase => Boolean(item));
 ---
 
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong.">
@@ -98,7 +105,7 @@ const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
 
         <section>
           <h2 class="section-label mb-6">Selected projects</h2>
-          <div class="grid gap-5 md:grid-cols-3">
+          <div class="grid gap-5 md:grid-cols-2">
             {cvProjects.map((item) => (
               <a class="group block" href={withBase(`projects/${item.slug}/`)}>
                 <article class="bento-card h-full">

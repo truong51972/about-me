@@ -73,3 +73,11 @@ Generated files:
 │   ├── pages/
 │   └── styles/
 └── dist/             # Build output (gitignored)
+
+## Validation
+
+```bash
+uv sync
+npm install
+npm run build
+```

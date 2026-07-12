@@ -136,11 +136,11 @@ My quality engineering background strengthens how I design clear domain boundari
   [
     #strong[FPT Software Academy], Full-Stack Developer Intern
 
-    - Built the initial version of a Django LMS and integrated a FastAPI face-detection service for exam proctoring.
+    - Built the initial version of a Django learning and assessment platform with structured course, quiz, enrollment, and role-based workflows.
 
-    - Modeled structured hierarchical course content (Course -\> Section -\> Module -\> Lesson\/Quiz) and role-based access rules.
+    - Integrated a separate FastAPI face-detection service for AI-assisted exam monitoring.
 
-    - Containerized and deployed the multi-service system using Docker Compose, Nginx, and Cloudflare Tunnel.
+    - Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel.
 
   ],
   [
@@ -163,13 +163,13 @@ My quality engineering background strengthens how I design clear domain boundari
 
     #summary[A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.]
 
-    - Designed a Django\/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, approval states, and audit metadata.
+    - Designed a Django\/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.
 
-    - Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, vector indexing, committed artifacts, and S3-compatible artifact lineage.
+    - Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, indexing workflows, committed artifacts, and S3-compatible artifact lineage.
 
     - Defined service ownership through typed worker contracts, idempotent jobs, and concurrency-safe commits, keeping domain lifecycle decisions in the API while stateless Celery workers handle long-running processing.
 
-    - Integrated Agent Testing into the platform core with runtime trace capture, Planner\/Judge\/Critic\/Meta-Judge evaluation stages, deterministic validation, and workflow-level quality gates.
+    - Integrated Agent Testing into the platform core with runtime trace capture, multi-stage evaluation, deterministic validation, and workflow-level quality gates.
 
   ],
   [
@@ -180,13 +180,15 @@ My quality engineering background strengthens how I design clear domain boundari
   [
     #strong[IQP — Intelligent Quality Platform]
 
-    #summary[An enterprise Quality Engineering platform combining product knowledge, source-code intelligence, and AI-assisted retrieval to support traceability and test analysis.]
+    #summary[An enterprise Quality Engineering platform combining product knowledge, source-code intelligence, and AI-assisted retrieval to support engineering traceability and test analysis.]
 
-    - Designed service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.
+    - Designed backend service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.
 
     - Implemented hybrid retrieval combining semantic, lexical, and graph-based signals to provide scoped context for engineering and AI-assisted tools.
 
-    - Developed code-intelligence capabilities and integrated asynchronous backend services, a React\/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product.
+    - Developed code-intelligence capabilities for indexing source repositories and linking product concepts with related implementation and test assets.
+
+    - Integrated asynchronous backend services, a React\/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product workflow.
 
   ],
   [
@@ -231,7 +233,7 @@ My quality engineering background strengthens how I design clear domain boundari
 
 #strong[Applied AI & Graph Systems:] RAG, hybrid retrieval, document intelligence, Knowledge Graphs, Code Graphs, graph traversal, agentic workflows, MCP, LangChain, LangGraph, LiteLLM, Docling, Qdrant, Langfuse
 
-#strong[Product Interfaces & Delivery:] React, TypeScript, Vite, Docker, Nginx, CI\/CD, observability, S3\/MinIO, Git
+#strong[Product Interfaces & Delivery:] React, TypeScript, Vite, Docker, Docker Compose, Nginx, CI\/CD, observability, S3\/MinIO, Git
 
 #strong[Quality, Evaluation & ML:] LLM evaluation, agent evaluation, LLM-as-a-Judge, quality gates, PyTorch, LoRA\/QLoRA, model evaluation, API validation, SQL validation, regression testing, test automation
 

@@ -9,22 +9,26 @@ const groups: Array<{ id: ProjectGroup; title: string; summary: string }> = [
   {
     id: "featured-systems",
     title: "Featured systems",
-    summary: "The strongest evidence for product engineering, backend systems, and applied AI workflows."
+    summary:
+      "The strongest evidence of Product Engineering, backend architecture, and Applied AI delivery."
   },
   {
     id: "applied-ai-systems",
     title: "Applied AI systems",
-    summary: "End-to-end AI application work with retrieval, agents, services, persistence, and containerized infrastructure."
+    summary:
+      "Products and prototypes combining models, retrieval, agent workflows, and user-facing software."
   },
   {
-    id: "supporting-delivery",
-    title: "Supporting delivery evidence",
-    summary: "Historical banking validation work that shows the quality and audit discipline behind the current agent-evaluation focus."
+    id: "quality-delivery",
+    title: "Quality Engineering delivery",
+    summary:
+      "Enterprise automation, transaction validation, and quality-analysis work across complex systems."
   },
   {
-    id: "earlier-ai-research",
-    title: "Earlier AI research",
-    summary: "Computer-vision and model-training work that shows the foundation behind the current applied AI direction."
+    id: "engineering-foundations",
+    title: "Engineering foundations",
+    summary:
+      "Earlier full-stack and machine-learning projects that established the foundation for the current direction."
   }
 ];
 
@@ -53,10 +57,13 @@ const tierClass = {
         <div class="lg:col-span-8">
           <div class="eyebrow mb-6">Projects</div>
           <h1 class="max-w-5xl text-4xl font-semibold leading-tight text-white md:text-6xl">
-            Applied AI systems, evaluation work, and earlier machine-learning research.
+            Projects
           </h1>
-          <p class="measure mt-7 text-lg leading-8 text-text-muted">
-            Omni-Agent is a document knowledge platform with versioned workflows, ATA is quality infrastructure for AI-agent products, and APIT is an AI-assisted API testing application. Supporting work keeps the quality-engineering foundation visible without making automation the headline.
+          <p class="measure mt-7 text-2xl font-medium leading-tight text-brand-300">
+            Products, platforms, and engineering systems.
+          </p>
+          <p class="measure mt-4 text-base leading-7 text-text-muted/80">
+            Omni-Agent is the flagship Applied AI platform. IQP demonstrates enterprise Quality Engineering delivery, while the remaining projects show banking automation, model development, and earlier Product Engineering foundations.
           </p>
         </div>
         <div class="grid grid-cols-3 gap-3 lg:col-span-4">
@@ -69,7 +76,7 @@ const tierClass = {
             <div class="mt-1 text-xs leading-5 text-text-muted">evidence groups</div>
           </div>
           <div class="surface-panel rounded-xl p-4">
-            <div class="font-mono text-3xl font-semibold text-white">3</div>
+            <div class="font-mono text-3xl font-semibold text-white">{cases.filter((item) => item.group === "featured-systems").length}</div>
             <div class="mt-1 text-xs leading-5 text-text-muted">featured systems</div>
           </div>
         </div>
