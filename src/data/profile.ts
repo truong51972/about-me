@@ -1,8 +1,8 @@
 export type ProjectGroup =
   | "featured-systems"
   | "applied-ai-systems"
-  | "supporting-delivery"
-  | "earlier-ai-research";
+  | "quality-delivery"
+  | "engineering-foundations";
 
 export type ProjectVisualTier = "flagship" | "featured" | "supporting" | "compact";
 
@@ -27,65 +27,101 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Applied AI Engineer | QA Automation & AI Evaluation",
+  role: "Product Engineer | Backend Systems & Applied AI",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I design production-oriented Python systems for applied AI, including ATA for agent validation, RAG workflows, evaluation pipelines, and backend orchestration."
+    "I build Python backend systems and applied AI products for document intelligence, retrieval, code intelligence, and agent evaluation. My work focuses on clear domain ownership, reliable asynchronous workflows, and verifiable product outcomes.",
+  about:
+    "My background combines backend development, applied AI, and quality automation. I work across domain modeling, service boundaries, AI integration, and system validation to turn technical capabilities into maintainable product workflows."
 };
 
 export const cases: ProjectCase[] = [
   {
     slug: "omni-agent",
-    label: "Flagship system",
-    title: "Omni-Agent — AI Agent Hub",
-    subtitle: "Project-centric AI platform for document intelligence and hybrid RAG + knowledge-graph retrieval",
+    label: "Flagship platform",
+    title: "Omni-Agent — Applied AI Platform",
+    subtitle:
+      "Versioned knowledge workflows, hybrid and graph retrieval, and integrated agent evaluation",
     summary:
-      "A Python monorepo AI platform where a Django/DRF control plane owns domain logic and a fleet of stateless Celery workers handle OCR, chunking, and knowledge-graph analysis. It pairs versioned document processing with hybrid RAG + graph retrieval for evaluation-oriented workflows such as test-case generation, change-impact analysis, and bug intelligence.",
+      "A project-centric Applied AI platform combining versioned document knowledge, hybrid and graph-based retrieval, AI workflows, and integrated agent evaluation through a shared backend control plane.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
-    period: "2026-Present",
-    role: "Solo architecture and implementation",
+    period: "2026–Present",
+    role: "Solo product architecture and implementation",
     outcome:
-      "Designed domain boundaries, a generic PlatformJob control-plane, worker command/result contracts, versioned document workflows, and the hybrid RAG + graph retrieval direction across a multi-app monorepo.",
+      "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing.",
     tags: [
       "Django/DRF",
       "Celery",
-      "Hybrid RAG + Graph",
-      "Knowledge Graph / GNN",
-      "LangGraph",
-      "Docling OCR",
-      "Milvus",
       "PostgreSQL",
-      "MinIO / S3",
-      "React 19 / Vite",
-      "Langfuse"
+      "Redis",
+      "S3/MinIO",
+      "Docling",
+      "Qdrant",
+      "Hybrid Retrieval",
+      "Knowledge Graph",
+      "Agent Evaluation",
+      "React/Vite"
     ],
     highlights: [
-      "Architected Omni-Agent as a Python monorepo — a Django/DRF control plane (omni-api), stateless data-plane services for document processing, Docling OCR, and graph analysis, a React console, and shared contract/worker packages — with app-local dependencies and no root-workspace coupling.",
-      "Built Knowledge Builder, the first capability: project-scoped versioned document processing with a job-centric pipeline (DocumentVersion lifecycle, Docling OCR, chunking, committed-text snapshots) writing artifacts to S3-compatible storage.",
-      "Designed a hybrid RAG + knowledge-graph retrieval layer with a graph-builder pipeline and GNN-oriented quality intelligence — change-impact analysis, duplicate-bug detection, and test-gap analysis — as the core product direction.",
-      "Established a generic PlatformJob control-plane for async work keyed by project, job type, and resource, with typed worker command/result envelopes in a shared contracts package and internal/presigned S3 storage boundaries.",
-      "Wired a production-style stack — PostgreSQL, Redis, MinIO, Milvus, a LiteLLM + Ollama model gateway, and Langfuse observability — behind a Google-Cloud-Console-like React 19 console (TanStack Query, Tailwind, Sigma graph visualization)."
+      "Designed a Django/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.",
+      "Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, indexing workflows, committed artifacts, and S3-compatible artifact lineage.",
+      "Defined service ownership through typed worker contracts, idempotent jobs, and concurrency-safe commits, keeping domain lifecycle decisions in the API while stateless workers handle long-running processing.",
+      "Integrated Agent Testing into the platform core with runtime trace capture, multi-stage evaluation, deterministic validation, and workflow-level quality gates."
     ]
   },
   {
-    slug: "ata",
-    label: "AI validation platform",
-    title: "ATA — Agent Test Agent",
-    subtitle: "AI-native validation and audit layer for agentic systems",
+    slug: "iqp",
+    label: "Enterprise Quality Engineering",
+    title: "IQP — Intelligent Quality Platform",
+    subtitle:
+      "AI-assisted traceability and code intelligence for Quality Engineering",
     summary:
-      "A completed standalone validation and audit platform for AI agent systems. ATA sits at the model-provider boundary, captures every agent-model interaction as auditable evidence, then scores it across 10 quality dimensions with a multi-agent judge to produce deployment-ready quality verdicts.",
+      "An enterprise Quality Engineering platform combining product knowledge, source-code intelligence, and AI-assisted retrieval to support engineering traceability and test analysis.",
     group: "featured-systems",
     visualTier: "featured",
     homepageFeatured: true,
     period: "2026",
+    role:
+      "Backend engineering, retrieval, code intelligence, and product integration",
+    outcome:
+      "Contributed to a working enterprise platform that unified product knowledge, source-code context, AI-assisted retrieval, and quality-analysis capabilities.",
+    tags: [
+      "FastAPI",
+      "Qdrant",
+      "PostgreSQL",
+      "Redis",
+      "Celery",
+      "MCP",
+      "React",
+      "TypeScript",
+      "Docker Compose"
+    ],
+    highlights: [
+      "Designed backend service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.",
+      "Implemented hybrid retrieval combining semantic, lexical, and graph-based signals to provide scoped context for engineering and AI-assisted tools.",
+      "Developed code-intelligence capabilities for indexing source repositories and linking product concepts with related implementation and test assets.",
+      "Integrated asynchronous backend services, a React/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product workflow."
+    ]
+  },
+  {
+    slug: "ata",
+    label: "Integrated prototype",
+    title: "ATA — Agent Test Agent",
+    subtitle: "Quality infrastructure for AI-agent products",
+    summary:
+      "A standalone agent-evaluation MVP whose capture, evaluation, and quality-gate capabilities were later integrated into Omni-Agent.",
+    group: "applied-ai-systems",
+    visualTier: "supporting",
+    homepageFeatured: false,
+    period: "2026",
     role: "Solo architecture and implementation",
     outcome:
-      "Built a working end-to-end MVP across API, capture gateway, validation worker, and web dashboard — from record capture to 10-dimension validation and Workflow Quality Gate verdicts.",
+      "Validated the evaluation architecture before its core capabilities were integrated into Omni-Agent's Agent Testing module.",
     tags: [
       "Agent Evaluation",
       "LLM-as-a-Judge",
@@ -99,33 +135,30 @@ export const cases: ProjectCase[] = [
       "Docker"
     ],
     highlights: [
-      "Designed ATA as an independent validation and audit layer that sits at the model-provider boundary (Target Agent System → ATA Gateway → Model Provider), capturing every agent–LLM interaction as auditable evidence without modifying the system under test.",
-      "Built a multi-service architecture — FastAPI control plane, LiteLLM capture gateway, Celery validation worker, and a React/Vite operational dashboard — over shared SQLAlchemy ORM and contract packages in a uv-managed monorepo.",
-      "Engineered a per-record multi-agent validator (Planner → Judge → Critic → Meta Judge) that scores 10 quality dimensions including context, tool-calling, reasoning, security, compliance, and business outcome.",
-      "Implemented a Workflow Quality Gate that turns record-score distributions (P10/P35/P50, mean, deviation) and critical blockers into PASS/WARN/FAIL/BLOCK deployment verdicts under a \"No Average Hiding\" principle.",
-      "Enforced security by design: ATA-prefixed recording credentials, a fail-closed gateway, and provider secrets kept request-local — never written to Redis, PostgreSQL, logs, or UI."
+      "Built an end-to-end MVP with a FastAPI control plane, LiteLLM gateway, Celery workers, PostgreSQL, Redis, and a React dashboard.",
+      "Designed a multi-stage evaluation workflow using Planner, Judge, Critic, and Meta-Judge roles across configurable quality dimensions.",
+      "Implemented percentile-based quality gates and deterministic critical blockers to produce reproducible PASS/FAIL verdicts."
     ]
   },
   {
     slug: "apit",
     label: "AI evaluation",
     title: "APIT — Agent Programmatic Intelligence Testing",
-    subtitle: "LLM-based test-case generation and evaluation",
+    subtitle: "An AI-assisted API testing application",
     summary:
-      "An LLM-based system that analyzes API documentation and generates structured API test cases using controlled data synthesis, LoRA fine-tuning, RAG, and automated evaluation.",
-    group: "featured-systems",
+      "An AI-assisted API testing application that generates structured test scenarios from API documentation.",
+    group: "applied-ai-systems",
     visualTier: "featured",
     homepageFeatured: true,
     period: "2025",
     docsUrl: "docs/apit-capstone.pdf",
     role: "System Architect",
-    outcome: "Qwen-2.5-3B LoRA reached 0.655 macro-F1 on structured API test generation.",
+    outcome: "Achieved a 0.655 macro-F1 score on structured API test-case generation using a fine-tuned Qwen-2.5-3B model via LoRA.",
     tags: ["LLM fine-tuning", "LoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
     highlights: [
-      "Named as a strategic play on words: while the immediate scope executes 'API Testing', the system architecture establishes a foundation for 'Agent Programmatic Intelligence Testing'.",
-      "Built a controlled bilingual synthetic dataset with 1,258 API testing samples.",
-      "Compared Qwen and Llama small-model fine-tuning with LoRA/QLoRA-style evaluation workflows.",
-      "Evaluated structured outputs with precision, recall, macro-F1, fuzzy matching, and LLM-as-a-Judge experiments."
+      "Built a bilingual synthetic dataset generation pipeline containing 1,258 API-testing samples.",
+      "Fine-tuned Qwen-2.5-3B with LoRA, achieving 0.655 macro-F1 in the project evaluation benchmark.",
+      "Developed an evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic validation."
     ]
   },
   {
@@ -134,8 +167,8 @@ export const cases: ProjectCase[] = [
     title: "Core Banking & Payment Hub QA Automation",
     subtitle: "Historical Core Banking and Payment Hub validation work",
     summary:
-      "Historical enterprise QA automation and integration validation across Core Banking, Payment Hub, API, database, web, and mobile systems; kept as supporting domain evidence behind the current AI evaluation direction.",
-    group: "supporting-delivery",
+      "Client delivery work covering Core Banking and Payment Hub integrations across API, database, web, mobile, regression, and automation testing.",
+    group: "quality-delivery",
     visualTier: "supporting",
     homepageFeatured: false,
     period: "2024-2026",
@@ -144,9 +177,10 @@ export const cases: ProjectCase[] = [
       "Delivered confidential banking validation work across transaction integrity, regression, API, database, web, and mobile systems.",
     tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
     highlights: [
-      "Built API, web, and mobile validation coverage for complex banking journeys.",
-      "Validated financial transaction behavior through API assertions, SQL checks, and regression scenarios.",
-      "Used Katalon, Appium, Postman, and JMeter across omnichannel banking delivery contexts."
+      "Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.",
+      "Validated end-to-end financial transaction flows through API testing, SQL-based database verification, regression testing, and stress testing.",
+      "Authored more than 1,500 lines of reusable SQL validation queries and maintained coverage across all in-scope API endpoints.",
+      "Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows."
     ]
   },
   {
@@ -172,13 +206,49 @@ export const cases: ProjectCase[] = [
     ]
   },
   {
+    slug: "lms",
+    label: "Early Product Engineering",
+    title: "LMS — Learning & Assessment Platform",
+    subtitle:
+      "A Django learning platform with a separate AI-assisted monitoring service",
+    summary:
+      "A full-stack learning and assessment platform covering structured course content, enrollment, quizzes, reporting, role-based workflows, and a separately deployed face-detection service.",
+    group: "engineering-foundations",
+    visualTier: "supporting",
+    homepageFeatured: false,
+    period: "2024",
+    repoUrl: "https://github.com/truong51972/LMS",
+    role:
+      "Solo developer of the initial version and primary developer in the extended team project",
+    outcome:
+      "Built the initial product independently, then continued as a primary developer when its core design was adopted into a larger team implementation.",
+    tags: [
+      "Django",
+      "FastAPI",
+      "PyTorch",
+      "Docker Compose",
+      "Nginx",
+      "Cloudflare Tunnel",
+      "Pandas",
+      "Plotly",
+      "SQLite/MySQL",
+      "Bootstrap"
+    ],
+    highlights: [
+      "Built the initial standalone version including course administration, online quizzes, and custom Django role-based access rules.",
+      "Integrated a separate FastAPI face-detection service to run computer-vision inference independently from the main Django application.",
+      "Configured multi-service deployment with Docker Compose, Nginx, and Cloudflare Tunnel to support external access and static file serving.",
+      "Developed course content ingestion and examination utilities to convert raw spreadsheet inputs into structured assessment JSON."
+    ]
+  },
+  {
     slug: "self-driving-car",
     label: "Earlier AI research",
     title: "Self-driving Car Problem",
     subtitle: "YOLOv8 perception, lane segmentation, and PID control in simulation",
     summary:
       "A simulated autonomous-driving pipeline combining YOLOv8-based perception, lane segmentation, OpenCV processing, and PID steering control inside a Unity environment.",
-    group: "earlier-ai-research",
+    group: "engineering-foundations",
     visualTier: "compact",
     homepageFeatured: false,
     period: "2024",
@@ -200,7 +270,7 @@ export const cases: ProjectCase[] = [
     subtitle: "PyTorch classification with segmentation-assisted preprocessing and visual explanations",
     summary:
       "A PyTorch computer-vision pipeline for plant disease classification that combines image preprocessing, CNN inference, class-specific thresholds, and Grad-CAM++ explanations behind a FastAPI service.",
-    group: "earlier-ai-research",
+    group: "engineering-foundations",
     visualTier: "compact",
     homepageFeatured: false,
     period: "2024",
@@ -220,21 +290,23 @@ export const cases: ProjectCase[] = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Applied AI Engineer | QA Automation & AI Evaluation",
+    title: "Automation Tester (Applied AI & Backend Engineering)",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Built applied AI workflows for document understanding, RAG Q&A, test-case generation, duplicate bug detection, traceability, and change impact analysis.",
-      "Designed backend orchestration with Django/DRF, FastAPI, Redis/Celery, PostgreSQL, async workers, service layers, and clear domain boundaries.",
-      "Applied banking quality experience to agent evaluation, evidence capture, and backend validation workflows."
+      "Designed backend, retrieval, and code-intelligence components for IQP, an enterprise Quality Engineering platform.",
+      "Built AI-assisted workflows for document analysis, test-case generation, defect analysis, and change-impact assessment.",
+      "Developed reusable automation across Web, mobile, API, and database layers for complex banking and payment workflows.",
+      "Improved testing efficiency through reusable validation assets, automation utilities, and traceable quality workflows."
     ]
   },
   {
     period: "Sep 2024 — Dec 2024",
-    title: "Full-stack Developer Intern",
+    title: "Full-Stack Developer Intern",
     org: "FPT Software Academy · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Built Django-based web applications and deployed containerized services with Docker.",
-      "Improved deployment reliability through production-oriented configuration and Cloudflare integration."
+      "Built the initial version of a Django learning and assessment platform with structured course, quiz, enrollment, and role-based workflows.",
+      "Integrated a separate FastAPI face-detection service for AI-assisted exam monitoring.",
+      "Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel."
     ]
   }
 ];
@@ -256,57 +328,73 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "Applied AI and machine learning",
-    items: [
-      "PyTorch",
-      "Model training and evaluation",
-      "Computer Vision",
-      "Data analysis and EDA",
-      "Dataset curation",
-      "OpenCV and YOLOv8",
-      "LoRA/QLoRA"
-    ]
-  },
-  {
-    title: "LLM systems and retrieval",
-    items: [
-      "RAG and hybrid retrieval",
-      "Knowledge graphs (RAG + Graph)",
-      "Agentic workflows",
-      "Vector search",
-      "LangChain/LangGraph",
-      "LLM evaluation",
-      "Agent evaluation and testing",
-      "Milvus/Qdrant",
-      "Langfuse"
-    ]
-  },
-  {
-    title: "Backend and AI infrastructure",
+    title: "Backend Systems & Architecture",
     items: [
       "Python",
       "Django/DRF",
       "FastAPI",
+      "Pydantic",
+      "SQLAlchemy/SQLModel",
+      "REST APIs",
+      "Domain modeling",
+      "Service boundaries",
+      "Asynchronous orchestration",
+      "Idempotency",
       "PostgreSQL",
-      "Redis/Celery",
-      "Async workers",
-      "S3-compatible storage",
-      "Docker"
+      "Redis",
+      "Celery"
     ]
   },
   {
-    title: "Agent evaluation and AI quality",
+    title: "Applied AI & Graph Systems",
     items: [
-      "Agent testing",
-      "Workflow quality gates",
-      "Evidence capture",
+      "RAG",
+      "Hybrid retrieval",
+      "Document intelligence",
+      "Knowledge Graphs",
+      "Code Graphs",
+      "Graph traversal",
+      "Agentic workflows",
+      "MCP",
+      "LangChain",
+      "LangGraph",
+      "LiteLLM",
+      "Docling",
+      "Qdrant",
+      "Langfuse"
+    ]
+  },
+  {
+    title: "Product Interfaces & Delivery",
+    items: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Docker",
+      "Docker Compose",
+      "Nginx",
+      "CI/CD",
+      "Observability",
+      "S3/MinIO",
+      "Git"
+    ]
+  },
+  {
+    title: "Quality, Evaluation & ML",
+    items: [
+      "LLM evaluation",
+      "Agent evaluation",
       "LLM-as-a-Judge",
-      "API and integration testing",
+      "Quality gates",
+      "PyTorch",
+      "LoRA/QLoRA",
+      "Model evaluation",
+      "API validation",
       "SQL validation",
       "Regression testing",
-      "Core Banking / Payment Hub"
+      "Test automation"
     ]
   }
 ];
 
-export const supportingTools = ["React", "Astro", "Streamlit"];
+export const supportingTools = ["Astro", "Streamlit"];

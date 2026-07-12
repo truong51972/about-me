@@ -1,6 +1,6 @@
 # Tran Quoc Truong — Portfolio & CV
 
-Static Astro portfolio for Applied AI / Python Backend / Agentic QA roles.
+Static Astro portfolio for Product Engineer | Backend Systems & Applied AI roles.
 
 ## Live site
 
@@ -73,3 +73,11 @@ Generated files:
 │   ├── pages/
 │   └── styles/
 └── dist/             # Build output (gitignored)
+
+## Validation
+
+```bash
+uv sync
+npm install
+npm run build
+```

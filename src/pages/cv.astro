@@ -1,14 +1,21 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, timeline, education, skillGroups, cases } from "../data/profile";
+import { site, timeline, education, skillGroups, cases, type ProjectCase } from "../data/profile";
 
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
 const yamlPath = withBase("Tran_Quoc_Truong_CV.yaml");
 const mdPath = withBase("cv/Tran_Quoc_Truong_CV.md");
-const cvProjectSlugs = ["omni-agent", "ata", "apit"];
-const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
+const cvProjectSlugs = [
+  "omni-agent",
+  "iqp",
+  "banking-automation",
+  "apit"
+];
+const cvProjects = cvProjectSlugs
+  .map((slug) => cases.find((item) => item.slug === slug))
+  .filter((item): item is ProjectCase => Boolean(item));
 ---
 
 <BaseLayout title="CV" description="CV summary for Tran Quoc Truong.">
@@ -48,29 +55,16 @@ const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
             <a class="btn-secondary justify-start px-4 py-2" href={htmlPath} target="_blank" rel="noreferrer">HTML</a>
           </div>
         </div>
-
-        <div class="evidence-card">
-          <h3>Education</h3>
-          <div class="space-y-5">
-            {education.map((item) => (
-              <div>
-                <strong class="block leading-tight text-white">{item.degree}</strong>
-                <p class="mt-2 text-sm leading-6 text-text-muted">{item.org}</p>
-                <p class="mt-1 font-mono text-xs text-brand-300">{item.period}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </aside>
 
       <article class="space-y-16">
         <section class="surface-panel rounded-2xl p-6 md:p-8">
           <h2 class="section-label mb-4">Positioning</h2>
           <h3 class="max-w-4xl text-3xl font-semibold leading-tight text-white">
-            Applied AI Backend Engineer focused on Python systems, retrieval, evaluation, and machine learning services.
+            Product Engineer focused on backend systems and applied AI workflows.
           </h3>
           <p class="measure mt-5 text-lg leading-8 text-text-muted">
-            My profile combines backend engineering, applied AI systems, and agent evaluation, building workflows where AI outputs become traceable, auditable, and testable product behavior.
+            {site.about}
           </p>
         </section>
 
@@ -98,7 +92,7 @@ const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
 
         <section>
           <h2 class="section-label mb-6">Selected projects</h2>
-          <div class="grid gap-5 md:grid-cols-3">
+          <div class="grid gap-5 md:grid-cols-2">
             {cvProjects.map((item) => (
               <a class="group block" href={withBase(`projects/${item.slug}/`)}>
                 <article class="bento-card h-full">
@@ -135,6 +129,53 @@ const cvProjects = cases.filter((item) => cvProjectSlugs.includes(item.slug));
             </div>
           </article>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 py-16 md:py-24">
+    <div class="site-shell">
+      <div class="mb-10 grid gap-6 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-7">
+          <h2 class="section-label mb-4">Education</h2>
+          <p class="text-3xl font-semibold leading-tight text-white md:text-4xl">
+            Formal software engineering and artificial intelligence training.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+        {education.map((item) => (
+          <article class="bento-card">
+            <div class="grid gap-3 md:grid-cols-[minmax(0,1fr)_12rem]">
+              <div>
+                <p class="text-sm font-medium text-brand-300">{item.org}</p>
+                <h3 class="mt-2 text-xl font-semibold text-white">{item.degree}</h3>
+              </div>
+              <p class="font-mono text-sm text-text-muted md:text-right">{item.period}</p>
+            </div>
+            {item.note && <p class="mt-4 border-t border-white/10 pt-4 text-sm text-text-muted">{item.note}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-white/10 bg-bg-surface/25 py-16 md:py-24">
+    <div class="site-shell">
+      <div class="mb-10 grid gap-6 lg:grid-cols-12 lg:items-end">
+        <div class="lg:col-span-7">
+          <h2 class="section-label mb-4">Languages</h2>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <article class="bento-card">
+          <h3>Vietnamese</h3>
+          <p class="mt-2 text-sm text-text-muted">Native</p>
+        </article>
+        <article class="bento-card">
+          <h3>English</h3>
+          <p class="mt-2 text-sm text-text-muted">Working proficiency</p>
+        </article>
       </div>
     </div>
   </section>

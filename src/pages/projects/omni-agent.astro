@@ -32,11 +32,11 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
               <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Shape</span>
-              <span class="text-sm leading-6 text-text-muted">Python monorepo, 5 apps, 2 shared packages</span>
+              <span class="text-sm leading-6 text-text-muted">Multi-service Python monorepo with independently deployable applications and shared typed contracts</span>
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
               <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Core</span>
-              <span class="text-sm leading-6 text-text-muted">Django control plane, Celery workers, hybrid RAG + graph retrieval</span>
+              <span class="text-sm leading-6 text-text-muted">Django control plane, asynchronous workers, versioned knowledge workflows, hybrid and graph-based retrieval, and integrated Agent Testing</span>
             </div>
           </div>
         </div>
@@ -52,40 +52,43 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
           <h3 class="text-2xl font-bold text-white mb-6">A project-centric AI platform with a clean control-plane / data-plane split.</h3>
           <p class="text-text-muted leading-relaxed mb-6">Omni-Agent is an event-driven AI platform built as a Python monorepo. Everything is scoped to a <strong class="text-white">Project</strong>, and a Django/DRF control plane owns the domain — projects, documents, jobs, and graph metadata — while a fleet of stateless workers executes the heavy technical work: OCR, chunking, and knowledge-graph analysis.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The product direction is evaluation-focused document intelligence: turn requirement and specification documents into a queryable knowledge base, then use <strong class="text-white">hybrid RAG + knowledge-graph retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence.</p>
+          <p class="text-text-muted leading-relaxed mb-6">The platform provides evaluation-focused document intelligence: it converts requirement and specification documents into a queryable knowledge base, then uses <strong class="text-white">hybrid and graph-based retrieval</strong> to support test-case generation, change-impact analysis, and bug intelligence.</p>
         </section>
 
         <!-- Architecture -->
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Architecture</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Five deployable apps and two shared packages.</h3>
+          <h3 class="text-2xl font-bold text-white mb-6">Monorepo structure and service boundaries.</h3>
           <p class="text-text-muted leading-relaxed mb-6">The monorepo keeps each app independently deployable with app-local dependencies (no root workspace). The Django control plane is the single source of truth for domain state; data-plane workers are stateless executors that receive typed commands and return typed results.</p>
           <pre class="bg-bg-base p-6 rounded-xl border border-white/5 text-sm font-mono text-brand-400 overflow-x-auto mb-6">Omni-Agent (monorepo)
 ├── apps/
-│   ├── omni-api            Django/DRF control plane (domain, jobs, auth, realtime)
-│   ├── omni-doc-processor  Stateless Celery worker (OCR strategy, chunking)
-│   ├── omni-docling        Docling document-conversion / OCR service
-│   ├── omni-graph-analysis Knowledge-graph builder (LangGraph, networkx)
+│   ├── omni-core           Django/DRF control plane (domain model, projects, lifecycles, and jobs)
+│   ├── omni-doc-processor  Stateless Celery worker (OCR strategy, text chunking)
+│   ├── omni-graph-analysis Knowledge-graph builder (LangGraph workflow, networkx)
+│   ├── ata-gateway         LiteLLM gateway plugin for agent traffic capture
+│   ├── ata-worker          Agent validation execution engine (evaluation workflows)
+│   ├── omni-tools-mcp      MCP server exposing tools and codebase context
 │   └── omni-web            React 19 + Vite console
 └── packages/
-    ├── omni-contracts      Pydantic DTOs, enums, worker command/result envelopes
-    └── omni-worker-shared  Celery config, HTTP/S3 helpers, worker DI lifecycle</pre>
+    ├── omni-contracts      Pydantic DTOs and transport contracts
+    ├── ata-domain          Agent evaluation schemas and validation rules
+    └── omni-worker-shared  Celery and storage shared configuration</pre>
 
-          <h3 class="text-lg font-bold text-white mb-4">Control plane (omni-api) owns:</h3>
+          <h3 class="text-lg font-bold text-white mb-4">Control plane (omni-core) owns:</h3>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Projects, documents, document versions, and graph metadata</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Domain rules, lifecycle transitions, and permissions (DRF, API keys, JWT)</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">The generic PlatformJob control-plane for async work</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Artifact metadata and S3 storage keys</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Realtime updates over Django Channels</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Projects, documents, document versions, and graph metadata</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Domain rules, lifecycle transitions, and permissions (DRF, API keys, JWT)</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">The generic PlatformJob control-plane for async work</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Artifact metadata and S3 storage keys</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Realtime updates over Django Channels</li>
           </ul>
 
           <h3 class="text-lg font-bold text-white mb-4">Data-plane workers execute:</h3>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Document conversion and OCR via Docling</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Text chunking and committed-text snapshots</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Knowledge-graph build / validate / merge pipelines</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Embedding and retrieval tasks against the vector store</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Document conversion and OCR via Docling</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Text chunking and committed-text snapshots</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Knowledge-graph build / validate / merge pipelines</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Embedding and retrieval tasks against the vector store</li>
           </ul>
         </section>
 
@@ -95,11 +98,11 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h3 class="text-2xl font-bold text-white mb-6">The first capability: versioned document processing.</h3>
           <p class="text-text-muted leading-relaxed mb-6">Knowledge Builder is job-centric and version-centric. Each document carries a <code>DocumentVersion</code> lifecycle, and processing is split cleanly between control and data planes:</p>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Versioned uploads with explicit lifecycle states</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Docling-based OCR and document conversion in a stateless worker</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Chunking with the API owning the committed-text snapshot</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Processing artifacts recorded against the owning version and job</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">S3-compatible storage with internal keys and presigned browser URLs</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Versioned uploads with explicit lifecycle states</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Docling-based OCR and document conversion in a stateless worker</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Chunking with the API owning the committed-text snapshot</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Processing artifacts recorded against the owning version and job</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">S3-compatible storage with internal keys and presigned browser URLs</li>
           </ul>
           <p class="text-text-muted leading-relaxed mb-6">The split is deliberate: the API creates the committed text snapshot and owns transitions, while the worker performs chunking and returns neutral artifacts — so a failed chunking run leaves the last ready version intact.</p>
         </section>
@@ -107,16 +110,22 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <!-- Knowledge Graph -->
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Knowledge Graph</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Hybrid RAG + graph retrieval for QA intelligence.</h3>
+          <h3 class="text-2xl font-bold text-white mb-6">Knowledge Graph and hybrid retrieval</h3>
           <p class="text-text-muted leading-relaxed mb-6">Beyond document chunks, Omni-Agent builds a project knowledge graph linking requirements, rules, test cases, and bugs. Combining vector retrieval with graph traversal gives the LLM both semantic recall and structural reasoning that pure RAG misses.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The graph powers a set of QA-oriented use cases as the core product direction:</p>
+          <p class="text-text-muted leading-relaxed mb-6">The graph-builder pipeline (build &rarr; validate &rarr; merge &rarr; metadata export) is orchestrated with LangGraph and networkx, with the React console rendering the graph via Sigma.</p>
+
+          <h4 class="text-lg font-bold text-white mb-4">Current capabilities:</h4>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Change-impact analysis</strong> — a changed requirement surfaces both directly linked and semantically similar test cases.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Regression optimization</strong> — rank test cases by a learned risk score to run the highest-risk subset first.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Duplicate-bug detection</strong> — embed new bug reports and find near-duplicate candidates.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Test-gap analysis</strong> — link prediction surfaces requirements with weak test coverage.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Change-impact analysis</strong> — a changed requirement surfaces both directly linked and semantically similar test cases.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Duplicate-bug detection</strong> — embed new bug reports and find near-duplicate candidates.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Test-gap analysis</strong> — mapping requirement paths to test coverage to identify missing validations.</li>
           </ul>
-          <p class="text-text-muted leading-relaxed mb-6">The graph-builder pipeline (build → validate → merge → metadata export) is orchestrated with LangGraph and networkx, with the React console rendering the graph via Sigma.</p>
+
+          <h4 class="text-lg font-bold text-white mb-4">Planned capabilities &amp; Product direction:</h4>
+          <ul class="space-y-4 text-text-muted mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Regression optimization</strong> — rank test cases by modification history and feature dependencies to run the highest-risk subset first.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Advanced Graph Retrieval</strong> — Ingesting complex multi-document specifications and code dependency graphs.</li>
+          </ul>
         </section>
 
         <!-- Platform foundations -->
@@ -124,11 +133,11 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Platform foundations</h2>
           <h3 class="text-2xl font-bold text-white mb-6">Shared contracts and a generic job control-plane.</h3>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">PlatformJob</strong> — one generic job model keyed by project, job type, resource type, and string-backed resource id, so resources with different identifier types share one control-plane for user-visible async work.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Typed transport contracts</strong> — worker command and result envelopes live in <code>omni-contracts</code> as transport-only Pydantic DTOs, kept free of Celery, storage, or service logic.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Worker runtime helpers</strong> — <code>omni-worker-shared</code> centralizes Celery config, HTTP sessions, the S3 wrapper, and worker DI lifecycle, so the API never has to depend on worker-only dependencies.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Storage boundary</strong> — internal S3 aliases for backend IO, presigned external aliases for the browser; raw storage keys never leak past API/worker code.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">UUID v7</strong> primary keys for document versions, treated as opaque strings across services.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">PlatformJob</strong> — one generic job model keyed by project, job type, resource type, and string-backed resource id, so resources with different identifier types share one control-plane for user-visible async work.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Typed transport contracts</strong> — worker command and result envelopes live in <code>omni-contracts</code> as transport-only Pydantic DTOs, kept free of Celery, storage, or service logic.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Worker runtime helpers</strong> — <code>omni-worker-shared</code> centralizes Celery config, HTTP sessions, the S3 wrapper, and worker DI lifecycle, so the API never has to depend on worker-only dependencies.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Storage boundary</strong> — internal S3 aliases for backend IO, presigned external aliases for the browser; raw storage keys never leak past API/worker code.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">UUID v7</strong> primary keys for document versions, treated as opaque strings across services.</li>
           </ul>
         </section>
 
@@ -138,10 +147,10 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h3 class="text-2xl font-bold text-white mb-6">A production-shaped local topology.</h3>
           <p class="text-text-muted leading-relaxed mb-6">Compose fragments wire the full system for local development:</p>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Backend</strong> — Django/DRF, Celery, Django Channels, PostgreSQL, Redis</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">AI / retrieval</strong> — LangChain, LangGraph, Milvus vector DB, a LiteLLM + Ollama model gateway, Langfuse for LLM observability</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Documents</strong> — Docling conversion service, MinIO S3-compatible object storage</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Frontend</strong> — React 19, Vite, TanStack Query, React Router, Tailwind, Sigma/graphology graph visualization, ApexCharts</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Backend</strong> — Django/DRF, Celery, Django Channels, PostgreSQL, Redis</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">AI / retrieval</strong> — LangChain, LangGraph, Qdrant vector DB, a LiteLLM + Ollama model gateway, Langfuse for LLM observability</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Documents</strong> — Docling conversion service, MinIO S3-compatible object storage</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Frontend</strong> — React 19, Vite, TanStack Query, React Router, Tailwind, Sigma/graphology graph visualization, ApexCharts</li>
           </ul>
           <p class="text-text-muted leading-relaxed mb-6">The React console is a Google-Cloud-Console-like shell: a compact top app bar, an overlay navigation drawer, and slug-first routes under <code>/projects/:projectSlug/...</code>, with Documents and Knowledge Graph as the main project-scoped resource pages.</p>
         </section>
@@ -149,8 +158,8 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <!-- ATA relationship -->
         <section>
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Agent Testing &amp; Operations</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Where ATA fits in.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Agent Testing &amp; Operations is a durable product direction for Omni-Agent. That direction now exists as <a href={withBase("projects/ata/")}>ATA — Agent Test Agent</a>, a completed standalone validation and audit MVP, with planned integration back into Omni-Agent as its evaluation module once the platform's backend support expands.</p>
+          <h3 class="text-2xl font-bold text-white mb-6">Integrated Agent Testing</h3>
+          <p class="text-text-muted leading-relaxed mb-6">ATA began as a standalone agent-evaluation MVP. Its runtime trace capture, multi-stage evaluation, deterministic validation, and quality-gate capabilities have since been integrated into Omni-Agent as the platform's Agent Testing core.</p>
         </section>
 
         <!-- Technical Decisions -->
@@ -158,12 +167,12 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Technical decisions</h2>
           <h3 class="text-2xl font-bold text-white mb-6">Engineering trade-offs and design rationale.</h3>
           <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Control plane vs. data plane</strong> — Django owns domain semantics; workers are stateless executors. Domain logic never leaks into workers.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">App-local dependencies</strong> — each app has its own <code>pyproject.toml</code> and lock file, so the API never pulls worker-only dependencies and apps stay independently deployable.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Transport-only contracts</strong> — shared DTOs describe payloads, not behavior, keeping the contract package framework-light.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Job-centric processing</strong> — every user-visible async operation is a PlatformJob, giving consistent status, observability, and resource linkage.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Concurrency safety</strong> — the document commit flow locks the current version directly and fetches nullable ancestor data separately instead of joining under a row lock.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Hybrid retrieval</strong> — graph traversal complements vector search to capture relationships that semantic similarity alone would miss.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Control plane vs. data plane</strong> — Django owns domain semantics; workers are stateless executors. Domain logic never leaks into workers.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">App-local dependencies</strong> — each app has its own <code>pyproject.toml</code> and lock file, so the API never pulls worker-only dependencies and apps stay independently deployable.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Transport-only contracts</strong> — shared DTOs describe payloads, not behavior, keeping the contract package framework-light.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Job-centric processing</strong> — every user-visible async operation is a PlatformJob, giving consistent status, observability, and resource linkage.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Concurrency safety</strong> — the document commit flow locks the current version directly and fetches nullable ancestor data separately instead of joining under a row lock.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Hybrid retrieval</strong> — graph traversal complements vector search to capture relationships that semantic similarity alone would miss.</li>
           </ul>
         </section>
 
@@ -186,13 +195,13 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         </div>
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
-          <p class="text-text-muted leading-relaxed mb-6"><strong class="text-white">Knowledge Builder</strong> — Built</p>
-          <p class="text-text-muted leading-relaxed mb-6"><strong class="text-white">Knowledge Graph</strong> — Building</p>
-          <p class="text-text-muted leading-relaxed mb-6"><strong class="text-white">Agent Testing (<a href={withBase("projects/ata/")}>ATA</a>)</strong> — Standalone MVP</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Builder</strong> — Built and actively evolving</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Graph and retrieval</strong> — Implemented; ranking, graph modeling, and analysis workflows continue to evolve</p>
+          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Agent Testing</strong> — Integrated into the platform core</p>
         </div>
         <div class="evidence-card">
           <h3 class="text-lg font-bold text-white mb-4">Shape</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Python monorepo · 5 apps · 2 shared packages</p>
+          <p class="text-text-muted leading-relaxed mb-6">Multi-service Python monorepo with independently deployable applications and shared typed contracts</p>
         </div>
       </aside>
     </div>
