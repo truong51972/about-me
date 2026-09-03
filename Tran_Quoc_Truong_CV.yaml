@@ -113,9 +113,9 @@ design:
     right_margin: 1.35cm
     show_footer: true
   header:
-    space_below_name: 0.25cm
-    space_below_headline: 0.25cm
-    space_below_connections: 0.25cm
+    space_below_name: 0.45cm
+    space_below_headline: 0.35cm
+    space_below_connections: 0.3cm
   section_titles:
     space_above: 0.38cm
     space_below: 0.2cm
