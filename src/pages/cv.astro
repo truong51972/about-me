@@ -1,7 +1,7 @@
 ---
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { site, timeline, education, skillGroups, cases, type ProjectCase } from "../data/profile";
+import { site, timeline, achievements, education, skillGroups, cases, type ProjectCase } from "../data/profile";
 
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
@@ -30,7 +30,7 @@ const cvProjects = cvProjectSlugs
         <div class="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
           <a class="btn-primary" href={pdfPath} target="_blank" rel="noreferrer">Download PDF</a>
           <a class="btn-secondary" href={htmlPath} target="_blank" rel="noreferrer">Open HTML</a>
-          <a class="btn-secondary" href={yamlPath} target="_blank" rel="noreferrer">YAML source</a>
+          <a class="btn-secondary" href={yamlPath} target="_blank" rel="noreferrer">YAML Source</a>
         </div>
       </div>
     </div>
@@ -53,6 +53,7 @@ const cvProjects = cvProjectSlugs
             <a class="btn-secondary justify-start px-4 py-2" href={pdfPath} target="_blank" rel="noreferrer">PDF</a>
             <a class="btn-secondary justify-start px-4 py-2" href={mdPath} target="_blank" rel="noreferrer">Markdown</a>
             <a class="btn-secondary justify-start px-4 py-2" href={htmlPath} target="_blank" rel="noreferrer">HTML</a>
+            <a class="btn-secondary justify-start px-4 py-2" href={yamlPath} target="_blank" rel="noreferrer">YAML Source</a>
           </div>
         </div>
       </aside>
@@ -61,7 +62,7 @@ const cvProjects = cvProjectSlugs
         <section class="surface-panel rounded-2xl p-6 md:p-8">
           <h2 class="section-label mb-4">Positioning</h2>
           <h3 class="max-w-4xl text-3xl font-semibold leading-tight text-white">
-            Product Engineer focused on backend systems and applied AI workflows.
+            Applied AI Engineer focused on LLM systems, RAG architectures, and agent evaluation.
           </h3>
           <p class="measure mt-5 text-lg leading-8 text-text-muted">
             {site.about}
@@ -85,6 +86,24 @@ const cvProjects = cvProjectSlugs
                     <li class="border-t border-white/10 pt-3">{bullet}</li>
                   ))}
                 </ul>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-label mb-6">Achievements</h2>
+          <div class="space-y-5">
+            {achievements.map((item) => (
+              <article class="bento-card">
+                <div class="grid gap-3 md:grid-cols-[minmax(0,1fr)_12rem]">
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p class="mt-2 text-sm font-medium text-brand-300">{item.org}</p>
+                  </div>
+                  <p class="font-mono text-sm text-text-muted md:text-right">{item.period}</p>
+                </div>
+                <p class="mt-6 border-t border-white/10 pt-3 text-sm leading-7 text-text-muted">{item.description}</p>
               </article>
             ))}
           </div>

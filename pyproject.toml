@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [tool.poe.tasks]
-update-cv = "rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv"
+update-cv = "rendercv render Tran_Quoc_Truong_CV.yaml"

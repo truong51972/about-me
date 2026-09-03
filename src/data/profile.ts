@@ -27,15 +27,15 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Product Engineer | Backend Systems & Applied AI",
+  role: "Applied AI Engineer | LLM Systems, Agent Evaluation & RAG",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build Python backend systems and applied AI products for document intelligence, retrieval, code intelligence, and agent evaluation. My work focuses on clear domain ownership, reliable asynchronous workflows, and verifiable product outcomes.",
+    "Applied AI Engineer with ~2 years of experience designing and deploying production LLM systems, hybrid retrieval architectures, and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL) to deliver reliable, verifiable AI-enabled software products.",
   about:
-    "My background combines backend development, applied AI, and quality automation. I work across domain modeling, service boundaries, AI integration, and system validation to turn technical capabilities into maintainable product workflows."
+    "My work bridges formal artificial intelligence with production software engineering: architecting multi-service RAG pipelines with Docling and Qdrant, orchestrating idempotent asynchronous workloads, fine-tuning lightweight models, and pioneering agent verification frameworks with runtime trace interception and deterministic quality gates."
 };
 
 export const cases: ProjectCase[] = [
@@ -53,7 +53,7 @@ export const cases: ProjectCase[] = [
     period: "2026–Present",
     role: "Solo product architecture and implementation",
     outcome:
-      "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing.",
+      "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing. Its Agent Assurance module won 2nd place at IVS Hackathon 2026.",
     tags: [
       "Django/DRF",
       "Celery",
@@ -68,10 +68,10 @@ export const cases: ProjectCase[] = [
       "React/Vite"
     ],
     highlights: [
-      "Designed a Django/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.",
-      "Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, indexing workflows, committed artifacts, and S3-compatible artifact lineage.",
-      "Defined service ownership through typed worker contracts, idempotent jobs, and concurrency-safe commits, keeping domain lifecycle decisions in the API while stateless workers handle long-running processing.",
-      "Integrated Agent Testing into the platform core with runtime trace capture, multi-stage evaluation, deterministic validation, and workflow-level quality gates."
+      "Built Knowledge Builder with Docling OCR, layout parsing, snapshot text chunking, and multi-vector indexing in Qdrant with S3-compatible artifact lineage.",
+      "Architected Agent Assurance: intercepted LLM runtime traces via LiteLLM gateway and OpenTelemetry metadata, enforcing idempotency on (capture_context, trace_id, span_id).",
+      "Implemented multi-stage evaluation pipelines (Planner, Judge, Critic, Meta-Judge) with deterministic quality gates and percentile scoring thresholds.",
+      "Engineered a modular monorepo with a Django/DRF control plane for identity and permissions, backed by stateless Celery workers for heavy async processing."
     ]
   },
   {
@@ -290,13 +290,13 @@ export const cases: ProjectCase[] = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Automation Tester (Applied AI & Backend Engineering)",
+    title: "Applied AI Engineer & Automation Tester",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Designed backend, retrieval, and code-intelligence components for IQP, an enterprise Quality Engineering platform.",
-      "Built AI-assisted workflows for document analysis, test-case generation, defect analysis, and change-impact assessment.",
-      "Developed reusable automation across Web, mobile, API, and database layers for complex banking and payment workflows.",
-      "Improved testing efficiency through reusable validation assets, automation utilities, and traceable quality workflows."
+      "Architected backend retrieval and code-intelligence components for IQP, an enterprise Quality Engineering platform serving multi-repository codebases.",
+      "Built hybrid retrieval pipelines combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP).",
+      "Developed AI-assisted quality workflows for requirement analysis, test-case generation, and defect impact assessment using LLM-as-a-Judge evaluators.",
+      "Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
     ]
   },
   {
@@ -304,10 +304,27 @@ export const timeline = [
     title: "Full-Stack Developer Intern",
     org: "FPT Software Academy · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Built the initial version of a Django learning and assessment platform with structured course, quiz, enrollment, and role-based workflows.",
-      "Integrated a separate FastAPI face-detection service for AI-assisted exam monitoring.",
-      "Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel."
+      "Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.",
+      "Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.",
+      "Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel."
     ]
+  }
+];
+
+export const achievements = [
+  {
+    title: "2nd Place — IVS Hackathon 2026",
+    period: "Aug 2026",
+    org: "IVS Hackathon 2026",
+    description:
+      "Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime trace interception, multi-stage LLM evaluation, and deterministic blockers; subsequently integrated into Omni-Agent."
+  },
+  {
+    title: "Second Prize — Autonomous Driving Research Paper Competition",
+    period: "Apr 2024",
+    org: "Research Paper Competition",
+    description:
+      "Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score."
   }
 ];
 
@@ -328,16 +345,48 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "Backend Systems & Architecture",
+    title: "Applied AI & Agentic Systems",
+    items: [
+      "Multi-Agent Systems",
+      "Agent Evaluation",
+      "MCP",
+      "RAG",
+      "Hybrid retrieval",
+      "Knowledge Graphs",
+      "Code Intelligence",
+      "LiteLLM",
+      "LangChain",
+      "LangGraph",
+      "Docling",
+      "Qdrant",
+      "Langfuse"
+    ]
+  },
+  {
+    title: "Machine Learning & LLM Evaluation",
+    items: [
+      "LLM-as-a-Judge",
+      "Runtime Trace Interception",
+      "Quality gates",
+      "LoRA/QLoRA",
+      "Synthetic Data Generation",
+      "Model benchmarking",
+      "PyTorch",
+      "Hugging Face",
+      "OpenCV",
+      "YOLOv8"
+    ]
+  },
+  {
+    title: "AI Systems & Backend Architecture",
     items: [
       "Python",
-      "Django/DRF",
       "FastAPI",
+      "Django/DRF",
       "Pydantic",
-      "SQLAlchemy/SQLModel",
+      "SQLAlchemy",
       "REST APIs",
       "Domain modeling",
-      "Service boundaries",
       "Asynchronous orchestration",
       "Idempotency",
       "PostgreSQL",
@@ -346,55 +395,18 @@ export const skillGroups = [
     ]
   },
   {
-    title: "Applied AI & Graph Systems",
+    title: "Platform, Infrastructure & Tooling",
     items: [
-      "RAG",
-      "Hybrid retrieval",
-      "Document intelligence",
-      "Knowledge Graphs",
-      "Code Graphs",
-      "Graph traversal",
-      "Agentic workflows",
-      "MCP",
-      "LangChain",
-      "LangGraph",
-      "LiteLLM",
-      "Docling",
-      "Qdrant",
-      "Langfuse"
-    ]
-  },
-  {
-    title: "Product Interfaces & Delivery",
-    items: [
-      "React",
-      "TypeScript",
-      "Vite",
       "Docker",
       "Docker Compose",
       "Nginx",
+      "MinIO/S3",
+      "OpenTelemetry",
       "CI/CD",
-      "Observability",
-      "S3/MinIO",
-      "Git"
-    ]
-  },
-  {
-    title: "Quality, Evaluation & ML",
-    items: [
-      "LLM evaluation",
-      "Agent evaluation",
-      "LLM-as-a-Judge",
-      "Quality gates",
-      "PyTorch",
-      "LoRA/QLoRA",
-      "Model evaluation",
-      "API validation",
-      "SQL validation",
-      "Regression testing",
-      "Test automation"
+      "Git",
+      "Linux"
     ]
   }
 ];
 
-export const supportingTools = ["Astro", "Streamlit"];
+export const supportingTools = ["Astro", "Streamlit", "React", "TypeScript"];
