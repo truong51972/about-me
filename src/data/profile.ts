@@ -33,7 +33,7 @@ export const site = {
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "Applied AI Engineer with ~2 years of experience designing and deploying production LLM systems, hybrid retrieval architectures, and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL) to deliver reliable, verifiable AI-enabled software products.",
+    "Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL) to deliver reliable, verifiable AI-enabled software products.",
   about:
     "My work bridges formal artificial intelligence with production software engineering: architecting multi-service RAG pipelines with Docling and Qdrant, orchestrating idempotent asynchronous workloads, fine-tuning lightweight models, and pioneering agent verification frameworks with runtime trace interception and deterministic quality gates."
 };

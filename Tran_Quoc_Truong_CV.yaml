@@ -14,7 +14,7 @@ cv:
 
   sections:
     summary:
-      - Applied AI Engineer with ~2 years of experience designing and deploying production LLM systems, hybrid retrieval architectures, and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL).
+      - Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL).
       - Proven expertise in building deterministic AI evaluation gates, production RAG pipelines with Qdrant and Docling, and fine-tuning open-source LLMs (LoRA/QLoRA) to deliver reliable, verifiable AI-enabled software products.
 
     technical_skills:
