@@ -2,7 +2,7 @@
 
 cv:
   name: Tran Quoc Truong
-  headline: Product Engineer | Backend Systems & Applied AI
+  headline: Applied AI Engineer | LLM Systems, Agent Evaluation & RAG
   location: Ho Chi Minh City, Vietnam
   email: tranquoctruong20@gmail.com
   website: https://truong51972.github.io/about-me/
@@ -14,20 +14,33 @@ cv:
 
   sections:
     summary:
-      - Backend-focused Product Engineer building Python services and applied AI systems for document intelligence, retrieval, code intelligence, and agent evaluation.
-      - My quality engineering background strengthens how I design clear domain boundaries, reliable asynchronous workflows, and verifiable AI-enabled products.
+      - Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL).
+      - Proven expertise in building deterministic AI evaluation gates, production RAG pipelines with Qdrant and Docling, and fine-tuning open-source LLMs (LoRA/QLoRA) to deliver reliable, verifiable AI-enabled software products.
+
+    technical_skills:
+      - label: Applied AI & Agentic Systems
+        details: Multi-Agent Systems, Agent Evaluation, MCP (Model Context Protocol), RAG & Hybrid Retrieval, Knowledge Graphs, Code Intelligence, LiteLLM Gateway, LangChain, LangGraph, Docling, Qdrant, Langfuse
+
+      - label: Machine Learning & LLM Evaluation
+        details: LLM-as-a-Judge, Runtime Trace Interception, Deterministic Quality Gates, LoRA/QLoRA Fine-tuning, Synthetic Data Generation, Model Benchmarking, PyTorch, Hugging Face, OpenCV, YOLOv8
+
+      - label: AI Systems & Backend Architecture
+        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, Celery, Redis, PostgreSQL, RESTful APIs, Asynchronous Workflows, Idempotent Processing
+
+      - label: Platform, Infrastructure & Tooling
+        details: Docker, Docker Compose, Nginx Ingress, S3/MinIO Lineage, OpenTelemetry (OTel), Git, CI/CD, Linux
 
     experience:
       - company: FPT Software
-        position: Automation Tester (Applied AI & Backend Engineering)
+        position: Applied AI Engineer & Automation Tester
         start_date: 2024-12
         end_date: present
         location: Ho Chi Minh City, Vietnam
         highlights:
-          - Designed backend, retrieval, and code-intelligence components for IQP, an enterprise Quality Engineering platform.
-          - Built AI-assisted workflows for document analysis, test-case generation, defect analysis, and change-impact assessment.
-          - Developed reusable automation across Web, mobile, API, and database layers for complex banking and payment workflows.
-          - Improved testing efficiency through reusable validation assets, automation utilities, and traceable quality workflows.
+          - Architected backend retrieval and code-intelligence components for IQP, an enterprise Quality Engineering platform serving multi-repository codebases.
+          - Built hybrid retrieval pipelines combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP).
+          - Developed AI-assisted quality workflows for requirement analysis, test-case generation, and defect impact assessment using LLM-as-a-Judge evaluators.
+          - Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
 
       - company: FPT Software Academy
         position: Full-Stack Developer Intern
@@ -35,53 +48,40 @@ cv:
         end_date: 2024-12
         location: Ho Chi Minh City, Vietnam
         highlights:
-          - Built the initial version of a Django learning and assessment platform with structured course, quiz, enrollment, and role-based workflows.
-          - Integrated a separate FastAPI face-detection service for AI-assisted exam monitoring.
-          - Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel.
+          - Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
+          - Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
+          - Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
 
+    achievements:
+      - name: 2nd Place — IVS Hackathon 2026
+        date: 2026-08
+        summary: Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime trace interception, multi-stage LLM evaluation, and deterministic blockers; subsequently integrated into Omni-Agent.
+      - name: Second Prize — Autonomous Driving Research Paper Competition
+        date: 2024-04
+        summary: Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
 
     featured_projects:
-      - name: Omni-Agent — Applied AI Platform
-        summary: A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.
+      - name: Omni-Agent — Applied AI & Agent Evaluation Platform
+        summary: A project-centric platform unifying versioned document knowledge, hybrid/graph retrieval, and automated agent verification across a distributed control plane.
         highlights:
-          - Designed a Django/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.
-          - Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, indexing workflows, committed artifacts, and S3-compatible artifact lineage.
-          - Defined service ownership through typed worker contracts, idempotent jobs, and concurrency-safe commits, keeping domain lifecycle decisions in the API while stateless Celery workers handle long-running processing.
-          - Integrated Agent Testing into the platform core with runtime trace capture, multi-stage evaluation, deterministic validation, and workflow-level quality gates.
-
-      - name: IQP — Intelligent Quality Platform
-        summary: An enterprise Quality Engineering platform combining product knowledge, source-code intelligence, and AI-assisted retrieval to support engineering traceability and test analysis.
-        highlights:
-          - Designed backend service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.
-          - Implemented hybrid retrieval combining semantic, lexical, and graph-based signals to provide scoped context for engineering and AI-assisted tools.
-          - Developed code-intelligence capabilities for indexing source repositories and linking product concepts with related implementation and test assets.
-          - Integrated asynchronous backend services, a React/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product workflow.
-
-      - name: Core Banking & Payment Hub QA Automation
-        summary: Client delivery work covering omnichannel banking and financial transaction integrations across API, database, regression, and automation testing.
-        highlights:
-          - Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.
-          - Validated end-to-end financial transactions through API, SQL-based database, regression, and stress testing, including more than 1,500 lines of reusable SQL validation queries.
-          - Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows.
+          - Built Knowledge Builder with Docling OCR, layout parsing, snapshot text chunking, and multi-vector indexing in Qdrant with S3-compatible artifact lineage.
+          - 'Architected Agent Assurance: intercepted LLM runtime traces via LiteLLM gateway and OpenTelemetry metadata (`requester_metadata`), enforcing idempotency on `(capture_context, trace_id, span_id)`.'
+          - Implemented multi-stage evaluation pipelines (Planner, Judge, Critic, Meta-Judge) with deterministic quality gates and percentile scoring thresholds.
+          - Engineered a modular monorepo with a Django/DRF control plane for identity and permissions, backed by stateless Celery workers for heavy async processing.
 
       - name: APIT — Agent Programmatic Intelligence Testing
-        summary: A graduation project that analyzes API documentation and generates structured API test cases using LLMs.
+        summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
         highlights:
-          - Built a FastAPI-based workflow for API-document understanding, structured test-case generation, and automated output evaluation using LLM-as-a-Judge.
-          - Evaluated LoRA and QLoRA approaches and fine-tuned Qwen2.5-3B, achieving macro-F1 0.655, a 41.5% relative improvement over a Llama-3.2-3B baseline in the same evaluation setup.
+          - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
+          - Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
+          - Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
 
-    technical_skills:
-      - label: Backend Systems & Architecture
-        details: Python, Django/DRF, FastAPI, Pydantic, SQLAlchemy/SQLModel, REST APIs, domain modeling, service boundaries, asynchronous orchestration, idempotency, PostgreSQL, Redis, Celery
-
-      - label: Applied AI & Graph Systems
-        details: RAG, hybrid retrieval, document intelligence, Knowledge Graphs, Code Graphs, graph traversal, agentic workflows, MCP, LangChain, LangGraph, LiteLLM, Docling, Qdrant, Langfuse
-
-      - label: Product Interfaces & Delivery
-        details: React, TypeScript, Vite, Docker, Docker Compose, Nginx, CI/CD, observability, S3/MinIO, Git
-
-      - label: Quality, Evaluation & ML
-        details: LLM evaluation, agent evaluation, LLM-as-a-Judge, quality gates, PyTorch, LoRA/QLoRA, model evaluation, API validation, SQL validation, regression testing, test automation
+      - name: E-Commerce AI Assistant — Conversational RAG & Search
+        summary: End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
+        highlights:
+          - Built product semantic search using Milvus, cosine similarity, embeddings, and dynamic category/price filters.
+          - Implemented multi-turn conversational agent with LangGraph and LangChain for context-aware product consultation.
+          - Containerized multi-service architecture with FastAPI, PostgreSQL, Redis, Milvus, and Docker Compose.
 
     education:
       - institution: FPT School of Business & Technology
@@ -101,10 +101,34 @@ cv:
         details: Native
 
       - label: English
-        details: Working proficiency
+        details: Professional working proficiency
 
 design:
   theme: classic
+  page:
+    size: a4
+    top_margin: 1.35cm
+    bottom_margin: 1.35cm
+    left_margin: 1.35cm
+    right_margin: 1.35cm
+    show_footer: true
+  header:
+    space_below_name: 0.45cm
+    space_below_headline: 0.35cm
+    space_below_connections: 0.3cm
+  section_titles:
+    space_above: 0.38cm
+    space_below: 0.2cm
+  sections:
+    allow_page_break: false
+    space_between_regular_entries: 0.75em
+    space_between_text_based_entries: 0.28em
+  entries:
+    highlights:
+      space_between_items: 0.28em
+      space_above: 0.1cm
+  typography:
+    line_spacing: 0.58em
 
 locale:
   language: english
@@ -112,5 +136,10 @@ locale:
 settings:
   current_date: today
   render_command:
-    output_folder: rendercv_output
+    output_folder: public/cv
+    pdf_path: public/cv/Tran_Quoc_Truong_CV.pdf
+    typst_path: public/cv/Tran_Quoc_Truong_CV.typ
+    html_path: public/cv/Tran_Quoc_Truong_CV.html
+    markdown_path: public/cv/Tran_Quoc_Truong_CV.md
+    png_path: public/cv/Tran_Quoc_Truong_CV.png
   pdf_title: Tran Quoc Truong - CV

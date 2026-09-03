@@ -8,12 +8,21 @@
 
 
 # Summary
-Backend-focused Product Engineer building Python services and applied AI systems for document intelligence, retrieval, code intelligence, and agent evaluation.
+Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL).
 
-My quality engineering background strengthens how I design clear domain boundaries, reliable asynchronous workflows, and verifiable AI-enabled products.
+Proven expertise in building deterministic AI evaluation gates, production RAG pipelines with Qdrant and Docling, and fine-tuning open-source LLMs (LoRA/QLoRA) to deliver reliable, verifiable AI-enabled software products.
+
+# Technical Skills
+**Applied AI & Agentic Systems:** Multi-Agent Systems, Agent Evaluation, MCP (Model Context Protocol), RAG & Hybrid Retrieval, Knowledge Graphs, Code Intelligence, LiteLLM Gateway, LangChain, LangGraph, Docling, Qdrant, Langfuse
+
+**Machine Learning & LLM Evaluation:** LLM-as-a-Judge, Runtime Trace Interception, Deterministic Quality Gates, LoRA/QLoRA Fine-tuning, Synthetic Data Generation, Model Benchmarking, PyTorch, Hugging Face, OpenCV, YOLOv8
+
+**AI Systems & Backend Architecture:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, Celery, Redis, PostgreSQL, RESTful APIs, Asynchronous Workflows, Idempotent Processing
+
+**Platform, Infrastructure & Tooling:** Docker, Docker Compose, Nginx Ingress, S3/MinIO Lineage, OpenTelemetry (OTel), Git, CI/CD, Linux
 
 # Experience
-## **FPT Software**, Automation Tester (Applied AI & Backend Engineering)
+## **FPT Software**, Applied AI Engineer & Automation Tester
 
 Ho Chi Minh City, Vietnam
 
@@ -21,15 +30,15 @@ Dec 2024 – present
 
 
 
-1 year 8 months
+1 year 10 months
 
-- Designed backend, retrieval, and code-intelligence components for IQP, an enterprise Quality Engineering platform.
+- Architected backend retrieval and code-intelligence components for IQP, an enterprise Quality Engineering platform serving multi-repository codebases.
 
-- Built AI-assisted workflows for document analysis, test-case generation, defect analysis, and change-impact assessment.
+- Built hybrid retrieval pipelines combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP).
 
-- Developed reusable automation across Web, mobile, API, and database layers for complex banking and payment workflows.
+- Developed AI-assisted quality workflows for requirement analysis, test-case generation, and defect impact assessment using LLM-as-a-Judge evaluators.
 
-- Improved testing efficiency through reusable validation assets, automation utilities, and traceable quality workflows.
+- Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
 
 
 
@@ -43,73 +52,69 @@ Sept 2024 – Dec 2024
 
 4 months
 
-- Built the initial version of a Django learning and assessment platform with structured course, quiz, enrollment, and role-based workflows.
+- Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 
-- Integrated a separate FastAPI face-detection service for AI-assisted exam monitoring.
+- Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
 
-- Containerized and deployed the multi-service application using Docker Compose, Nginx, and Cloudflare Tunnel.
+- Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
+
+
+
+# Achievements
+## **2nd Place — IVS Hackathon 2026**
+
+Aug 2026
+
+Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime trace interception, multi-stage LLM evaluation, and deterministic blockers; subsequently integrated into Omni-Agent.
+
+
+
+## **Second Prize — Autonomous Driving Research Paper Competition**
+
+Apr 2024
+
+Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
 
 
 
 # Featured Projects
-## **Omni-Agent — Applied AI Platform**
+## **Omni-Agent — Applied AI & Agent Evaluation Platform**
 
-A project-centric platform for versioned document knowledge, AI workflows, and integrated agent evaluation, built around a shared backend control plane.
+A project-centric platform unifying versioned document knowledge, hybrid/graph retrieval, and automated agent verification across a distributed control plane.
 
-- Designed a Django/DRF control plane for projects, permissions, document versions, processing jobs, artifacts, evaluation runs, scorecards, and audit metadata.
+- Built Knowledge Builder with Docling OCR, layout parsing, snapshot text chunking, and multi-vector indexing in Qdrant with S3-compatible artifact lineage.
 
-- Built versioned document-ingestion workflows covering source upload, OCR, preview generation, chunking, indexing workflows, committed artifacts, and S3-compatible artifact lineage.
+- Architected Agent Assurance: intercepted LLM runtime traces via LiteLLM gateway and OpenTelemetry metadata (`requester_metadata`), enforcing idempotency on `(capture_context, trace_id, span_id)`.
 
-- Defined service ownership through typed worker contracts, idempotent jobs, and concurrency-safe commits, keeping domain lifecycle decisions in the API while stateless Celery workers handle long-running processing.
+- Implemented multi-stage evaluation pipelines (Planner, Judge, Critic, Meta-Judge) with deterministic quality gates and percentile scoring thresholds.
 
-- Integrated Agent Testing into the platform core with runtime trace capture, multi-stage evaluation, deterministic validation, and workflow-level quality gates.
-
-
-
-## **IQP — Intelligent Quality Platform**
-
-An enterprise Quality Engineering platform combining product knowledge, source-code intelligence, and AI-assisted retrieval to support engineering traceability and test analysis.
-
-- Designed backend service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.
-
-- Implemented hybrid retrieval combining semantic, lexical, and graph-based signals to provide scoped context for engineering and AI-assisted tools.
-
-- Developed code-intelligence capabilities for indexing source repositories and linking product concepts with related implementation and test assets.
-
-- Integrated asynchronous backend services, a React/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product workflow.
-
-
-
-## **Core Banking & Payment Hub QA Automation**
-
-Client delivery work covering omnichannel banking and financial transaction integrations across API, database, regression, and automation testing.
-
-- Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.
-
-- Validated end-to-end financial transactions through API, SQL-based database, regression, and stress testing, including more than 1,500 lines of reusable SQL validation queries.
-
-- Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows.
+- Engineered a modular monorepo with a Django/DRF control plane for identity and permissions, backed by stateless Celery workers for heavy async processing.
 
 
 
 ## **APIT — Agent Programmatic Intelligence Testing**
 
-A graduation project that analyzes API documentation and generates structured API test cases using LLMs.
+AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
 
-- Built a FastAPI-based workflow for API-document understanding, structured test-case generation, and automated output evaluation using LLM-as-a-Judge.
+- Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
 
-- Evaluated LoRA and QLoRA approaches and fine-tuned Qwen2.5-3B, achieving macro-F1 0.655, a 41.5% relative improvement over a Llama-3.2-3B baseline in the same evaluation setup.
+- Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
+
+- Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
 
 
 
-# Technical Skills
-**Backend Systems & Architecture:** Python, Django/DRF, FastAPI, Pydantic, SQLAlchemy/SQLModel, REST APIs, domain modeling, service boundaries, asynchronous orchestration, idempotency, PostgreSQL, Redis, Celery
+## **E-Commerce AI Assistant — Conversational RAG & Search**
 
-**Applied AI & Graph Systems:** RAG, hybrid retrieval, document intelligence, Knowledge Graphs, Code Graphs, graph traversal, agentic workflows, MCP, LangChain, LangGraph, LiteLLM, Docling, Qdrant, Langfuse
+End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
 
-**Product Interfaces & Delivery:** React, TypeScript, Vite, Docker, Docker Compose, Nginx, CI/CD, observability, S3/MinIO, Git
+- Built product semantic search using Milvus, cosine similarity, embeddings, and dynamic category/price filters.
 
-**Quality, Evaluation & ML:** LLM evaluation, agent evaluation, LLM-as-a-Judge, quality gates, PyTorch, LoRA/QLoRA, model evaluation, API validation, SQL validation, regression testing, test automation
+- Implemented multi-turn conversational agent with LangGraph and LangChain for context-aware product consultation.
+
+- Containerized multi-service architecture with FastAPI, PostgreSQL, Redis, Milvus, and Docker Compose.
+
+
 
 # Education
 ## **FPT School of Business & Technology**, Master of Software Engineering in AI
@@ -139,4 +144,4 @@ Ho Chi Minh City, Vietnam
 # Languages
 **Vietnamese:** Native
 
-**English:** Working proficiency
+**English:** Professional working proficiency

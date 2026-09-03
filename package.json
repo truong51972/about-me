@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "dev:cv": "uv run poe update-cv",
-    "render:cv": "uv run poe update-cv",
+    "dev:cv": "./.venv/bin/poe update-cv",
+    "render:cv": "./.venv/bin/poe update-cv",
     "build": "npm run render:cv && astro check && astro build",
     "preview": "astro preview",
     "check": "astro check"
