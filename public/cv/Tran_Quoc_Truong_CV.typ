@@ -81,14 +81,14 @@
   date: datetime(
     year: 2026,
     month: 9,
-    day: 3,
+    day: 12,
   ),
 )
 
 
 = Tran Quoc Truong
 
-  #headline([Applied AI Engineer | LLM Systems, Agent Evaluation & RAG])
+  #headline([Applied AI Engineer | AI Platforms, Agentic Systems & Quality Engineering])
 
 #connections(
   [#connection-with-icon("location-dot")[Ho Chi Minh City, Vietnam]],
@@ -101,19 +101,19 @@
 
 == Summary
 
-Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL).
+Applied AI Engineer working across AI systems, backend architecture, and software quality, building agentic and retrieval-based solutions grounded in real operational and quality-engineering needs. Combines formal AI training with backend architecture experience in control-plane design, domain\/service boundaries, and asynchronous processing.
 
-Proven expertise in building deterministic AI evaluation gates, production RAG pipelines with Qdrant and Docling, and fine-tuning open-source LLMs (LoRA\/QLoRA) to deliver reliable, verifiable AI-enabled software products.
+Applies a quality-engineering mindset to AI systems through agent orchestration, retrieval, observability, trace reconstruction, and measurable evaluation mechanisms for reliable and auditable AI applications.
 
 == Technical Skills
 
-#strong[Applied AI & Agentic Systems:] Multi-Agent Systems, Agent Evaluation, MCP (Model Context Protocol), RAG & Hybrid Retrieval, Knowledge Graphs, Code Intelligence, LiteLLM Gateway, LangChain, LangGraph, Docling, Qdrant, Langfuse
+#strong[Agentic AI & Orchestration:] LangGraph, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, LiteLLM, LangChain, Agentic Workflows, Qdrant (Vector DB), Milvus, Docling, RAG & Hybrid Retrieval
 
-#strong[Machine Learning & LLM Evaluation:] LLM-as-a-Judge, Runtime Trace Interception, Deterministic Quality Gates, LoRA\/QLoRA Fine-tuning, Synthetic Data Generation, Model Benchmarking, PyTorch, Hugging Face, OpenCV, YOLOv8
+#strong[LLM Evaluation, Observability & Security:] OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Deterministic Quality Gates, Prompt Injection Testing, Data Leakage Evaluation, LoRA\/QLoRA Fine-tuning, Synthetic Data Generation, Langfuse, PyTorch
 
 #strong[AI Systems & Backend Architecture:] Python, FastAPI, Django\/DRF, Pydantic, SQLAlchemy, Celery, Redis, PostgreSQL, RESTful APIs, Asynchronous Workflows, Idempotent Processing
 
-#strong[Platform, Infrastructure & Tooling:] Docker, Docker Compose, Nginx Ingress, S3\/MinIO Lineage, OpenTelemetry (OTel), Git, CI\/CD, Linux
+#strong[Platform, Infrastructure & Tooling:] Docker, Docker Compose, Nginx, S3-compatible Object Storage (MinIO), Git, CI\/CD, Linux
 
 == Experience
 
@@ -121,13 +121,13 @@ Proven expertise in building deterministic AI evaluation gates, production RAG p
   [
     #strong[FPT Software], Applied AI Engineer & Automation Tester
 
-    - Architected backend retrieval and code-intelligence components for IQP, an enterprise Quality Engineering platform serving multi-repository codebases.
+    - IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.
 
-    - Built hybrid retrieval pipelines combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP).
+    - Agent Assurance (Testing Discipline for AI): Applied software testing discipline to agentic systems by architecting an assurance engine with explicit domain boundaries and async evaluation workflows; implemented evidence-capture paths through LiteLLM and OpenTelemetry-based instrumentation, with idempotent trace persistence.
 
-    - Developed AI-assisted quality workflows for requirement analysis, test-case generation, and defect impact assessment using LLM-as-a-Judge evaluators.
+    - Agent Assurance (Assurance Lifecycle & Verification): Applied an end-to-end assurance lifecycle spanning Intake, Strategy, Requirements, Test Design & Oracle Definition, Measurement Qualification, Validation, Reporting, and Re-assurance, supported by trace-based behavioral evaluation and regression workflows.
 
-    - Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by \~70\%.
+    - Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by \~70\%.
 
   ],
   [
@@ -171,7 +171,7 @@ Proven expertise in building deterministic AI evaluation gates, production RAG p
   [
     #strong[2nd Place — IVS Hackathon 2026]
 
-    #summary[Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime trace interception, multi-stage LLM evaluation, and deterministic blockers; subsequently integrated into Omni-Agent.]
+    #summary[Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.]
 
   ],
   [
@@ -197,17 +197,17 @@ Proven expertise in building deterministic AI evaluation gates, production RAG p
 
 #regular-entry(
   [
-    #strong[Omni-Agent — Applied AI & Agent Evaluation Platform]
+    #strong[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)]
 
-    #summary[A project-centric platform unifying versioned document knowledge, hybrid\/graph retrieval, and automated agent verification across a distributed control plane.]
+    #summary[An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.]
 
-    - Built Knowledge Builder with Docling OCR, layout parsing, snapshot text chunking, and multi-vector indexing in Qdrant with S3-compatible artifact lineage.
+    - Platform Architecture: Engineered a modular monorepo featuring a Django\/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.
 
-    - Architected Agent Assurance: intercepted LLM runtime traces via LiteLLM gateway and OpenTelemetry metadata (`requester_metadata`), enforcing idempotency on `(capture_context, trace_id, span_id)`.
+    - Knowledge Builder: Built document processing pipeline with Docling layout parsing\/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.
 
-    - Implemented multi-stage evaluation pipelines (Planner, Judge, Critic, Meta-Judge) with deterministic quality gates and percentile scoring thresholds.
+    - Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.
 
-    - Engineered a modular monorepo with a Django\/DRF control plane for identity and permissions, backed by stateless Celery workers for heavy async processing.
+    - Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace\/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.
 
   ],
   [
@@ -216,7 +216,7 @@ Proven expertise in building deterministic AI evaluation gates, production RAG p
 
 #regular-entry(
   [
-    #strong[APIT — Agent Programmatic Intelligence Testing]
+    #strong[APIT — Agent Programmatic Integration Testing]
 
     #summary[AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.]
 

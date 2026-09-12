@@ -27,15 +27,15 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Applied AI Engineer | LLM Systems, Agent Evaluation & RAG",
+  role: "Applied AI Engineer | AI Platforms, Agentic Systems & Quality Engineering",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "Applied AI Engineer with nearly 2 years of professional experience in AI systems and backend engineering, specializing in hybrid retrieval architectures and autonomous agent workflows. Combines formal AI training (B.S. in AI, M.S. candidate in Software Engineering) with robust Python systems engineering (FastAPI, Django, Celery, PostgreSQL) to deliver reliable, verifiable AI-enabled software products.",
+    "Applied AI Engineer working across AI systems, backend architecture, and software quality, building agentic and retrieval-based solutions grounded in real operational and quality-engineering needs. Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous processing.",
   about:
-    "My work bridges formal artificial intelligence with production software engineering: architecting multi-service RAG pipelines with Docling and Qdrant, orchestrating idempotent asynchronous workloads, fine-tuning lightweight models, and pioneering agent verification frameworks with runtime trace interception and deterministic quality gates."
+    "Applies a quality-engineering mindset to AI systems through agent orchestration, retrieval, observability, trace reconstruction, and measurable evaluation mechanisms for reliable and auditable AI applications."
 };
 
 export const cases: ProjectCase[] = [
@@ -44,9 +44,9 @@ export const cases: ProjectCase[] = [
     label: "Flagship platform",
     title: "Omni-Agent — Applied AI Platform",
     subtitle:
-      "Versioned knowledge workflows, hybrid and graph retrieval, and integrated agent evaluation",
+      "An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture",
     summary:
-      "A project-centric Applied AI platform combining versioned document knowledge, hybrid and graph-based retrieval, AI workflows, and integrated agent evaluation through a shared backend control plane.",
+      "An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
@@ -55,23 +55,24 @@ export const cases: ProjectCase[] = [
     outcome:
       "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing. Its Agent Assurance module won 2nd place at IVS Hackathon 2026.",
     tags: [
+      "LangGraph",
+      "FastAPI",
+      "Model Context Protocol (MCP)",
+      "OpenTelemetry (OTel)",
+      "LLM-as-a-Judge",
+      "Qdrant",
+      "Docling",
       "Django/DRF",
       "Celery",
       "PostgreSQL",
       "Redis",
-      "S3/MinIO",
-      "Docling",
-      "Qdrant",
-      "Hybrid Retrieval",
-      "Knowledge Graph",
-      "Agent Evaluation",
-      "React/Vite"
+      "Docker"
     ],
     highlights: [
-      "Built Knowledge Builder with Docling OCR, layout parsing, snapshot text chunking, and multi-vector indexing in Qdrant with S3-compatible artifact lineage.",
-      "Architected Agent Assurance: intercepted LLM runtime traces via LiteLLM gateway and OpenTelemetry metadata, enforcing idempotency on (capture_context, trace_id, span_id).",
-      "Implemented multi-stage evaluation pipelines (Planner, Judge, Critic, Meta-Judge) with deterministic quality gates and percentile scoring thresholds.",
-      "Engineered a modular monorepo with a Django/DRF control plane for identity and permissions, backed by stateless Celery workers for heavy async processing."
+      "Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.",
+      "Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.",
+      "Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.",
+      "Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage."
     ]
   },
   {
@@ -143,7 +144,7 @@ export const cases: ProjectCase[] = [
   {
     slug: "apit",
     label: "AI evaluation",
-    title: "APIT — Agent Programmatic Intelligence Testing",
+    title: "APIT — Agent Programmatic Integration Testing",
     subtitle: "An AI-assisted API testing application",
     summary:
       "An AI-assisted API testing application that generates structured test scenarios from API documentation.",
@@ -293,10 +294,10 @@ export const timeline = [
     title: "Applied AI Engineer & Automation Tester",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "Architected backend retrieval and code-intelligence components for IQP, an enterprise Quality Engineering platform serving multi-repository codebases.",
-      "Built hybrid retrieval pipelines combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP).",
-      "Developed AI-assisted quality workflows for requirement analysis, test-case generation, and defect impact assessment using LLM-as-a-Judge evaluators.",
-      "Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
+      "IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.",
+      "Agent Assurance (Testing Discipline for AI): Applied software testing discipline to agentic systems by architecting an assurance engine with explicit domain boundaries and async evaluation workflows; implemented evidence-capture paths through LiteLLM and OpenTelemetry-based instrumentation, with idempotent trace persistence.",
+      "Agent Assurance (Assurance Lifecycle & Verification): Applied an end-to-end assurance lifecycle spanning Intake, Strategy, Requirements, Test Design & Oracle Definition, Measurement Qualification, Validation, Reporting, and Re-assurance, supported by trace-based behavioral evaluation and regression workflows.",
+      "Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
     ]
   },
   {
@@ -317,7 +318,7 @@ export const achievements = [
     period: "Aug 2026",
     org: "IVS Hackathon 2026",
     description:
-      "Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime trace interception, multi-stage LLM evaluation, and deterministic blockers; subsequently integrated into Omni-Agent."
+      "Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent."
   },
   {
     title: "Second Prize — Autonomous Driving Research Paper Competition",
@@ -345,36 +346,34 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "Applied AI & Agentic Systems",
+    title: "Agentic AI & Orchestration",
     items: [
+      "LangGraph",
       "Multi-Agent Systems",
-      "Agent Evaluation",
-      "MCP",
-      "RAG",
-      "Hybrid retrieval",
-      "Knowledge Graphs",
-      "Code Intelligence",
+      "MCP (Model Context Protocol)",
+      "Tool Calling",
       "LiteLLM",
       "LangChain",
-      "LangGraph",
-      "Docling",
+      "Agentic Workflows",
       "Qdrant",
-      "Langfuse"
+      "Milvus",
+      "Docling",
+      "RAG & Hybrid Retrieval"
     ]
   },
   {
-    title: "Machine Learning & LLM Evaluation",
+    title: "LLM Evaluation, Observability & Security",
     items: [
+      "OpenTelemetry (OTel)",
+      "Runtime Trace Reconstruction",
       "LLM-as-a-Judge",
-      "Runtime Trace Interception",
-      "Quality gates",
-      "LoRA/QLoRA",
+      "Deterministic Quality Gates",
+      "Prompt Injection Testing",
+      "Data Leakage Evaluation",
+      "LoRA/QLoRA Fine-tuning",
       "Synthetic Data Generation",
-      "Model benchmarking",
-      "PyTorch",
-      "Hugging Face",
-      "OpenCV",
-      "YOLOv8"
+      "Langfuse",
+      "PyTorch"
     ]
   },
   {
@@ -385,13 +384,12 @@ export const skillGroups = [
       "Django/DRF",
       "Pydantic",
       "SQLAlchemy",
-      "REST APIs",
-      "Domain modeling",
-      "Asynchronous orchestration",
-      "Idempotency",
-      "PostgreSQL",
+      "Celery",
       "Redis",
-      "Celery"
+      "PostgreSQL",
+      "REST APIs",
+      "Asynchronous Orchestration",
+      "Idempotency"
     ]
   },
   {
@@ -400,8 +398,7 @@ export const skillGroups = [
       "Docker",
       "Docker Compose",
       "Nginx",
-      "MinIO/S3",
-      "OpenTelemetry",
+      "S3-compatible Object Storage (MinIO)",
       "CI/CD",
       "Git",
       "Linux"
