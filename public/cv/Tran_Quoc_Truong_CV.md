@@ -2,15 +2,15 @@
 
 - Email: [tranquoctruong20@gmail.com](mailto:tranquoctruong20@gmail.com)
 - Location: Ho Chi Minh City, Vietnam
-- Website: [truong51972.github.ioabout-me](https://truong51972.github.io/about-me/)
+- Website: [portfolio.truong51972.id.vn](https://portfolio.truong51972.id.vn/)
 - LinkedIn: [truong51972](https://linkedin.com/in/truong51972)
 - GitHub: [truong51972](https://github.com/truong51972)
 
 
 # Summary
-Applied AI Engineer working across AI systems, backend architecture, and software quality, building agentic and retrieval-based solutions grounded in real operational and quality-engineering needs. Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous processing.
+Product Engineer & Applied AI Engineer building agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.
 
-Applies a quality-engineering mindset to AI systems through agent orchestration, retrieval, observability, trace reconstruction, and measurable evaluation mechanisms for reliable and auditable AI applications.
+Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates.
 
 # Technical Skills
 **Agentic AI & Orchestration:** LangGraph, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, LiteLLM, LangChain, Agentic Workflows, Qdrant (Vector DB), Milvus, Docling, RAG & Hybrid Retrieval

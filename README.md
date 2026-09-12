@@ -4,7 +4,7 @@ Static Astro portfolio for Product Engineer | Backend Systems & Applied AI roles
 
 ## Live site
 
-https://truong51972.github.io/about-me/
+https://portfolio.truong51972.id.vn/
 
 ## Stack
 

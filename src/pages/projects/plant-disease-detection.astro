@@ -8,14 +8,14 @@ const repoUrl = item.repoUrl!;
 ---
 
 <BaseLayout title="Leaf-Based Plant Disease Detection" description="Leaf-Based Plant Disease Detection case study by Tran Quoc Truong.">
-  <section class="border-b border-white/10 pb-16 pt-28 md:pb-24 md:pt-36">
+  <section class="border-b border-[var(--border-subtle)] pb-16 pt-28 md:pb-24 md:pt-36">
     <div class="site-shell">
       <div class="flex items-center gap-3 mb-6">
-        <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
-        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
+        <span class="rounded-md border border-sky-500/20 bg-sky-500/10 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:border-sky-400/30 dark:bg-sky-400/15 dark:text-sky-300">{item.label}</span>
+        {item.period && <span class="text-sm font-medium text-[var(--text-muted)]">{item.period}</span>}
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
-      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-base)] mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
+      <p class="text-lg text-[var(--text-muted)] max-w-3xl leading-relaxed mb-8">{item.summary}</p>
       <div class="flex flex-wrap gap-4">
         <a class="btn-primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
         <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
@@ -27,15 +27,15 @@ const repoUrl = item.repoUrl!;
     <div class="case-study-shell">
       <article class="case-article">
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">A computer-vision pipeline for leaf-image analysis.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">This project implements a plant-disease analysis prototype around leaf images. The service accepts image payloads, checks whether the input is a leaf, runs disease classification for supported plant models, and returns prediction metadata with an explanation image.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The current service configuration includes disease models for tomato and potato, plus a separate leaf-versus-non-leaf classifier.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Overview</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">A computer-vision pipeline for leaf-image analysis.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">This project implements a plant-disease analysis prototype around leaf images. The service accepts image payloads, checks whether the input is a leaf, runs disease classification for supported plant models, and returns prediction metadata with an explanation image.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The current service configuration includes disease models for tomato and potato, plus a separate leaf-versus-non-leaf classifier.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">System flow</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Preprocessing, inference, explanation, and persisted analysis.</h3>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">System flow</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Preprocessing, inference, explanation, and persisted analysis.</h3>
           <div class="diagram compact-diagram">
             <div class="diagram-step"><b>Image input</b><span>FastAPI receives a base64 image with garden and plant metadata.</span></div>
             <div class="diagram-step"><b>Leaf check</b><span>A classifier filters non-leaf inputs before disease inference.</span></div>
@@ -45,40 +45,40 @@ const repoUrl = item.repoUrl!;
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Technical contribution</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Training and serving are both represented in the repository.</h3>
-          <ul class="space-y-4 text-text-muted mb-6">
-            {item.highlights.map((h) => <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">{h}</li>)}
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Used cross-entropy loss, SGD optimization, StepLR scheduling, and multiclass accuracy evaluation in the training pipeline.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Exposed analysis, garden, user, history, and statistics workflows through FastAPI and SQLite-backed data access.</li>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Technical contribution</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Training and serving are both represented in the repository.</h3>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            {item.highlights.map((h) => <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">{h}</li>)}
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Used cross-entropy loss, SGD optimization, StepLR scheduling, and multiclass accuracy evaluation in the training pipeline.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Exposed analysis, garden, user, history, and statistics workflows through FastAPI and SQLite-backed data access.</li>
           </ul>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Limitations</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Results are framed without unsupported performance claims.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">The repository supports model training, inference, explainability, and API integration, but it does not provide enough public evidence for a specific accuracy, dataset size, production deployment, mobile deployment, or real agricultural usage claim.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Limitations</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Results are framed without unsupported performance claims.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The repository supports model training, inference, explainability, and API integration, but it does not provide enough public evidence for a specific accuracy, dataset size, production deployment, mobile deployment, or real agricultural usage claim.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Stack</h2>
           <div class="flex flex-wrap gap-2 mt-4">
-            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
       </article>
 
       <aside class="case-aside">
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Role</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.role}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Outcome</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.outcome}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Repository</h3>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Repository</h3>
           <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/Leaf-Based_Plant_Disease_Detection</a></p>
         </div>
       </aside>

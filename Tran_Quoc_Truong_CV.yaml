@@ -2,10 +2,10 @@
 
 cv:
   name: Tran Quoc Truong
-  headline: Applied AI Engineer | AI Platforms, Agentic Systems & Quality Engineering
+  headline: Product Engineer · Applied AI · Backend Systems
   location: Ho Chi Minh City, Vietnam
   email: tranquoctruong20@gmail.com
-  website: https://truong51972.github.io/about-me/
+  website: https://portfolio.truong51972.id.vn/
   social_networks:
     - network: LinkedIn
       username: truong51972
@@ -14,8 +14,8 @@ cv:
 
   sections:
     summary:
-      - 'Applied AI Engineer working across AI systems, backend architecture, and software quality, building agentic and retrieval-based solutions grounded in real operational and quality-engineering needs. Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous processing.'
-      - 'Applies a quality-engineering mindset to AI systems through agent orchestration, retrieval, observability, trace reconstruction, and measurable evaluation mechanisms for reliable and auditable AI applications.'
+      - 'Product Engineer & Applied AI Engineer building agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.'
+      - 'Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates.'
 
     technical_skills:
       - label: Agentic AI & Orchestration

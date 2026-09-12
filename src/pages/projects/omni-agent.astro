@@ -5,15 +5,15 @@ import { cases } from "../../data/profile";
 const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
 ---
 <BaseLayout title="Omni-Agent" description="Omni-Agent case study by Tran Quoc Truong." >
-  <section class="border-b border-white/10 pb-14 pt-28 md:pb-20 md:pt-36">
+  <section class="border-b border-[var(--border-subtle)] pb-14 pt-28 md:pb-20 md:pt-36">
     <div class="site-shell grid gap-10 lg:grid-cols-12 lg:items-center">
       <div class="lg:col-span-7">
         <div class="flex items-center gap-3 mb-6">
-          <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
-          {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
+          <span class="rounded-md border border-sky-500/20 bg-sky-500/10 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:border-sky-400/30 dark:bg-sky-400/15 dark:text-sky-300">{item.label}</span>
+          {item.period && <span class="tag">{item.period}</span>}
         </div>
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
-        <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+        <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-base)] mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
+        <p class="text-lg text-[var(--text-muted)] max-w-3xl leading-relaxed mb-8">{item.summary}</p>
         <div class="flex flex-wrap gap-4">
           <a class="btn-primary" href="https://github.com/truong51972" target="_blank" rel="noreferrer">View GitHub</a>
           <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
@@ -25,18 +25,18 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <div class="project-art rounded-none border-0">
             <img src={withBase("images/project-omni-panel.png")} alt="Abstract document intelligence and knowledge graph panel for Omni-Agent" loading="eager" />
           </div>
-          <div class="grid gap-0 divide-y divide-white/10">
+          <div class="grid gap-0 divide-y divide-[var(--border-subtle)]">
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
-              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Role</span>
-              <span class="text-sm leading-6 text-text-muted">{item.role}</span>
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-sky-700 dark:text-sky-400">Role</span>
+              <span class="text-sm leading-6 text-[var(--text-secondary)]">{item.role}</span>
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
-              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Shape</span>
-              <span class="text-sm leading-6 text-text-muted">Multi-service Python monorepo with independently deployable domain applications and shared typed contracts</span>
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-sky-700 dark:text-sky-400">Shape</span>
+              <span class="text-sm leading-6 text-[var(--text-secondary)]">Multi-service Python monorepo with independently deployable domain applications and shared typed contracts</span>
             </div>
             <div class="grid grid-cols-[8rem_minmax(0,1fr)] gap-4 p-5">
-              <span class="font-mono text-xs uppercase tracking-[0.18em] text-brand-300">Core</span>
-              <span class="text-sm leading-6 text-text-muted">Knowledge Builder (LangGraph multi-agent chat, Streamable HTTP MCP, Docling RAG), Agent Assurance (OTel telemetry, trace reconstruction, evaluation gates), and platform control plane</span>
+              <span class="font-mono text-xs uppercase tracking-[0.18em] text-sky-700 dark:text-sky-400">Core</span>
+              <span class="text-sm leading-6 text-[var(--text-secondary)]">Knowledge Builder (LangGraph multi-agent chat, Streamable HTTP MCP, Docling RAG), Agent Assurance (OTel telemetry, trace reconstruction, evaluation gates), and platform control plane</span>
             </div>
           </div>
         </div>
@@ -49,21 +49,21 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
       <article class="case-article">
         <!-- Overview -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">An Applied AI platform engineered from real operational needs.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Omni-Agent is an Applied AI platform born from solving concrete operational bottlenecks in document intelligence, retrieval, agent workflows, and AI assurance, rather than speculative or experimental use cases. Architected as a Python monorepo with clean control-plane / data-plane separation, everything is scoped to an authenticated, isolated <strong class="text-white">Project</strong> workspace. The platform pairs agentic document intelligence with behavioral verification across two flagship capabilities:</p>
-          <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Knowledge Builder</strong> — document intelligence featuring Docling layout parsing and OCR, Qdrant multi-vector indexing, a Streamable HTTP Model Context Protocol (MCP) server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Agent Assurance (IVS Hackathon 2026 2nd Place)</strong> — a behavioral verification and observability engine capturing GenAI execution evidence through LiteLLM and OpenTelemetry-based telemetry, designing trace reconstruction pipelines, and enforcing deterministic evaluation quality gates.</li>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Overview</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">An Applied AI platform engineered from real operational needs.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Omni-Agent is an Applied AI platform born from solving concrete operational bottlenecks in document intelligence, retrieval, agent workflows, and AI assurance, rather than speculative or experimental use cases. Architected as a Python monorepo with clean control-plane / data-plane separation, everything is scoped to an authenticated, isolated <strong class="text-[var(--text-base)]">Project</strong> workspace. The platform pairs agentic document intelligence with behavioral verification across two flagship capabilities:</p>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — document intelligence featuring Docling layout parsing and OCR, Qdrant multi-vector indexing, a Streamable HTTP Model Context Protocol (MCP) server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Agent Assurance (IVS Hackathon 2026 2nd Place)</strong> — a behavioral verification and observability engine capturing GenAI execution evidence through LiteLLM and OpenTelemetry-based telemetry, designing trace reconstruction pipelines, and enforcing deterministic evaluation quality gates.</li>
           </ul>
         </section>
 
         <!-- Architecture -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Architecture</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Monorepo topology and strict domain boundaries.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">The monorepo enforces clean dependency boundaries with independent package management per application. The Django/DRF control plane manages project workspaces, tenant boundaries, identity, and permissions, while stateless async workers and FastAPI services execute technical workloads:</p>
-          <pre class="bg-bg-base p-6 rounded-xl border border-white/5 text-sm font-mono text-brand-400 overflow-x-auto mb-6">Omni-Agent (monorepo)
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Architecture</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Monorepo topology and strict domain boundaries.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The monorepo enforces clean dependency boundaries with independent package management per application. The Django/DRF control plane manages project workspaces, tenant boundaries, identity, and permissions, while stateless async workers and FastAPI services execute technical workloads:</p>
+          <pre class="bg-[var(--bg-subtle)] p-6 rounded-xl border border-[var(--border-subtle)] text-sm font-mono text-sky-800 dark:text-sky-300 overflow-x-auto mb-6">Omni-Agent (monorepo)
 ├── apps/
 │   ├── oa-platform/                Django/DRF control plane, project workspaces, identity & React console
 │   ├── oa-knowledge-builder/
@@ -81,119 +81,149 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
     ├── oa-agent-assurance-contracts/
     └── oa-agent-assurance-domain/</pre>
 
-          <h3 class="text-lg font-bold text-white mb-4">Control Plane (oa-platform) owns:</h3>
-          <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Project tenancy, identity, role-based permissions, and API credential management</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Document lifecycles and committed-text snapshot versioning with UUID v7 keys</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Generic async job dispatching across decoupled Celery task queues</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">S3/MinIO artifact metadata and presigned URL access control</li>
+          <h3 class="text-lg font-bold text-[var(--text-base)] mb-4">Control Plane (oa-platform) owns:</h3>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Project tenancy, identity, role-based permissions, and API credential management</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Document lifecycles and committed-text snapshot versioning with UUID v7 keys</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Generic async job dispatching across decoupled Celery task queues</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">S3/MinIO artifact metadata and presigned URL access control</li>
           </ul>
         </section>
 
         <!-- Knowledge Builder -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Capability 1: Knowledge Builder</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Document processing, Streamable HTTP MCP, and LangGraph-based multi-agent runtime.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Knowledge Builder solves unstructured technical document processing and conversational grounded retrieval through three integrated services:</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capability 1: Knowledge Builder</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Document processing, Streamable HTTP MCP, and LangGraph-based multi-agent runtime.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Knowledge Builder solves unstructured technical document processing and conversational grounded retrieval through three integrated services:</p>
 
-          <h4 class="text-lg font-bold text-white mb-3">1. Pipeline: Ingestion → Chunking → Vector Indexing</h4>
-          <p class="text-text-muted leading-relaxed mb-6">Uploaded technical specifications, PDFs, and manuals are parsed by a dedicated Docling server for layout detection, table structure extraction, and OCR. A stateless Celery worker (<code>doc-processor</code>) creates reproducible Markdown chunk snapshots stored in S3-compatible object storage (MinIO) and generates multi-vector embeddings indexed in Qdrant collections scoped by project.</p>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">1. Pipeline: Ingestion → Chunking → Vector Indexing</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Uploaded technical specifications, PDFs, and manuals are parsed by a dedicated Docling server for layout detection, table structure extraction, and OCR. A stateless Celery worker (<code>doc-processor</code>) creates reproducible Markdown chunk snapshots stored in S3-compatible object storage (MinIO) and generates multi-vector embeddings indexed in Qdrant collections scoped by project.</p>
 
-          <h4 class="text-lg font-bold text-white mb-3">2. Streamable HTTP Model Context Protocol (MCP) Server</h4>
-          <p class="text-text-muted leading-relaxed mb-6">The <code>tool-server</code> service exposes standard Streamable HTTP MCP on port 8020. This allows external coding agents (Claude, Cline, Cursor, Antigravity) and internal workflows to discover and execute project-scoped document retrieval tools with explicit tenant isolation and vector search filtering.</p>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">2. Streamable HTTP Model Context Protocol (MCP) Server</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The <code>tool-server</code> service exposes standard Streamable HTTP MCP on port 8020. This allows external coding agents (Claude, Cline, Cursor, Antigravity) and internal workflows to discover and execute project-scoped document retrieval tools with explicit tenant isolation and vector search filtering.</p>
 
-          <h4 class="text-lg font-bold text-white mb-3">3. LangGraph-Based Multi-Agent Orchestration</h4>
-          <p class="text-text-muted leading-relaxed mb-6">The conversational runtime (<code>knowledge-chat</code> on port 8030) implements a stateful LangGraph workflow running over MongoDB session persistence, coordinating specialized agent roles:</p>
-          <ul class="space-y-3 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">OrchestratorAgent</strong> — routes incoming user queries between clarification, general chat, or deep research paths.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Research & Navigation Subgraph</strong> — <code>CorpusNavigatorAgent</code>, <code>MapSelectorAgent</code>, <code>ExpanderAgent</code>, and <code>ResearchAgent</code> interact with MCP tools to locate relevant documents and extract precise evidence snippets.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">EvidenceCuratorAgent & CitationRegistry</strong> — deduplicates evidence, validates source provenance, and structures citations into an auditable registry.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">AnswerAgent & VerifierAgent</strong> — generates grounded answers with structured blocks; the Verifier agent cross-checks claims against cited evidence to prevent hallucinations before emitting the final response.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Streaming Events</strong> — streams real-time text deltas, thinking notifications, activity updates, and final grounded blocks over SSE.</li>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">3. LangGraph-Based Multi-Agent Orchestration</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The conversational runtime (<code>knowledge-chat</code> on port 8030) implements a stateful LangGraph workflow running over MongoDB session persistence, coordinating specialized agent roles:</p>
+          <ul class="space-y-3 text-[var(--text-muted)] mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">OrchestratorAgent</strong> — routes incoming user queries between clarification, general chat, or deep research paths.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Research & Navigation Subgraph</strong> — <code>CorpusNavigatorAgent</code>, <code>MapSelectorAgent</code>, <code>ExpanderAgent</code>, and <code>ResearchAgent</code> interact with MCP tools to locate relevant documents and extract precise evidence snippets.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">EvidenceCuratorAgent & CitationRegistry</strong> — deduplicates evidence, validates source provenance, and structures citations into an auditable registry.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">AnswerAgent & VerifierAgent</strong> — generates grounded answers with structured blocks; the Verifier agent cross-checks claims against cited evidence to prevent hallucinations before emitting the final response.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Streaming Events</strong> — streams real-time text deltas, thinking notifications, activity updates, and final grounded blocks over SSE.</li>
           </ul>
         </section>
 
         <!-- Agent Assurance -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Capability 2: Agent Assurance</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Runtime trace capture, reconstruction, and deterministic evaluation gates.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Awarded <strong class="text-white">2nd Place at IVS Hackathon 2026</strong>, Agent Assurance applies software testing discipline to agentic systems across the end-to-end assurance lifecycle (<code>Intake → Strategy → Requirements → Test Design &amp; Oracle Definition → Measurement Qualification → Validation → Reporting → Re-assurance</code>). Unlike traditional tests that only assert final text outputs, Agent Assurance audits the decision trajectory:</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capability 2: Agent Assurance</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Runtime trace capture, reconstruction, and deterministic evaluation gates.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Awarded <strong class="text-[var(--text-base)]">2nd Place (2nd Runner-up) at IVS Hackathon 2026</strong>, Agent Assurance applies software testing discipline to agentic systems across the end-to-end assurance lifecycle (<code>Intake → Strategy → Requirements → Test Design &amp; Oracle Definition → Measurement Qualification → Validation → Reporting → Re-assurance</code>). Unlike traditional tests that only assert final text outputs, Agent Assurance audits the decision trajectory:</p>
+
+          {/* Real Hackathon Proof Imagery */}
+          <div class="my-8 grid gap-4 sm:grid-cols-2">
+            <figure class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-subtle)]">
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src={withBase("images/ivs-hackthon-2nd.jpg")}
+                  alt="Team Nova4Test awarded 2nd Runner-up at IVS Hackathon 2026"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="p-3 text-xs leading-snug text-[var(--text-muted)]">
+                Award Ceremony: Team Nova4Test (IVS HCM) receives 2nd Runner-up at IVS Hackathon 2026
+              </figcaption>
+            </figure>
+            <figure class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-subtle)]">
+              <div class="aspect-[4/3] w-full overflow-hidden">
+                <img
+                  src={withBase("images/presenting.jpg")}
+                  alt="Tran Quoc Truong pitching Agent Assurance on stage"
+                  class="h-full w-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption class="p-3 text-xs leading-snug text-[var(--text-muted)]">
+                Technical Defense: Truong presenting the agent evaluation and verification architecture
+              </figcaption>
+            </figure>
+          </div>
 
           <div class="space-y-6 mb-8">
-            <div class="surface-panel p-6 rounded-xl border border-white/5">
-              <h4 class="text-lg font-bold text-white mb-2">1. OpenTelemetry-Based Trace Capture</h4>
-              <p class="text-text-muted text-sm leading-relaxed">Agent interactions pass through a LiteLLM proxy boundary instrumented with OpenTelemetry GenAI semantic conventions (<code>gen_ai.*</code> / <code>genai.*</code>). Traces are exported via OTLP to a dedicated FastAPI endpoint (<code>/otlp/v1/traces</code>) with idempotency enforcement on <code>(trace_id, span_id)</code> to prevent duplicate evidence collection.</p>
+            <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">1. OpenTelemetry-Based Trace Capture</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Agent interactions pass through a LiteLLM proxy boundary instrumented with OpenTelemetry GenAI semantic conventions (<code>gen_ai.*</code> / <code>genai.*</code>). Traces are exported via OTLP to a dedicated FastAPI endpoint (<code>/otlp/v1/traces</code>) with idempotency enforcement on <code>(trace_id, span_id)</code> to prevent duplicate evidence collection.</p>
             </div>
 
-            <div class="surface-panel p-6 rounded-xl border border-white/5">
-              <h4 class="text-lg font-bold text-white mb-2">2. Trace Reconstruction</h4>
-              <p class="text-text-muted text-sm leading-relaxed">The <code>project_evidence</code> pipeline reconstructs raw OTel spans into chronological, multi-turn execution trajectories. It normalizes system instructions, user prompts, assistant completions, tool calls, tool results, model parameters, token usages, and span latencies into immutable evidence packages.</p>
+            <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">2. Trace Reconstruction</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">The <code>project_evidence</code> pipeline reconstructs raw OTel spans into chronological, multi-turn execution trajectories. It normalizes system instructions, user prompts, assistant completions, tool calls, tool results, model parameters, token usages, and span latencies into immutable evidence packages.</p>
             </div>
 
-            <div class="surface-panel p-6 rounded-xl border border-white/5">
-              <h4 class="text-lg font-bold text-white mb-2">3. Multi-Stage Evaluation & Security Governance</h4>
-              <p class="text-text-muted text-sm leading-relaxed">Runs diagnostic evaluation contracts across behavioral dimensions covering context, tool use, trajectory, response quality, security (prompt injection testing), privacy (data leakage evaluation), and safety. Multi-agent evaluation roles (Planner, Judge, Critic, Meta-Judge) prevent hallucinated scores and judge bias.</p>
+            <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">3. Multi-Stage Evaluation & Security Governance</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Runs diagnostic evaluation contracts across behavioral dimensions covering context, tool use, trajectory, response quality, security (prompt injection testing), privacy (data leakage evaluation), and safety. Multi-agent evaluation roles (Planner, Judge, Critic, Meta-Judge) prevent hallucinated scores and judge bias.</p>
             </div>
 
-            <div class="surface-panel p-6 rounded-xl border border-white/5">
-              <h4 class="text-lg font-bold text-white mb-2">4. Deterministic Quality Gates & Archival Casefiles</h4>
-              <p class="text-text-muted text-sm leading-relaxed">A strict "No Average Hiding" policy evaluates percentile thresholds (P10/P35/P50) and critical blockers. A prompt injection or malformed tool call immediately triggers a deterministic <strong class="text-white">BLOCKED</strong> or <strong class="text-white">FAIL</strong> verdict. All judgments, traces, and metrics are preserved in an archival "Assurance Casefile" evidence ledger with immutable report snapshots for regression tracking.</p>
+            <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">4. Deterministic Quality Gates & Archival Casefiles</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">A strict "No Average Hiding" policy evaluates percentile thresholds (P10/P35/P50) and critical blockers. A prompt injection or malformed tool call immediately triggers a deterministic <strong class="text-[var(--text-base)]">BLOCKED</strong> or <strong class="text-[var(--text-base)]">FAIL</strong> verdict. All judgments, traces, and metrics are preserved in an archival "Assurance Casefile" evidence ledger with immutable report snapshots for regression tracking.</p>
             </div>
           </div>
         </section>
 
         <!-- Platform foundations -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Platform foundations</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Idempotent async orchestration and reliable data contracts.</h3>
-          <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Reliability & Data Integrity</strong> — designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Typed Transport Contracts</strong> — worker commands and event envelopes live in <code>oa-contracts</code> as framework-free Pydantic DTOs, decoupling Celery tasks from application business logic.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Worker DI & Runtime Helpers</strong> — <code>oa-worker-shared</code> standardizes Celery connection management, S3-compatible storage abstractions, and dependency injection lifecycles across data-plane executors.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Network Segmentation</strong> — Compose topologies enforce private internal planes for PostgreSQL, Redis, MongoDB, and Qdrant; external access is restricted to Nginx and Cloudflare tunnel routes.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Storage Boundary & Security</strong> — raw MinIO/S3 object keys are concealed behind internal aliases; client browsers interact exclusively through short-lived presigned URLs.</li>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Platform foundations</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Idempotent async orchestration and reliable data contracts.</h3>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Reliability & Data Integrity</strong> — designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Typed Transport Contracts</strong> — worker commands and event envelopes live in <code>oa-contracts</code> as framework-free Pydantic DTOs, decoupling Celery tasks from application business logic.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Worker DI & Runtime Helpers</strong> — <code>oa-worker-shared</code> standardizes Celery connection management, S3-compatible storage abstractions, and dependency injection lifecycles across data-plane executors.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Network Segmentation</strong> — Compose topologies enforce private internal planes for PostgreSQL, Redis, MongoDB, and Qdrant; external access is restricted to Nginx and Cloudflare tunnel routes.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Storage Boundary & Security</strong> — raw MinIO/S3 object keys are concealed behind internal aliases; client browsers interact exclusively through short-lived presigned URLs.</li>
           </ul>
         </section>
 
         <!-- Stack & infra -->
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack &amp; infrastructure</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Applied AI technology stack.</h3>
-          <ul class="space-y-4 text-text-muted mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Agent Orchestration & AI</strong> — LangGraph, LangChain, Model Context Protocol (MCP), LiteLLM, Qdrant Vector DB, Ollama</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Observability & Evaluation</strong> — OpenTelemetry (OTel), OTLP Ingest, LLM-as-a-Judge, Langfuse, Deterministic Quality Gates</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Backend & Workers</strong> — Python, FastAPI, Django/DRF, Celery, Redis, PostgreSQL, MongoDB, Pydantic, SQLAlchemy</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Documents & Storage</strong> — Docling OCR & Layout Engine, MinIO S3 Object Storage</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50"><strong class="text-white">Frontend & Tooling</strong> — React 19, TypeScript, Vite, Tailwind CSS, Docker, Docker Compose, Nginx</li>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Stack &amp; infrastructure</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Applied AI technology stack.</h3>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Agent Orchestration & AI</strong> — LangGraph, LangChain, Model Context Protocol (MCP), LiteLLM, Qdrant Vector DB, Ollama</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Observability & Evaluation</strong> — OpenTelemetry (OTel), OTLP Ingest, LLM-as-a-Judge, Langfuse, Deterministic Quality Gates</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Backend & Workers</strong> — Python, FastAPI, Django/DRF, Celery, Redis, PostgreSQL, MongoDB, Pydantic, SQLAlchemy</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Documents & Storage</strong> — Docling OCR & Layout Engine, MinIO S3 Object Storage</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Frontend & Tooling</strong> — React 19, TypeScript, Vite, Tailwind CSS, Docker, Docker Compose, Nginx</li>
           </ul>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Stack</h2>
           <div class="flex flex-wrap gap-2 mt-4">
-            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
       </article>
 
       <aside class="case-aside">
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Role</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.role}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Evidence</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Evidence</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.outcome}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Capabilities</h3>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Knowledge Builder</strong> — Docling layout parsing/OCR, Markdown chunking, Streamable HTTP MCP server, and LangGraph-based multi-agent runtime with citation-grounded RAG</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Agent Assurance</strong> — OpenTelemetry trace capture, GenAI trajectory reconstruction, behavioral evaluation across key quality dimensions, and deterministic quality gates (IVS Hackathon 2nd Place)</p>
-          <p class="text-text-muted leading-relaxed mb-4"><strong class="text-white">Platform Control Plane</strong> — Django/DRF, FastAPI, Celery async workers, Redis, PostgreSQL, and MinIO storage</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capabilities</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — Docling layout parsing/OCR, Markdown chunking, Streamable HTTP MCP server, and LangGraph-based multi-agent runtime with citation-grounded RAG</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Agent Assurance</strong> — OpenTelemetry trace capture, GenAI trajectory reconstruction, behavioral evaluation across key quality dimensions, and deterministic quality gates (IVS Hackathon 2nd Place)</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Platform Control Plane</strong> — Django/DRF, FastAPI, Celery async workers, Redis, PostgreSQL, and MinIO storage</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Shape</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Multi-service Python monorepo with independently deployable applications and shared typed contracts</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Shape</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Multi-service Python monorepo with independently deployable applications and shared typed contracts</p>
         </div>
       </aside>
     </div>

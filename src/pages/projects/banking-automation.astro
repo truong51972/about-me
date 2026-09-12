@@ -5,14 +5,14 @@ import { cases } from "../../data/profile";
 const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
 ---
 <BaseLayout title="Banking QA Automation" description="Banking QA automation case study." >
-  <section class="border-b border-white/10 pb-16 pt-28 md:pb-24 md:pt-36">
+  <section class="border-b border-[var(--border-subtle)] pb-16 pt-28 md:pb-24 md:pt-36">
     <div class="site-shell">
       <div class="flex items-center gap-3 mb-6">
-        <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
-        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
+        <span class="rounded-md border border-sky-500/20 bg-sky-500/10 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:border-sky-400/30 dark:bg-sky-400/15 dark:text-sky-300">{item.label}</span>
+        {item.period && <span class="tag">{item.period}</span>}
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
-      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-base)] mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
+      <p class="text-lg text-[var(--text-muted)] max-w-3xl leading-relaxed mb-8">{item.summary}</p>
       <div class="flex flex-wrap gap-4">
         <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
       </div>
@@ -23,43 +23,43 @@ const item = cases.find((caseItem) => caseItem.slug === "banking-automation")!;
     <div class="case-study-shell">
       <article class="case-article">
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Problem</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Banking QA creates strong constraints for automation.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">Unlike toy QA examples, banking workflows involve transaction correctness, regression coverage, multiple channels, auditability, API contracts, database state, and failure classification.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Problem</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Banking QA creates strong constraints for automation.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Unlike toy QA examples, banking workflows involve transaction correctness, regression coverage, multiple channels, auditability, API contracts, database state, and failure classification.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">What I built</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Core Banking PoC and Payment Hub integration testing.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal across channels.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The Payment Hub work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. Internal delivery metrics are treated as verified but private, so this public case study emphasizes the engineering scope rather than headline numbers.</p>
-          <p class="text-text-muted leading-relaxed mb-6">This delivery experience is the practical foundation behind <a href={withBase("projects/ata/")}>ATA</a> - applying structured evaluation, regression reporting, and quality discipline to AI agent and RAG workflows.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">What I built</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Core Banking PoC and Payment Hub integration testing.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The Core Banking automation proof of concept covered Web, iOS, and Android automation, supporting a successful automation proposal across channels.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The Payment Hub work involved Postman API testing, SQL validation, regression testing, and JMeter stress testing. Internal delivery metrics are treated as verified but private, so this public case study emphasizes the engineering scope rather than headline numbers.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">This delivery experience is the practical foundation behind <a href={withBase("projects/ata/")}>ATA</a> - applying structured evaluation, regression reporting, and quality discipline to AI agent and RAG workflows.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Key highlights</h2>
-          <ul class="clean clean-flush">
-            {item.highlights.map((h) => <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">{h}</li>)}
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Key highlights</h2>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            {item.highlights.map((h) => <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">{h}</li>)}
           </ul>
-          <p class="block-note"><strong class="text-white">Outcome:</strong> {item.outcome}</p>
+          <p class="block-note"><strong class="text-[var(--text-base)]">Outcome:</strong> {item.outcome}</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Stack</h2>
           <div class="flex flex-wrap gap-2 mt-4">
-            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
       </article>
 
       <aside class="case-aside">
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Evidence</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Evidence</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.outcome}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Role</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.role}</p>
         </div>
       </aside>
     </div>

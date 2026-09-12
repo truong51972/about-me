@@ -20,16 +20,35 @@ const description = Astro.props.description ?? site.summary;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#06080a" />
+    <meta name="theme-color" content="#f8fafc" />
     <link rel="icon" href={withBase("favicon.svg")} />
+    <link rel="canonical" href={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={site.linkedin} />
+    <meta property="og:url" content={Astro.url} />
     <meta property="og:image" content={withBase("images/project-omni-panel.png")} />
+    <script is:inline>
+      (function () {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "dark") {
+          document.documentElement.classList.add("dark");
+        } else if (storedTheme === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
+          // Default to light theme per design specification
+          document.documentElement.classList.remove("dark");
+        }
+      })();
+    </script>
   </head>
-  <body class="flex flex-col min-h-screen">
-    <a class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:rounded-lg focus:bg-brand-600 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white" href="#main-content">Skip to content</a>
+  <body class="flex min-h-screen flex-col">
+    <a
+      class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:m-3 focus:rounded-lg focus:bg-sky-600 focus:px-4 focus:py-3 focus:text-sm focus:font-semibold focus:text-white"
+      href="#main-content"
+    >
+      Skip to content
+    </a>
     <Header />
     <main id="main-content" class="flex-grow">
       <slot />

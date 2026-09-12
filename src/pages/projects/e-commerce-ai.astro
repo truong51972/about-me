@@ -8,14 +8,14 @@ const repoUrl = item.repoUrl!;
 ---
 
 <BaseLayout title="E-Commerce AI Assistant" description="E-Commerce AI Assistant case study by Tran Quoc Truong.">
-  <section class="border-b border-white/10 pb-16 pt-28 md:pb-24 md:pt-36">
+  <section class="border-b border-[var(--border-subtle)] pb-16 pt-28 md:pb-24 md:pt-36">
     <div class="site-shell">
       <div class="flex items-center gap-3 mb-6">
-        <span class="tag border-brand-400/20 bg-brand-400/10 text-brand-300">{item.label}</span>
-        {item.period && <span class="text-sm font-medium text-text-muted">{item.period}</span>}
+        <span class="rounded-md border border-sky-500/20 bg-sky-500/10 px-2.5 py-0.5 text-xs font-semibold text-sky-700 dark:border-sky-400/30 dark:bg-sky-400/15 dark:text-sky-300">{item.label}</span>
+        {item.period && <span class="tag">{item.period}</span>}
       </div>
-      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
-      <p class="text-lg text-text-muted max-w-3xl leading-relaxed mb-8">{item.summary}</p>
+      <h1 class="text-4xl md:text-5xl font-bold text-[var(--text-base)] mb-6 leading-tight max-w-4xl">{item.title}: {item.subtitle}</h1>
+      <p class="text-lg text-[var(--text-muted)] max-w-3xl leading-relaxed mb-8">{item.summary}</p>
       <div class="flex flex-wrap gap-4">
         <a class="btn-primary" href={repoUrl} target="_blank" rel="noreferrer">View repository</a>
         <a class="btn-secondary" href={withBase("projects/")}>Back to projects</a>
@@ -27,15 +27,15 @@ const repoUrl = item.repoUrl!;
     <div class="case-study-shell">
       <article class="case-article">
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Overview</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Conversational product discovery backed by vector retrieval.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">E-Commerce AI Assistant is a prototype shopping assistant for natural-language product search and consultation. The backend exposes product retrieval flows through FastAPI, while a Streamlit frontend provides a simple chat surface for users.</p>
-          <p class="text-text-muted leading-relaxed mb-6">The system focuses on two retrieval paths: direct context search with metadata filters, and agent search where retrieved product records become context for an LLM response.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Overview</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Conversational product discovery backed by vector retrieval.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">E-Commerce AI Assistant is a prototype shopping assistant for natural-language product search and consultation. The backend exposes product retrieval flows through FastAPI, while a Streamlit frontend provides a simple chat surface for users.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The system focuses on two retrieval paths: direct context search with metadata filters, and agent search where retrieved product records become context for an LLM response.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">System flow</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Two search modes share the same retrieval foundation.</h3>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">System flow</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Two search modes share the same retrieval foundation.</h3>
           <div class="diagram compact-diagram">
             <div class="diagram-step"><b>Query</b><span>User describes the desired product in natural language.</span></div>
             <div class="diagram-step"><b>Embedding</b><span>The query is converted into a vector representation.</span></div>
@@ -45,40 +45,40 @@ const repoUrl = item.repoUrl!;
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Technical contribution</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Backend, retrieval, and infrastructure are designed as one system.</h3>
-          <ul class="space-y-4 text-text-muted mb-6">
-            {item.highlights.map((h) => <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">{h}</li>)}
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Used SQLModel-style backend structure with repository and service layers for product and conversation workflows.</li>
-            <li class="relative pl-6 before:content-[\'\'] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-brand-500/50">Integrated Google Generative AI embeddings and chat models through LangChain-based service abstractions.</li>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Technical contribution</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Backend, retrieval, and infrastructure are designed as one system.</h3>
+          <ul class="space-y-4 text-[var(--text-muted)] mb-6">
+            {item.highlights.map((h) => <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">{h}</li>)}
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Used SQLModel-style backend structure with repository and service layers for product and conversation workflows.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Integrated Google Generative AI embeddings and chat models through LangChain-based service abstractions.</li>
           </ul>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Limitations</h2>
-          <h3 class="text-2xl font-bold text-white mb-6">Prototype scope, not a production claim.</h3>
-          <p class="text-text-muted leading-relaxed mb-6">The repository supports a containerized AI assistant prototype. It does not provide evidence for production deployment, revenue impact, real-time performance guarantees, or customer-service reduction metrics, so those claims are intentionally excluded.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Limitations</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Prototype scope, not a production claim.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The repository supports a containerized AI assistant prototype. It does not provide evidence for production deployment, revenue impact, real-time performance guarantees, or customer-service reduction metrics, so those claims are intentionally excluded.</p>
         </section>
 
         <section>
-          <h2 class="text-sm font-semibold text-brand-500 uppercase tracking-wider mb-4">Stack</h2>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Stack</h2>
           <div class="flex flex-wrap gap-2 mt-4">
-            {item.tags.map((tag) => <span class="inline-flex items-center rounded bg-white/5 px-2.5 py-1 text-xs font-medium text-text-muted border border-white/5">{tag}</span>)}
+            {item.tags.map((tag) => <span class="tag">{tag}</span>)}
           </div>
         </section>
       </article>
 
       <aside class="case-aside">
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Role</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.role}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Role</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.role}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Outcome</h3>
-          <p class="text-text-muted leading-relaxed mb-6">{item.outcome}</p>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Outcome</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">{item.outcome}</p>
         </div>
         <div class="evidence-card">
-          <h3 class="text-lg font-bold text-white mb-4">Repository</h3>
+          <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Repository</h3>
           <p class="side-card-link"><a href={repoUrl} target="_blank" rel="noreferrer">github.com/truong51972/E_commerce_AI</a></p>
         </div>
       </aside>
