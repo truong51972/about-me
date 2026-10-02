@@ -1,0 +1,479 @@
+# LinkedIn Profile Source of Truth
+
+This file is the canonical content specification for keeping LinkedIn aligned with the CV and portfolio in this repository.
+
+Use it when manually updating LinkedIn or when delegating the update through a browser-capable agent. Preserve existing dates, company associations, certificates, and recommendations unless this document explicitly says to change them.
+
+## Positioning
+
+Primary identity:
+
+**Applied AI Engineer · AI Agents & RAG · Backend Systems**
+
+Career story:
+
+- Applied AI Engineer building agentic applications, retrieval systems, LLM evaluation infrastructure, model-serving workflows, and Python backend platforms.
+- Strongest differentiators: AI agents, RAG/hybrid retrieval, MCP/tool calling, LLM evaluation and observability, backend systems, model fine-tuning/serving, and AI-augmented software development.
+- Quality engineering and automation are domain strengths that reinforce evaluation, reliability, regression, and delivery discipline; they are not the primary professional identity.
+- Do not describe pre-production AI work as production-scale unless there is explicit evidence.
+
+---
+
+## Headline
+
+**Applied AI Engineer · AI Agents & RAG · Backend Systems**
+
+Optional longer variant if LinkedIn search coverage is preferred:
+
+**Applied AI Engineer | AI Agents, RAG & MCP | LLM Evaluation & Model Serving | Python Backend Systems**
+
+Use the first version by default.
+
+---
+
+## About
+
+Applied AI Engineer building agentic applications, retrieval systems, LLM evaluation infrastructure, model-serving workflows, and Python backend platforms.
+
+My work spans enterprise code intelligence, RAG and hybrid retrieval, MCP and tool calling, prompt and context engineering, trace-based AI evaluation, streaming and asynchronous backend systems, model fine-tuning and serving, CI-driven delivery, and AI-augmented software development.
+
+At FPT Software, I contribute to Applied AI initiatives including enterprise code intelligence and retrieval, AI-agent assurance, and engineering-quality workflows. My recent work includes hybrid retrieval over enterprise repositories, MCP-based AI integrations, runtime evidence capture with LiteLLM and OpenTelemetry, multi-turn agent trace reconstruction, and reproducible regression/evaluation gates.
+
+I independently develop Omni-Agent, a modular Applied AI platform combining a versioned Knowledge Builder, agent runtimes, MCP-based integrations, and native Agent Assurance. The Agent Assurance work was recognized with 2nd Place at IVS Hackathon 2026 and later the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 as Flezi Polaris.
+
+I also work across model adaptation and serving. In APIT, I fine-tuned Qwen2.5-3B using Unsloth and PEFT LoRA/QLoRA, deployed the adapted model through an OpenAI-compatible vLLM service on RunPod, and integrated pgvector-backed retrieval with model-based and deterministic evaluation.
+
+My engineering stack includes Python, FastAPI, Django/DRF, LangGraph, LangChain, PostgreSQL, Redis, Celery, Qdrant, pgvector, Milvus, LiteLLM, OpenTelemetry, Docker, Kubernetes, GitLab CI/CD, Azure DevOps Pipelines, Hugging Face Transformers, PEFT, Unsloth, and vLLM.
+
+I also use AI coding agents extensively in day-to-day development, especially OpenAI Codex, Claude Code, and GitHub Copilot, with workflows around scoped context management, multi-agent delegation, Git worktrees, implementation, review, testing, and repository-scale refactoring.
+
+---
+
+# Experience
+
+## FPT Software
+
+### Title
+
+**Applied AI Engineer**
+
+### Dates
+
+Keep the existing LinkedIn employment dates. The CV source of truth currently uses **Dec 2024 — Present**.
+
+### Description
+
+- **IQP — Code Intelligence & Retrieval:** Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories; exposed retrieval capabilities to AI clients through Model Context Protocol (MCP).
+- **Agent Assurance / Flezi Polaris — AI Evaluation Infrastructure:** Architected a trace-based evaluation system for agentic applications, capturing runtime evidence through LiteLLM and OpenTelemetry, reconstructing multi-turn execution trajectories, and applying reproducible behavioral evaluation and regression gates. The solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+- **Automation & Delivery Engineering:** Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.
+- **Banking Systems Verification:** Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%. An omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.
+
+### Skills to associate with this experience
+
+Prioritize:
+
+- Applied AI
+- Python
+- FastAPI
+- RAG
+- Hybrid Retrieval
+- Model Context Protocol (MCP)
+- AI Agents / Agentic AI
+- LLM Evaluation
+- OpenTelemetry
+- PostgreSQL
+- Redis
+- Celery
+- Docker
+- Kubernetes
+- GitLab CI/CD
+- Azure DevOps
+
+Do not use `Automation Tester` as the primary title.
+
+---
+
+## FPT Software Academy
+
+### Title
+
+**Full-Stack Developer Intern**
+
+### Dates
+
+Keep existing LinkedIn dates. The CV source of truth currently uses **Sep 2024 — Dec 2024**.
+
+### Description
+
+- Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
+- Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
+- Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
+
+---
+
+# Projects
+
+Project entries should reinforce the current Applied AI identity. Prefer fewer, stronger projects over a flat list of every historical project.
+
+## Priority 1 — Omni-Agent
+
+### Name
+
+**Omni-Agent — Applied AI Platform**
+
+### Description
+
+A modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, MCP integrations, and trace-based Agent Assurance within a project-centric multi-service architecture.
+
+- Designed a modular platform with a project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.
+- Built a versioned Knowledge Builder covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.
+- Implemented LangGraph-based agent workflows with prompt and context engineering, tool calling, MCP integration, and SSE streaming for multi-turn execution over project knowledge.
+- Integrated Agent Assurance capabilities for runtime evidence capture, behavioral evaluation, regression, and quality gating.
+- Current maturity: active development / pre-production.
+
+### Skills
+
+LangGraph, FastAPI, Django/DRF, RAG, Qdrant, MCP, Prompt Engineering, Context Engineering, SSE, Celery, PostgreSQL, Redis, OpenTelemetry, Docker.
+
+### Replace old content
+
+Remove or replace descriptions centered on:
+
+- "Next-Generation of Testing Intelligence"
+- generic automated test-case generation as the main Omni-Agent purpose
+- duplicate bug prediction as the platform identity
+- Knowledge Graph/GNN claims that no longer reflect the current primary product architecture
+
+---
+
+## Priority 2 — Agent Assurance / Flezi Polaris
+
+### Name
+
+**Agent Assurance — AI Agent Evaluation Platform**
+
+### Description
+
+A record-first assurance layer for agentic systems that captures runtime evidence, reconstructs multi-turn execution trajectories, evaluates behavioral dimensions, and produces reproducible regression and quality-gate results.
+
+- Captures agent interactions through LiteLLM and OpenTelemetry paths and normalizes multi-turn execution evidence into durable evaluation records.
+- Evaluates records across semantic behavior groups while retaining evidence and rationale for reproducible review.
+- Uses worst-record aggregation so decisive failures cannot be hidden by averages; missing evidence remains explicitly inconclusive rather than guessed.
+- Uses versioned requirements and scenarios so assurance runs can preserve historical reproducibility.
+- Received 2nd Place at IVS Hackathon 2026 and later evolved into Flezi Polaris, winner of the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+
+### Skills
+
+LLM Evaluation, LLM-as-a-Judge, OpenTelemetry, LiteLLM, FastAPI, Celery, PostgreSQL, Redis, Regression Testing, Docker.
+
+---
+
+## Priority 3 — APIT
+
+### Name
+
+**APIT — Agent Programmatic Integration Testing**
+
+### Description
+
+An AI-assisted API testing system that generates structured test scenarios from API documentation using a fine-tuned LLM, pgvector-backed retrieval, and deterministic/model-based evaluation.
+
+- Built a bilingual synthetic dataset generation pipeline containing 1,258 API-testing samples.
+- Fine-tuned Qwen2.5-3B with Unsloth and PEFT LoRA/QLoRA, achieving 0.655 macro-F1, a 41.5% relative improvement over the Llama-3.2-3B baseline.
+- Deployed the adapted model on RunPod through an OpenAI-compatible vLLM service with BitsAndBytes quantization and runtime LoRA adapters.
+- Implemented pgvector-backed cosine-similarity retrieval.
+- Built a hybrid evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
+
+### Skills
+
+Qwen2.5, Unsloth, Hugging Face Transformers, PEFT, LoRA/QLoRA, vLLM, RunPod, pgvector, BitsAndBytes, LLM Evaluation, Python.
+
+---
+
+## Supporting — E-Commerce AI Assistant
+
+### Name
+
+**E-Commerce AI Assistant — Conversational RAG & Search**
+
+### Description
+
+An end-to-end AI shopping assistant combining filtered vector search and agent-driven conversational retrieval for natural-language product discovery.
+
+- Implemented semantic product retrieval with Milvus, cosine similarity, embeddings, category filters, and price filters.
+- Built an agent search flow that supplies retrieved product records to an LLM for context-aware consultation.
+- Structured the system as FastAPI, PostgreSQL, Redis, Milvus, Nginx, and Docker Compose services.
+
+### Cleanup
+
+Remove speculative business-impact claims such as projected percentage reductions in labor, sales improvements, or engagement improvements unless backed by measured production data.
+
+---
+
+## Supporting / Historical — Self-Driving Car
+
+### Name
+
+**Self-Driving Car Problem — Autonomous Driving Research**
+
+### Description
+
+Research project combining YOLOv8 perception, lane segmentation, OpenCV processing, and PID steering control in a Unity simulation.
+
+- Built YOLOv8 traffic-sign classification and lane-segmentation workflows.
+- Implemented bird-view lane processing and PID-based steering control.
+- Completed the simulation benchmark in 125.8 seconds with a perfect 100% score.
+- Received Second Prize in the FPT University Student Scientific Research Competition in 2024.
+
+### Cleanup
+
+Remove the old `60% accuracy` driving claim if still present; use the benchmark and award evidence instead.
+
+---
+
+## Supporting / Historical — Leaf-Based Plant Disease Detection
+
+Keep as a historical computer-vision project if desired, but remove speculative claims about percentage crop-loss reduction or consultation-cost reduction unless backed by measured field data.
+
+Use engineering evidence instead:
+
+- PyTorch classification pipeline
+- segmentation-assisted preprocessing
+- FastAPI serving
+- Grad-CAM++ explanations
+
+---
+
+# Honors & Awards
+
+Order the most relevant AI awards first.
+
+## 1. Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
+
+**Date:** Sep 18, 2026
+
+**Associated project:** Flezi Polaris / Agent Assurance
+
+**Description:**
+
+Awarded the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 for Flezi Polaris, an Agent Assurance solution focused on AI-agent evaluation, runtime evidence capture, behavioral verification, and governed quality assurance.
+
+---
+
+## 2. 2nd Place — IVS Hackathon 2026
+
+**Date:** Aug 2026
+
+**Associated project:** Agent Assurance
+
+**Description:**
+
+Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed regression/quality gates. The core capabilities were subsequently integrated into Omni-Agent.
+
+---
+
+## 3. Second Prize — Autonomous Driving Research Paper Competition
+
+**Date:** Apr 2024
+
+**Description:**
+
+Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the benchmark in 125.8 seconds with a perfect 100% score.
+
+---
+
+## 4. Older programming awards
+
+Keep older C/C++ or academic programming awards if already present, but place them below the Applied AI awards above.
+
+---
+
+# Skills
+
+LinkedIn skills should optimize both recruiter search and profile credibility. Prefer high-signal skills actually used in projects.
+
+## Top / pinned skills
+
+Recommended priority order:
+
+1. Python
+2. Artificial Intelligence (AI) / Applied AI
+3. Large Language Models (LLMs)
+4. AI Agents / Agentic AI
+5. Retrieval-Augmented Generation (RAG)
+6. FastAPI
+7. LangGraph
+8. Model Context Protocol (MCP)
+9. LLM Evaluation
+10. PostgreSQL
+
+If LinkedIn limits pinned skills to fewer items, prioritize Python, Applied AI/AI, and LLM/Agentic AI.
+
+## AI & Agentic Systems
+
+- Retrieval-Augmented Generation (RAG)
+- Hybrid Retrieval
+- LangGraph
+- LangChain
+- AI Agents / Agentic AI
+- Multi-Agent Systems
+- Model Context Protocol (MCP)
+- Tool Calling
+- Prompt Engineering
+- Context Engineering
+- Structured Outputs / JSON Schema
+- Qdrant
+- Milvus
+- pgvector
+- Docling
+- Embeddings
+
+## Evaluation & Observability
+
+- LLM Evaluation
+- LLM-as-a-Judge
+- Regression Testing
+- OpenTelemetry
+- LiteLLM
+- Runtime Trace Reconstruction
+- Prompt Injection Testing
+- Data Leakage Evaluation
+- Langfuse
+
+## Backend & Product Engineering
+
+- Python
+- FastAPI
+- Django / Django REST Framework
+- Pydantic
+- SQLAlchemy
+- PostgreSQL
+- Redis
+- Celery
+- REST APIs
+- Server-Sent Events (SSE)
+- Async/Await
+- Concurrency
+- API Authentication & Authorization
+- Pytest
+- Unit Testing
+- API Testing
+- Integration Testing
+- SQL
+- React
+- TypeScript
+
+## Model Adaptation & Serving
+
+- PyTorch
+- Hugging Face Transformers
+- PEFT
+- Unsloth
+- LoRA / QLoRA
+- vLLM
+- BitsAndBytes
+- Synthetic Data Generation
+
+## Cloud & Infrastructure
+
+- Google Cloud Platform
+- RunPod
+- DigitalOcean
+- Heroku
+- Cloudflare
+- Docker
+- Docker Compose
+- Kubernetes
+- Nginx
+- MinIO / S3-compatible storage
+- GitLab CI/CD
+- Azure DevOps Pipelines
+- Linux
+
+## AI-Augmented Development
+
+Use these as secondary skills rather than top identity skills:
+
+- OpenAI Codex
+- Claude Code
+- GitHub Copilot
+
+The broader workflow can be explained in About rather than creating many niche skill entries for OpenCode, Cline, T3 Code, agy, or other tools.
+
+---
+
+# Featured
+
+Keep Featured focused. Recommended order:
+
+1. **Portfolio** — https://portfolio.truong51972.id.vn/
+2. **GitHub profile** — https://github.com/truong51972
+3. **CV** — use the public CV URL generated by the portfolio if available
+4. **Agent Assurance / Flezi Polaris case study** — use the public portfolio case-study URL rather than a private repository
+5. **IVS Solution Day / award evidence** — add a public portfolio or post link if available
+
+Avoid featuring private repository links that recruiters cannot open.
+
+---
+
+# Education
+
+## FPT School of Business & Technology
+
+**Master of Software Engineering in AI**
+
+**May 2026 — Present**
+
+Optional description:
+
+Software engineering focus for applied AI systems.
+
+## FPT University
+
+**Bachelor of Artificial Intelligence**
+
+**2021 — 2025**
+
+Optional description:
+
+Coursework and projects across machine learning, computer vision, AI systems, and applied software engineering.
+
+---
+
+# Profile Cleanup Checklist
+
+When applying this document to LinkedIn:
+
+- [ ] Change primary headline to `Applied AI Engineer · AI Agents & RAG · Backend Systems`.
+- [ ] Replace generic `Software Engineer` positioning in About.
+- [ ] Use `Applied AI Engineer` as the FPT role title.
+- [ ] Keep automation/testing as quality-engineering and delivery evidence rather than primary identity.
+- [ ] Replace old Omni-Agent description with the current Applied AI Platform description.
+- [ ] Add or refresh Agent Assurance / Flezi Polaris.
+- [ ] Refresh APIT with Unsloth, PEFT, vLLM, RunPod, pgvector, and evaluation details.
+- [ ] Add Golden Solution Prize 2026.
+- [ ] Add IVS Hackathon 2026 award.
+- [ ] Remove speculative business-impact percentages from prototype projects.
+- [ ] Remove stale `60% accuracy` claim from the self-driving project.
+- [ ] Keep measured/defensible impact: ~70% manual-regression reduction, ~20 person-months follow-on delivery, APIT macro-F1 0.655, +41.5% relative improvement, self-driving 125.8s / 100% score.
+- [ ] Refresh Skills using the priority list above.
+- [ ] Add Kubernetes as hands-on experience; do not add Helm as a primary skill yet.
+- [ ] Add vLLM and pgvector as real hands-on technologies.
+- [ ] Keep Codex, Claude Code, and GitHub Copilot; do not turn coding-agent experience into a long tool list.
+- [ ] Feature the public portfolio and public evidence rather than private repository URLs.
+
+---
+
+# Browser-Agent Instructions
+
+When a browser-capable agent applies this file to LinkedIn:
+
+1. Treat this file, `Tran_Quoc_Truong_CV.yaml`, and `src/data/profile.ts` as the source of truth.
+2. Do not invent dates, metrics, production scale, team size, users, traffic, cost savings, latency, throughput, or revenue impact.
+3. Preserve LinkedIn connection/recommendation history and existing verified credentials.
+4. Do not delete an existing role, project, award, certificate, or education record unless the cleanup instructions above explicitly mark its content as stale or speculative.
+5. Prefer editing existing matching entries over creating duplicates.
+6. If LinkedIn has a field that does not map cleanly to this document, preserve the existing value rather than guessing.
+7. Use public portfolio links for Featured content; do not expose private repository URLs.
+8. Stop before any action that would publish a post, notify the network, or materially change privacy settings unless explicitly requested.
+9. After applying changes, review the public-facing profile for consistency with the headline, About, FPT role, major projects, awards, and top skills.
