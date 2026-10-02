@@ -2,7 +2,9 @@
 
 This file is the canonical content specification for keeping LinkedIn aligned with the CV and portfolio in this repository.
 
-Use it when manually updating LinkedIn or when delegating the update through a browser-capable agent. Preserve existing dates, company associations, certificates, and recommendations unless this document explicitly says to change them.
+Use it when manually updating LinkedIn or when delegating the update through a browser-capable agent. Preserve existing dates, company associations, certificates, recommendations, endorsements, and verified credentials unless this document explicitly says to change them.
+
+Recruiter discoverability is a first-class goal. LinkedIn should not be treated only as a web version of the CV: headline, About, Experience, and standardized Skills should reinforce the same target-role vocabulary while remaining fully supported by actual work.
 
 ## Positioning
 
@@ -16,6 +18,7 @@ Career story:
 - Strongest differentiators: AI agents, RAG/hybrid retrieval, MCP/tool calling, LLM evaluation and observability, backend systems, model fine-tuning/serving, and AI-augmented software development.
 - Quality engineering and automation are domain strengths that reinforce evaluation, reliability, regression, and delivery discipline; they are not the primary professional identity.
 - Do not describe pre-production AI work as production-scale unless there is explicit evidence.
+- Use consistent recruiter-search vocabulary across Headline, About, Experience, and Skills instead of keyword stuffing isolated sections.
 
 ---
 
@@ -70,24 +73,33 @@ Keep the existing LinkedIn employment dates. The CV source of truth currently us
 
 ### Skills to associate with this experience
 
-Prioritize:
+Prioritize LinkedIn-standardized equivalents of:
 
-- Applied AI
+- Artificial Intelligence (AI) / Applied AI
+- Generative AI
+- Large Language Models (LLMs)
 - Python
 - FastAPI
-- RAG
+- Retrieval-Augmented Generation (RAG)
 - Hybrid Retrieval
-- Model Context Protocol (MCP)
 - AI Agents / Agentic AI
+- Model Context Protocol (MCP)
 - LLM Evaluation
+- Prompt Engineering
 - OpenTelemetry
 - PostgreSQL
 - Redis
 - Celery
+- REST APIs / Backend Development
 - Docker
 - Kubernetes
+- CI/CD
 - GitLab CI/CD
 - Azure DevOps
+- API Testing
+- Integration Testing
+- Regression Testing
+- SQL
 
 Do not use `Automation Tester` as the primary title.
 
@@ -108,6 +120,23 @@ Keep existing LinkedIn dates. The CV source of truth currently uses **Sep 2024 �
 - Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 - Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
 - Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
+
+### Skills to associate with this experience
+
+Prioritize LinkedIn-standardized equivalents of:
+
+- Python
+- Django
+- Django REST Framework
+- FastAPI
+- Backend Development
+- REST APIs
+- Computer Vision
+- PyTorch
+- Docker
+- Docker Compose
+- Nginx
+- Cloudflare
 
 ---
 
@@ -290,115 +319,217 @@ Keep older C/C++ or academic programming awards if already present, but place th
 
 # Skills
 
-LinkedIn skills should optimize both recruiter search and profile credibility. Prefer high-signal skills actually used in projects.
+Skills are a first-class part of the LinkedIn migration because recruiter search and matching rely heavily on skill vocabulary. The goal is not to maximize the raw number of skills; the goal is to maintain a focused, searchable, evidence-backed skill graph that matches the target roles.
+
+Target roughly **30–40 high-signal skills**. LinkedIn may support more, but low-signal or redundant skills dilute the profile and make maintenance harder.
+
+## Skill selection rules
+
+When manually updating LinkedIn or using a browser agent:
+
+1. Search for each skill in LinkedIn's Add Skill UI.
+2. Prefer the standardized/canonical skill offered by LinkedIn autocomplete.
+3. Treat the names in this document as concepts, not mandatory literal labels. For example, LinkedIn may expose `Artificial Intelligence (AI)` rather than `Applied AI`, or another canonical label for `AI Agents`.
+4. Do not create arbitrary variants when a recognized LinkedIn skill exists.
+5. Avoid duplicate synonyms unless both labels have clear recruiter-search value and LinkedIn treats them as distinct standardized skills.
+6. If a requested concept cannot be mapped confidently to a LinkedIn-standardized skill, skip it and report the mismatch rather than inventing a label.
+7. Associate important skills with the relevant Experience, Education, certification, or other contextual source where LinkedIn allows it.
+8. Preserve useful existing endorsements. Do not delete an endorsed skill merely to make the list aesthetically cleaner; only remove/deprioritize it when it is clearly stale, misleading, or materially reinforces the wrong professional identity.
+9. Skills must be supported by repository evidence. Do not add a technology solely because it is useful for recruiter search.
+
+## Recruiter-search priorities
+
+Optimize primarily for these role families:
+
+- Applied AI Engineer
+- AI Engineer
+- AI Agent / Agentic AI Engineer
+- Python Backend Engineer
+- Applied AI / Backend Engineer
+
+The same core concepts should appear naturally across Headline/About, Experience, and Skills so recruiter search terms have both an explicit skill and supporting evidence.
 
 ## Top / pinned skills
 
-Recommended priority order:
+If LinkedIn exposes only three prominent/pinned skills, prefer:
 
 1. Python
-2. Artificial Intelligence (AI) / Applied AI
-3. Large Language Models (LLMs)
-4. AI Agents / Agentic AI
-5. Retrieval-Augmented Generation (RAG)
+2. Artificial Intelligence (AI) / the closest standardized AI skill
+3. Large Language Models (LLMs) / the closest standardized LLM skill
+
+If more prominent positions are available, extend with:
+
+4. Retrieval-Augmented Generation (RAG)
+5. AI Agents / Agentic AI
 6. FastAPI
-7. LangGraph
-8. Model Context Protocol (MCP)
-9. LLM Evaluation
-10. PostgreSQL
 
-If LinkedIn limits pinned skills to fewer items, prioritize Python, Applied AI/AI, and LLM/Agentic AI.
+Do not prioritize QA/Test Automation in the top profile skills even though those remain valid supporting skills.
 
-## AI & Agentic Systems
+## Tier 1 — Core recruiter-search skills
 
-- Retrieval-Augmented Generation (RAG)
-- Hybrid Retrieval
-- LangGraph
-- LangChain
-- AI Agents / Agentic AI
-- Multi-Agent Systems
-- Model Context Protocol (MCP)
-- Tool Calling
-- Prompt Engineering
-- Context Engineering
-- Structured Outputs / JSON Schema
-- Qdrant
-- Milvus
-- pgvector
-- Docling
-- Embeddings
-
-## Evaluation & Observability
-
-- LLM Evaluation
-- LLM-as-a-Judge
-- Regression Testing
-- OpenTelemetry
-- LiteLLM
-- Runtime Trace Reconstruction
-- Prompt Injection Testing
-- Data Leakage Evaluation
-- Langfuse
-
-## Backend & Product Engineering
+These are the highest-priority concepts to reconcile first:
 
 - Python
+- Artificial Intelligence (AI) / Applied AI
+- Generative AI
+- Large Language Models (LLMs)
+- Retrieval-Augmented Generation (RAG)
+- AI Agents / Agentic AI
+- Machine Learning
 - FastAPI
-- Django / Django REST Framework
-- Pydantic
-- SQLAlchemy
+- Backend Development
 - PostgreSQL
-- Redis
-- Celery
-- REST APIs
-- Server-Sent Events (SSE)
-- Async/Await
-- Concurrency
-- API Authentication & Authorization
-- Pytest
-- Unit Testing
-- API Testing
-- Integration Testing
-- SQL
-- React
-- TypeScript
 
-## Model Adaptation & Serving
+## Tier 2 — Applied AI differentiation
+
+Add standardized equivalents where available and supported:
+
+- LangGraph
+- Model Context Protocol (MCP)
+- LLM Evaluation
+- Hybrid Retrieval
+- Vector Databases
+- OpenTelemetry
+- Prompt Engineering
+- Context Engineering
+- LangChain
+- Qdrant
+- pgvector
+- LiteLLM
+- Embeddings
+
+Do not force highly niche implementation phrases such as `Runtime Trace Reconstruction`, `Structured Outputs / JSON Schema`, or `Tool Calling` into the Skills section if LinkedIn does not expose a strong standardized skill for them. Keep those concepts in Experience/About instead.
+
+## Tier 3 — Model adaptation & serving
+
+Add standardized equivalents where available:
 
 - PyTorch
 - Hugging Face Transformers
+- Fine-Tuning
 - PEFT
-- Unsloth
 - LoRA / QLoRA
 - vLLM
-- BitsAndBytes
 - Synthetic Data Generation
 
-## Cloud & Infrastructure
+`Unsloth` and `BitsAndBytes` are valid hands-on technologies but should remain secondary unless LinkedIn exposes them as standardized skills with useful search value.
 
-- Google Cloud Platform
-- RunPod
-- DigitalOcean
-- Heroku
-- Cloudflare
+## Tier 4 — Backend, platform & delivery
+
+- Django
+- Django REST Framework
+- Redis
+- Celery
+- REST APIs
+- SQL
 - Docker
-- Docker Compose
 - Kubernetes
-- Nginx
-- MinIO / S3-compatible storage
-- GitLab CI/CD
-- Azure DevOps Pipelines
 - Linux
+- CI/CD
+- GitLab CI/CD
+- Azure DevOps
+- Nginx
 
-## AI-Augmented Development
+Supporting technologies such as Docker Compose, MinIO/S3-compatible storage, Cloudflare, RunPod, DigitalOcean, and Heroku may remain on the profile when LinkedIn exposes useful standardized skills, but they are lower priority than the core engineering stack.
 
-Use these as secondary skills rather than top identity skills:
+## Tier 5 — Quality engineering support
+
+These skills are relevant evidence and should remain searchable, but they should not dominate the profile identity:
+
+- Test Automation
+- API Testing
+- Integration Testing
+- Regression Testing
+- Unit Testing
+- Pytest
+
+Keep SQL in the backend/platform set because it is broader than QA and is directly supported by work experience.
+
+## Contextual skill associations
+
+Where LinkedIn allows a skill to be associated with the place it was used, prefer these mappings.
+
+### FPT Software
+
+Associate the strongest available standardized equivalents of:
+
+- Artificial Intelligence (AI)
+- Generative AI
+- Large Language Models (LLMs)
+- Python
+- FastAPI
+- RAG
+- AI Agents / Agentic AI
+- MCP
+- LLM Evaluation
+- Hybrid Retrieval / Vector Search
+- OpenTelemetry
+- Prompt Engineering
+- PostgreSQL
+- Redis
+- Celery
+- REST APIs / Backend Development
+- Docker
+- Kubernetes
+- CI/CD
+- GitLab CI/CD
+- Azure DevOps
+- Test Automation
+- API Testing
+- Integration Testing
+- Regression Testing
+- SQL
+
+### FPT Software Academy
+
+Associate:
+
+- Python
+- Django
+- Django REST Framework
+- FastAPI
+- Backend Development
+- REST APIs
+- Computer Vision
+- PyTorch
+- Docker
+- Nginx
+
+### Education / projects when supported
+
+Use project or education associations to provide evidence for model-specific skills that are less central to the FPT role, especially:
+
+- Machine Learning
+- PyTorch
+- Hugging Face Transformers
+- Fine-Tuning
+- LoRA / QLoRA
+- vLLM
+- Computer Vision
+
+Do not fabricate an association if LinkedIn does not offer the relevant context selector.
+
+## Secondary AI-augmented development skills
+
+Keep these secondary rather than top identity skills:
 
 - OpenAI Codex
 - Claude Code
 - GitHub Copilot
 
-The broader workflow can be explained in About rather than creating many niche skill entries for OpenCode, Cline, T3 Code, agy, or other tools.
+The broader agentic-development workflow belongs mainly in About/portfolio evidence. Do not create a long LinkedIn Skills list for OpenCode, Cline, T3 Code, agy, or similar tools.
+
+## Skills verification checklist
+
+After the Skills migration:
+
+- confirm that the highest-priority Applied AI and backend skills are present
+- confirm that important skills use LinkedIn's standardized autocomplete labels where possible
+- confirm that high-value skills are associated with the correct FPT experience where LinkedIn supports contextual associations
+- confirm that QA skills remain visible but do not dominate the top/pinned skills
+- preserve valuable endorsements where possible
+- remove or deprioritize stale skills that reinforce an outdated QA-only identity
+- report concepts that could not be mapped confidently to a standardized LinkedIn skill
 
 ---
 
@@ -448,6 +579,14 @@ When applying this document to LinkedIn:
 - [ ] Replace generic `Software Engineer` positioning in About.
 - [ ] Use `Applied AI Engineer` as the FPT role title.
 - [ ] Keep automation/testing as quality-engineering and delivery evidence rather than primary identity.
+- [ ] Reconcile Skills immediately after Experience; treat recruiter discoverability as a first-class objective.
+- [ ] Target roughly 30–40 high-signal skills rather than blindly filling the maximum allowed count.
+- [ ] Prefer standardized LinkedIn skill labels returned by autocomplete.
+- [ ] Prioritize Python, AI, LLMs, RAG, AI Agents, FastAPI, Backend Development, PostgreSQL, and other Tier 1 skills.
+- [ ] Associate important skills with FPT Software / FPT Software Academy where LinkedIn supports contextual skill associations.
+- [ ] Preserve useful endorsements and avoid deleting endorsed skills merely for visual cleanup.
+- [ ] Keep QA/testing skills as supporting search evidence, not the top profile identity.
+- [ ] Report requested skill concepts that cannot be mapped confidently to LinkedIn-standardized skills.
 - [ ] Replace old Omni-Agent description with the current Applied AI Platform description.
 - [ ] Add or refresh Agent Assurance / Flezi Polaris.
 - [ ] Refresh APIT with Unsloth, PEFT, vLLM, RunPod, pgvector, and evaluation details.
@@ -456,10 +595,9 @@ When applying this document to LinkedIn:
 - [ ] Remove speculative business-impact percentages from prototype projects.
 - [ ] Remove stale `60% accuracy` claim from the self-driving project.
 - [ ] Keep measured/defensible impact: ~70% manual-regression reduction, ~20 person-months follow-on delivery, APIT macro-F1 0.655, +41.5% relative improvement, self-driving 125.8s / 100% score.
-- [ ] Refresh Skills using the priority list above.
 - [ ] Add Kubernetes as hands-on experience; do not add Helm as a primary skill yet.
-- [ ] Add vLLM and pgvector as real hands-on technologies.
-- [ ] Keep Codex, Claude Code, and GitHub Copilot; do not turn coding-agent experience into a long tool list.
+- [ ] Add vLLM and pgvector when LinkedIn provides useful standardized skill labels; otherwise retain them in project/About evidence.
+- [ ] Keep Codex, Claude Code, and GitHub Copilot as secondary evidence; do not turn coding-agent experience into a long tool list.
 - [ ] Feature the public portfolio and public evidence rather than private repository URLs.
 
 ---
@@ -470,10 +608,24 @@ When a browser-capable agent applies this file to LinkedIn:
 
 1. Treat this file, `Tran_Quoc_Truong_CV.yaml`, and `src/data/profile.ts` as the source of truth.
 2. Do not invent dates, metrics, production scale, team size, users, traffic, cost savings, latency, throughput, or revenue impact.
-3. Preserve LinkedIn connection/recommendation history and existing verified credentials.
-4. Do not delete an existing role, project, award, certificate, or education record unless the cleanup instructions above explicitly mark its content as stale or speculative.
+3. Preserve LinkedIn connection/recommendation history, useful skill endorsements, and existing verified credentials.
+4. Do not delete an existing role, project, award, certificate, education record, or endorsed skill unless the cleanup instructions above explicitly mark its content as stale, speculative, misleading, or materially inconsistent with the target positioning.
 5. Prefer editing existing matching entries over creating duplicates.
 6. If LinkedIn has a field that does not map cleanly to this document, preserve the existing value rather than guessing.
 7. Use public portfolio links for Featured content; do not expose private repository URLs.
 8. Stop before any action that would publish a post, notify the network, or materially change privacy settings unless explicitly requested.
-9. After applying changes, review the public-facing profile for consistency with the headline, About, FPT role, major projects, awards, and top skills.
+9. Apply changes in this priority order: **Headline → About → Experience → Skills → Honors & Awards → Featured → Projects → Education**.
+10. For each normal profile section, use an **observe → compare → edit → save → verify** loop. Re-observe the section after saving before moving on.
+11. Treat Skills as a dedicated reconciliation workflow rather than a simple add/remove list:
+    - observe the current skill inventory and existing endorsements
+    - search each target concept through LinkedIn's Add Skill UI
+    - choose the standardized autocomplete result when available
+    - avoid duplicate synonyms unless intentionally useful
+    - add contextual associations to the relevant Experience/Education when LinkedIn supports them
+    - preserve valuable endorsed skills where possible
+    - verify the resulting skill set after changes
+12. Do not blindly add every skill listed in this file. Prioritize Tier 1 first, then Tier 2, and stop around 30–40 high-signal skills unless existing endorsed skills justify keeping a larger set.
+13. If LinkedIn cannot map a skill concept cleanly, skip it and include it in the final report instead of creating a custom/unverified variant.
+14. If LinkedIn presents login verification, MFA, CAPTCHA, or another human-only interaction, request human help/handoff and continue afterward.
+15. After applying changes, review the public-facing profile for consistency across headline, About, Experience, explicit Skills, major projects, awards, and Featured content.
+16. Final report must include: sections updated, entries created or substantially rewritten, stale content removed, skills added/retained/deprioritized, skill concepts that could not be standardized, contextual skill associations applied, content intentionally preserved, and anything still inconsistent with this specification.
