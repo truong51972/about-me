@@ -15,7 +15,7 @@ cv:
   sections:
     summary:
       - 'Applied AI Engineer building agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms, with a focus on reliability, observability, and practical delivery.'
-      - 'Hands-on with LangGraph, MCP/tool calling, Qdrant, LiteLLM, OpenTelemetry, FastAPI/Django, PostgreSQL, Redis, Celery, Docker, CI/CD, and cloud-hosted services. Currently works across enterprise code intelligence, AI assurance, and automation at FPT Software while independently developing Omni-Agent.'
+      - 'Experience spans enterprise code intelligence, trace-based AI assurance, quality engineering, CI-driven delivery, and AI-augmented software development; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.'
 
     technical_skills:
       - label: AI & Agentic Systems
@@ -27,6 +27,9 @@ cv:
       - label: Backend & Product Engineering
         details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, RESTful APIs, SQL, Asynchronous Workflows, Idempotent Processing, React, TypeScript
 
+      - label: AI-Augmented Development
+        details: OpenAI Codex, Claude Code, GitHub Copilot, Agentic Coding Workflows, Multi-Agent Delegation, Context Management, Git Worktrees
+
       - label: Cloud, Infrastructure & Delivery
         details: Google Cloud Platform (Compute Engine, cost/budget management), DigitalOcean, Heroku, RunPod, Cloudflare, Docker, Docker Compose, Nginx, S3-compatible Object Storage (MinIO), GitLab CI/CD, Azure DevOps Pipelines, Linux
 
@@ -35,7 +38,7 @@ cv:
 
     experience:
       - company: FPT Software
-        position: Applied AI Engineer & Automation Tester
+        position: Applied AI Engineer
         start_date: 2024-12
         end_date: present
         location: Ho Chi Minh City, Vietnam
@@ -43,7 +46,7 @@ cv:
           - 'IQP (Code Intelligence & Retrieval): Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories; exposed retrieval capabilities to AI clients through Model Context Protocol (MCP).'
           - 'Agent Assurance / Flezi Polaris (AI Evaluation Infrastructure): Architected a trace-based evaluation system for agentic applications, capturing runtime evidence through LiteLLM and OpenTelemetry, reconstructing multi-turn execution trajectories, and applying reproducible behavioral evaluation and regression gates; the solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.'
           - 'Automation & Delivery Engineering: Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated test execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.'
-          - 'Banking Systems Verification: Authored 1,500+ lines of reusable SQL validation and cross-platform test automation across banking and payment systems, reducing manual regression effort by approximately 70%.'
+          - 'Banking Systems Verification: Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%; an omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.'
 
       - company: FPT Software Academy
         position: Full-Stack Developer Intern
