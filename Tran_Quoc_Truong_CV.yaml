@@ -15,26 +15,26 @@ cv:
   sections:
     summary:
       - 'Applied AI Engineer building agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms, with a focus on reliability, observability, and practical delivery.'
-      - 'Experience spans enterprise code intelligence, trace-based AI assurance, quality engineering, CI-driven delivery, and AI-augmented software development; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.'
+      - 'Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, CI-driven delivery, and AI-augmented software development; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.'
 
     technical_skills:
       - label: AI & Agentic Systems
-        details: RAG, Hybrid Retrieval, LangGraph, LangChain, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Milvus, Docling
+        details: RAG, Hybrid Retrieval, LangGraph, LangChain, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, Prompt Engineering, Structured Outputs / JSON Schema, Context Engineering, LiteLLM, Qdrant, Milvus, pgvector, Docling
 
       - label: LLM Evaluation & Observability
         details: LLM Evaluation, Regression Testing, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Deterministic Quality Gates, Prompt Injection Testing, Data Leakage Evaluation, Langfuse
 
       - label: Backend & Product Engineering
-        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, RESTful APIs, SQL, Asynchronous Workflows, Idempotent Processing, React, TypeScript
+        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, RESTful APIs, SSE / Streaming APIs, Async/Await, Concurrency, API Authentication & Authorization, Pytest, Unit/API/Integration Testing, SQL, Idempotent Processing, React, TypeScript
 
       - label: AI-Augmented Development
         details: OpenAI Codex, Claude Code, GitHub Copilot, Agentic Coding Workflows, Multi-Agent Delegation, Context Management, Git Worktrees
 
       - label: Cloud, Infrastructure & Delivery
-        details: Google Cloud Platform (Compute Engine, cost/budget management), DigitalOcean, Heroku, RunPod, Cloudflare, Docker, Docker Compose, Nginx, S3-compatible Object Storage (MinIO), GitLab CI/CD, Azure DevOps Pipelines, Linux
+        details: Google Cloud Platform (Compute Engine, cost/budget management), DigitalOcean, Heroku, RunPod, Cloudflare, Docker, Docker Compose, Kubernetes, Nginx, S3-compatible Object Storage (MinIO), GitLab CI/CD, Azure DevOps Pipelines, Linux
 
-      - label: ML & Model Adaptation
-        details: PyTorch, LoRA/QLoRA Fine-tuning, Synthetic Data Generation, Embeddings
+      - label: ML, Fine-Tuning & Model Serving
+        details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA Fine-tuning, vLLM, BitsAndBytes Quantization, Synthetic Data Generation, Embeddings
 
     experience:
       - company: FPT Software
@@ -75,15 +75,16 @@ cv:
         highlights:
           - 'Platform Architecture: Designed a modular multi-service architecture with project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.'
           - 'Knowledge Builder: Built a versioned document pipeline covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.'
-          - 'Agent Runtime & Integration: Implemented LangGraph-based agent workflows with tool calling and MCP integration for multi-turn execution over project knowledge.'
+          - 'Agent Runtime & Integration: Implemented LangGraph-based agent workflows with tool calling, context-aware retrieval, MCP integration, and SSE streaming for multi-turn execution over project knowledge.'
           - 'Agent Assurance: Integrated trace-based evidence capture, evaluation, regression, and quality-gating capabilities into the platform.'
 
       - name: APIT — Agent Programmatic Integration Testing
         summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
         highlights:
           - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
-          - Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
-          - Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
+          - Fine-tuned Qwen2.5-3B with Unsloth and PEFT LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
+          - Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with BitsAndBytes quantization and runtime LoRA adapters.
+          - Integrated pgvector-backed cosine-similarity retrieval and a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
 
       - name: E-Commerce AI Assistant — Conversational RAG & Search
         summary: End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
