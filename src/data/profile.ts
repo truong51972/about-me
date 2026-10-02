@@ -36,7 +36,7 @@ export const site = {
   summary:
     "I build agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms with a focus on reliability, observability, and practical delivery.",
   about:
-    "My work spans enterprise code intelligence, hybrid retrieval, MCP/tool calling, trace-based AI evaluation, asynchronous backend systems, CI-driven delivery, and AI-augmented software development. I currently contribute as an Applied AI Engineer at FPT Software while independently developing Omni-Agent."
+    "My work spans enterprise code intelligence, hybrid retrieval, MCP/tool calling, prompt and context engineering, trace-based AI evaluation, streaming and asynchronous backend systems, model fine-tuning and serving, CI-driven delivery, and AI-augmented software development. I currently contribute as an Applied AI Engineer at FPT Software while independently developing Omni-Agent."
 };
 
 export const cases: ProjectCase[] = [
@@ -58,6 +58,8 @@ export const cases: ProjectCase[] = [
       "LangGraph",
       "FastAPI",
       "Model Context Protocol (MCP)",
+      "Context Engineering",
+      "SSE Streaming",
       "OpenTelemetry (OTel)",
       "LLM Evaluation",
       "Qdrant",
@@ -71,7 +73,7 @@ export const cases: ProjectCase[] = [
     highlights: [
       "Platform Architecture: Designed a modular multi-service architecture with a project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.",
       "Knowledge Builder: Built a versioned document pipeline covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.",
-      "Agent Runtime & Integration: Implemented LangGraph-based agent workflows with tool calling and MCP integration for multi-turn execution over project knowledge.",
+      "Agent Runtime & Integration: Implemented LangGraph-based agent workflows with prompt and context engineering, tool calling, MCP integration, and SSE streaming for multi-turn execution over project knowledge.",
       "Agent Assurance: Integrated trace-based evidence capture, behavioral evaluation, regression, and quality-gating capabilities directly into the platform."
     ]
   },
@@ -101,7 +103,8 @@ export const cases: ProjectCase[] = [
       "MCP",
       "React",
       "TypeScript",
-      "Docker Compose"
+      "Docker Compose",
+      "Kubernetes"
     ],
     highlights: [
       "Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories.",
@@ -146,11 +149,11 @@ export const cases: ProjectCase[] = [
   },
   {
     slug: "apit",
-    label: "AI Evaluation",
+    label: "AI Evaluation & Model Serving",
     title: "APIT — Agent Programmatic Integration Testing",
-    subtitle: "AI-assisted structured API test generation",
+    subtitle: "Fine-tuned LLM test generation, vector retrieval, and GPU model serving",
     summary:
-      "An AI-assisted API testing application that generates structured test scenarios from API documentation and evaluates them with model-based and deterministic checks.",
+      "An AI-assisted API testing system that generates structured test scenarios from API documentation using a fine-tuned LLM, pgvector-backed retrieval, and deterministic/model-based evaluation.",
     group: "applied-ai-systems",
     visualTier: "supporting",
     homepageFeatured: false,
@@ -158,12 +161,24 @@ export const cases: ProjectCase[] = [
     docsUrl: "docs/apit-capstone.pdf",
     role: "System Architect",
     outcome:
-      "Academic / research prototype. Achieved a 0.655 macro-F1 score on structured API test-case generation using a fine-tuned Qwen2.5-3B model via LoRA/QLoRA.",
-    tags: ["LLM Fine-Tuning", "LoRA/QLoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
+      "Academic / research prototype. Fine-tuned Qwen2.5-3B to 0.655 macro-F1 and deployed it on RunPod through an OpenAI-compatible vLLM service with pgvector-backed retrieval.",
+    tags: [
+      "Qwen2.5",
+      "Unsloth",
+      "Hugging Face Transformers",
+      "PEFT",
+      "LoRA/QLoRA",
+      "vLLM",
+      "RunPod",
+      "pgvector",
+      "BitsAndBytes",
+      "LLM Evaluation"
+    ],
     highlights: [
       "Built a bilingual synthetic dataset generation pipeline containing 1,258 API-testing samples.",
-      "Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving 0.655 macro-F1 (+41.5% relative improvement over the Llama-3.2-3B baseline).",
-      "Developed an evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation."
+      "Fine-tuned Qwen2.5-3B with Unsloth and PEFT LoRA/QLoRA, achieving 0.655 macro-F1 (+41.5% relative improvement over the Llama-3.2-3B baseline).",
+      "Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with BitsAndBytes quantization and runtime LoRA adapters.",
+      "Implemented pgvector cosine-similarity retrieval over document embeddings and a hybrid evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation."
     ]
   },
   {
@@ -455,7 +470,10 @@ export const skillGroups = [
       "Multi-Agent Systems",
       "Model Context Protocol (MCP)",
       "Tool Calling",
-      "Vector Search (Qdrant, Milvus)",
+      "Prompt Engineering",
+      "Structured Outputs / JSON Schema",
+      "Context Engineering",
+      "Vector Search (Qdrant, Milvus, pgvector)",
       "Docling Layout & OCR",
       "Embeddings"
     ]
@@ -486,8 +504,11 @@ export const skillGroups = [
       "Celery",
       "SQLAlchemy",
       "Pydantic",
-      "REST APIs & SSE",
-      "Async Workflows",
+      "REST APIs & SSE Streaming",
+      "Async/Await & Concurrency",
+      "API Authentication & Authorization",
+      "Pytest",
+      "Unit / API / Integration Testing",
       "Idempotency Contracts",
       "React",
       "TypeScript"
@@ -514,6 +535,7 @@ export const skillGroups = [
       "RunPod",
       "Cloudflare",
       "Docker & Docker Compose",
+      "Kubernetes",
       "GitLab CI/CD",
       "Azure DevOps Pipelines",
       "Nginx",
@@ -522,10 +544,15 @@ export const skillGroups = [
     ]
   },
   {
-    title: "ML & Model Adaptation",
+    title: "ML, Fine-Tuning & Serving",
     items: [
       "PyTorch",
+      "Hugging Face Transformers",
+      "PEFT",
+      "Unsloth",
       "LoRA / QLoRA",
+      "vLLM",
+      "BitsAndBytes Quantization",
       "Synthetic Data Generation",
       "Evaluation Benchmarks"
     ]
