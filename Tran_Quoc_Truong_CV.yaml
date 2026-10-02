@@ -127,9 +127,10 @@ design:
     space_above: 0.38cm
     space_below: 0.2cm
   sections:
-    allow_page_break: false
+    allow_page_break: true
     space_between_regular_entries: 0.75em
     space_between_text_based_entries: 0.28em
+    show_time_spans_in: []
   entries:
     highlights:
       space_between_items: 0.28em
