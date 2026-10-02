@@ -36,7 +36,7 @@ export const site = {
   summary:
     "I build agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms with a focus on reliability, observability, and practical delivery.",
   about:
-    "My work spans Applied AI and backend engineering: hybrid retrieval, MCP/tool calling, trace-based AI evaluation, asynchronous workflows, CI delivery, and cloud-hosted services. I currently work across enterprise code intelligence, AI assurance, and automation at FPT Software while independently developing Omni-Agent."
+    "My work spans enterprise code intelligence, hybrid retrieval, MCP/tool calling, trace-based AI evaluation, asynchronous backend systems, CI-driven delivery, and AI-augmented software development. I currently contribute as an Applied AI Engineer at FPT Software while independently developing Omni-Agent."
 };
 
 export const cases: ProjectCase[] = [
@@ -302,13 +302,13 @@ export const cases: ProjectCase[] = [
 export const timeline = [
   {
     period: "Dec 2024 — Present",
-    title: "Applied AI Engineer & Automation Tester",
+    title: "Applied AI Engineer",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
       "IQP (Code Intelligence & Retrieval): Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships, exposing repository-aware engineering context to AI clients through MCP.",
       "Agent Assurance / Flezi Polaris: Architected a trace-based evaluation system using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.",
       "Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.",
-      "Banking Systems Verification: Authored 1,500+ lines of reusable SQL validation and cross-platform automation, reducing manual regression effort by approximately 70%."
+      "Banking Systems Verification: Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%; an omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work."
     ]
   },
   {
@@ -491,6 +491,18 @@ export const skillGroups = [
       "Idempotency Contracts",
       "React",
       "TypeScript"
+    ]
+  },
+  {
+    title: "AI-Augmented Development",
+    items: [
+      "OpenAI Codex",
+      "Claude Code",
+      "GitHub Copilot",
+      "Agentic Coding Workflows",
+      "Multi-Agent Delegation",
+      "Context Management",
+      "Git Worktrees"
     ]
   },
   {
