@@ -10,20 +10,18 @@
 # Summary
 Applied AI Engineer building agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms, with a focus on reliability, observability, and practical delivery.
 
-Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, CI-driven delivery, and AI-augmented software development; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.
+Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, and CI-driven delivery; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.
 
 # Technical Skills
-**AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, LangChain, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, Prompt Engineering, Structured Outputs / JSON Schema, Context Engineering, LiteLLM, Qdrant, Milvus, pgvector, Docling
+**AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, Context Engineering, LiteLLM, Qdrant, pgvector, Docling
 
-**LLM Evaluation & Observability:** LLM Evaluation, Regression Testing, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Deterministic Quality Gates, Prompt Injection Testing, Data Leakage Evaluation, Langfuse
+**LLM Evaluation & Observability:** LLM Evaluation, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Regression Testing, Deterministic Quality Gates, Langfuse
 
-**Backend & Product Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, RESTful APIs, SSE / Streaming APIs, Async/Await, Concurrency, API Authentication & Authorization, Pytest, Unit/API/Integration Testing, SQL, Idempotent Processing, React, TypeScript
+**Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs, Pytest, SQL, React, TypeScript
 
-**AI-Augmented Development:** OpenAI Codex, Claude Code, GitHub Copilot, Agentic Coding Workflows, Multi-Agent Delegation, Context Management, Git Worktrees
+**ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, BitsAndBytes Quantization, Synthetic Data Generation
 
-**Cloud, Infrastructure & Delivery:** Google Cloud Platform (Compute Engine, cost/budget management), DigitalOcean, Heroku, RunPod, Cloudflare, Docker, Docker Compose, Kubernetes, Nginx, S3-compatible Object Storage (MinIO), GitLab CI/CD, Azure DevOps Pipelines, Linux
-
-**ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA Fine-tuning, vLLM, BitsAndBytes Quantization, Synthetic Data Generation, Embeddings
+**Infrastructure & Delivery:** Docker, Docker Compose, Kubernetes, Google Cloud Platform, RunPod, Nginx, MinIO, GitLab CI/CD, Azure DevOps Pipelines, Linux
 
 # Experience
 ## **FPT Software**, Applied AI Engineer
@@ -36,11 +34,11 @@ Dec 2024 – present
 
 1 year 11 months
 
-- IQP (Code Intelligence & Retrieval): Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories; exposed retrieval capabilities to AI clients through Model Context Protocol (MCP).
+- IQP (Code Intelligence & Retrieval): Built hybrid code retrieval combining dense search, BM25, and code-graph relationships across enterprise repositories, exposing repository-aware engineering context to AI clients through Model Context Protocol (MCP).
 
-- Agent Assurance / Flezi Polaris (AI Evaluation Infrastructure): Architected a trace-based evaluation system for agentic applications, capturing runtime evidence through LiteLLM and OpenTelemetry, reconstructing multi-turn execution trajectories, and applying reproducible behavioral evaluation and regression gates; the solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+- Agent Assurance / Flezi Polaris: Architected trace-based evaluation for agentic applications using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
-- Automation & Delivery Engineering: Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated test execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.
+- Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.
 
 - Banking Systems Verification: Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%; an omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.
 
@@ -56,11 +54,11 @@ Sept 2024 – Dec 2024
 
 4 months
 
-- Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
+- Built the backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 
-- Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
+- Integrated a FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
 
-- Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
+- Containerized the multi-service architecture with Docker Compose, Nginx, and Cloudflare Tunnel.
 
 
 
@@ -77,7 +75,7 @@ Awarded the Golden Solution Prize (1st place) on September 18, 2026 for Flezi Po
 
 Aug 2026
 
-Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
+Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
 
 
 
