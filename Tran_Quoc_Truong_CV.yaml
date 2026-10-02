@@ -15,26 +15,23 @@ cv:
   sections:
     summary:
       - 'Applied AI Engineer building agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms, with a focus on reliability, observability, and practical delivery.'
-      - 'Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, CI-driven delivery, and AI-augmented software development; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.'
+      - 'Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, and CI-driven delivery; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.'
 
     technical_skills:
       - label: AI & Agentic Systems
-        details: RAG, Hybrid Retrieval, LangGraph, LangChain, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, Prompt Engineering, Structured Outputs / JSON Schema, Context Engineering, LiteLLM, Qdrant, Milvus, pgvector, Docling
+        details: RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, Context Engineering, LiteLLM, Qdrant, pgvector, Docling
 
       - label: LLM Evaluation & Observability
-        details: LLM Evaluation, Regression Testing, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Deterministic Quality Gates, Prompt Injection Testing, Data Leakage Evaluation, Langfuse
+        details: LLM Evaluation, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Regression Testing, Deterministic Quality Gates, Langfuse
 
-      - label: Backend & Product Engineering
-        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, RESTful APIs, SSE / Streaming APIs, Async/Await, Concurrency, API Authentication & Authorization, Pytest, Unit/API/Integration Testing, SQL, Idempotent Processing, React, TypeScript
-
-      - label: AI-Augmented Development
-        details: OpenAI Codex, Claude Code, GitHub Copilot, Agentic Coding Workflows, Multi-Agent Delegation, Context Management, Git Worktrees
-
-      - label: Cloud, Infrastructure & Delivery
-        details: Google Cloud Platform (Compute Engine, cost/budget management), DigitalOcean, Heroku, RunPod, Cloudflare, Docker, Docker Compose, Kubernetes, Nginx, S3-compatible Object Storage (MinIO), GitLab CI/CD, Azure DevOps Pipelines, Linux
+      - label: Backend Engineering
+        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs, Pytest, SQL, React, TypeScript
 
       - label: ML, Fine-Tuning & Model Serving
-        details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA Fine-tuning, vLLM, BitsAndBytes Quantization, Synthetic Data Generation, Embeddings
+        details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, BitsAndBytes Quantization, Synthetic Data Generation
+
+      - label: Infrastructure & Delivery
+        details: Docker, Docker Compose, Kubernetes, Google Cloud Platform, RunPod, Nginx, MinIO, GitLab CI/CD, Azure DevOps Pipelines, Linux
 
     experience:
       - company: FPT Software
@@ -43,9 +40,9 @@ cv:
         end_date: present
         location: Ho Chi Minh City, Vietnam
         highlights:
-          - 'IQP (Code Intelligence & Retrieval): Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories; exposed retrieval capabilities to AI clients through Model Context Protocol (MCP).'
-          - 'Agent Assurance / Flezi Polaris (AI Evaluation Infrastructure): Architected a trace-based evaluation system for agentic applications, capturing runtime evidence through LiteLLM and OpenTelemetry, reconstructing multi-turn execution trajectories, and applying reproducible behavioral evaluation and regression gates; the solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.'
-          - 'Automation & Delivery Engineering: Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated test execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.'
+          - 'IQP (Code Intelligence & Retrieval): Built hybrid code retrieval combining dense search, BM25, and code-graph relationships across enterprise repositories, exposing repository-aware engineering context to AI clients through Model Context Protocol (MCP).'
+          - 'Agent Assurance / Flezi Polaris: Architected trace-based evaluation for agentic applications using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.'
+          - 'Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.'
           - 'Banking Systems Verification: Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%; an omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.'
 
       - company: FPT Software Academy
@@ -54,9 +51,9 @@ cv:
         end_date: 2024-12
         location: Ho Chi Minh City, Vietnam
         highlights:
-          - Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
-          - Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
-          - Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
+          - Built the backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
+          - Integrated a FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
+          - Containerized the multi-service architecture with Docker Compose, Nginx, and Cloudflare Tunnel.
 
     achievements:
       - name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
@@ -64,7 +61,7 @@ cv:
         summary: Awarded the Golden Solution Prize (1st place) on September 18, 2026 for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.
       - name: 2nd Place — IVS Hackathon 2026
         date: 2026-08
-        summary: Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
+        summary: Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
       - name: Second Prize — Autonomous Driving Research Paper Competition
         date: 2024-04
         summary: Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
