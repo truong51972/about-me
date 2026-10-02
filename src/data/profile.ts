@@ -27,16 +27,16 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Product Engineer · Applied AI · Backend Systems",
-  tagline: "Building production-grade AI systems & backend platforms.",
+  role: "Applied AI Engineer · AI Agents & RAG · Backend Systems",
+  tagline: "Building reliable AI agents, retrieval systems, and backend platforms.",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.",
+    "I build agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms with a focus on reliability, observability, and practical delivery.",
   about:
-    "Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates."
+    "My work spans Applied AI and backend engineering: hybrid retrieval, MCP/tool calling, trace-based AI evaluation, asynchronous workflows, CI delivery, and cloud-hosted services. I currently work across enterprise code intelligence, AI assurance, and automation at FPT Software while independently developing Omni-Agent."
 };
 
 export const cases: ProjectCase[] = [
@@ -44,22 +44,22 @@ export const cases: ProjectCase[] = [
     slug: "omni-agent",
     label: "Flagship AI Platform",
     title: "Omni-Agent — AI Platform",
-    subtitle: "Platform for building knowledge bases, running AI agents, and evaluating agent behavior",
+    subtitle: "Knowledge pipelines, agent runtimes, and agent assurance in one modular platform",
     summary:
-      "A modular Applied AI platform featuring document intelligence with Docling and Qdrant, a Streamable HTTP MCP server, a LangGraph-based multi-agent runtime, and an integrated Agent Assurance evaluation engine.",
+      "A modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and trace-based agent evaluation within a project-centric multi-service architecture.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
     period: "2026–Present",
     role: "Solo product architecture and implementation",
     outcome:
-      "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing. Its Agent Assurance module won 2nd place at IVS Hackathon 2026.",
+      "Active development / pre-production. Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, MCP integration, and native agent assurance. Its Agent Assurance work was recognized with 2nd Place at IVS Hackathon 2026 and later the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 as Flezi Polaris.",
     tags: [
       "LangGraph",
       "FastAPI",
       "Model Context Protocol (MCP)",
       "OpenTelemetry (OTel)",
-      "LLM-as-a-Judge",
+      "LLM Evaluation",
       "Qdrant",
       "Docling",
       "Django/DRF",
@@ -69,63 +69,32 @@ export const cases: ProjectCase[] = [
       "Docker"
     ],
     highlights: [
-      "Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.",
-      "Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.",
-      "Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.",
-      "Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage."
-    ]
-  },
-  {
-    slug: "ata",
-    label: "Evaluation Infrastructure · 2nd Place IVS Hackathon",
-    title: "Agent Assurance (ATA) — AI Agent Evaluation Platform",
-    subtitle: "Quality & evaluation infrastructure for autonomous AI agents",
-    summary:
-      "An independent validation and audit layer for agentic systems that captures runtime interactions via LiteLLM and OpenTelemetry, reconstructs execution traces, and enforces deterministic quality gates.",
-    group: "applied-ai-systems",
-    visualTier: "featured",
-    homepageFeatured: true,
-    period: "2026",
-    role: "Solo architecture and implementation",
-    outcome:
-      "Awarded 2nd Place at IVS Hackathon 2026 for autonomous agent verification; validated the core architecture before integration into Omni-Agent.",
-    tags: [
-      "Agent Evaluation",
-      "OpenTelemetry",
-      "LLM-as-a-Judge",
-      "FastAPI",
-      "Celery",
-      "LiteLLM Gateway",
-      "Redis",
-      "PostgreSQL",
-      "LangChain",
-      "Docker"
-    ],
-    highlights: [
-      "Built an end-to-end evaluation engine with a FastAPI control plane, LiteLLM gateway, Celery workers, PostgreSQL, Redis, and an operational dashboard.",
-      "Designed a multi-stage evaluation workflow using Planner, Judge, Critic, and Meta-Judge roles across configurable quality dimensions.",
-      "Implemented percentile-based quality gates and deterministic critical blockers to produce reproducible PASS/FAIL verdicts."
+      "Platform Architecture: Designed a modular multi-service architecture with a project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.",
+      "Knowledge Builder: Built a versioned document pipeline covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.",
+      "Agent Runtime & Integration: Implemented LangGraph-based agent workflows with tool calling and MCP integration for multi-turn execution over project knowledge.",
+      "Agent Assurance: Integrated trace-based evidence capture, behavioral evaluation, regression, and quality-gating capabilities directly into the platform."
     ]
   },
   {
     slug: "iqp",
     label: "Enterprise Applied AI",
     title: "IQP — Intelligent Quality Platform",
-    subtitle:
-      "AI-assisted traceability and code intelligence for enterprise systems",
+    subtitle: "AI-assisted traceability and code intelligence for enterprise systems",
     summary:
-      "An enterprise platform combining graph-based product knowledge, source-code intelligence, and hybrid retrieval to automate engineering traceability and test analysis.",
+      "An enterprise platform combining graph-based product knowledge, source-code intelligence, and hybrid retrieval to support engineering traceability and AI-assisted quality analysis.",
     group: "featured-systems",
     visualTier: "featured",
     homepageFeatured: true,
     period: "2026",
-    role:
-      "Backend engineering, retrieval, code intelligence, and product integration",
+    role: "Backend engineering, retrieval, code intelligence, and product integration",
     outcome:
-      "Contributed to a working enterprise platform that unified product knowledge, source-code context, AI-assisted retrieval, and quality-analysis capabilities.",
+      "Enterprise internal system. Contributed backend architecture and retrieval capabilities that connect product knowledge, source-code context, and MCP-compatible AI clients across multi-repository engineering workflows.",
     tags: [
       "FastAPI",
       "Qdrant",
+      "Hybrid Retrieval",
+      "BM25",
+      "Code Graphs",
       "PostgreSQL",
       "Redis",
       "Celery",
@@ -135,62 +104,106 @@ export const cases: ProjectCase[] = [
       "Docker Compose"
     ],
     highlights: [
-      "Designed backend service boundaries for workspace management, graph ingestion and retrieval, code indexing, AI context access, and quality-analysis workflows.",
-      "Implemented hybrid retrieval combining semantic, lexical, and graph-based signals to provide scoped context for engineering and AI-assisted tools.",
+      "Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories.",
       "Developed code-intelligence capabilities for indexing source repositories and linking product concepts with related implementation and test assets.",
-      "Integrated asynchronous backend services, a React/TypeScript portal, and MCP-compatible AI clients into a workspace-oriented product workflow."
+      "Exposed contextual retrieval capabilities through MCP so AI clients can access repository-aware engineering context through a stable integration boundary.",
+      "Integrated asynchronous backend services, a React/TypeScript portal, and workspace-oriented product workflows."
+    ]
+  },
+  {
+    slug: "ata",
+    label: "Golden Solution Prize · IVS Solution Day 2.0",
+    title: "Agent Assurance — AI Agent Evaluation Platform",
+    subtitle: "Record-first evaluation and regression infrastructure for agentic systems",
+    summary:
+      "A record-first assurance layer that captures runtime evidence, reconstructs multi-turn agent trajectories, evaluates behavioral dimensions, and produces reproducible regression and quality-gate results.",
+    group: "applied-ai-systems",
+    visualTier: "featured",
+    homepageFeatured: true,
+    period: "2026",
+    role: "Solo architecture and implementation",
+    outcome:
+      "Awarded 2nd Place at IVS Hackathon 2026 and later evolved into Flezi Polaris, which received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 on September 18, 2026.",
+    tags: [
+      "Agent Evaluation",
+      "OpenTelemetry",
+      "LLM-as-a-Judge",
+      "FastAPI",
+      "Celery",
+      "LiteLLM Gateway",
+      "Redis",
+      "PostgreSQL",
+      "Regression Testing",
+      "Docker"
+    ],
+    highlights: [
+      "Captured agent interactions through LiteLLM and OpenTelemetry paths and normalized multi-turn execution evidence into durable evaluation records.",
+      "Evaluated records across semantic behavior groups with a single evaluator workflow and retained evidence/rationale for reproducible review.",
+      "Applied worst-record aggregation so decisive failures cannot be hidden by averages; missing evidence remains inconclusive rather than being guessed.",
+      "Evolved the model toward versioned requirements and scenarios so assurance runs can preserve historical reproducibility.",
+      "Presented the Agent Assurance capability as Flezi Polaris at IVS Solution Day 2.0 2026, earning the Golden Solution Prize (1st place)."
     ]
   },
   {
     slug: "apit",
-    label: "AI evaluation",
+    label: "AI Evaluation",
     title: "APIT — Agent Programmatic Integration Testing",
-    subtitle: "An AI-assisted API testing application",
+    subtitle: "AI-assisted structured API test generation",
     summary:
-      "An AI-assisted API testing application that generates structured test scenarios from API documentation.",
+      "An AI-assisted API testing application that generates structured test scenarios from API documentation and evaluates them with model-based and deterministic checks.",
     group: "applied-ai-systems",
     visualTier: "supporting",
     homepageFeatured: false,
     period: "2025",
     docsUrl: "docs/apit-capstone.pdf",
     role: "System Architect",
-    outcome: "Achieved a 0.655 macro-F1 score on structured API test-case generation using a fine-tuned Qwen-2.5-3B model via LoRA.",
-    tags: ["LLM fine-tuning", "LoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
+    outcome:
+      "Academic / research prototype. Achieved a 0.655 macro-F1 score on structured API test-case generation using a fine-tuned Qwen2.5-3B model via LoRA/QLoRA.",
+    tags: ["LLM Fine-Tuning", "LoRA/QLoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
     highlights: [
       "Built a bilingual synthetic dataset generation pipeline containing 1,258 API-testing samples.",
-      "Fine-tuned Qwen-2.5-3B with LoRA, achieving 0.655 macro-F1 in the project evaluation benchmark.",
-      "Developed an evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic validation."
+      "Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving 0.655 macro-F1 (+41.5% relative improvement over the Llama-3.2-3B baseline).",
+      "Developed an evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation."
     ]
   },
   {
     slug: "banking-automation",
-    label: "Industry delivery",
+    label: "Industry Delivery",
     title: "Core Banking & Payment Hub QA Automation",
-    subtitle: "Historical Core Banking and Payment Hub validation work",
+    subtitle: "Production delivery workflows across API, database, web, and mobile systems",
     summary:
-      "Client delivery work covering Core Banking and Payment Hub integrations across API, database, web, mobile, regression, and automation testing.",
+      "Client delivery work covering Core Banking and Payment Hub integrations across API, database, web, mobile, regression, automation, and CI-driven validation.",
     group: "quality-delivery",
     visualTier: "supporting",
     homepageFeatured: false,
-    period: "2024-2026",
+    period: "2024–2026",
     role: "Applied AI and Quality Engineering contributor",
     outcome:
-      "Delivered confidential banking validation work across transaction integrity, regression, API, database, web, and mobile systems.",
-    tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
+      "Production delivery workflow. Built reusable validation and automation assets that reduced manual regression effort by approximately 70% and supported repeatable CI execution.",
+    tags: [
+      "Core Banking",
+      "Payment Hub",
+      "Katalon",
+      "Postman",
+      "SQL",
+      "JMeter",
+      "GitLab CI/CD",
+      "Azure DevOps Pipelines"
+    ],
     highlights: [
       "Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.",
       "Validated end-to-end financial transaction flows through API testing, SQL-based database verification, regression testing, and stress testing.",
       "Authored more than 1,500 lines of reusable SQL validation queries and maintained coverage across all in-scope API endpoints.",
-      "Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows."
+      "Integrated automated validation into GitLab and Azure DevOps CI workflows for repeatable regression and delivery execution."
     ]
   },
   {
     slug: "e-commerce-ai",
-    label: "Applied AI system",
+    label: "Applied AI System",
     title: "E-Commerce AI Assistant",
     subtitle: "Vector search and conversational product discovery",
     summary:
-      "An end-to-end AI shopping assistant that combines filtered vector search and agent-driven conversational retrieval for natural-language product discovery.",
+      "An end-to-end AI shopping assistant combining filtered vector search and agent-driven conversational retrieval for natural-language product discovery.",
     group: "applied-ai-systems",
     visualTier: "supporting",
     homepageFeatured: false,
@@ -198,7 +211,7 @@ export const cases: ProjectCase[] = [
     repoUrl: "https://github.com/truong51972/E_commerce_AI",
     role: "Implementation-focused system build",
     outcome:
-      "Delivered a containerized prototype covering semantic search, conversational consultation, persistence, caching, and service orchestration.",
+      "Prototype. Delivered a containerized system covering semantic search, conversational consultation, persistence, caching, and service orchestration.",
     tags: ["FastAPI", "LangGraph", "LangChain", "Milvus", "PostgreSQL", "Redis", "Streamlit", "Docker"],
     highlights: [
       "Implemented semantic product retrieval with Milvus, cosine similarity, embeddings, category filters, and price filters.",
@@ -210,8 +223,7 @@ export const cases: ProjectCase[] = [
     slug: "lms",
     label: "Early Product Engineering",
     title: "LMS — Learning & Assessment Platform",
-    subtitle:
-      "A Django learning platform with a separate AI-assisted monitoring service",
+    subtitle: "A Django learning platform with a separate AI-assisted monitoring service",
     summary:
       "A full-stack learning and assessment platform covering structured course content, enrollment, quizzes, reporting, role-based workflows, and a separately deployed face-detection service.",
     group: "engineering-foundations",
@@ -219,8 +231,7 @@ export const cases: ProjectCase[] = [
     homepageFeatured: false,
     period: "2024",
     repoUrl: "https://github.com/truong51972/LMS",
-    role:
-      "Solo developer of the initial version and primary developer in the extended team project",
+    role: "Solo developer of the initial version and primary developer in the extended team project",
     outcome:
       "Built the initial product independently, then continued as a primary developer when its core design was adopted into a larger team implementation.",
     tags: [
@@ -244,7 +255,7 @@ export const cases: ProjectCase[] = [
   },
   {
     slug: "self-driving-car",
-    label: "Earlier AI research",
+    label: "Earlier AI Research",
     title: "Self-driving Car Problem",
     subtitle: "YOLOv8 perception, lane segmentation, and PID control in simulation",
     summary:
@@ -266,7 +277,7 @@ export const cases: ProjectCase[] = [
   },
   {
     slug: "plant-disease-detection",
-    label: "Earlier computer vision system",
+    label: "Earlier Computer Vision System",
     title: "Leaf-Based Plant Disease Detection",
     subtitle: "PyTorch classification with segmentation-assisted preprocessing and visual explanations",
     summary:
@@ -294,10 +305,10 @@ export const timeline = [
     title: "Applied AI Engineer & Automation Tester",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.",
-      "Agent Assurance (Evaluation & Observability Engine): Architected and implemented an end-to-end AI Agent Verification engine (awarded 2nd Place at IVS Hackathon 2026) featuring runtime evidence capture via LiteLLM and OpenTelemetry, trace reconstruction pipelines, and deterministic quality gates.",
-      "AI Systems Reliability & Assurance Lifecycle: Established an end-to-end assurance lifecycle spanning Intake, Requirements, Test Design & Oracle Definition, Measurement Qualification, Behavioral Validation, Reporting, and Re-assurance for agentic applications.",
-      "Banking Automation & Systems Verification: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
+      "IQP (Code Intelligence & Retrieval): Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships, exposing repository-aware engineering context to AI clients through MCP.",
+      "Agent Assurance / Flezi Polaris: Architected a trace-based evaluation system using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.",
+      "Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.",
+      "Banking Systems Verification: Authored 1,500+ lines of reusable SQL validation and cross-platform automation, reducing manual regression effort by approximately 70%."
     ]
   },
   {
@@ -336,6 +347,32 @@ export interface Achievement {
 
 export const achievements: Achievement[] = [
   {
+    id: "ivs-solution-day-2026-gold",
+    title: "Golden Solution Prize — IVS Solution Day 2.0 2026",
+    badge: "Golden Solution Prize · 1st Place",
+    category: "Competition",
+    period: "Sep 18, 2026",
+    org: "IVS Solution Day 2.0 · FPT Software",
+    team: "Flezi Polaris",
+    role: "Agent Assurance solution engineering",
+    description:
+      "Awarded the Golden Solution Prize (1st place) at IVS Solution Day 2.0 for Flezi Polaris, an Agent Assurance solution focused on AI-agent evaluation, runtime evidence capture, and governed quality verification.",
+    keyContributions: [
+      "Built on the Agent Assurance architecture for trace-based AI-agent evaluation and reproducible quality verification",
+      "Connected runtime evidence capture, behavioral evaluation, and regression-oriented assurance into a coherent solution workflow",
+      "Presented the Agent Assurance capability as Flezi Polaris for IVS Solution Day 2.0 2026"
+    ],
+    images: [
+      {
+        src: "images/ivs-solution-day-2026-gold.jpg",
+        alt: "Flezi Polaris team receiving the Golden Solution Prize at IVS Solution Day 2.0 2026",
+        caption: "Award Ceremony: Flezi Polaris received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 on Sep 18, 2026"
+      }
+    ],
+    projectSlug: "ata",
+    projectLabel: "Explore Agent Assurance Case Study"
+  },
+  {
     id: "ivs-hackathon-2026",
     title: "2nd Place — IVS Hackathon 2026",
     badge: "2nd Runner-up",
@@ -345,11 +382,11 @@ export const achievements: Achievement[] = [
     team: "Nova4Test · IVS HCM",
     role: "Solo architecture & implementation of Agent Assurance engine",
     description:
-      "Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.",
+      "Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; its core capabilities were subsequently integrated into Omni-Agent.",
     keyContributions: [
-      "Architected LiteLLM & OpenTelemetry instrumentation capturing full multi-turn execution trajectories",
-      "Designed idempotent trace reconstruction pipelines keyed by trace/span identity with PostgreSQL & MinIO",
-      "Implemented deterministic quality gates and LLM-as-a-Judge evaluators for reliable agent verification"
+      "Architected LiteLLM and OpenTelemetry instrumentation for multi-turn execution evidence capture",
+      "Designed trace reconstruction and durable evidence workflows with PostgreSQL-backed state",
+      "Built record-first behavioral evaluation and regression gates for reproducible agent verification"
     ],
     images: [
       {
@@ -410,22 +447,36 @@ export const education = [
 
 export const skillGroups = [
   {
-    title: "AI & Agent Systems",
+    title: "AI & Agentic Systems",
     items: [
+      "RAG & Hybrid Retrieval",
       "LangGraph",
+      "LangChain",
       "Multi-Agent Systems",
       "Model Context Protocol (MCP)",
       "Tool Calling",
-      "Citation-Grounded RAG",
-      "Hybrid Retrieval",
       "Vector Search (Qdrant, Milvus)",
       "Docling Layout & OCR",
-      "Embeddings",
-      "LoRA Fine-Tuning"
+      "Embeddings"
     ]
   },
   {
-    title: "Backend Engineering",
+    title: "Evaluation & Observability",
+    items: [
+      "LLM Evaluation",
+      "Regression Testing",
+      "LLM-as-a-Judge",
+      "OpenTelemetry (OTel)",
+      "LiteLLM Gateway",
+      "Runtime Trace Reconstruction",
+      "Deterministic Quality Gates",
+      "Prompt Injection Testing",
+      "Data Leakage Evaluation",
+      "Langfuse"
+    ]
+  },
+  {
+    title: "Backend & Product Engineering",
     items: [
       "Python",
       "FastAPI",
@@ -437,36 +488,36 @@ export const skillGroups = [
       "Pydantic",
       "REST APIs & SSE",
       "Async Workflows",
-      "Idempotency Contracts"
+      "Idempotency Contracts",
+      "React",
+      "TypeScript"
     ]
   },
   {
-    title: "AI Infrastructure & Observability",
+    title: "Cloud & Delivery",
     items: [
-      "OpenTelemetry (OTel)",
-      "LiteLLM Gateway",
-      "Docker",
-      "Docker Compose",
-      "MinIO (S3-Compatible)",
+      "Google Cloud Platform (Compute Engine, budget management)",
+      "DigitalOcean",
+      "Heroku",
+      "RunPod",
+      "Cloudflare",
+      "Docker & Docker Compose",
+      "GitLab CI/CD",
+      "Azure DevOps Pipelines",
       "Nginx",
-      "Langfuse",
-      "Linux",
-      "CI/CD"
+      "MinIO (S3-Compatible)",
+      "Linux"
     ]
   },
   {
-    title: "Reliability & System Design",
+    title: "ML & Model Adaptation",
     items: [
-      "System Architecture",
-      "LLM-as-a-Judge",
-      "Deterministic Quality Gates",
-      "Runtime Trace Reconstruction",
-      "Prompt Injection Testing",
-      "API Verification",
-      "Evaluation Benchmarks",
-      "Data Integrity & Auditability"
+      "PyTorch",
+      "LoRA / QLoRA",
+      "Synthetic Data Generation",
+      "Evaluation Benchmarks"
     ]
   }
 ];
 
-export const supportingTools = ["Astro", "Streamlit", "React", "TypeScript"];
+export const supportingTools = ["Astro", "Streamlit", "Postman", "JMeter", "Katalon"];
