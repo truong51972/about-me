@@ -30,13 +30,9 @@ Ho Chi Minh City, Vietnam
 
 Dec 2024 – present
 
-
-
-1 year 11 months
-
 - IQP (Code Intelligence & Retrieval): Built hybrid code retrieval combining dense search, BM25, and code-graph relationships across enterprise repositories, exposing repository-aware engineering context to AI clients through Model Context Protocol (MCP).
 
-- Agent Assurance / Flezi Polaris: Architected trace-based evaluation for agentic applications using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+- Agent Assurance / Flezi Polaris: Designed and implemented the core trace-based Agent Assurance engine using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the capability was later presented by the Flezi Polaris team and received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
 - Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.
 
@@ -49,10 +45,6 @@ Dec 2024 – present
 Ho Chi Minh City, Vietnam
 
 Sept 2024 – Dec 2024
-
-
-
-4 months
 
 - Built the backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 
@@ -67,7 +59,7 @@ Sept 2024 – Dec 2024
 
 Sept 2026
 
-Awarded the Golden Solution Prize (1st place) on September 18, 2026 for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.
+Flezi Polaris team solution built around the Agent Assurance capability for trace-based AI-agent evaluation and governed quality verification.
 
 
 
@@ -75,7 +67,7 @@ Awarded the Golden Solution Prize (1st place) on September 18, 2026 for Flezi Po
 
 Aug 2026
 
-Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
+Designed and implemented the core Agent Assurance engine independently; awarded 2nd place for trace-based behavioral evaluation and governed regression gates.
 
 
 
@@ -83,7 +75,7 @@ Awarded 2nd place for independently architecting an AI Agent Verification engine
 
 Apr 2024
 
-Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
+Co-authored YOLOv8, lane-segmentation, and PID-control research; completed the simulation benchmark in 125.8 seconds with a 100% score.
 
 
 

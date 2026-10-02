@@ -25,7 +25,7 @@
   colors-footer: rgb(128, 128, 128),
   colors-top-note: rgb(128, 128, 128),
   typography-line-spacing: 0.58em,
-  typography-alignment: "justified",
+  typography-alignment: "justified-with-no-hyphenation",
   typography-date-and-location-column-alignment: right,
   typography-font-family-body: "Source Sans 3",
   typography-font-family-name: "Source Sans 3",
@@ -61,7 +61,7 @@
   section-titles-line-thickness: 0.5pt,
   section-titles-space-above: 0.38cm,
   section-titles-space-below: 0.2cm,
-  sections-allow-page-break: false,
+  sections-allow-page-break: true,
   sections-space-between-text-based-entries: 0.28em,
   sections-space-between-regular-entries: 0.75em,
   entries-date-and-location-width: 4.15cm,
@@ -125,7 +125,7 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
 
     - IQP (Code Intelligence & Retrieval): Built hybrid code retrieval combining dense search, BM25, and code-graph relationships across enterprise repositories, exposing repository-aware engineering context to AI clients through Model Context Protocol (MCP).
 
-    - Agent Assurance \/ Flezi Polaris: Architected trace-based evaluation for agentic applications using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the solution received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+    - Agent Assurance \/ Flezi Polaris: Designed and implemented the core trace-based Agent Assurance engine using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the capability was later presented by the Flezi Polaris team and received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
     - Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.
 
@@ -136,10 +136,6 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
     Ho Chi Minh City, Vietnam
 
     Dec 2024 – present
-
-    
-
-    1 year 11 months
 
   ],
 )
@@ -160,10 +156,6 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
 
     Sept 2024 – Dec 2024
 
-    
-
-    4 months
-
   ],
 )
 
@@ -173,7 +165,7 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
   [
     #strong[Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026]
 
-    #summary[Awarded the Golden Solution Prize (1st place) on September 18, 2026 for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.]
+    #summary[Flezi Polaris team solution built around the Agent Assurance capability for trace-based AI-agent evaluation and governed quality verification.]
 
   ],
   [
@@ -186,7 +178,7 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
   [
     #strong[2nd Place — IVS Hackathon 2026]
 
-    #summary[Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.]
+    #summary[Designed and implemented the core Agent Assurance engine independently; awarded 2nd place for trace-based behavioral evaluation and governed regression gates.]
 
   ],
   [
@@ -199,7 +191,7 @@ Experience spans enterprise code intelligence, trace-based AI assurance, model f
   [
     #strong[Second Prize — Autonomous Driving Research Paper Competition]
 
-    #summary[Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100\% score.]
+    #summary[Co-authored YOLOv8, lane-segmentation, and PID-control research; completed the simulation benchmark in 125.8 seconds with a 100\% score.]
 
   ],
   [
