@@ -8,9 +8,9 @@
 
 
 # Summary
-Product Engineer & Applied AI Engineer building agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.
+Applied AI Engineer focused on translating real business and operational problems into reliable AI systems.
 
-Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates.
+Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.
 
 # Technical Skills
 **AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Docling
@@ -65,7 +65,7 @@ Sept 2024 – Dec 2024
 
 Sept 2026
 
-Awarded the Golden Solution Prize for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.
+Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.
 
 
 
@@ -73,20 +73,12 @@ Awarded the Golden Solution Prize for Flezi Polaris, an Agent Assurance solution
 
 Aug 2026
 
-Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
-
-
-
-## **Second Prize — Autonomous Driving Research Paper Competition**
-
-Apr 2024
-
-Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
+2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
 
 
 
 # Featured Projects
-## **Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)**
+## **[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)](https://portfolio.truong51972.id.vn/projects/omni-agent)**
 
 An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
 
@@ -100,7 +92,7 @@ An Applied AI platform engineered from real operational needs, unifying versione
 
 
 
-## **APIT — Agent Programmatic Integration Testing**
+## **[APIT — Agent Programmatic Integration Testing](https://portfolio.truong51972.id.vn/projects/apit)**
 
 AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
 
