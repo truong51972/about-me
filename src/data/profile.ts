@@ -34,7 +34,7 @@ export const site = {
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I work across product engineering and Applied AI to translate business and operational problems into end-to-end systems, from solution design through delivery, evaluation, and reliability.",
+    "Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems, with end-to-end ownership from solution design through delivery, evaluation, and reliability.",
   about:
     "Combines solution architecture with hands-on engineering across agentic workflows, retrieval, model adaptation, backend platforms, and AI assurance, with ownership from problem framing through production delivery."
 };
@@ -465,8 +465,7 @@ export const skillGroups = [
       "Redis",
       "Celery",
       "SSE / Streaming APIs",
-      "Docker",
-      "Kubernetes"
+      "Docker"
     ]
   },
   {
