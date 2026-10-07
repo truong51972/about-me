@@ -34,7 +34,7 @@ export const site = {
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I translate business and operational problems into end-to-end AI solutions, from system design and technology choices through delivery, evaluation, and reliability.",
+    "I work across product engineering and Applied AI to translate business and operational problems into end-to-end systems, from solution design through delivery, evaluation, and reliability.",
   about:
     "Combines solution architecture with hands-on engineering across agentic workflows, retrieval, model adaptation, backend platforms, and AI assurance, with ownership from problem framing through production delivery."
 };
@@ -71,7 +71,7 @@ export const cases: ProjectCase[] = [
     highlights: [
       "Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.",
       "Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.",
-      "Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.",
+      "Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.",
       "Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage."
     ]
   },
@@ -295,8 +295,8 @@ export const timeline = [
     title: "Applied AI Engineer & Automation Tester",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval combining semantic search, BM25 lexical signals, and Code Graphs, exposing scoped engineering context to AI clients through Model Context Protocol (MCP).",
-      "Agent Assurance: Translated AI reliability requirements into an assurance engine with LiteLLM/OpenTelemetry evidence capture, multi-turn trace reconstruction, behavioral evaluation, reproducible regression, and deterministic quality gates.",
+      "IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.",
+      "Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.",
       "Banking Automation & Systems Verification: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
     ]
   },
