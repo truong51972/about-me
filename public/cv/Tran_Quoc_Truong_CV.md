@@ -150,8 +150,3 @@ Ho Chi Minh City, Vietnam
 2021 – 2025
 
 
-
-# Languages
-**Vietnamese:** Native
-
-**English:** Professional working proficiency

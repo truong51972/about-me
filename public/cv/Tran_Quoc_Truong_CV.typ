@@ -296,9 +296,3 @@ Combines formal AI training with backend architecture experience in control-plan
     
   ],
 )
-
-== Languages
-
-#strong[Vietnamese:] Native
-
-#strong[English:] Professional working proficiency
