@@ -40,9 +40,11 @@ Guidelines:
 - **Technical Skills:** keep only high-signal, demonstrated keywords useful for ATS and human scanning.
 - **Experience:** prioritize shipped work, scope, business/engineering impact, and enterprise context.
 - **Featured Projects:** prove capabilities not already clear from Experience.
-- **Achievements:** show external recognition; avoid restating full project descriptions.
+- **Achievements:** show external recognition; keep only the strongest, most relevant recognitions and avoid restating full project descriptions.
 
 Each featured project should answer a distinct hiring question. If two projects prove essentially the same capability, prefer removing or shortening the weaker one before expanding the CV.
+
+When a strong portfolio case study exists, link the project name rather than adding a raw URL or extra explanatory line. Prefer links only for the highest-signal projects.
 
 ## Skills taxonomy
 
