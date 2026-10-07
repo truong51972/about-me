@@ -61,9 +61,12 @@ cv:
       - name: 2nd Place — IVS Hackathon 2026
         date: 2026-08
         summary: 2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
+      - name: Second Prize — Autonomous Driving Research Paper Competition
+        date: 2024-04
+        summary: Co-authored YOLOv8 perception, lane segmentation, and PID-control research; completed the benchmark in 125.8 seconds with a 100% score.
 
     featured_projects:
-      - name: '[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)](https://portfolio.truong51972.id.vn/projects/omni-agent)'
+      - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
         summary: An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
         highlights:
           - 'Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.'
@@ -71,7 +74,7 @@ cv:
           - 'Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.'
           - 'Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.'
 
-      - name: '[APIT — Agent Programmatic Integration Testing](https://portfolio.truong51972.id.vn/projects/apit)'
+      - name: APIT — Agent Programmatic Integration Testing
         summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
         highlights:
           - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
@@ -98,6 +101,12 @@ cv:
         start_date: 2021
         end_date: 2025
         location: Ho Chi Minh City, Vietnam
+
+    languages:
+      - label: Vietnamese
+        details: Native
+      - label: English
+        details: Professional working proficiency
 
 design:
   theme: classic
