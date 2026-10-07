@@ -70,7 +70,8 @@ The generic CV should remain reusable across Applied AI Engineer, AI Platform En
 
 ## Length and density
 
-- Target a maximum of two pages for the current profile.
+- Target two pages for the current profile; do not compress to one page at the cost of relevant evidence or readability.
+- Do not allow a low-signal spill page. If an extra page contains only optional material (for example, a Languages section on an English-language technical CV), remove or relocate that material before changing typography.
 - Prefer deleting low-signal or redundant content before shrinking typography or adding dense tool lists.
 - Portfolio pages and GitHub repositories should carry deep implementation detail that does not belong in the CV.
 
