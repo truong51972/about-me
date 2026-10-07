@@ -8,7 +8,7 @@
 
 
 # Summary
-Applied AI Engineer focused on translating real business and operational problems into reliable AI systems.
+Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
 
 Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.
 
@@ -21,7 +21,7 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 **Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
 
-**Infrastructure & Delivery:** Docker, Docker Compose, Kubernetes, Google Cloud Platform (GCP), RunPod, Nginx, MinIO, CI/CD, Linux
+**Infrastructure & Delivery:** Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
 
 # Experience
 ## **FPT Software**, Applied AI Engineer & Automation Tester
@@ -34,9 +34,9 @@ Dec 2024 – present
 
 1 year 11 months
 
-- IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.
+- IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.
 
-- Agent Assurance: Architected an assurance engine for agentic systems with explicit domain boundaries and asynchronous evaluation workflows, capturing LiteLLM/OpenTelemetry traces for multi-turn reconstruction, behavioral evaluation, reproducible regression, and idempotent persistence.
+- Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.
 
 - Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
 
@@ -81,7 +81,7 @@ Aug 2026
 
 Apr 2024
 
-Co-authored YOLOv8 perception, lane segmentation, and PID-control research; completed the benchmark in 125.8 seconds with a 100% score.
+Second Prize for independently authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
 
 
 
@@ -94,7 +94,7 @@ An Applied AI platform engineered from real operational needs, unifying versione
 
 - Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.
 
-- Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.
+- Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.
 
 - Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.
 
