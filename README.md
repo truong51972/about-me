@@ -1,6 +1,6 @@
 # Tran Quoc Truong — Portfolio & CV
 
-Static Astro portfolio for Product Engineer | Backend Systems & Applied AI roles.
+Static Astro portfolio for a solution-oriented Product Engineer / Applied AI Engineer working across AI systems, backend platforms, evaluation, and delivery.
 
 ## Live site
 
