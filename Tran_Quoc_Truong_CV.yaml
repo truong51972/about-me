@@ -14,8 +14,8 @@ cv:
 
   sections:
     summary:
-      - 'Product Engineer & Applied AI Engineer building agentic applications, RAG systems, and backend platforms with a focus on production reliability and evaluation.'
-      - 'Bridges software engineering and AI through model fine-tuning and serving, retrieval, runtime observability, and automated quality gates.'
+      - 'Applied AI Engineer focused on translating real business and operational problems into reliable AI systems.'
+      - 'Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.'
 
     technical_skills:
       - label: AI & Agentic Systems
