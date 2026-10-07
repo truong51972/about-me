@@ -81,7 +81,7 @@ Aug 2026
 
 Apr 2024
 
-Second Prize for independently authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
+Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
 
 
 

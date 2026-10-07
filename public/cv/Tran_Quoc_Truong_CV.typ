@@ -197,7 +197,7 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
   [
     #strong[Second Prize — Autonomous Driving Research Paper Competition]
 
-    #summary[Second Prize for independently authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.]
+    #summary[Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.]
 
   ],
   [
