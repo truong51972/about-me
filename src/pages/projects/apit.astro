@@ -37,21 +37,21 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
         </section>
 
         <section>
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">What I built</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Controlled data synthesis and small-model fine-tuning pipeline.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Manual API documents were distilled into prompts, used to generate 1,258 bilingual English/Vietnamese samples, and converted into structured test-case outputs with reasoning. Qwen-2.5-3B and Llama-3.2-3B were fine-tuned with LoRA/4-bit training under identical hyperparameters.</p>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Solution architecture</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">A controlled model lifecycle from domain data to deployable inference.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The solution treats test generation as a full model-and-system problem rather than a prompt-only feature. API documents were distilled into prompts, used to generate 1,258 bilingual English/Vietnamese samples, and converted into structured test-case outputs with reasoning. Qwen-2.5-3B and Llama-3.2-3B were fine-tuned with LoRA/QLoRA under controlled settings, then the selected model was served through an OpenAI-compatible vLLM endpoint on RunPod for application integration.</p>
           <div class="diagram">
             <div class="diagram-step"><b>Document preprocessing</b><span>Standardize API docs from OpenAPI, Swagger, PDF, or structured text.</span></div>
             <div class="diagram-step"><b>Test scope</b><span>Select requirements, endpoints, and value/risk boundaries for generation.</span></div>
-            <div class="diagram-step"><b>LLM generation</b><span>Fine-tuned model + RAG generates structured test cases and reasoning.</span></div>
-            <div class="diagram-step"><b>Execution/report</b><span>Run requests, classify pass/fail/exception, and present results.</span></div>
+            <div class="diagram-step"><b>Model adaptation</b><span>Synthetic data + LoRA/QLoRA adapt a small model to structured API-test generation.</span></div>
+            <div class="diagram-step"><b>Serving & execution</b><span>OpenAI-compatible vLLM inference feeds test execution, validation, and reporting.</span></div>
           </div>
         </section>
 
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Evaluation</h2>
           <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Structured output quality measured with reference-based metrics.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Generated test cases were evaluated with precision, recall, and F1 using fuzzy string similarity, numeric tolerance, and categorical matching. Qwen-2.5-3B LoRA achieved 0.655 macro-F1, outperforming the Llama-3.2-3B baseline.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Generated test cases were evaluated with precision, recall, and F1 using fuzzy string similarity, numeric tolerance, and categorical matching. Qwen-2.5-3B LoRA/QLoRA achieved 0.655 macro-F1, a 41.5% relative improvement over the Llama-3.2-3B baseline.</p>
           <p class="text-[var(--text-muted)] leading-relaxed mb-6">Reasoning quality was assessed through logical validity, coherence, and groundedness, aligning with the agent evaluation direction.</p>
         </section>
 
@@ -73,7 +73,7 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
       <aside class="case-aside">
         <div class="evidence-card">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Result</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6"><strong class="text-[var(--text-base)]">0.655 macro-F1</strong> on structured API test generation with Qwen-2.5-3B LoRA.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6"><strong class="text-[var(--text-base)]">0.655 macro-F1</strong> on structured API test generation, plus a deployable OpenAI-compatible vLLM inference service on RunPod.</p>
         </div>
         <div class="evidence-card">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Spec</h3>
@@ -81,7 +81,8 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
             <div><dt>Role</dt><dd>{item.role}</dd></div>
             <div><dt>Dataset</dt><dd>1,258 samples</dd></div>
             <div><dt>Models</dt><dd>Qwen-2.5-3B, Llama-3.2-3B</dd></div>
-            <div><dt>Method</dt><dd>LoRA / 4-bit training</dd></div>
+            <div><dt>Method</dt><dd>LoRA/QLoRA · 4-bit training</dd></div>
+            <div><dt>Serving</dt><dd>vLLM · RunPod</dd></div>
           </dl>
         </div>
       </aside>

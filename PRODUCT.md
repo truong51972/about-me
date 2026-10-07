@@ -12,11 +12,11 @@ Engineering leaders, hiring managers, AI tech leads, recruiters, and prospective
 
 ## Product Purpose
 
-A high-credibility engineering portfolio and personal technical brand for Tran Quoc Truong (TQT), communicating his unique intersection of Applied AI, agent orchestration, LLM evaluation, and production-grade software architecture with undeniable, verifiable evidence.
+A high-credibility engineering portfolio and personal technical brand for Tran Quoc Truong (TQT), showing how he translates real business and operational problems into reliable Applied AI systems through solution architecture, hands-on engineering, evaluation, and production delivery.
 
 ## Positioning
 
-An Applied AI Engineer who brings rigorous software quality and backend architectural discipline to LLM and agentic systems. Unlike pure theoretical ML researchers or surface-level wrapper developers, Truong builds end-to-end platforms featuring modular service boundaries, deterministic quality gates, runtime trace reconstruction, and measurable evaluation pipelines.
+A solution-oriented Applied AI Engineer who starts from business and operational problems, designs the system boundaries and AI approach, and carries solutions through implementation, integration, evaluation, and reliability. Technical depth in agentic systems, retrieval, model adaptation, backend platforms, and AI assurance serves as evidence of end-to-end solution ownership rather than the brand itself.
 
 ## Operating Context
 
@@ -33,17 +33,19 @@ Desktop and mobile web browsing by technical recruiters and engineering director
 ## Brand Commitments
 
 - Name: Tran Quoc Truong (TQT).
-- Headline: Applied AI Engineer | AI Platforms, Agentic Systems & Quality Engineering.
+- Headline: Product Engineer | Applied AI | Backend Systems.
+- Positioning thesis: Real problem → solution architecture → hands-on delivery → measurable reliability.
 - Tone of Voice: Precise, disciplined, substantive, engineering-grounded, zero hype or vanity buzzwords.
 - Visual Language: Light, modern, crisp tech-editorial with high typographic contrast and subtle architectural elevation.
 
 ## Evidence on Hand
 
+- Solution Recognition: Golden Solution Prize (1st Place) at IVS Solution Day 2.0 2026 for Flezi Polaris / Agent Assurance.
 - Hackathon Recognition: 2nd Runner-up at IVS Hackathon 2026 (Nova4Test team) for AI Agent Verification engine (`public/images/ivs-hackthon-2nd.jpg` and `public/images/presenting.jpg`).
 - Research Award: Second Prize at Autonomous Driving Research Paper Competition Spring 2024 (`public/images/second-prize-award.webp` and `public/images/second-prize-award-wide.webp`).
 - Flagship Platform: Omni-Agent (modular monorepo, Django/DRF control plane, Celery workers, LangGraph multi-agent RAG, LiteLLM & OTel trace reconstruction).
 - Enterprise Platform: IQP (Intelligent Quality Platform at FPT Software, MCP tool servers, hybrid retrieval).
-- Capstone AI Evaluation: APIT (Fine-tuned Qwen-2.5-3B via LoRA, 0.655 macro-F1, bilingual synthetic dataset).
+- Capstone AI Evaluation: APIT (1,258-sample bilingual dataset, Qwen-2.5-3B LoRA/QLoRA fine-tuning, 0.655 macro-F1, OpenAI-compatible vLLM serving on RunPod).
 - Enterprise QA Automation: Core Banking & Payment Hub validation (reduced manual regression effort by ~70%).
 
 ## Product Principles
