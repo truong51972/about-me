@@ -13,13 +13,15 @@ Product Engineer & Applied AI Engineer building agentic applications, RAG platfo
 Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates.
 
 # Technical Skills
-**Agentic AI & Orchestration:** LangGraph, Multi-Agent Systems, MCP (Model Context Protocol), Tool Calling, LiteLLM, LangChain, Agentic Workflows, Qdrant (Vector DB), Milvus, Docling, RAG & Hybrid Retrieval
+**AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Docling
 
-**LLM Evaluation, Observability & Security:** OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Deterministic Quality Gates, Prompt Injection Testing, Data Leakage Evaluation, LoRA/QLoRA Fine-tuning, Synthetic Data Generation, Langfuse, PyTorch
+**ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
 
-**AI Systems & Backend Architecture:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, Celery, Redis, PostgreSQL, RESTful APIs, Asynchronous Workflows, Idempotent Processing
+**LLM Evaluation & Observability:** OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Regression Testing, Deterministic Quality Gates, Langfuse
 
-**Platform, Infrastructure & Tooling:** Docker, Docker Compose, Nginx, S3-compatible Object Storage (MinIO), Git, CI/CD, Linux
+**Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
+
+**Infrastructure & Delivery:** Docker, Docker Compose, Kubernetes, Google Cloud Platform (GCP), RunPod, Nginx, MinIO, CI/CD, Linux
 
 # Experience
 ## **FPT Software**, Applied AI Engineer & Automation Tester
@@ -30,13 +32,11 @@ Dec 2024 – present
 
 
 
-1 year 10 months
+1 year 11 months
 
 - IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.
 
-- Agent Assurance (Testing Discipline for AI): Applied software testing discipline to agentic systems by architecting an assurance engine with explicit domain boundaries and async evaluation workflows; implemented evidence-capture paths through LiteLLM and OpenTelemetry-based instrumentation, with idempotent trace persistence.
-
-- Agent Assurance (Assurance Lifecycle & Verification): Applied an end-to-end assurance lifecycle spanning Intake, Strategy, Requirements, Test Design & Oracle Definition, Measurement Qualification, Validation, Reporting, and Re-assurance, supported by trace-based behavioral evaluation and regression workflows.
+- Agent Assurance: Architected an assurance engine for agentic systems with explicit domain boundaries and asynchronous evaluation workflows, capturing LiteLLM/OpenTelemetry traces for multi-turn reconstruction, behavioral evaluation, reproducible regression, and idempotent persistence.
 
 - Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
 
@@ -61,6 +61,14 @@ Sept 2024 – Dec 2024
 
 
 # Achievements
+## **Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026**
+
+Sept 2026
+
+Awarded the Golden Solution Prize for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.
+
+
+
 ## **2nd Place — IVS Hackathon 2026**
 
 Aug 2026
@@ -99,6 +107,8 @@ AI-assisted API testing framework generating structured test scenarios from API 
 - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
 
 - Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
+
+- Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with quantized inference and runtime LoRA adapters.
 
 - Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
 
