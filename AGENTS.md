@@ -23,6 +23,17 @@ Position the profile as a solution-oriented Applied AI engineer: start from real
 - Do not add a skill, metric, award, responsibility, or production claim unless it is backed by real work.
 - Never fabricate metrics to make a bullet look stronger.
 
+## Portfolio positioning
+
+The portfolio and CV must tell the same story, but they do not need identical detail.
+
+- Lead with real business or operational problems and desired outcomes.
+- Show solution/system architecture and key trade-offs before implementation detail.
+- Use technologies, frameworks, and low-level implementation as evidence of delivery capability.
+- Portfolio case studies may go deeper than the CV, but should preserve the same problem → architecture → delivery → evaluation/reliability narrative.
+- Keep headline, summary, achievements, project outcomes, and major skill claims consistent across `Tran_Quoc_Truong_CV.yaml` and `src/data/profile.ts`.
+- When the CV is intentionally more selective (for example, fewer awards or projects), the portfolio may retain broader evidence without contradicting the CV.
+
 ## Bullet quality
 
 Prefer bullets that follow:
