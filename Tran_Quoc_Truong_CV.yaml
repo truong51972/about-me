@@ -102,13 +102,6 @@ cv:
         end_date: 2025
         location: Ho Chi Minh City, Vietnam
 
-    languages:
-      - label: Vietnamese
-        details: Native
-
-      - label: English
-        details: Professional working proficiency
-
 design:
   theme: classic
   page:
