@@ -256,7 +256,7 @@ export const cases: ProjectCase[] = [
     period: "2024",
     repoUrl: "https://github.com/truong51972/self_driving_car",
     docsUrl: "docs/self-driving-car-problem.pdf",
-    role: "Sole author and implementer",
+    role: "Sole author and end-to-end ML/controls implementer",
     outcome: "Completed the simulation benchmark in 125.8 seconds with full marks.",
     tags: ["YOLOv8", "PyTorch", "OpenCV", "Computer Vision", "Segmentation", "PID Control", "Unity"],
     highlights: [
@@ -392,13 +392,13 @@ export const achievements: Achievement[] = [
     category: "Research",
     period: "Apr 2024",
     org: "Student Research Paper Competition · FPT University",
-    role: "Sole author & algorithm implementer",
+    role: "Sole author & end-to-end ML/controls implementer",
     description:
-      "Independently authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.",
+      "Sole-authored and implemented the autonomous-driving research end to end, from data labeling and model training through YOLOv8 perception, lane segmentation, PID steering control, and Unity-based evaluation.",
     keyContributions: [
-      "Trained YOLOv8 classifier across 18k+ images for real-time traffic sign recognition",
-      "Built lane segmentation pipeline with 9.5k annotated images and bird's-eye view projection",
-      "Engineered PID-style steering control achieving a 100% score in 125.8s benchmark"
+      "Prepared and labeled training data, then trained YOLOv8 models for traffic-sign recognition and lane segmentation",
+      "Built the perception pipeline with lane-mask processing and bird's-eye view projection",
+      "Engineered PID-style steering control and completed the Unity benchmark with full marks"
     ],
     images: [
       {
