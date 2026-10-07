@@ -53,11 +53,11 @@ Guidelines:
 - **Technical Skills:** keep only high-signal, demonstrated keywords useful for ATS and human scanning.
 - **Experience:** prioritize shipped work, scope, business/engineering impact, and enterprise context.
 - **Featured Projects:** prove capabilities not already clear from Experience.
-- **Achievements:** show external recognition; keep only the strongest, most relevant recognitions and avoid restating full project descriptions.
+- **Achievements:** show external recognition; keep strong, relevant recognitions concise. Use additional awards when they add distinct evidence and fit the two-page layout without displacing higher-signal content.
 
 Each featured project should answer a distinct hiring question. If two projects prove essentially the same capability, prefer removing or shortening the weaker one before expanding the CV.
 
-When a strong portfolio case study exists, link the project name rather than adding a raw URL or extra explanatory line. Prefer links only for the highest-signal projects.
+Do not hyperlink project names in the CV when the underlying work is private, proprietary, or primarily represented by a private repository. The top-level portfolio URL is sufficient navigation. Portfolio case-study pages may still link internally when appropriate.
 
 ## Skills taxonomy
 
@@ -86,7 +86,7 @@ The generic CV should remain reusable across Applied AI Engineer, AI Platform En
 ## Length and density
 
 - Target two pages for the current profile; do not compress to one page at the cost of relevant evidence or readability.
-- Do not allow a low-signal spill page. If an extra page contains only optional material (for example, a Languages section on an English-language technical CV), remove or relocate that material before changing typography.
+- Do not allow a low-signal spill page. Optional sections such as Languages may remain when they fit naturally inside the two-page layout, but should be removed before allowing a third page.
 - Prefer deleting low-signal or redundant content before shrinking typography or adding dense tool lists.
 - Portfolio pages and GitHub repositories should carry deep implementation detail that does not belong in the CV.
 
