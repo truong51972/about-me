@@ -63,7 +63,7 @@ cv:
         summary: 2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
       - name: Second Prize — Autonomous Driving Research Paper Competition
         date: 2024-04
-        summary: Second Prize for independently authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
+        summary: Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
 
     featured_projects:
       - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
