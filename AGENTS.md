@@ -14,6 +14,8 @@ These rules apply to the portfolio and especially to CV-related changes in this 
 
 Treat the CV as an index of the strongest evidence, not a database of every tool or project.
 
+Position the profile as a solution-oriented Applied AI engineer: start from real business or operational problems, show system/solution design, then use implementation details as evidence rather than as the primary identity.
+
 - Keep one stable professional identity. Do not rewrite the headline for every job description.
 - Tailor primarily through ordering, selection, and emphasis of evidence.
 - Prefer concrete accomplishments over technology inventories.
@@ -36,7 +38,7 @@ Guidelines:
 
 ## Section responsibilities
 
-- **Summary:** explain the profile in about two sentences; no framework dump.
+- **Summary:** explain the profile in about two sentences; lead with the problems and systems the candidate solves, then the scope of solution ownership. Avoid framework dumps or implementation-first wording.
 - **Technical Skills:** keep only high-signal, demonstrated keywords useful for ATS and human scanning.
 - **Experience:** prioritize shipped work, scope, business/engineering impact, and enterprise context.
 - **Featured Projects:** prove capabilities not already clear from Experience.
