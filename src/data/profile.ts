@@ -77,7 +77,7 @@ export const cases: ProjectCase[] = [
   },
   {
     slug: "ata",
-    label: "Evaluation Infrastructure · 2nd Place IVS Hackathon",
+    label: "Award-Winning AI Assurance",
     title: "Agent Assurance (ATA) — AI Agent Evaluation Platform",
     subtitle: "Quality & evaluation infrastructure for autonomous AI agents",
     summary:
@@ -86,9 +86,9 @@ export const cases: ProjectCase[] = [
     visualTier: "featured",
     homepageFeatured: true,
     period: "2026",
-    role: "Solo architecture and implementation",
+    role: "Solo solution architecture and implementation",
     outcome:
-      "Awarded 2nd Place at IVS Hackathon 2026 for autonomous agent verification; validated the core architecture before integration into Omni-Agent.",
+      "Validated the assurance architecture through 2nd Place at IVS Hackathon 2026; the evolved Flezi Polaris solution later received the Golden Solution Prize at IVS Solution Day 2.0 before the core capabilities were integrated into Omni-Agent.",
     tags: [
       "Agent Evaluation",
       "OpenTelemetry",
