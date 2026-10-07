@@ -193,11 +193,24 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
   ],
 )
 
+#regular-entry(
+  [
+    #strong[Second Prize — Autonomous Driving Research Paper Competition]
+
+    #summary[Co-authored YOLOv8 perception, lane segmentation, and PID-control research; completed the benchmark in 125.8 seconds with a 100\% score.]
+
+  ],
+  [
+    Apr 2024
+
+  ],
+)
+
 == Featured Projects
 
 #regular-entry(
   [
-    #strong[#link("https://portfolio.truong51972.id.vn/projects/omni-agent")[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)]]
+    #strong[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)]
 
     #summary[An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.]
 
@@ -216,7 +229,7 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 #regular-entry(
   [
-    #strong[#link("https://portfolio.truong51972.id.vn/projects/apit")[APIT — Agent Programmatic Integration Testing]]
+    #strong[APIT — Agent Programmatic Integration Testing]
 
     #summary[AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.]
 
@@ -283,3 +296,9 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
     
   ],
 )
+
+== Languages
+
+#strong[Vietnamese:] Native
+
+#strong[English:] Professional working proficiency

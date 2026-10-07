@@ -77,8 +77,16 @@ Aug 2026
 
 
 
+## **Second Prize — Autonomous Driving Research Paper Competition**
+
+Apr 2024
+
+Co-authored YOLOv8 perception, lane segmentation, and PID-control research; completed the benchmark in 125.8 seconds with a 100% score.
+
+
+
 # Featured Projects
-## **[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)](https://portfolio.truong51972.id.vn/projects/omni-agent)**
+## **Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)**
 
 An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
 
@@ -92,7 +100,7 @@ An Applied AI platform engineered from real operational needs, unifying versione
 
 
 
-## **[APIT — Agent Programmatic Integration Testing](https://portfolio.truong51972.id.vn/projects/apit)**
+## **APIT — Agent Programmatic Integration Testing**
 
 AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
 
@@ -142,3 +150,8 @@ Ho Chi Minh City, Vietnam
 2021 – 2025
 
 
+
+# Languages
+**Vietnamese:** Native
+
+**English:** Professional working proficiency
