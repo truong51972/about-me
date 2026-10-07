@@ -14,8 +14,8 @@ cv:
 
   sections:
     summary:
-      - 'Product Engineer & Applied AI Engineer building agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.'
-      - 'Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates.'
+      - 'Product Engineer & Applied AI Engineer building agentic applications, RAG systems, and backend platforms with a focus on production reliability and evaluation.'
+      - 'Bridges software engineering and AI through model fine-tuning and serving, retrieval, runtime observability, and automated quality gates.'
 
     technical_skills:
       - label: AI & Agentic Systems
@@ -57,16 +57,13 @@ cv:
     achievements:
       - name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
         date: 2026-09
-        summary: Awarded the Golden Solution Prize for Flezi Polaris, an Agent Assurance solution focused on AI agent evaluation, trace-based evidence capture, and governed quality verification.
+        summary: Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.
       - name: 2nd Place — IVS Hackathon 2026
         date: 2026-08
-        summary: Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.
-      - name: Second Prize — Autonomous Driving Research Paper Competition
-        date: 2024-04
-        summary: Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the autonomous benchmark in 125.8 seconds with a perfect 100% score.
+        summary: 2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
 
     featured_projects:
-      - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
+      - name: '[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)](https://portfolio.truong51972.id.vn/projects/omni-agent)'
         summary: An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
         highlights:
           - 'Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.'
@@ -74,7 +71,7 @@ cv:
           - 'Agent Assurance (IVS Hackathon 2nd Place): Implemented execution evidence capture through LiteLLM and OpenTelemetry, trace reconstruction pipelines to normalize multi-turn trajectories, and deterministic quality gates.'
           - 'Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.'
 
-      - name: APIT — Agent Programmatic Integration Testing
+      - name: '[APIT — Agent Programmatic Integration Testing](https://portfolio.truong51972.id.vn/projects/apit)'
         summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
         highlights:
           - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
