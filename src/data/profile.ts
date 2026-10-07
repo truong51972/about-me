@@ -46,7 +46,7 @@ export const cases: ProjectCase[] = [
     title: "Omni-Agent — AI Platform",
     subtitle: "Platform for building knowledge bases, running AI agents, and evaluating agent behavior",
     summary:
-      "A modular Applied AI platform featuring document intelligence with Docling and Qdrant, a Streamable HTTP MCP server, a LangGraph-based multi-agent runtime, and an integrated Agent Assurance evaluation engine.",
+      "A modular Applied AI platform designed to solve document intelligence, grounded knowledge access, agent workflow, and AI assurance needs within one project-scoped architecture.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
@@ -81,7 +81,7 @@ export const cases: ProjectCase[] = [
     title: "Agent Assurance (ATA) — AI Agent Evaluation Platform",
     subtitle: "Quality & evaluation infrastructure for autonomous AI agents",
     summary:
-      "An independent validation and audit layer for agentic systems that captures runtime interactions via LiteLLM and OpenTelemetry, reconstructs execution traces, and enforces deterministic quality gates.",
+      "An independent assurance solution for teams that need auditable evidence, behavioral evaluation, and governed release gates for probabilistic AI agents.",
     group: "applied-ai-systems",
     visualTier: "featured",
     homepageFeatured: true,
@@ -114,13 +114,13 @@ export const cases: ProjectCase[] = [
     subtitle:
       "AI-assisted traceability and code intelligence for enterprise systems",
     summary:
-      "An enterprise platform combining graph-based product knowledge, source-code intelligence, and hybrid retrieval to automate engineering traceability and test analysis.",
+      "An enterprise solution connecting product knowledge, source code, and quality artifacts so engineering teams and AI tools can retrieve traceable context across large codebases.",
     group: "featured-systems",
     visualTier: "featured",
     homepageFeatured: true,
     period: "2026",
     role:
-      "Backend engineering, retrieval, code intelligence, and product integration",
+      "Backend solution design, retrieval, code intelligence, and product integration",
     outcome:
       "Contributed to a working enterprise platform that unified product knowledge, source-code context, AI-assisted retrieval, and quality-analysis capabilities.",
     tags: [
