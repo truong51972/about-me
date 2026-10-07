@@ -28,15 +28,15 @@ export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
   role: "Product Engineer · Applied AI · Backend Systems",
-  tagline: "Building production-grade AI systems & backend platforms.",
+  tagline: "Turning real operational problems into reliable AI systems.",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "I build agentic applications, RAG platforms, and backend systems, with a focus on production reliability, observability, and evaluation.",
+    "I translate business and operational problems into end-to-end AI solutions, from system design and technology choices through delivery, evaluation, and reliability.",
   about:
-    "Combines formal AI training with backend architecture experience in control-plane design, domain/service boundaries, and asynchronous task processing. Bridges software engineering and AI through trace reconstruction, runtime observability, and automated evaluation gates."
+    "Combines solution architecture with hands-on engineering across agentic workflows, retrieval, model adaptation, backend platforms, and AI assurance, with ownership from problem framing through production delivery."
 };
 
 export const cases: ProjectCase[] = [
@@ -51,9 +51,9 @@ export const cases: ProjectCase[] = [
     visualTier: "flagship",
     homepageFeatured: true,
     period: "2026–Present",
-    role: "Solo product architecture and implementation",
+    role: "Solo solution architecture and implementation",
     outcome:
-      "Designed and implemented the platform foundation, including explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Testing. Its Agent Assurance module won 2nd place at IVS Hackathon 2026.",
+      "Translated document-intelligence and AI-assurance needs into a modular platform with explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Assurance. Its assurance engine won 2nd place at IVS Hackathon 2026.",
     tags: [
       "LangGraph",
       "FastAPI",
@@ -147,18 +147,19 @@ export const cases: ProjectCase[] = [
     title: "APIT — Agent Programmatic Integration Testing",
     subtitle: "An AI-assisted API testing application",
     summary:
-      "An AI-assisted API testing application that generates structured test scenarios from API documentation.",
+      "An AI-assisted API testing system designed to turn API documentation into structured, evaluable test scenarios using an adapted domain model.",
     group: "applied-ai-systems",
     visualTier: "supporting",
     homepageFeatured: false,
     period: "2025",
     docsUrl: "docs/apit-capstone.pdf",
-    role: "System Architect",
-    outcome: "Achieved a 0.655 macro-F1 score on structured API test-case generation using a fine-tuned Qwen-2.5-3B model via LoRA.",
-    tags: ["LLM fine-tuning", "LoRA", "Qwen", "RAG", "API Testing", "Evaluation"],
+    role: "System architecture and model engineering",
+    outcome: "Built the full model lifecycle from bilingual synthetic data and Qwen-2.5-3B LoRA/QLoRA fine-tuning to OpenAI-compatible vLLM serving, reaching 0.655 macro-F1 (+41.5% over the Llama-3.2-3B baseline).",
+    tags: ["LLM Fine-Tuning", "LoRA/QLoRA", "Qwen", "vLLM", "RunPod", "API Testing", "Evaluation"],
     highlights: [
       "Built a bilingual synthetic dataset generation pipeline containing 1,258 API-testing samples.",
-      "Fine-tuned Qwen-2.5-3B with LoRA, achieving 0.655 macro-F1 in the project evaluation benchmark.",
+      "Fine-tuned Qwen-2.5-3B with LoRA/QLoRA, achieving 0.655 macro-F1 (+41.5% relative improvement over the Llama-3.2-3B baseline).",
+      "Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with quantized inference and runtime LoRA adapters.",
       "Developed an evaluation workflow combining LLM-as-a-Judge, fuzzy matching, and deterministic validation."
     ]
   },
@@ -294,9 +295,8 @@ export const timeline = [
     title: "Applied AI Engineer & Automation Tester",
     org: "FPT Software · Ho Chi Minh City, Vietnam",
     bullets: [
-      "IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval for IQP combining semantic vector search, BM25 lexical signals, and Code Graphs, exposing contextual tools to AI clients via Model Context Protocol (MCP) to automate quality analysis across multi-repository codebases.",
-      "Agent Assurance (Evaluation & Observability Engine): Architected and implemented an end-to-end AI Agent Verification engine (awarded 2nd Place at IVS Hackathon 2026) featuring runtime evidence capture via LiteLLM and OpenTelemetry, trace reconstruction pipelines, and deterministic quality gates.",
-      "AI Systems Reliability & Assurance Lifecycle: Established an end-to-end assurance lifecycle spanning Intake, Requirements, Test Design & Oracle Definition, Measurement Qualification, Behavioral Validation, Reporting, and Re-assurance for agentic applications.",
+      "IQP (Code Intelligence & Quality Retrieval): Architected backend retrieval combining semantic search, BM25 lexical signals, and Code Graphs, exposing scoped engineering context to AI clients through Model Context Protocol (MCP).",
+      "Agent Assurance: Translated AI reliability requirements into an assurance engine with LiteLLM/OpenTelemetry evidence capture, multi-turn trace reconstruction, behavioral evaluation, reproducible regression, and deterministic quality gates.",
       "Banking Automation & Systems Verification: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
     ]
   },
@@ -335,6 +335,25 @@ export interface Achievement {
 }
 
 export const achievements: Achievement[] = [
+  {
+    id: "ivs-solution-day-2026",
+    title: "Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026",
+    badge: "Golden Solution Prize",
+    category: "Competition",
+    period: "Sep 2026",
+    org: "IVS Solution Day 2.0 · FPT Software",
+    role: "Solution architecture and technical delivery for Flezi Polaris",
+    description:
+      "Awarded the Golden Solution Prize for Flezi Polaris, an Agent Assurance solution translating AI-agent reliability needs into trace-based evidence capture, behavioral evaluation, and governed quality verification.",
+    keyContributions: [
+      "Framed AI-agent reliability as a measurable assurance problem with explicit requirements and quality gates",
+      "Designed trace-based evidence capture and behavioral evaluation across multi-turn agent executions",
+      "Connected assurance results to reproducible regression and governed release decisions"
+    ],
+    images: [],
+    projectSlug: "ata",
+    projectLabel: "Explore Agent Assurance Case Study"
+  },
   {
     id: "ivs-hackathon-2026",
     title: "2nd Place — IVS Hackathon 2026",
@@ -413,57 +432,53 @@ export const skillGroups = [
     title: "AI & Agent Systems",
     items: [
       "LangGraph",
-      "Multi-Agent Systems",
       "Model Context Protocol (MCP)",
       "Tool Calling",
       "Citation-Grounded RAG",
       "Hybrid Retrieval",
-      "Vector Search (Qdrant, Milvus)",
-      "Docling Layout & OCR",
-      "Embeddings",
-      "LoRA Fine-Tuning"
+      "Qdrant",
+      "Docling",
+      "Context Engineering"
     ]
   },
   {
-    title: "Backend Engineering",
+    title: "Model & Retrieval Engineering",
+    items: [
+      "PyTorch",
+      "Hugging Face Transformers",
+      "PEFT",
+      "Unsloth",
+      "LoRA/QLoRA",
+      "vLLM",
+      "Synthetic Data",
+      "Vector Search"
+    ]
+  },
+  {
+    title: "Backend & Platform Engineering",
     items: [
       "Python",
       "FastAPI",
       "Django / DRF",
+      "SQLAlchemy",
       "PostgreSQL",
       "Redis",
       "Celery",
-      "SQLAlchemy",
-      "Pydantic",
-      "REST APIs & SSE",
-      "Async Workflows",
-      "Idempotency Contracts"
-    ]
-  },
-  {
-    title: "AI Infrastructure & Observability",
-    items: [
-      "OpenTelemetry (OTel)",
-      "LiteLLM Gateway",
+      "SSE / Streaming APIs",
       "Docker",
-      "Docker Compose",
-      "MinIO (S3-Compatible)",
-      "Nginx",
-      "Langfuse",
-      "Linux",
-      "CI/CD"
+      "Kubernetes"
     ]
   },
   {
-    title: "Reliability & System Design",
+    title: "Solution Reliability & Evaluation",
     items: [
-      "System Architecture",
+      "Solution Architecture",
+      "OpenTelemetry (OTel)",
+      "LiteLLM",
       "LLM-as-a-Judge",
-      "Deterministic Quality Gates",
       "Runtime Trace Reconstruction",
-      "Prompt Injection Testing",
-      "API Verification",
-      "Evaluation Benchmarks",
+      "Regression Testing",
+      "Deterministic Quality Gates",
       "Data Integrity & Auditability"
     ]
   }
