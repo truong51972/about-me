@@ -14,9 +14,9 @@ These rules apply to the portfolio and especially to CV-related changes in this 
 
 Treat the CV as an index of the strongest evidence, not a database of every tool or project.
 
-Position the profile as a solution-oriented Applied AI engineer: start from real business or operational problems, show system/solution design, then use implementation details as evidence rather than as the primary identity.
+Position the profile primarily as an Applied AI engineer with solution architecture, Python backend, and quality engineering strengths. Start from real business or operational problems, show system/solution design, then use implementation details as evidence rather than as the primary identity.
 
-- Keep one stable professional identity. Do not rewrite the headline for every job description.
+- Keep one stable professional identity ("Applied AI Engineer"). Do not rewrite the headline for every job description.
 - Tailor primarily through ordering, selection, and emphasis of evidence.
 - Prefer concrete accomplishments over technology inventories.
 - A technology mentioned in a real project or experience bullet is stronger evidence than a long skills list.
@@ -65,11 +65,21 @@ Keep skills grouped by capability rather than by arbitrary tool category. Curren
 
 1. AI & Agentic Systems
 2. ML, Fine-Tuning & Model Serving
-3. LLM Evaluation & Observability
+3. LLM Evaluation & Reliability
 4. Backend Engineering
-5. Infrastructure & Delivery
+5. Test Automation & Quality Engineering
+6. Infrastructure & Delivery
+
+Keep hands-on automation frameworks (Playwright, Cypress, Katalon Studio, Postman) visible; AI positioning does not require obscuring real quality engineering experience.
 
 Do not keyword-stuff these groups. Generic tools such as Git or REST should only remain when they add hiring signal.
+
+## Employer and awards accuracy
+
+- List **FPT Software** as the employer for both IVS work (Dec 2024–present) and FSA internship (Sep–Dec 2024), distinguishing business units without inventing a second legal employer.
+- Tenure at FPT Software starts in Sep 2024 and includes the internship; never claim that the whole period was full-time employment.
+- The IVS Hackathon 2026 result is **2nd Runner-up (3rd Place)**, not 2nd Place. Flezi Polaris later earned the Golden Solution Prize (1st Place) at IVS Solution Day 2.0 2026.
+- State the maturity of independently developed Omni-Agent honestly as active development/pre-production. Do not conflate this with enterprise production delivery.
 
 ## Tailoring for a job
 
@@ -97,4 +107,5 @@ Before merging a CV change:
 - Check that claims are internally consistent across CV and portfolio.
 - Check for duplicated evidence.
 - Check that generated output remains readable and within the intended page count.
-- Run `npm run build` when the environment supports it.
+- Run `npm run build` when the environment supports it; this regenerates PDF/HTML/Markdown/Typst CV outputs from the YAML source.
+- Inspect the generated PDF for a two-page layout, hyphenation, and accurate employer/award text before merging.
