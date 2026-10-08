@@ -103,8 +103,8 @@ export const cases: ProjectCase[] = [
     ],
     highlights: [
       "Built an end-to-end evaluation engine with a FastAPI control plane, LiteLLM gateway, Celery workers, PostgreSQL, Redis, and an operational dashboard.",
-      "Designed a multi-stage evaluation workflow using Planner, Judge, Critic, and Meta-Judge roles across configurable quality dimensions.",
-      "Implemented percentile-based quality gates and deterministic critical blockers to produce reproducible PASS/FAIL verdicts."
+      "Designed record-first behavioral evaluation with a single evaluator workflow, evidence-backed rationales, and targeted retries by semantic group.",
+      "Applied worst-record aggregation to preserve decisive failures and return INCONCLUSIVE when evidence is insufficient rather than guessing a verdict."
     ]
   },
   {
@@ -350,7 +350,13 @@ export const achievements: Achievement[] = [
       "Designed trace-based evidence capture and behavioral evaluation across multi-turn agent executions",
       "Connected assurance results to reproducible regression and governed release decisions"
     ],
-    images: [],
+    images: [
+      {
+        src: "images/ivs-solution-day-2026-gold.jpg",
+        alt: "Flezi Polaris team receiving the Golden Solution Prize at IVS Solution Day 2.0 2026",
+        caption: "Golden Solution Prize (1st place), IVS Solution Day 2.0, September 2026"
+      }
+    ],
     projectSlug: "ata",
     projectLabel: "Explore Agent Assurance Case Study"
   },
