@@ -36,7 +36,7 @@ export const site = {
   summary:
     "Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems, focused on solution architecture and AI reliability.",
   about:
-    "Designs and implements agentic AI, RAG, and backend solutions with evidence-backed LLM evaluation, traceability, and reliability checks; distinguishes enterprise delivery from independent pre-production systems."
+    "Combines solution architecture and hands-on engineering across agentic AI, RAG, Python backend systems, and trace-based LLM evaluation, with emphasis on observable and auditable system behavior."
 };
 
 export const cases: ProjectCase[] = [
