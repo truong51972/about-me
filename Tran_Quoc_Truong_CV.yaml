@@ -14,8 +14,8 @@ cv:
 
   sections:
     summary:
-      - 'Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems.'
-      - 'Architects agentic AI and RAG solutions with a focus on trace-based LLM evaluation, system reliability, and end-to-end delivery; recognized for award-winning AI assurance work at FPT Software.'
+      - 'Applied AI Engineer focused on translating business and operational challenges into practical, reliable AI solutions.'
+      - 'Combines solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, with end-to-end ownership from problem framing and architectural decisions to delivery and quality validation.'
 
     technical_skills:
       - label: AI & Agentic Systems
