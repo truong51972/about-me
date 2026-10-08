@@ -81,7 +81,7 @@
   date: datetime(
     year: 2026,
     month: 10,
-    day: 7,
+    day: 8,
   ),
 )
 
