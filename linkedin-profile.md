@@ -10,13 +10,13 @@ Recruiter discoverability is a first-class goal. LinkedIn should not be treated 
 
 Primary identity:
 
-**Product Engineer · Applied AI · Backend Systems**
+**Applied AI Engineer · AI Agents & RAG · Backend Systems**
 
 Career story:
 
-- Product Engineer / Applied AI Engineer translating operational problems into reliable AI systems, from solution design to hands-on delivery.
+- Applied AI Engineer using solution architecture and backend engineering to deliver reliable agentic AI, RAG, and evaluation workflows.
 - Strongest differentiators: AI agents, RAG/hybrid retrieval, MCP/tool calling, LLM evaluation and observability, backend systems, model fine-tuning/serving, and AI-augmented software development.
-- Quality engineering and automation are domain strengths that reinforce evaluation, reliability, regression, and delivery discipline; they are not the primary professional identity.
+- Quality engineering and hands-on automation experience (Playwright, Cypress, Katalon Studio, Postman) reinforce evaluation, reliability, regression, and delivery discipline.
 - Do not describe pre-production AI work as production-scale unless there is explicit evidence.
 - Use consistent recruiter-search vocabulary across Headline, About, Experience, and Skills instead of keyword stuffing isolated sections.
 
@@ -24,11 +24,11 @@ Career story:
 
 ## Headline
 
-**Product Engineer · Applied AI · Backend Systems**
+**Applied AI Engineer · AI Agents & RAG · Backend Systems**
 
 Optional longer variant if LinkedIn search coverage is preferred:
 
-**Applied AI Engineer | AI Agents, RAG & MCP | LLM Evaluation | Python Backend Systems**
+**Applied AI Engineer | AI Agents & RAG | LLM Evaluation | Python Backend Systems**
 
 Use the first version by default.
 
@@ -36,13 +36,13 @@ Use the first version by default.
 
 ## About
 
-Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
+Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems.
 
-I design end-to-end solutions across agentic workflows, RAG and hybrid retrieval, model adaptation, Python backend systems, and trace-based evaluation, with hands-on ownership from problem framing through implementation and reliability verification.
+I architect and implement agentic AI and RAG solutions with trace-based LLM evaluation, system reliability, and end-to-end delivery. My work connects business and operational requirements to testable, auditable engineering outcomes.
 
-At FPT Software, my work spans enterprise code intelligence through hybrid retrieval and MCP-based integrations, Agent Assurance using LiteLLM/OpenTelemetry capture and reproducible evaluation, and banking quality engineering. Reusable banking validation assets reduced manual regression effort by approximately 70%.
+At FPT Software since September 2024 (including an internship in the FPT Software Academy business unit), my work spans enterprise code intelligence through hybrid retrieval and MCP integration, Agent Assurance through LiteLLM/OpenTelemetry evidence capture, and banking test automation. Reusable API, database, and cross-platform validation reduced manual regression effort by approximately 70%.
 
-Independently, I develop Omni-Agent, a modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and evaluation. I also built APIT's fine-tuning and serving workflow using Unsloth/PEFT, RunPod/vLLM, and hybrid evaluation. Agent Assurance received 2nd Place at IVS Hackathon 2026, and Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+Independently, I develop Omni-Agent, a modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and evaluation. I also built APIT's fine-tuning and serving workflow using Unsloth/PEFT, RunPod/vLLM, and hybrid evaluation. Agent Assurance received 2nd Runner-up (3rd place) at IVS Hackathon 2026, and Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
 I focus on demonstrated systems, auditable evaluation, and dependable delivery rather than claiming production-scale metrics that have not been measured.
 ---
@@ -51,18 +51,20 @@ I focus on demonstrated systems, auditable evaluation, and dependable delivery r
 
 ## FPT Software
 
+Use **FPT Software** as the employer for both roles (continuous tenure since Sep 2024). Group the two positions under the same company where LinkedIn supports it; **IVS** and **FSA** are business units, not separate employers.
+
 ### Title
 
 **Applied AI Engineer & Automation Tester**
 
 ### Dates
 
-Keep the existing LinkedIn employment dates. The CV source of truth currently uses **Dec 2024 — Present**.
+**Dec 2024 — Present**, within FPT Software's **IVS business unit**. Company tenure, including the preceding FSA internship, began in **Sep 2024**. Do not describe the whole period as full-time experience.
 
 ### Description
 
-- **IQP — Code Intelligence & Retrieval:** Architected backend retrieval combining dense semantic search, BM25 lexical ranking, and code-graph relationships to provide scoped implementation and testing context across enterprise repositories; exposed retrieval capabilities to AI clients through Model Context Protocol (MCP).
-- **Agent Assurance / Flezi Polaris — AI Evaluation Infrastructure:** Architected a trace-based evaluation system for agentic applications, capturing runtime evidence through LiteLLM and OpenTelemetry, reconstructing multi-turn execution trajectories, and applying reproducible behavioral evaluation and regression gates. The solution later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+- **IQP — Code Intelligence & Retrieval:** Designed multi-repository semantic, lexical, and code-graph retrieval to provide traceable implementation and testing context through MCP-enabled AI workflows.
+- **Agent Assurance / Flezi Polaris — AI Evaluation Infrastructure:** Architected trace-based evaluation reconstructing agent execution evidence against versioned requirements for auditable regression and quality-gate decisions. Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 - **Automation & Delivery Engineering:** Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.
 - **Banking Systems Verification:** Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%. An omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.
 
@@ -93,13 +95,19 @@ Prioritize LinkedIn-standardized equivalents of:
 - API Testing
 - Integration Testing
 - Regression Testing
+- Playwright
+- Cypress
+- Katalon Studio
+- Postman
 - SQL
 
 Keep the FPT job title consistent with the CV unless an officially verified title change warrants updating both sources. Treat automation/quality engineering as supporting experience, not the sole professional identity.
 
 ---
 
-## FPT Software Academy
+## FPT Software — FPT Software Academy (FSA) internship
+
+The employer is **FPT Software**, not a second independent company. Display this as a separate internship position grouped under FPT Software, with the FSA business unit identified in the description.
 
 ### Title
 
@@ -107,7 +115,7 @@ Keep the FPT job title consistent with the CV unless an officially verified titl
 
 ### Dates
 
-Keep existing LinkedIn dates. The CV source of truth currently uses **Sep 2024 — Dec 2024**.
+**Sep 2024 — Dec 2024**, internship in the **FPT Software Academy (FSA) business unit**. This period contributes to continuous FPT Software tenure but is not full-time experience.
 
 ### Description
 
@@ -183,7 +191,7 @@ A record-first assurance layer for agentic systems that captures runtime evidenc
 - Evaluates records across semantic behavior groups while retaining evidence and rationale for reproducible review.
 - Uses worst-record aggregation so decisive failures cannot be hidden by averages; missing evidence remains explicitly inconclusive rather than guessed.
 - Uses versioned requirements and scenarios so assurance runs can preserve historical reproducibility.
-- Received 2nd Place at IVS Hackathon 2026 and later evolved into Flezi Polaris, winner of the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
+- Received 2nd Runner-up (3rd place) at IVS Hackathon 2026 and later evolved into Flezi Polaris, winner of the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
 ### Skills
 
@@ -283,7 +291,7 @@ Awarded the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 for F
 
 ---
 
-## 2. 2nd Place — IVS Hackathon 2026
+## 2. 2nd Runner-up (3rd Place) — IVS Hackathon 2026
 
 **Date:** Aug 2026
 
@@ -291,7 +299,7 @@ Awarded the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 for F
 
 **Description:**
 
-Awarded 2nd place for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed regression/quality gates. The core capabilities were subsequently integrated into Omni-Agent.
+Awarded 2nd Runner-up (3rd place) for independently architecting an AI Agent Verification engine featuring runtime evidence capture, trace-based behavioral evaluation, and governed regression/quality gates. The core capabilities were subsequently integrated into Omni-Agent.
 
 ---
 
@@ -315,7 +323,7 @@ Keep older C/C++ or academic programming awards if already present, but place th
 
 Skills are a first-class part of the LinkedIn migration because recruiter search and matching rely heavily on skill vocabulary. The goal is not to maximize the raw number of skills; the goal is to maintain a focused, searchable, evidence-backed skill graph that matches the target roles.
 
-Target roughly **30–40 high-signal skills**. LinkedIn may support more, but low-signal or redundant skills dilute the profile and make maintenance harder.
+Prioritize high-signal, evidence-backed skills rather than a fixed count. Keep the established Applied AI and backend skills while retaining hands-on test automation frameworks that support the work history.
 
 ## Skill selection rules
 
@@ -435,6 +443,11 @@ These skills are relevant evidence and should remain searchable, but they should
 - Regression Testing
 - Unit Testing
 - Pytest
+- Playwright
+- Cypress
+- Katalon Studio
+- Postman
+- SQL Validation
 
 Keep SQL in the backend/platform set because it is broader than QA and is directly supported by work experience.
 
