@@ -14,7 +14,7 @@ Primary identity:
 
 Career story:
 
-- Applied AI Engineer using solution architecture and backend engineering to deliver reliable agentic AI, RAG, and evaluation workflows.
+- Applied AI Engineer translating business and operational challenges into practical, reliable AI solutions through solution architecture, hands-on delivery, and quality validation.
 - Strongest differentiators: AI agents, RAG/hybrid retrieval, MCP/tool calling, LLM evaluation and observability, backend systems, model fine-tuning/serving, and AI-augmented software development.
 - Quality engineering and hands-on automation experience (Playwright, Cypress, Katalon Studio, Postman) reinforce evaluation, reliability, regression, and delivery discipline.
 - Do not describe pre-production AI work as production-scale unless there is explicit evidence.
@@ -36,9 +36,9 @@ Use the first version by default.
 
 ## About
 
-Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems.
+Applied AI Engineer focused on translating business and operational challenges into practical, reliable AI solutions.
 
-I architect and implement agentic AI and RAG solutions with trace-based LLM evaluation, system reliability, and end-to-end delivery. My work connects business and operational requirements to testable, auditable engineering outcomes.
+I combine solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, from problem framing and architectural decisions through delivery and quality validation.
 
 At FPT Software since September 2024 (including an internship in the FPT Software Academy business unit), my work spans enterprise code intelligence through hybrid retrieval and MCP integration, Agent Assurance through LiteLLM/OpenTelemetry evidence capture, and banking test automation. Reusable API, database, and cross-platform validation reduced manual regression effort by approximately 70%.
 
