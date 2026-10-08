@@ -8,35 +8,37 @@
 
 
 # Summary
-Applied AI Engineer building agentic applications, RAG and retrieval systems, LLM evaluation infrastructure, and Python backend platforms, with a focus on reliability, observability, and practical delivery.
+Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
 
-Experience spans enterprise code intelligence, trace-based AI assurance, model fine-tuning and serving, quality engineering, and CI-driven delivery; independently develops Omni-Agent as a modular platform for knowledge, agents, and evaluation.
+Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.
 
 # Technical Skills
-**AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, Context Engineering, LiteLLM, Qdrant, pgvector, Docling
+**AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Docling
 
-**LLM Evaluation & Observability:** LLM Evaluation, LLM-as-a-Judge, OpenTelemetry (OTel), Runtime Trace Reconstruction, Regression Testing, Deterministic Quality Gates, Langfuse
+**ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
 
-**Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs, Pytest, SQL, React, TypeScript
+**LLM Evaluation & Observability:** OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Regression Testing, Deterministic Quality Gates, Langfuse
 
-**ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, BitsAndBytes Quantization, Synthetic Data Generation
+**Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
 
-**Infrastructure & Delivery:** Docker, Docker Compose, Kubernetes, Google Cloud Platform, RunPod, Nginx, MinIO, GitLab CI/CD, Azure DevOps Pipelines, Linux
+**Infrastructure & Delivery:** Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
 
 # Experience
-## **FPT Software**, Applied AI Engineer
+## **FPT Software**, Applied AI Engineer & Automation Tester
 
 Ho Chi Minh City, Vietnam
 
 Dec 2024 – present
 
-- IQP (Code Intelligence & Retrieval): Built hybrid code retrieval combining dense search, BM25, and code-graph relationships across enterprise repositories, exposing repository-aware engineering context to AI clients through Model Context Protocol (MCP).
 
-- Agent Assurance / Flezi Polaris: Designed and implemented the core trace-based Agent Assurance engine using LiteLLM and OpenTelemetry capture, multi-turn trajectory reconstruction, behavioral evaluation, and reproducible regression gates; the capability was later presented by the Flezi Polaris team and received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
-- Automation & Delivery Engineering: Developed automated validation across API, database, web, and mobile layers and integrated repeatable execution into GitLab and Azure DevOps CI pipelines.
+1 year 11 months
 
-- Banking Systems Verification: Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%; an omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.
+- IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.
+
+- Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.
+
+- Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
 
 
 
@@ -46,11 +48,15 @@ Ho Chi Minh City, Vietnam
 
 Sept 2024 – Dec 2024
 
-- Built the backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 
-- Integrated a FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
 
-- Containerized the multi-service architecture with Docker Compose, Nginx, and Cloudflare Tunnel.
+4 months
+
+- Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
+
+- Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
+
+- Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
 
 
 
@@ -59,7 +65,7 @@ Sept 2024 – Dec 2024
 
 Sept 2026
 
-Flezi Polaris team solution built around the Agent Assurance capability for trace-based AI-agent evaluation and governed quality verification.
+Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.
 
 
 
@@ -67,7 +73,7 @@ Flezi Polaris team solution built around the Agent Assurance capability for trac
 
 Aug 2026
 
-Designed and implemented the core Agent Assurance engine independently; awarded 2nd place for trace-based behavioral evaluation and governed regression gates.
+2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
 
 
 
@@ -75,22 +81,22 @@ Designed and implemented the core Agent Assurance engine independently; awarded 
 
 Apr 2024
 
-Co-authored YOLOv8, lane-segmentation, and PID-control research; completed the simulation benchmark in 125.8 seconds with a 100% score.
+Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
 
 
 
 # Featured Projects
 ## **Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)**
 
-A modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and agent evaluation within a project-centric multi-service architecture.
+An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
 
-- Platform Architecture: Designed a modular multi-service architecture with project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.
+- Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.
 
-- Knowledge Builder: Built a versioned document pipeline covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.
+- Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.
 
-- Agent Runtime & Integration: Implemented LangGraph-based agent workflows with tool calling, context-aware retrieval, MCP integration, and SSE streaming for multi-turn execution over project knowledge.
+- Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.
 
-- Agent Assurance: Integrated trace-based evidence capture, evaluation, regression, and quality-gating capabilities into the platform.
+- Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.
 
 
 
@@ -100,11 +106,11 @@ AI-assisted API testing framework generating structured test scenarios from API 
 
 - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
 
-- Fine-tuned Qwen2.5-3B with Unsloth and PEFT LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
+- Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
 
-- Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with BitsAndBytes quantization and runtime LoRA adapters.
+- Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with quantized inference and runtime LoRA adapters.
 
-- Integrated pgvector-backed cosine-similarity retrieval and a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
+- Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
 
 
 

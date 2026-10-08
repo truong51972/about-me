@@ -10,11 +10,11 @@ Recruiter discoverability is a first-class goal. LinkedIn should not be treated 
 
 Primary identity:
 
-**Applied AI Engineer · AI Agents & RAG · Backend Systems**
+**Product Engineer · Applied AI · Backend Systems**
 
 Career story:
 
-- Applied AI Engineer building agentic applications, retrieval systems, LLM evaluation infrastructure, model-serving workflows, and Python backend platforms.
+- Product Engineer / Applied AI Engineer translating operational problems into reliable AI systems, from solution design to hands-on delivery.
 - Strongest differentiators: AI agents, RAG/hybrid retrieval, MCP/tool calling, LLM evaluation and observability, backend systems, model fine-tuning/serving, and AI-augmented software development.
 - Quality engineering and automation are domain strengths that reinforce evaluation, reliability, regression, and delivery discipline; they are not the primary professional identity.
 - Do not describe pre-production AI work as production-scale unless there is explicit evidence.
@@ -24,11 +24,11 @@ Career story:
 
 ## Headline
 
-**Applied AI Engineer · AI Agents & RAG · Backend Systems**
+**Product Engineer · Applied AI · Backend Systems**
 
 Optional longer variant if LinkedIn search coverage is preferred:
 
-**Applied AI Engineer | AI Agents, RAG & MCP | LLM Evaluation & Model Serving | Python Backend Systems**
+**Applied AI Engineer | AI Agents, RAG & MCP | LLM Evaluation | Python Backend Systems**
 
 Use the first version by default.
 
@@ -36,20 +36,15 @@ Use the first version by default.
 
 ## About
 
-Applied AI Engineer building agentic applications, retrieval systems, LLM evaluation infrastructure, model-serving workflows, and Python backend platforms.
+Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
 
-My work spans enterprise code intelligence, RAG and hybrid retrieval, MCP and tool calling, prompt and context engineering, trace-based AI evaluation, streaming and asynchronous backend systems, model fine-tuning and serving, CI-driven delivery, and AI-augmented software development.
+I design end-to-end solutions across agentic workflows, RAG and hybrid retrieval, model adaptation, Python backend systems, and trace-based evaluation, with hands-on ownership from problem framing through implementation and reliability verification.
 
-At FPT Software, I contribute to Applied AI initiatives including enterprise code intelligence and retrieval, AI-agent assurance, and engineering-quality workflows. My recent work includes hybrid retrieval over enterprise repositories, MCP-based AI integrations, runtime evidence capture with LiteLLM and OpenTelemetry, multi-turn agent trace reconstruction, and reproducible regression/evaluation gates.
+At FPT Software, my work spans enterprise code intelligence through hybrid retrieval and MCP-based integrations, Agent Assurance using LiteLLM/OpenTelemetry capture and reproducible evaluation, and banking quality engineering. Reusable banking validation assets reduced manual regression effort by approximately 70%.
 
-I independently develop Omni-Agent, a modular Applied AI platform combining a versioned Knowledge Builder, agent runtimes, MCP-based integrations, and native Agent Assurance. The Agent Assurance work was recognized with 2nd Place at IVS Hackathon 2026 and later the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026 as Flezi Polaris.
+Independently, I develop Omni-Agent, a modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and evaluation. I also built APIT's fine-tuning and serving workflow using Unsloth/PEFT, RunPod/vLLM, and hybrid evaluation. Agent Assurance received 2nd Place at IVS Hackathon 2026, and Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
-I also work across model adaptation and serving. In APIT, I fine-tuned Qwen2.5-3B using Unsloth and PEFT LoRA/QLoRA, deployed the adapted model through an OpenAI-compatible vLLM service on RunPod, and integrated pgvector-backed retrieval with model-based and deterministic evaluation.
-
-My engineering stack includes Python, FastAPI, Django/DRF, LangGraph, LangChain, PostgreSQL, Redis, Celery, Qdrant, pgvector, Milvus, LiteLLM, OpenTelemetry, Docker, Kubernetes, GitLab CI/CD, Azure DevOps Pipelines, Hugging Face Transformers, PEFT, Unsloth, and vLLM.
-
-I also use AI coding agents extensively in day-to-day development, especially OpenAI Codex, Claude Code, and GitHub Copilot, with workflows around scoped context management, multi-agent delegation, Git worktrees, implementation, review, testing, and repository-scale refactoring.
-
+I focus on demonstrated systems, auditable evaluation, and dependable delivery rather than claiming production-scale metrics that have not been measured.
 ---
 
 # Experience
@@ -58,7 +53,7 @@ I also use AI coding agents extensively in day-to-day development, especially Op
 
 ### Title
 
-**Applied AI Engineer**
+**Applied AI Engineer & Automation Tester**
 
 ### Dates
 
@@ -92,7 +87,6 @@ Prioritize LinkedIn-standardized equivalents of:
 - Celery
 - REST APIs / Backend Development
 - Docker
-- Kubernetes
 - CI/CD
 - GitLab CI/CD
 - Azure DevOps
@@ -101,7 +95,7 @@ Prioritize LinkedIn-standardized equivalents of:
 - Regression Testing
 - SQL
 
-Do not use `Automation Tester` as the primary title.
+Keep the FPT job title consistent with the CV unless an officially verified title change warrants updating both sources. Treat automation/quality engineering as supporting experience, not the sole professional identity.
 
 ---
 
@@ -307,7 +301,7 @@ Awarded 2nd place for independently architecting an AI Agent Verification engine
 
 **Description:**
 
-Co-authored research combining YOLOv8 perception, lane segmentation, and PID steering control in Unity simulation, completing the benchmark in 125.8 seconds with a perfect 100% score.
+Independently completed the autonomous-driving research end to end, from data labeling and model training through YOLOv8 perception, lane segmentation, PID steering control, and Unity-based evaluation; completed the benchmark in 125.8 seconds with a 100% score.
 
 ---
 
@@ -423,7 +417,6 @@ Add standardized equivalents where available:
 - REST APIs
 - SQL
 - Docker
-- Kubernetes
 - Linux
 - CI/CD
 - GitLab CI/CD
@@ -470,7 +463,6 @@ Associate the strongest available standardized equivalents of:
 - Celery
 - REST APIs / Backend Development
 - Docker
-- Kubernetes
 - CI/CD
 - GitLab CI/CD
 - Azure DevOps
@@ -575,9 +567,9 @@ Coursework and projects across machine learning, computer vision, AI systems, an
 
 When applying this document to LinkedIn:
 
-- [ ] Change primary headline to `Applied AI Engineer · AI Agents & RAG · Backend Systems`.
+- [ ] Change primary headline to `Product Engineer · Applied AI · Backend Systems`.
 - [ ] Replace generic `Software Engineer` positioning in About.
-- [ ] Use `Applied AI Engineer` as the FPT role title.
+- [ ] Keep the FPT employment title aligned with the current CV (`Applied AI Engineer & Automation Tester`) unless independently verified otherwise.
 - [ ] Keep automation/testing as quality-engineering and delivery evidence rather than primary identity.
 - [ ] Reconcile Skills immediately after Experience; treat recruiter discoverability as a first-class objective.
 - [ ] Target roughly 30–40 high-signal skills rather than blindly filling the maximum allowed count.
@@ -595,7 +587,6 @@ When applying this document to LinkedIn:
 - [ ] Remove speculative business-impact percentages from prototype projects.
 - [ ] Remove stale `60% accuracy` claim from the self-driving project.
 - [ ] Keep measured/defensible impact: ~70% manual-regression reduction, ~20 person-months follow-on delivery, APIT macro-F1 0.655, +41.5% relative improvement, self-driving 125.8s / 100% score.
-- [ ] Add Kubernetes as hands-on experience; do not add Helm as a primary skill yet.
 - [ ] Add vLLM and pgvector when LinkedIn provides useful standardized skill labels; otherwise retain them in project/About evidence.
 - [ ] Keep Codex, Claude Code, and GitHub Copilot as secondary evidence; do not turn coding-agent experience into a long tool list.
 - [ ] Feature the public portfolio and public evidence rather than private repository URLs.
