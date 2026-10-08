@@ -47,9 +47,20 @@ Guidelines:
 - Use implementation detail when it proves capability; omit low-signal internals.
 - Avoid repeating the same capability across Experience, Projects, and Achievements.
 
+## Summary writing rules — solution-first
+
+The Summary must position the candidate as an **Applied AI Engineer who solves problems through solution architecture and hands-on delivery**, not as a framework implementer or someone claiming the formal title of Solution Architect.
+
+- Use roughly **two concise sentences**, with the first about the **business/operational problems and intended value**, and the second about **solution architecture, engineering ownership, and delivery/quality validation**.
+- Prefer the narrative **problem / desired outcome → architectural decisions and trade-offs → implementation ownership → evaluation and reliability**. Specific supported problem areas include enterprise knowledge access, intelligent automation, and AI agent reliability.
+- Describe engineering work as evidence of solving a problem; avoid leading with a list of technologies, model names, frameworks, domains alone, or generic phrases such as "experienced in Python backend systems".
+- Balance **solution design** and **hands-on engineering**. Do not imply a formal Solution Architect job title, enterprise-wide architecture authority, or production maturity beyond verified experience.
+- Keep skill keywords and stack inventories in Skills, Experience, and Projects. Keep measured achievements and award names in their appropriate sections unless they are essential for differentiating the profile.
+- Preserve this meaning consistently in the canonical CV (`Tran_Quoc_Truong_CV.yaml`), portfolio (`src/data/profile.ts`), and LinkedIn guide (`linkedin-profile.md`), while allowing first-person wording on LinkedIn.
+
 ## Section responsibilities
 
-- **Summary:** explain the profile in about two sentences; lead with the problems and systems the candidate solves, then the scope of solution ownership. Avoid framework dumps or implementation-first wording.
+- **Summary:** follow the solution-first rules above, in about two sentences; lead with the problems solved, then architecture/ownership through delivery and validation. Never degrade into implementation-first skill inventory.
 - **Technical Skills:** keep only high-signal, demonstrated keywords useful for ATS and human scanning.
 - **Experience:** prioritize shipped work, scope, business/engineering impact, and enterprise context.
 - **Featured Projects:** prove capabilities not already clear from Experience.
