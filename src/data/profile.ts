@@ -34,9 +34,9 @@ export const site = {
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems, focused on solution architecture and AI reliability.",
+    "Focused on translating business and operational challenges into practical, reliable AI solutions for enterprise knowledge access, intelligent automation, and AI agent reliability.",
   about:
-    "Combines solution architecture and hands-on engineering across agentic AI, RAG, Python backend systems, and trace-based LLM evaluation, with emphasis on observable and auditable system behavior."
+    "Combines solution architecture and hands-on engineering with ownership from problem framing and architectural decisions to delivery and quality validation."
 };
 
 export const cases: ProjectCase[] = [
