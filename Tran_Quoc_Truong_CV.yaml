@@ -2,7 +2,7 @@
 
 cv:
   name: Tran Quoc Truong
-  headline: Product Engineer · Applied AI · Backend Systems
+  headline: Applied AI Engineer · AI Agents & RAG · Backend Systems
   location: Ho Chi Minh City, Vietnam
   email: tranquoctruong20@gmail.com
   website: https://portfolio.truong51972.id.vn/
@@ -14,8 +14,8 @@ cv:
 
   sections:
     summary:
-      - 'Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.'
-      - 'Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.'
+      - 'Applied AI Engineer with experience in enterprise code intelligence, banking quality engineering, and Python backend systems.'
+      - 'Architects agentic AI and RAG solutions with a focus on trace-based LLM evaluation, system reliability, and end-to-end delivery; recognized for award-winning AI assurance work at FPT Software.'
 
     technical_skills:
       - label: AI & Agentic Systems
@@ -24,28 +24,31 @@ cv:
       - label: ML, Fine-Tuning & Model Serving
         details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
 
-      - label: LLM Evaluation & Observability
-        details: OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Regression Testing, Deterministic Quality Gates, Langfuse
+      - label: LLM Evaluation & Reliability
+        details: OpenTelemetry, Runtime Trace Reconstruction, LLM-as-a-Judge, Quality Gates, Guardrails, Langfuse
 
       - label: Backend Engineering
         details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
+
+      - label: Test Automation & Quality Engineering
+        details: Playwright, Cypress, Katalon Studio, Postman, API Testing, Regression Testing, SQL Validation
 
       - label: Infrastructure & Delivery
         details: Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
 
     experience:
       - company: FPT Software
-        position: Applied AI Engineer & Automation Tester
+        position: Applied AI Engineer & Automation Tester (IVS)
         start_date: 2024-12
         end_date: present
         location: Ho Chi Minh City, Vietnam
         highlights:
-          - 'IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.'
-          - 'Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.'
-          - 'Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.'
+          - 'IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.'
+          - 'Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.'
+          - 'Banking Automation: Reduced manual regression effort by ~70% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation.'
 
-      - company: FPT Software Academy
-        position: Full-Stack Developer Intern
+      - company: FPT Software
+        position: Full-Stack Developer Intern (FSA)
         start_date: 2024-09
         end_date: 2024-12
         location: Ho Chi Minh City, Vietnam
@@ -57,22 +60,21 @@ cv:
     achievements:
       - name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
         date: 2026-09
-        summary: Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.
-      - name: 2nd Place — IVS Hackathon 2026
+        summary: Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.
+      - name: 2nd Runner-up (3rd Place) — IVS Hackathon 2026
         date: 2026-08
-        summary: 2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
+        summary: 2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
       - name: Second Prize — Autonomous Driving Research Paper Competition
         date: 2024-04
         summary: Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
 
     featured_projects:
       - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
-        summary: An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
+        summary: Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.
         highlights:
-          - 'Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.'
-          - 'Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.'
-          - 'Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.'
-          - 'Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.'
+          - 'Solution Architecture: Defined project-scoped service boundaries, a Django/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.'
+          - 'Knowledge Builder: Implemented Docling parsing/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.'
+          - 'Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL/S3-compatible artifact persistence.'
 
       - name: APIT — Agent Programmatic Integration Testing
         summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
@@ -85,9 +87,8 @@ cv:
       - name: E-Commerce AI Assistant — Conversational RAG & Search
         summary: End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
         highlights:
-          - Built product semantic search using Milvus, cosine similarity, embeddings, and dynamic category/price filters.
-          - Implemented multi-turn conversational agent with LangGraph and LangChain for context-aware product consultation.
-          - Containerized multi-service architecture with FastAPI, PostgreSQL, Redis, Milvus, and Docker Compose.
+          - Built filtered semantic product retrieval with Milvus and conversational consultation through LangGraph/LangChain.
+          - Delivered a Docker-based prototype integrating FastAPI, PostgreSQL, Redis, and vector search.
 
     education:
       - institution: FPT School of Business & Technology
@@ -117,6 +118,7 @@ design:
     left_margin: 1.35cm
     right_margin: 1.35cm
     show_footer: true
+    show_top_note: false
   header:
     space_below_name: 0.45cm
     space_below_headline: 0.35cm
@@ -134,6 +136,7 @@ design:
       space_above: 0.1cm
   typography:
     line_spacing: 0.58em
+    alignment: left
 
 locale:
   language: english
