@@ -84,7 +84,7 @@ export const cases: ProjectCase[] = [
     title: "Agent Assurance (ATA) — AI Agent Evaluation Platform",
     subtitle: "Quality & evaluation infrastructure for autonomous AI agents",
     summary:
-      "An independent assurance solution for teams that need auditable evidence, behavioral evaluation, and governed release gates for probabilistic AI agents.",
+      "An independently designed, evidence-first agent testing solution connecting runtime traces, behavioral evaluation, and explicit quality gates; its core concepts now inform Omni-Agent's Agent Assurance capability.",
     group: "applied-ai-systems",
     visualTier: "featured",
     homepageFeatured: true,
@@ -105,7 +105,7 @@ export const cases: ProjectCase[] = [
       "Docker"
     ],
     highlights: [
-      "Built an end-to-end evaluation engine with a FastAPI control plane, LiteLLM gateway, Celery workers, PostgreSQL, Redis, and an operational dashboard.",
+      "Designed an assurance architecture around FastAPI, LiteLLM/OpenTelemetry evidence capture, asynchronous evaluation, and durable execution records.",
       "Designed record-first behavioral evaluation with a single evaluator workflow, evidence-backed rationales, and targeted retries by semantic group.",
       "Applied worst-record aggregation to preserve decisive failures and return INCONCLUSIVE when evidence is insufficient rather than guessing a verdict."
     ]
@@ -146,14 +146,14 @@ export const cases: ProjectCase[] = [
   },
   {
     slug: "apit",
-    label: "AI evaluation",
+    label: "Model Engineering & Evaluation",
     title: "APIT — Agent Programmatic Integration Testing",
     subtitle: "An AI-assisted API testing application",
     summary:
       "An AI-assisted API testing system designed to turn API documentation into structured, evaluable test scenarios using an adapted domain model.",
     group: "applied-ai-systems",
     visualTier: "supporting",
-    homepageFeatured: false,
+    homepageFeatured: true,
     period: "2025",
     docsUrl: "docs/apit-capstone.pdf",
     role: "System architecture and model engineering",
