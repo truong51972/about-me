@@ -17,8 +17,8 @@ const projectImages: Record<string, string> = {
   "self-driving-car": "images/project-vision-panel.png"
 };
 
-// 3 Flagship projects featured on homepage
-const flagshipSlugs = ["omni-agent", "ata", "iqp"];
+// Four complementary flagship cases: platform, model engineering, enterprise delivery and assurance
+const flagshipSlugs = ["omni-agent", "apit", "iqp", "ata"];
 const featuredCases = flagshipSlugs
   .map((slug) => cases.find((c) => c.slug === slug))
   .filter((c): c is (typeof cases)[0] => Boolean(c));
@@ -119,7 +119,7 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
     </div>
   </section>
 
-  {/* 2. Featured Work: 3 Flagship Projects */}
+  {/* 2. Featured Work: four complementary project case studies */}
   <section class="border-t border-[var(--border-subtle)] bg-[var(--bg-surface)] py-20 md:py-24" id="featured-work">
     <div class="site-shell">
       <div class="mb-12 flex flex-col justify-between gap-4 md:flex-row md:items-end">
@@ -147,7 +147,7 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
         </div>
       </div>
 
-      <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         {featuredCases.map((item) => (
           <a href={projectHref(item.slug)} class="group block h-full">
             <article class="bento-card flex h-full flex-col justify-between transition group-hover:border-sky-500/40">
@@ -285,7 +285,7 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
           <ul class="mt-5 space-y-2.5 text-xs text-[var(--text-muted)] border-t border-[var(--border-subtle)] pt-4">
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">LangGraph Runtimes:</strong> Stateful subgraphs, routing, and verifiers</span>
+              <span><strong class="text-[var(--text-primary)]">LangGraph Runtimes:</strong> Structured agent routing, research specialists, and evidence curation</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
@@ -293,7 +293,7 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">Knowledge Processing:</strong> Docling layout OCR & multi-vector Qdrant RAG</span>
+              <span><strong class="text-[var(--text-primary)]">Knowledge Processing:</strong> Docling OCR, versioned evidence, and PostgreSQL–Qdrant hybrid search</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
@@ -316,7 +316,7 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
           <ul class="mt-5 space-y-2.5 text-xs text-[var(--text-muted)] border-t border-[var(--border-subtle)] pt-4">
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">High-Performance APIs:</strong> FastAPI, Django/DRF, and SSE streaming</span>
+              <span><strong class="text-[var(--text-primary)]">Python Backend:</strong> FastAPI, Django/DRF, and SSE streaming across different projects</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
@@ -351,15 +351,15 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">Adversarial Evaluation:</strong> Planner → Judge → Critic → Meta-Judge roles</span>
+              <span><strong class="text-[var(--text-primary)]">Evidence-Based Evaluation:</strong> Record-level behavioral assessment and trace-linked judgments</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">Deterministic Gates:</strong> P10/P50 percentile metrics & blocker checks</span>
+              <span><strong class="text-[var(--text-primary)]">Quality Gates:</strong> Agent Goals, decisive failures, and explicit inconclusive outcomes</span>
             </li>
             <li class="flex items-start gap-2">
               <span class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-sky-500"></span>
-              <span><strong class="text-[var(--text-primary)]">Security Testing:</strong> Prompt injection defense, data leakage audits</span>
+              <span><strong class="text-[var(--text-primary)]">Runtime Guardrails:</strong> Input/context/output checks and sensitive-data protections</span>
             </li>
           </ul>
         </article>
