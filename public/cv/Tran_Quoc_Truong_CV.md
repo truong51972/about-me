@@ -67,7 +67,7 @@ Sept 2024 – Dec 2024
 
 Sept 2026
 
-Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.
+Recognized for Flezi Polaris, an Agent Assurance solution combining execution traceability, behavioral evaluation, and auditable quality gates.
 
 
 
@@ -75,7 +75,7 @@ Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agen
 
 Aug 2026
 
-2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
+Independently architected the Agent Assurance engine later integrated into Omni-Agent, enabling trace-based evaluation and quality verification.
 
 
 
@@ -83,7 +83,7 @@ Aug 2026
 
 Apr 2024
 
-Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
+Sole-authored the project, from dataset labeling and YOLOv8 training to lane segmentation and PID steering control.
 
 
 
@@ -92,15 +92,15 @@ Second Prize for sole-authored autonomous-driving research combining YOLOv8 perc
 
 Independently architected and built a pre-production Applied AI platform for enterprise document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.
 
-- Solution Architecture: Designed project-scoped FastAPI services with independent persistence, authorization boundaries, and durable asynchronous processing across knowledge and assurance workloads.
+- Solution Architecture: Designed project-scoped FastAPI services with independent data ownership, authorization boundaries, and durable asynchronous workflows.
 
 - Knowledge Engineering: Built versioned Docling/OCR processing and PostgreSQL–Qdrant hybrid retrieval, preserving usable documents through recoverable indexing failures.
 
 - Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped citations, immutable answer evidence, and input/context/output guardrails.
 
-- Agent Assurance: Designed versioned executable Scenarios, qualified Run snapshots, OpenTelemetry evidence capture, and deterministic quality gates for repeatable AI-agent evaluation.
+- Agent Assurance: Built versioned Scenarios and qualified Run snapshots, linking OpenTelemetry evidence with deterministic quality gates for reproducible agent evaluation.
 
-- Product Engineering: Streamlined first-test onboarding into Connect → Define Test → Run & Result, reducing required actions from 33 to 6 for a test API (4 for demo) in a controlled Playwright fixture while preserving preflight and informed consent.
+- Product Engineering: Reduced first-test STFV from 33 to 6 actions (4 for demo) through guided onboarding in a controlled Playwright fixture, preserving preflight checks and informed consent.
 
 
 
