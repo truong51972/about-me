@@ -41,7 +41,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
   → LiteLLM / OpenTelemetry capture
   → normalized trace records
   → behavioral evaluation
-  → run-level assurance verdict</pre>
+  → Trial evidence + configured quality-gate outcomes</pre>
           <p class="text-[var(--text-muted)] leading-relaxed mb-6">Keeping capture separate from evaluation preserves raw evidence, makes regressions reproducible, and allows evaluation logic to evolve without changing the system under test.</p>
         </section>
 
@@ -51,7 +51,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
           <p class="text-[var(--text-muted)] leading-relaxed mb-6">Each record is evaluated across semantic behavior groups using a single evaluator workflow. The result retains evidence and rationale for each decision, and retries remain scoped to the affected group rather than re-running the entire evaluation.</p>
           <ul class="space-y-4 text-[var(--text-muted)] mb-6">
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Missing or insufficient evidence produces an <strong class="text-[var(--text-base)]">inconclusive</strong> result instead of a guessed score.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Run-level behavior uses <strong class="text-[var(--text-base)]">worst-record aggregation</strong>, so a decisive failure cannot be hidden by strong averages elsewhere.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Configured behavior evaluation uses <strong class="text-[var(--text-base)]">worst-record aggregation</strong>, so decisive failures are not hidden by strong averages elsewhere.</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">The decisive record is retained and surfaced so a verdict is auditable rather than opaque.</li>
           </ul>
         </section>
@@ -59,7 +59,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Reproducibility</h2>
           <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Requirements and scenarios are versioned with the run.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Assurance runs depend on explicit requirement and scenario versions. Editing the source definition creates a new version, while completed runs retain the exact snapshots they were evaluated against. This avoids historical drift and makes regression comparison meaningful.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The current Omni-Agent capability publishes immutable Scenario versions containing SUT, Flow, and evaluation policies. Preflight-qualified Runs freeze the exact published contract and capture policy, while Trial evidence and evaluation outcomes remain independently inspectable. Later authoring changes cannot silently rewrite the execution basis.</p>
         </section>
 
         <section>
@@ -75,8 +75,8 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
 
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Maturity</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Validated through two internal competitions; evolving as part of Omni-Agent.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The standalone project proved the core evidence-capture and evaluation model and was recognized at both IVS Hackathon 2026 and IVS Solution Day 2.0. The current direction is a project-centric assurance capability inside Omni-Agent, with explicit requirements, scenarios, reproducible runs, and operational reporting.</p>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Recognized in two internal competitions; evolving within Omni-Agent.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The original standalone implementation established the record-first evaluation approach and earned recognition at IVS Hackathon 2026 and IVS Solution Day 2.0. Omni-Agent now implements versioned Scenario contracts, worker-qualified Runs, HTTP/OTLP capture options, and Trial-level quality gates. Immutable Candidate identity is an initial Release Assurance foundation; full baseline comparisons, release decisions, and evidence packs are not yet implemented.</p>
         </section>
 
         <section>
@@ -98,7 +98,7 @@ const item = cases.find((caseItem) => caseItem.slug === "ata")!;
         </div>
         <div class="evidence-card">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Current model</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Unit:</strong> recorded agent execution evidence</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Unit:</strong> normalized agent execution Records and Trial evidence</p>
           <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Aggregation:</strong> worst-record behavior gate</p>
           <p class="text-[var(--text-muted)] leading-relaxed"><strong class="text-[var(--text-base)]">Reproducibility:</strong> versioned requirements and scenarios</p>
         </div>

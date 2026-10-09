@@ -58,8 +58,8 @@ const item = cases.find((caseItem) => caseItem.slug === "apit")!;
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Agent Testing Connection</h2>
           <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">APIT as evidence for the Agent Testing / Evaluation direction.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">APIT demonstrates the evaluation methodology behind <a href={withBase("projects/ata/")}>ATA</a>. The same LLM-as-a-Judge patterns, structured output evaluation, and fine-tuning experiments used in APIT inform how RAG and agent workflows should be tested and validated at scale.</p>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The APIT pipeline — document understanding → test generation → automated evaluation → regression reporting — mirrors the evaluation loops that ATA applies to RAG and agent workflows as a completed standalone validation platform.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">APIT and <a href={withBase("projects/ata/")}>Agent Assurance</a> address different reliability questions. APIT evaluates a fine-tuned model's structured API-test generation; Agent Assurance examines observable agent execution and quality gates. Both rely on explicit evaluation criteria, but their metrics and execution contracts are not interchangeable.</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">APIT's documented result is model-level performance on structured test-case generation, not a claim of improved production API-test coverage or measured agent reliability. Its practical contribution is a reproducible data → fine-tuning → serving → evaluation workflow.</p>
         </section>
 
         <section>
