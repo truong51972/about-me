@@ -27,16 +27,16 @@ export interface ProjectCase {
 export const site = {
   name: "Tran Quoc Truong",
   shortName: "TQT",
-  role: "Product Engineer · Applied AI · Backend Systems",
+  role: "Applied AI Engineer · AI Agents & RAG · Backend Systems",
   tagline: "Turning real operational problems into reliable AI systems.",
   location: "Ho Chi Minh City, Vietnam",
   email: "tranquoctruong20@gmail.com",
   github: "https://github.com/truong51972",
   linkedin: "https://www.linkedin.com/in/truong51972/",
   summary:
-    "Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems, with end-to-end ownership from solution design through delivery, evaluation, and reliability.",
+    "Focused on translating business and operational challenges into practical, reliable AI solutions for enterprise knowledge access, intelligent automation, and AI agent reliability.",
   about:
-    "Combines solution architecture with hands-on engineering across agentic workflows, retrieval, model adaptation, backend platforms, and AI assurance, with ownership from problem framing through production delivery."
+    "Combines solution architecture and hands-on engineering with ownership from problem framing and architectural decisions to delivery and quality validation."
 };
 
 export const cases: ProjectCase[] = [
@@ -46,14 +46,14 @@ export const cases: ProjectCase[] = [
     title: "Omni-Agent — AI Platform",
     subtitle: "Platform for building knowledge bases, running AI agents, and evaluating agent behavior",
     summary:
-      "A modular Applied AI platform designed to solve document intelligence, grounded knowledge access, agent workflow, and AI assurance needs within one project-scoped architecture.",
+      "An independently developed pre-production Applied AI platform for versioned document knowledge, retrieval-grounded agent workflows, and auditable evaluation within a project-scoped architecture.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
     period: "2026–Present",
     role: "Solo solution architecture and implementation",
     outcome:
-      "Translated document-intelligence and AI-assurance needs into a modular platform with explicit domain ownership, versioned document lifecycles, asynchronous processing contracts, and integrated Agent Assurance. Its assurance engine won 2nd place at IVS Hackathon 2026.",
+      "Independently implemented a modular platform with domain ownership, versioned knowledge lifecycles, asynchronous processing, and integrated Agent Assurance capabilities. The earlier standalone assurance solution earned 2nd Runner-up (3rd place) at IVS Hackathon 2026.",
     tags: [
       "LangGraph",
       "FastAPI",
@@ -88,7 +88,7 @@ export const cases: ProjectCase[] = [
     period: "2026",
     role: "Solo solution architecture and implementation",
     outcome:
-      "Validated the assurance architecture through 2nd Place at IVS Hackathon 2026; the evolved Flezi Polaris solution later received the Golden Solution Prize at IVS Solution Day 2.0 before the core capabilities were integrated into Omni-Agent.",
+      "Earned 2nd Runner-up (3rd place) at IVS Hackathon 2026 for the original assurance solution; its evolution, Flezi Polaris, later received the Golden Solution Prize at IVS Solution Day 2.0 before core capabilities were integrated into Omni-Agent.",
     tags: [
       "Agent Evaluation",
       "OpenTelemetry",
@@ -122,7 +122,7 @@ export const cases: ProjectCase[] = [
     role:
       "Backend solution design, retrieval, code intelligence, and product integration",
     outcome:
-      "Contributed to a working enterprise platform that unified product knowledge, source-code context, AI-assisted retrieval, and quality-analysis capabilities.",
+      "Contributed backend retrieval and MCP-enabled context workflows to a working enterprise platform connecting product knowledge, source code, and quality artifacts.",
     tags: [
       "FastAPI",
       "Qdrant",
@@ -293,17 +293,17 @@ export const timeline = [
   {
     period: "Dec 2024 — Present",
     title: "Applied AI Engineer & Automation Tester",
-    org: "FPT Software · Ho Chi Minh City, Vietnam",
+    org: "FPT Software · IVS business unit · Ho Chi Minh City, Vietnam",
     bullets: [
-      "IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.",
-      "Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.",
-      "Banking Automation & Systems Verification: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%."
+      "IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.",
+      "Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.",
+      "Banking Automation: Reduced manual regression effort by ~70% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation."
     ]
   },
   {
     period: "Sep 2024 — Dec 2024",
     title: "Full-Stack Developer Intern",
-    org: "FPT Software Academy · Ho Chi Minh City, Vietnam",
+    org: "FPT Software · FPT Software Academy (FSA) business unit · Ho Chi Minh City, Vietnam",
     bullets: [
       "Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.",
       "Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.",
@@ -362,7 +362,7 @@ export const achievements: Achievement[] = [
   },
   {
     id: "ivs-hackathon-2026",
-    title: "2nd Place — IVS Hackathon 2026",
+    title: "2nd Runner-up (3rd Place) — IVS Hackathon 2026",
     badge: "2nd Runner-up",
     category: "Hackathon",
     period: "Aug 2026",
@@ -370,7 +370,7 @@ export const achievements: Achievement[] = [
     team: "Nova4Test · IVS HCM",
     role: "Solo architecture & implementation of Agent Assurance engine",
     description:
-      "Awarded 2nd place for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.",
+      "Awarded 2nd Runner-up (3rd place) for independently architecting an end-to-end AI Agent Verification engine (Agent Assurance) featuring runtime evidence capture, trace-based behavioral evaluation, and governed quality gates; subsequently integrated into Omni-Agent.",
     keyContributions: [
       "Architected LiteLLM & OpenTelemetry instrumentation capturing full multi-turn execution trajectories",
       "Designed idempotent trace reconstruction pipelines keyed by trace/span identity with PostgreSQL & MinIO",
@@ -484,7 +484,20 @@ export const skillGroups = [
       "Runtime Trace Reconstruction",
       "Regression Testing",
       "Deterministic Quality Gates",
+      "Guardrails",
       "Data Integrity & Auditability"
+    ]
+  },
+  {
+    title: "Test Automation & Quality Engineering",
+    items: [
+      "Playwright",
+      "Cypress",
+      "Katalon Studio",
+      "Postman",
+      "API Testing",
+      "Regression Testing",
+      "SQL Validation"
     ]
   }
 ];
