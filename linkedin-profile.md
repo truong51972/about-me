@@ -154,17 +154,18 @@ Project entries should reinforce the current Applied AI identity. Prefer fewer, 
 
 ### Description
 
-A modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, MCP integrations, and trace-based Agent Assurance within a project-centric multi-service architecture.
+Independently architected and built a pre-production Applied AI platform combining enterprise document intelligence, grounded agent workflows, and reproducible AI-agent verification.
 
-- Designed a modular platform with a project-scoped control plane, isolated domain services, asynchronous workers, PostgreSQL, Redis, S3-compatible object storage, and containerized deployment.
-- Built a versioned Knowledge Builder covering source ingestion, Docling parsing/OCR, chunking, Qdrant indexing, citation-grounded retrieval, and MCP-based knowledge access.
-- Implemented LangGraph-based agent workflows with prompt and context engineering, tool calling, MCP integration, and SSE streaming for multi-turn execution over project knowledge.
-- Integrated Agent Assurance capabilities for runtime evidence capture, behavioral evaluation, regression, and quality gating.
-- Current maturity: active development / pre-production.
+- Designed project-scoped FastAPI services with independent domain persistence, authorization, and recoverable asynchronous processing.
+- Built versioned Docling/OCR workflows, PostgreSQL + Qdrant hybrid retrieval, and MCP knowledge access, preserving usable document versions when derived indexing fails.
+- Orchestrated LangGraph research agents with run-scoped citations, immutable answer evidence, and input/context/output guardrails.
+- Integrated Agent Assurance with versioned executable Scenarios, preflight-qualified Runs, OpenTelemetry evidence, and deterministic evaluation gates.
+- Improved Steps to First Value (STFV) for the exploratory first test: 33 required actions in the full-authoring baseline versus 6 for own API or 4 for demo, in a controlled Playwright fixture. This does not measure production activation, user time, or conversion.
+- Current maturity: active development / pre-production. Complete Release Assurance decisions and evidence packs are not yet baseline capabilities.
 
 ### Skills
 
-LangGraph, FastAPI, Django/DRF, RAG, Qdrant, MCP, Prompt Engineering, Context Engineering, SSE, Celery, PostgreSQL, Redis, OpenTelemetry, Docker.
+LangGraph, FastAPI, Hybrid Retrieval, PostgreSQL, Qdrant, MCP, Guardrails, OpenTelemetry, LiteLLM, Celery, React, Playwright, Docker.
 
 ### Replace old content
 

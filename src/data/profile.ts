@@ -44,16 +44,16 @@ export const cases: ProjectCase[] = [
     slug: "omni-agent",
     label: "Flagship AI Platform",
     title: "Omni-Agent — AI Platform",
-    subtitle: "Platform for building knowledge bases, running AI agents, and evaluating agent behavior",
+    subtitle: "Enterprise knowledge engineering, grounded agents, and auditable AI evaluation",
     summary:
-      "An independently developed pre-production Applied AI platform for versioned document knowledge, retrieval-grounded agent workflows, and auditable evaluation within a project-scoped architecture.",
+      "An independently developed pre-production Applied AI platform combining versioned document knowledge, citation-grounded agent workflows, and reproducible AI-agent assurance.",
     group: "featured-systems",
     visualTier: "flagship",
     homepageFeatured: true,
     period: "2026–Present",
     role: "Solo solution architecture and implementation",
     outcome:
-      "Independently implemented a modular platform with domain ownership, versioned knowledge lifecycles, asynchronous processing, and integrated Agent Assurance capabilities. The earlier standalone assurance solution earned 2nd Runner-up (3rd place) at IVS Hackathon 2026.",
+      "Designed a modular AI platform with independent domain ownership and recoverable processing. A controlled first-test Playwright fixture reduced required actions from 33 to 6 for an own API (4 for demo), without removing preflight or informed consent; this is not production activation or time-savings evidence. The earlier standalone Agent Assurance solution earned 2nd Runner-up (3rd place) at IVS Hackathon 2026.",
     tags: [
       "LangGraph",
       "FastAPI",
@@ -61,18 +61,21 @@ export const cases: ProjectCase[] = [
       "OpenTelemetry (OTel)",
       "LLM-as-a-Judge",
       "Qdrant",
-      "Docling",
-      "Django/DRF",
-      "Celery",
       "PostgreSQL",
-      "Redis",
+      "Hybrid Retrieval",
+      "Docling",
+      "Guardrails",
+      "Celery",
+      "React",
+      "Playwright",
       "Docker"
     ],
     highlights: [
-      "Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.",
-      "Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.",
-      "Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.",
-      "Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage."
+      "Solution Architecture: Designed project-scoped FastAPI services with independent persistence, authorization boundaries, and durable asynchronous processing across knowledge and assurance workloads.",
+      "Knowledge Engineering: Built versioned Docling/OCR processing with PostgreSQL full-text and Qdrant hybrid retrieval; recoverable index operations preserve usable document versions.",
+      "Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP tools, run-scoped citations, immutable answer evidence, and input/context/output guardrails.",
+      "Agent Assurance: Designed versioned executable Scenarios, qualified Run snapshots, OpenTelemetry evidence capture, and deterministic quality gates for repeatable AI-agent evaluation.",
+      "Product Engineering: Simplified the First Run First workflow into Connect → Define Test → Run & Result, with controlled Playwright fixture action counts of 33 before vs. 6 for own API or 4 for demo after."
     ]
   },
   {

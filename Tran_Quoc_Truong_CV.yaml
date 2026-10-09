@@ -60,21 +60,23 @@ cv:
     achievements:
       - name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
         date: 2026-09
-        summary: Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.
+        summary: Recognized for Flezi Polaris, an Agent Assurance solution combining execution traceability, behavioral evaluation, and auditable quality gates.
       - name: 2nd Runner-up (3rd Place) — IVS Hackathon 2026
         date: 2026-08
-        summary: 2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
+        summary: Independently architected the Agent Assurance engine later integrated into Omni-Agent, enabling trace-based evaluation and quality verification.
       - name: Second Prize — Autonomous Driving Research Paper Competition
         date: 2024-04
-        summary: Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.
+        summary: Sole-authored the project, from dataset labeling and YOLOv8 training to lane segmentation and PID steering control.
 
     featured_projects:
       - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
-        summary: Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.
+        summary: Independently architected and built a pre-production Applied AI platform for enterprise document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.
         highlights:
-          - 'Solution Architecture: Defined project-scoped service boundaries, a Django/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.'
-          - 'Knowledge Builder: Implemented Docling parsing/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.'
-          - 'Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL/S3-compatible artifact persistence.'
+          - 'Solution Architecture: Designed project-scoped FastAPI services with independent data ownership, authorization boundaries, and durable asynchronous workflows.'
+          - 'Knowledge Engineering: Built versioned Docling/OCR processing and PostgreSQL–Qdrant hybrid retrieval, preserving usable documents through recoverable indexing failures.'
+          - 'Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped citations, immutable answer evidence, and input/context/output guardrails.'
+          - 'Agent Assurance: Built versioned Scenarios and qualified Run snapshots, linking OpenTelemetry evidence with deterministic quality gates for reproducible agent evaluation.'
+          - 'Product Engineering: Reduced first-test STFV from 33 to 6 actions (4 for demo) through guided onboarding in a controlled Playwright fixture, preserving preflight checks and informed consent.'
 
       - name: APIT — Agent Programmatic Integration Testing
         summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
@@ -123,6 +125,8 @@ design:
     space_below_name: 0.45cm
     space_below_headline: 0.35cm
     space_below_connections: 0.3cm
+    connections:
+      space_between_connections: 1.2cm
   section_titles:
     space_above: 0.38cm
     space_below: 0.2cm

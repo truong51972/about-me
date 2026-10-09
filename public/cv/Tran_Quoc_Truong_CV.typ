@@ -56,7 +56,7 @@
   header-connections-show-icons: true,
   header-connections-display-urls-instead-of-usernames: false,
   header-connections-separator: "",
-  header-connections-space-between-connections: 0.5cm,
+  header-connections-space-between-connections: 1.2cm,
   section-titles-type: "with_partial_line",
   section-titles-line-thickness: 0.5pt,
   section-titles-space-above: 0.38cm,
@@ -173,7 +173,7 @@ Combines solution architecture and hands-on engineering to address enterprise kn
   [
     #strong[Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026]
 
-    #summary[Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.]
+    #summary[Recognized for Flezi Polaris, an Agent Assurance solution combining execution traceability, behavioral evaluation, and auditable quality gates.]
 
   ],
   [
@@ -186,7 +186,7 @@ Combines solution architecture and hands-on engineering to address enterprise kn
   [
     #strong[2nd Runner-up (3rd Place) — IVS Hackathon 2026]
 
-    #summary[2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.]
+    #summary[Independently architected the Agent Assurance engine later integrated into Omni-Agent, enabling trace-based evaluation and quality verification.]
 
   ],
   [
@@ -199,7 +199,7 @@ Combines solution architecture and hands-on engineering to address enterprise kn
   [
     #strong[Second Prize — Autonomous Driving Research Paper Competition]
 
-    #summary[Second Prize for sole-authored autonomous-driving research combining YOLOv8 perception, lane segmentation, and PID control.]
+    #summary[Sole-authored the project, from dataset labeling and YOLOv8 training to lane segmentation and PID steering control.]
 
   ],
   [
@@ -214,13 +214,17 @@ Combines solution architecture and hands-on engineering to address enterprise kn
   [
     #strong[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)]
 
-    #summary[Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.]
+    #summary[Independently architected and built a pre-production Applied AI platform for enterprise document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.]
 
-    - Solution Architecture: Defined project-scoped service boundaries, a Django\/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.
+    - Solution Architecture: Designed project-scoped FastAPI services with independent data ownership, authorization boundaries, and durable asynchronous workflows.
 
-    - Knowledge Builder: Implemented Docling parsing\/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.
+    - Knowledge Engineering: Built versioned Docling\/OCR processing and PostgreSQL–Qdrant hybrid retrieval, preserving usable documents through recoverable indexing failures.
 
-    - Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL\/S3-compatible artifact persistence.
+    - Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped citations, immutable answer evidence, and input\/context\/output guardrails.
+
+    - Agent Assurance: Built versioned Scenarios and qualified Run snapshots, linking OpenTelemetry evidence with deterministic quality gates for reproducible agent evaluation.
+
+    - Product Engineering: Reduced first-test STFV from 33 to 6 actions (4 for demo) through guided onboarding in a controlled Playwright fixture, preserving preflight checks and informed consent.
 
   ],
   [
