@@ -51,9 +51,9 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Overview</h2>
           <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">An Applied AI platform engineered from real operational needs.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Omni-Agent is an Applied AI platform born from solving concrete operational bottlenecks in document intelligence, retrieval, agent workflows, and AI assurance, rather than speculative or experimental use cases. Architected as a Python monorepo with clean control-plane / data-plane separation, everything is scoped to an authenticated, isolated <strong class="text-[var(--text-base)]">Project</strong> workspace. The platform pairs agentic document intelligence with behavioral verification across two flagship capabilities:</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Omni-Agent is an independently developed pre-production Applied AI platform addressing document knowledge access, verifiable agent workflows, and evidence-driven assurance. Architected as a Python monorepo with clean control-plane / data-plane separation, everything is scoped to an authenticated, isolated <strong class="text-[var(--text-base)]">Project</strong> workspace. The platform pairs agentic document intelligence with behavioral verification across two flagship capabilities:</p>
           <ul class="space-y-4 text-[var(--text-muted)] mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — document intelligence featuring Docling layout parsing and OCR, Qdrant multi-vector indexing, a Streamable HTTP Model Context Protocol (MCP) server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — document intelligence featuring Docling layout parsing and OCR, versioned document retrieval, a Streamable HTTP Model Context Protocol (MCP) server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Agent Assurance (3rd Place, IVS Hackathon 2026)</strong> — a behavioral verification and observability engine capturing GenAI execution evidence through LiteLLM and OpenTelemetry-based telemetry, designing trace reconstruction pipelines, and enforcing deterministic evaluation quality gates.</li>
           </ul>
         </section>
@@ -61,64 +61,49 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         <!-- Architecture -->
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Architecture</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Monorepo topology and strict domain boundaries.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The monorepo enforces clean dependency boundaries with independent package management per application. The Django/DRF control plane manages project workspaces, tenant boundaries, identity, and permissions, while stateless async workers and FastAPI services execute technical workloads:</p>
-          <pre class="bg-[var(--bg-subtle)] p-6 rounded-xl border border-[var(--border-subtle)] text-sm font-mono text-sky-800 dark:text-sky-300 overflow-x-auto mb-6">Omni-Agent (monorepo)
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Domain-owned AI services, not one shared application database.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The FastAPI Platform Control Plane owns project identity, membership, credentials, and gateway authorization. Knowledge Builder and Agent Assurance own their application state, migrations, execution workers, and interfaces independently. Project identifiers cross service boundaries as trusted context, not shared domain models.</p>
+          <pre class="bg-[var(--bg-subtle)] p-6 rounded-xl border border-[var(--border-subtle)] text-sm font-mono text-sky-800 dark:text-sky-300 overflow-x-auto mb-6">Omni-Agent (project-scoped monorepo)
 ├── apps/
-│   ├── oa-platform/                Django/DRF control plane, project workspaces, identity & React console
+│   ├── oa-platform/
+│   │   ├── control-plane/         FastAPI identity, projects, auth and permissions
+│   │   └── front-end/            React console and contextual product workflows
 │   ├── oa-knowledge-builder/
-│   │   ├── docling-server/         Docling layout parsing and OCR service
-│   │   ├── doc-processor/          Stateless Celery worker for Markdown chunking & snapshots
-│   │   ├── tool-server/            Streamable HTTP MCP server (port 8020) for Qdrant retrieval
-│   │   └── knowledge-chat/         LangGraph-based multi-agent runtime (port 8030)
+│   │   ├── api/                  Documents, versions, extraction and project APIs
+│   │   ├── doc-processor/        Document transformation and chunking workers
+│   │   ├── docling-server/       Document parsing and OCR runtime
+│   │   ├── tool-server/          Project-scoped hybrid retrieval and MCP tools
+│   │   └── knowledge-chat/       LangGraph agents, evidence and guarded answers
 │   └── oa-agent-assurance/
-│       ├── api/                    FastAPI backend & OTLP trace ingest endpoint (/otlp/v1/traces)
-│       ├── llm-gateway/            LiteLLM proxy with OpenTelemetry GenAI instrumentation
-│       └── worker/                 Async evaluation worker (LLM-as-a-Judge & quality gates)
-└── packages/
-    ├── oa-contracts/               Shared Pydantic transport DTOs
-    ├── oa-worker-shared/           Celery, MinIO/S3 storage, and dependency injection lifecycle
-    ├── oa-agent-assurance-contracts/
-    └── oa-agent-assurance-domain/</pre>
-
-          <h3 class="text-lg font-bold text-[var(--text-base)] mb-4">Control Plane (oa-platform) owns:</h3>
+│       ├── core/                 FastAPI, Scenarios, Runs, Trials and workers
+│       └── llm-gateway/          LiteLLM and OpenTelemetry capture integration
+└── shared infrastructure        PostgreSQL, Redis, S3/MinIO, Qdrant, Nginx</pre>
+          <h3 class="text-lg font-bold text-[var(--text-base)] mb-4">Architectural decisions</h3>
           <ul class="space-y-4 text-[var(--text-muted)] mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Project tenancy, identity, role-based permissions, and API credential management</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Document lifecycles and committed-text snapshot versioning with UUID v7 keys</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">Generic async job dispatching across decoupled Celery task queues</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500">S3/MinIO artifact metadata and presigned URL access control</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Domain ownership</strong> — isolate project administration, canonical knowledge data, and assurance evidence under the services that own their invariants.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Durable processing</strong> — use transactional outbox commands, stable job identities, and retry/reconciliation to recover asynchronous operations without corrupting canonical results.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:w-1.5 before:bg-sky-500"><strong class="text-[var(--text-base)]">Trust boundaries</strong> — authorize project-scoped reads before exposing retrieval evidence; keep credentials out of captured execution artifacts.</li>
           </ul>
         </section>
 
         <!-- Knowledge Builder -->
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capability 1: Knowledge Builder</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Document processing, Streamable HTTP MCP, and LangGraph-based multi-agent runtime.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Knowledge Builder solves unstructured technical document processing and conversational grounded retrieval through three integrated services:</p>
-
-          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">1. Pipeline: Ingestion → Chunking → Vector Indexing</h4>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Uploaded technical specifications, PDFs, and manuals are parsed by a dedicated Docling server for layout detection, table structure extraction, and OCR. A stateless Celery worker (<code>doc-processor</code>) creates reproducible Markdown chunk snapshots stored in S3-compatible object storage (MinIO) and generates multi-vector embeddings indexed in Qdrant collections scoped by project.</p>
-
-          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">2. Streamable HTTP Model Context Protocol (MCP) Server</h4>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The <code>tool-server</code> service exposes standard Streamable HTTP MCP on port 8020. This allows external coding agents (Claude, Cline, Cursor, Antigravity) and internal workflows to discover and execute project-scoped document retrieval tools with explicit tenant isolation and vector search filtering.</p>
-
-          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">3. LangGraph-Based Multi-Agent Orchestration</h4>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The conversational runtime (<code>knowledge-chat</code> on port 8030) implements a stateful LangGraph workflow running over MongoDB session persistence, coordinating specialized agent roles:</p>
-          <ul class="space-y-3 text-[var(--text-muted)] mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">OrchestratorAgent</strong> — routes incoming user queries between clarification, general chat, or deep research paths.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Research & Navigation Subgraph</strong> — <code>CorpusNavigatorAgent</code>, <code>MapSelectorAgent</code>, <code>ExpanderAgent</code>, and <code>ResearchAgent</code> interact with MCP tools to locate relevant documents and extract precise evidence snippets.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">EvidenceCuratorAgent & CitationRegistry</strong> — deduplicates evidence, validates source provenance, and structures citations into an auditable registry.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">AnswerAgent & VerifierAgent</strong> — generates grounded answers with structured blocks; the Verifier agent cross-checks claims against cited evidence to prevent hallucinations before emitting the final response.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Streaming Events</strong> — streams real-time text deltas, thinking notifications, activity updates, and final grounded blocks over SSE.</li>
-          </ul>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Usable knowledge survives downstream indexing failures.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Enterprise documents are ingested through versioned workflows. Docling provides PDF layout extraction/OCR, while dedicated workers perform deterministic, tokenizer-aware chunking. Canonical READY content is persisted separately from derived map, summary and vector indexes, so a failed indexing attempt does not erase the last usable document version.</p>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">Hybrid retrieval with evidence identity</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Indexed PostgreSQL lexical search is fused with dense Qdrant candidates through reciprocal rank fusion (RRF). The project-scoped MCP tool server hydrates candidates against canonical document/version state before exposing retrieval results; stale or unauthorized vector points cannot become answer evidence.</p>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">Agent orchestration and verifiable answers</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">A LangGraph workflow routes questions to general, clarification, or research paths. Research uses dedicated corpus navigation, section selection, expansion, and evidence curation tools. The answer cites bounded, run-specific evidence; completed answers freeze their source snapshots so historical verification does not silently change when the source corpus evolves.</p>
+          <h4 class="text-lg font-bold text-[var(--text-base)] mb-3">Guardrails across trust boundaries</h4>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Input, untrusted context, and output checks complement a configurable self-hosted LiteLLM provider hook. Model-generated answer text is checked before public SSE publication; guardrails are defense-in-depth protections, not a guarantee against all prompt injection or leakage variants.</p>
         </section>
 
         <!-- Agent Assurance -->
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capability 2: Agent Assurance</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Runtime trace capture, reconstruction, and deterministic evaluation gates.</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-6">Awarded <strong class="text-[var(--text-base)]">2nd Runner-up (3rd Place) at IVS Hackathon 2026</strong>, Agent Assurance applies software testing discipline to agentic systems across the end-to-end assurance lifecycle (<code>Intake → Strategy → Requirements → Test Design &amp; Oracle Definition → Measurement Qualification → Validation → Reporting → Re-assurance</code>). Unlike traditional tests that only assert final text outputs, Agent Assurance audits the decision trajectory:</p>
-
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Reproducible agent testing from executable contracts to evidence-based gates.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The standalone Agent Assurance engine received <strong class="text-[var(--text-base)]">2nd Runner-up (3rd Place) at IVS Hackathon 2026</strong> before being integrated into Omni-Agent. It connects versioned requirements and executable Scenario contracts to qualified Runs, Trials, captured evidence and explicit evaluation outcomes.</p>
           {/* Real Hackathon Proof Imagery */}
           <div class="my-8 grid gap-4 sm:grid-cols-2">
             <figure class="overflow-hidden rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-subtle)]">
@@ -149,39 +134,46 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
             </figure>
           </div>
 
+
           <div class="space-y-6 mb-8">
             <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
-              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">1. OpenTelemetry-Based Trace Capture</h4>
-              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Agent interactions pass through a LiteLLM proxy boundary instrumented with OpenTelemetry GenAI semantic conventions (<code>gen_ai.*</code> / <code>genai.*</code>). Traces are exported via OTLP to a dedicated FastAPI endpoint (<code>/otlp/v1/traces</code>) with idempotency enforcement on <code>(trace_id, span_id)</code> to prevent duplicate evidence collection.</p>
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">1. Versioned assurance and qualified execution</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Each published Scenario freezes its SUT/OpenAPI targets, request/verification Flow, evaluation policy and published assurance references. Worker-executed preflight qualifies a Run and freezes the exact Scenario versions and capture policy; Trials execute that immutable basis.</p>
             </div>
-
             <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
-              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">2. Trace Reconstruction</h4>
-              <p class="text-[var(--text-muted)] text-sm leading-relaxed">The <code>project_evidence</code> pipeline reconstructs raw OTel spans into chronological, multi-turn execution trajectories. It normalizes system instructions, user prompts, assistant completions, tool calls, tool results, model parameters, token usages, and span latencies into immutable evidence packages.</p>
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">2. Runtime evidence and agent-aware reconstruction</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">HTTP response capture and optional LiteLLM/OpenTelemetry OTLP ingestion provide correlated execution evidence. Idempotent records and AgentRun-aware timelines support investigation across an agent's behavior, not merely its final answer.</p>
             </div>
-
             <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
-              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">3. Multi-Stage Evaluation & Security Governance</h4>
-              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Runs diagnostic evaluation contracts across behavioral dimensions covering context, tool use, trajectory, response quality, security (prompt injection testing), privacy (data leakage evaluation), and safety. Multi-agent evaluation roles (Planner, Judge, Critic, Meta-Judge) prevent hallucinated scores and judge bias.</p>
-            </div>
-
-            <div class="surface-panel p-6 rounded-xl border border-[var(--border-subtle)]">
-              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">4. Deterministic Quality Gates & Archival Casefiles</h4>
-              <p class="text-[var(--text-muted)] text-sm leading-relaxed">A strict "No Average Hiding" policy evaluates percentile thresholds (P10/P35/P50) and critical blockers. A prompt injection or malformed tool call immediately triggers a deterministic <strong class="text-[var(--text-base)]">BLOCKED</strong> or <strong class="text-[var(--text-base)]">FAIL</strong> verdict. All judgments, traces, and metrics are preserved in an archival "Assurance Casefile" evidence ledger with immutable report snapshots for regression tracking.</p>
+              <h4 class="text-lg font-bold text-[var(--text-base)] mb-2">3. Quality gates with explicit uncertainty</h4>
+              <p class="text-[var(--text-muted)] text-sm leading-relaxed">Deterministic outcome assertions and configured semantic gates evaluate available evidence with distinct pass, fail and inconclusive paths. Missing evidence is never silently interpreted as a passing check. Immutable Candidate identity can be attached to Runs; complete release-decision governance remains future work.</p>
             </div>
           </div>
+        </section>
+
+        <!-- First Run First -->
+        <section>
+          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Product engineering: First Run First</h2>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Reducing Steps to First Value without weakening validation.</h3>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-6">The original first-test journey exposed technical authoring resources before users could inspect a result. A guided Connect → Define Test → Run &amp; Result workspace now composes the existing Scenario publication, smoke preflight, Run/Trial execution, and evidence view. Advanced goals, profiles and Suites remain available contextually, but are not prerequisites for an exploratory first test.</p>
+          <div class="grid gap-4 sm:grid-cols-3 mb-6">
+            <div class="surface-panel rounded-xl p-5"><p class="text-sm text-[var(--text-muted)]">Full-authoring baseline</p><p class="text-3xl font-semibold text-[var(--text-base)] mt-2">33 actions</p></div>
+            <div class="surface-panel rounded-xl p-5"><p class="text-sm text-[var(--text-muted)]">Own API quick test</p><p class="text-3xl font-semibold text-[var(--text-base)] mt-2">6 actions</p></div>
+            <div class="surface-panel rounded-xl p-5"><p class="text-sm text-[var(--text-muted)]">Configured demo quick test</p><p class="text-3xl font-semibold text-[var(--text-base)] mt-2">4 actions</p></div>
+          </div>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4">The action counts come from a controlled, credential-free Playwright fixture starting at an already selected Project and using a fixed OpenAPI POST operation. Automatic backend work does not count as user actions; required SUT-call consent and preflight checks are preserved. Repeat execution requires one intentional action and a fresh preflight.</p>
+          <p class="text-sm text-[var(--text-muted)] leading-relaxed">These are deterministic usability-regression measurements, <strong class="text-[var(--text-base)]">not production conversion, elapsed-time, or adoption metrics</strong>. <a class="text-sky-700 underline dark:text-sky-400" href="https://github.com/truong51972/Omni-Agent/blob/main/.documents/testing-acceptance.md" target="_blank" rel="noreferrer">Measurement protocol</a>.</p>
         </section>
 
         <!-- Platform foundations -->
         <section>
           <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Platform foundations</h2>
-          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Idempotent async orchestration and reliable data contracts.</h3>
+          <h3 class="text-2xl font-bold text-[var(--text-base)] mb-6">Consistency, recovery, and operational trust.</h3>
           <ul class="space-y-4 text-[var(--text-muted)] mb-6">
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Reliability & Data Integrity</strong> — designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Typed Transport Contracts</strong> — worker commands and event envelopes live in <code>oa-contracts</code> as framework-free Pydantic DTOs, decoupling Celery tasks from application business logic.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Worker DI & Runtime Helpers</strong> — <code>oa-worker-shared</code> standardizes Celery connection management, S3-compatible storage abstractions, and dependency injection lifecycles across data-plane executors.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Network Segmentation</strong> — Compose topologies enforce private internal planes for PostgreSQL, Redis, MongoDB, and Qdrant; external access is restricted to Nginx and Cloudflare tunnel routes.</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Storage Boundary & Security</strong> — raw MinIO/S3 object keys are concealed behind internal aliases; client browsers interact exclusively through short-lived presigned URLs.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-sky-500"><strong class="text-[var(--text-base)]">Canonical vs. derived state</strong> — document content and version eligibility are authoritative in PostgreSQL; derived Qdrant indexes can be retried and reconciled without hiding READY content.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-sky-500"><strong class="text-[var(--text-base)]">Durable workers</strong> — transactional outbox dispatch, scoped job identity, and idempotent callbacks prevent duplicate or stale results from overwriting accepted state.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-sky-500"><strong class="text-[var(--text-base)]">Authorization and evidence</strong> — protect project-scoped retrieval and agent traces at their owning API/gateway boundaries, keeping provider credentials separate from persisted evidence.</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:bg-sky-500"><strong class="text-[var(--text-base)]">Deployment boundaries</strong> — compose-managed private networks keep domain databases and caches separate from application and public ingress planes.</li>
           </ul>
         </section>
 
@@ -192,9 +184,9 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
           <ul class="space-y-4 text-[var(--text-muted)] mb-6">
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Agent Orchestration & AI</strong> — LangGraph, LangChain, Model Context Protocol (MCP), LiteLLM, Qdrant Vector DB, Ollama</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Observability & Evaluation</strong> — OpenTelemetry (OTel), OTLP Ingest, LLM-as-a-Judge, Langfuse, Deterministic Quality Gates</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Backend & Workers</strong> — Python, FastAPI, Django/DRF, Celery, Redis, PostgreSQL, MongoDB, Pydantic, SQLAlchemy</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Backend & Workers</strong> — Python, FastAPI, Celery, Redis, PostgreSQL, MongoDB, Pydantic, SQLAlchemy</li>
             <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Documents & Storage</strong> — Docling OCR & Layout Engine, MinIO S3 Object Storage</li>
-            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Frontend & Tooling</strong> — React 19, TypeScript, Vite, Tailwind CSS, Docker, Docker Compose, Nginx</li>
+            <li class="relative pl-6 before:content-[''] before:absolute before:left-0 before:top-2.5 before:w-1.5 before:h-1.5 before:rounded-full before:bg-sky-500"><strong class="text-[var(--text-base)]">Frontend & Tooling</strong> — React 19, Vite, Tailwind CSS, Playwright, Docker, Docker Compose, Nginx</li>
           </ul>
         </section>
 
@@ -217,9 +209,9 @@ const item = cases.find((caseItem) => caseItem.slug === "omni-agent")!;
         </div>
         <div class="evidence-card">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Capabilities</h3>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — Docling layout parsing/OCR, Markdown chunking, Streamable HTTP MCP server, and LangGraph-based multi-agent runtime with citation-grounded RAG</p>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Agent Assurance</strong> — OpenTelemetry trace capture, GenAI trajectory reconstruction, behavioral evaluation across key quality dimensions, and deterministic quality gates (3rd Place, IVS Hackathon 2026)</p>
-          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Platform Control Plane</strong> — Django/DRF, FastAPI, Celery async workers, Redis, PostgreSQL, and MinIO storage</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Knowledge Builder</strong> — Docling/OCR, recoverable versioned processing, PostgreSQL–Qdrant hybrid retrieval, and LangGraph agents with frozen answer evidence</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Agent Assurance</strong> — versioned Scenarios and qualified Runs, HTTP/OTLP evidence, explicit quality gates, and the measured First Run First workflow</p>
+          <p class="text-[var(--text-muted)] leading-relaxed mb-4"><strong class="text-[var(--text-base)]">Platform Control Plane</strong> — FastAPI project identity and authorization, with independent Knowledge Builder and Agent Assurance services, persistence and workers</p>
         </div>
         <div class="evidence-card">
           <h3 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-4">Shape</h3>
