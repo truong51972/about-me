@@ -90,13 +90,17 @@ Second Prize for sole-authored autonomous-driving research combining YOLOv8 perc
 # Featured Projects
 ## **Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)**
 
-Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.
+Independently architected and built a pre-production Applied AI platform for enterprise document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.
 
-- Solution Architecture: Defined project-scoped service boundaries, a Django/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.
+- Solution Architecture: Designed project-scoped FastAPI services with independent persistence, authorization boundaries, and durable asynchronous processing across knowledge and assurance workloads.
 
-- Knowledge Builder: Implemented Docling parsing/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.
+- Knowledge Engineering: Built versioned Docling/OCR processing and PostgreSQL–Qdrant hybrid retrieval, preserving usable documents through recoverable indexing failures.
 
-- Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL/S3-compatible artifact persistence.
+- Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped citations, immutable answer evidence, and input/context/output guardrails.
+
+- Agent Assurance: Designed versioned executable Scenarios, qualified Run snapshots, OpenTelemetry evidence capture, and deterministic quality gates for repeatable AI-agent evaluation.
+
+- Product Engineering: Streamlined first-test onboarding into Connect → Define Test → Run & Result, reducing required actions from 33 to 6 for a test API (4 for demo) in a controlled Playwright fixture while preserving preflight and informed consent.
 
 
 
