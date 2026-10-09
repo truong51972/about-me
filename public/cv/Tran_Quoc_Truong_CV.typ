@@ -15,7 +15,7 @@
   page-left-margin: 1.35cm,
   page-right-margin: 1.35cm,
   page-show-footer: true,
-  page-show-top-note: true,
+  page-show-top-note: false,
   colors-body: rgb(0, 0, 0),
   colors-name: rgb(0, 79, 144),
   colors-headline: rgb(0, 79, 144),
@@ -25,7 +25,7 @@
   colors-footer: rgb(128, 128, 128),
   colors-top-note: rgb(128, 128, 128),
   typography-line-spacing: 0.58em,
-  typography-alignment: "justified",
+  typography-alignment: "left",
   typography-date-and-location-column-alignment: right,
   typography-font-family-body: "Source Sans 3",
   typography-font-family-name: "Source Sans 3",
@@ -81,14 +81,14 @@
   date: datetime(
     year: 2026,
     month: 10,
-    day: 8,
+    day: 9,
   ),
 )
 
 
 = Tran Quoc Truong
 
-  #headline([Product Engineer · Applied AI · Backend Systems])
+  #headline([Applied AI Engineer · AI Agents & RAG · Backend Systems])
 
 #connections(
   [#connection-with-icon("location-dot")[Ho Chi Minh City, Vietnam]],
@@ -101,9 +101,9 @@
 
 == Summary
 
-Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
+Applied AI Engineer focused on translating business and operational challenges into practical, reliable AI solutions.
 
-Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.
+Combines solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, with end-to-end ownership from problem framing and architectural decisions to delivery and quality validation.
 
 == Technical Skills
 
@@ -111,9 +111,11 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 #strong[ML, Fine-Tuning & Model Serving:] PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA\/QLoRA, vLLM, Synthetic Data Generation
 
-#strong[LLM Evaluation & Observability:] OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Regression Testing, Deterministic Quality Gates, Langfuse
+#strong[LLM Evaluation & Reliability:] OpenTelemetry, Runtime Trace Reconstruction, LLM-as-a-Judge, Quality Gates, Guardrails, Langfuse
 
 #strong[Backend Engineering:] Python, FastAPI, Django\/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE \/ Streaming APIs
+
+#strong[Test Automation & Quality Engineering:] Playwright, Cypress, Katalon Studio, Postman, API Testing, Regression Testing, SQL Validation
 
 #strong[Infrastructure & Delivery:] Docker, Docker Compose, RunPod, Nginx, MinIO, CI\/CD, Linux
 
@@ -121,13 +123,13 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 #regular-entry(
   [
-    #strong[FPT Software], Applied AI Engineer & Automation Tester
+    #strong[FPT Software], Applied AI Engineer & Automation Tester (IVS)
 
-    - IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.
+    - IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.
 
-    - Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.
+    - Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.
 
-    - Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by \~70\%.
+    - Banking Automation: Reduced manual regression effort by \~70\% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation.
 
   ],
   [
@@ -144,7 +146,7 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 #regular-entry(
   [
-    #strong[FPT Software Academy], Full-Stack Developer Intern
+    #strong[FPT Software], Full-Stack Developer Intern (FSA)
 
     - Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
 
@@ -171,7 +173,7 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
   [
     #strong[Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026]
 
-    #summary[Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.]
+    #summary[Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.]
 
   ],
   [
@@ -182,9 +184,9 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
 #regular-entry(
   [
-    #strong[2nd Place — IVS Hackathon 2026]
+    #strong[2nd Runner-up (3rd Place) — IVS Hackathon 2026]
 
-    #summary[2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.]
+    #summary[2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.]
 
   ],
   [
@@ -212,15 +214,13 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
   [
     #strong[Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)]
 
-    #summary[An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.]
+    #summary[Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.]
 
-    - Platform Architecture: Engineered a modular monorepo featuring a Django\/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.
+    - Solution Architecture: Defined project-scoped service boundaries, a Django\/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.
 
-    - Knowledge Builder: Built document processing pipeline with Docling layout parsing\/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.
+    - Knowledge Builder: Implemented Docling parsing\/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.
 
-    - Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.
-
-    - Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace\/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.
+    - Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL\/S3-compatible artifact persistence.
 
   ],
   [
@@ -252,11 +252,9 @@ Designs end-to-end solutions across agentic workflows, retrieval, model adaptati
 
     #summary[End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.]
 
-    - Built product semantic search using Milvus, cosine similarity, embeddings, and dynamic category\/price filters.
+    - Built filtered semantic product retrieval with Milvus and conversational consultation through LangGraph\/LangChain.
 
-    - Implemented multi-turn conversational agent with LangGraph and LangChain for context-aware product consultation.
-
-    - Containerized multi-service architecture with FastAPI, PostgreSQL, Redis, Milvus, and Docker Compose.
+    - Delivered a Docker-based prototype integrating FastAPI, PostgreSQL, Redis, and vector search.
 
   ],
   [

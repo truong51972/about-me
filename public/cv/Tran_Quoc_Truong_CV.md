@@ -8,23 +8,25 @@
 
 
 # Summary
-Product Engineer & Applied AI Engineer translating real business and operational problems into reliable AI systems.
+Applied AI Engineer focused on translating business and operational challenges into practical, reliable AI solutions.
 
-Designs end-to-end solutions across agentic workflows, retrieval, model adaptation, backend architecture, and evaluation, with hands-on ownership from system design through delivery.
+Combines solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, with end-to-end ownership from problem framing and architectural decisions to delivery and quality validation.
 
 # Technical Skills
 **AI & Agentic Systems:** RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Docling
 
 **ML, Fine-Tuning & Model Serving:** PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
 
-**LLM Evaluation & Observability:** OpenTelemetry (OTel), Runtime Trace Reconstruction, LLM-as-a-Judge, Regression Testing, Deterministic Quality Gates, Langfuse
+**LLM Evaluation & Reliability:** OpenTelemetry, Runtime Trace Reconstruction, LLM-as-a-Judge, Quality Gates, Guardrails, Langfuse
 
 **Backend Engineering:** Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
+
+**Test Automation & Quality Engineering:** Playwright, Cypress, Katalon Studio, Postman, API Testing, Regression Testing, SQL Validation
 
 **Infrastructure & Delivery:** Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
 
 # Experience
-## **FPT Software**, Applied AI Engineer & Automation Tester
+## **FPT Software**, Applied AI Engineer & Automation Tester (IVS)
 
 Ho Chi Minh City, Vietnam
 
@@ -34,15 +36,15 @@ Dec 2024 – present
 
 1 year 11 months
 
-- IQP (Code Intelligence & Quality Retrieval): Designed multi-repository code intelligence combining hybrid retrieval, Code Graphs, and MCP to provide traceable engineering context for AI-assisted quality analysis.
+- IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.
 
-- Agent Assurance: Translated AI reliability requirements into an assurance engine for trace-based behavioral evaluation, reproducible regression, and governed quality gates.
+- Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.
 
-- Banking Automation & Quality Operations: Engineered reusable cross-platform test automation and 1,500+ lines of SQL validation across banking and payment systems, cutting manual regression effort by ~70%.
+- Banking Automation: Reduced manual regression effort by ~70% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation.
 
 
 
-## **FPT Software Academy**, Full-Stack Developer Intern
+## **FPT Software**, Full-Stack Developer Intern (FSA)
 
 Ho Chi Minh City, Vietnam
 
@@ -65,15 +67,15 @@ Sept 2024 – Dec 2024
 
 Sept 2026
 
-Golden Solution Prize for Flezi Polaris, an Agent Assurance solution for trace-based AI evaluation and governed quality verification.
+Golden Solution Prize at FPT Software's IVS Solution Day for Flezi Polaris (Agent Assurance), focused on evidence-backed AI evaluation and quality verification.
 
 
 
-## **2nd Place — IVS Hackathon 2026**
+## **2nd Runner-up (3rd Place) — IVS Hackathon 2026**
 
 Aug 2026
 
-2nd place for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
+2nd Runner-up (3rd place) at FPT Software's IVS Hackathon for independently architecting the Agent Assurance engine later integrated into Omni-Agent.
 
 
 
@@ -88,15 +90,13 @@ Second Prize for sole-authored autonomous-driving research combining YOLOv8 perc
 # Featured Projects
 ## **Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)**
 
-An Applied AI platform engineered from real operational needs, unifying versioned document RAG, LangGraph multi-agent orchestration, and integrated agent verification within a modular multi-service architecture.
+Independently designed and built a pre-production Applied AI platform for versioned document knowledge, grounded agent workflows, and auditable agent evaluation.
 
-- Platform Architecture: Engineered a modular monorepo featuring a Django/DRF control plane for project tenancy, identity, and permissions, backed by decoupled, stateless Celery workers for asynchronous processing workloads.
+- Solution Architecture: Defined project-scoped service boundaries, a Django/DRF control plane, and asynchronous processing contracts to connect knowledge and assurance workflows.
 
-- Knowledge Builder: Built document processing pipeline with Docling layout parsing/OCR, snapshot chunking, Qdrant vector indexing, a Streamable HTTP MCP tool server, and a LangGraph-based multi-agent runtime with citation-grounded RAG.
+- Knowledge Builder: Implemented Docling parsing/OCR, versioned chunking, Qdrant retrieval, MCP knowledge access, and LangGraph-based citation-grounded chat.
 
-- Agent Assurance Integration: Integrated execution evidence, regression evaluation, and governed quality gates as a native platform capability.
-
-- Reliability & Data Integrity: Designed idempotent evidence ingestion keyed by trace/span identity, with PostgreSQL-backed execution metadata and S3-compatible artifact storage.
+- Reliability: Integrated Agent Assurance evidence capture and quality gates, with idempotent trace ingestion and PostgreSQL/S3-compatible artifact persistence.
 
 
 
@@ -118,11 +118,9 @@ AI-assisted API testing framework generating structured test scenarios from API 
 
 End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
 
-- Built product semantic search using Milvus, cosine similarity, embeddings, and dynamic category/price filters.
+- Built filtered semantic product retrieval with Milvus and conversational consultation through LangGraph/LangChain.
 
-- Implemented multi-turn conversational agent with LangGraph and LangChain for context-aware product consultation.
-
-- Containerized multi-service architecture with FastAPI, PostgreSQL, Redis, Milvus, and Docker Compose.
+- Delivered a Docker-based prototype integrating FastAPI, PostgreSQL, Redis, and vector search.
 
 
 
