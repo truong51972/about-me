@@ -1,0 +1,45 @@
+filename: Tran_Quoc_Truong_AI_Engineer
+name: AI Engineer
+description: Machine Learning · Computer Vision · Model Engineering
+headline: AI Engineer — Machine Learning & Computer Vision
+summary:
+- AI Engineer developing and evaluating models for visual perception and structured API test generation,
+  with an emphasis on reproducible experiments and interpretable results.
+- Owns data preparation, model adaptation, and inference integration, combining controlled evaluation
+  with hands-on backend delivery.
+skills:
+- vision
+- models
+- evaluation
+- backend
+- delivery
+experience:
+- id: ivs
+  highlights:
+  - bullet-1
+  - bullet-2
+  - bullet-3
+- id: fsa
+  highlights:
+  - bullet-2
+  - bullet-1
+  - bullet-3
+projects:
+- id: vehicle-detection
+  highlights:
+  - protocol
+  - experiments
+  - analysis
+- id: apit
+  highlights:
+  - bullet-2
+  - bullet-3
+  - bullet-4
+- id: self-driving
+  highlights:
+  - perception
+  - control
+achievements:
+- research
+- solution-day
+- hackathon

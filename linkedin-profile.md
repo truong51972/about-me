@@ -40,7 +40,7 @@ Applied AI Engineer focused on translating business and operational challenges i
 
 I combine solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, from problem framing and architectural decisions through delivery and quality validation.
 
-At FPT Software since September 2024 (including an internship in the FPT Software Academy business unit), my work spans enterprise code intelligence through hybrid retrieval and MCP integration, Agent Assurance through LiteLLM/OpenTelemetry evidence capture, and banking test automation. Reusable API, database, and cross-platform validation reduced manual regression effort by approximately 70%.
+At FPT Software since September 2024 (including an internship in the FPT Software Academy business unit), my work spans enterprise code intelligence through hybrid retrieval and MCP integration, Agent Assurance through LiteLLM/OpenTelemetry evidence capture, and banking test automation. Reusable API, database, and cross-platform validation supports repeatable regression checks.
 
 Independently, I develop Omni-Agent, a modular Applied AI platform combining versioned document knowledge pipelines, agent runtimes, and evaluation. I also built APIT's fine-tuning and serving workflow using Unsloth/PEFT, RunPod/vLLM, and hybrid evaluation. Agent Assurance received 2nd Runner-up (3rd place) at IVS Hackathon 2026, and Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 
@@ -66,7 +66,7 @@ Use **FPT Software** as the employer for both roles (continuous tenure since Sep
 - **IQP — Code Intelligence & Retrieval:** Designed multi-repository semantic, lexical, and code-graph retrieval to provide traceable implementation and testing context through MCP-enabled AI workflows.
 - **Agent Assurance / Flezi Polaris — AI Evaluation Infrastructure:** Architected trace-based evaluation reconstructing agent execution evidence against versioned requirements for auditable regression and quality-gate decisions. Flezi Polaris later received the Golden Solution Prize (1st place) at IVS Solution Day 2.0 2026.
 - **Automation & Delivery Engineering:** Developed and maintained automated validation workflows across API, database, web, and mobile layers; integrated automated execution into GitLab and Azure DevOps CI pipelines for repeatable regression and delivery workflows.
-- **Banking Systems Verification:** Built reusable cross-platform automation and SQL-based validation across banking and payment systems, reducing manual regression effort by approximately 70%. An omnichannel automation proof of concept contributed to approximately 20 person-months of follow-on delivery work.
+- **Banking Systems Verification:** Built reusable cross-platform automation and SQL-based validation across banking and payment systems, including an omnichannel proof of concept across Web, iOS, and Android.
 
 ### Skills to associate with this experience
 
@@ -600,7 +600,7 @@ When applying this document to LinkedIn:
 - [ ] Add IVS Hackathon 2026 award.
 - [ ] Remove speculative business-impact percentages from prototype projects.
 - [ ] Remove stale `60% accuracy` claim from the self-driving project.
-- [ ] Keep measured/defensible impact: ~70% manual-regression reduction, ~20 person-months follow-on delivery, APIT macro-F1 0.655, +41.5% relative improvement, self-driving 125.8s / 100% score.
+- [ ] Keep source-backed impact: APIT test macro-F1 0.655 and +41.5% relative improvement over fine-tuned Llama-3.2-3B. Omit banking effort/scope figures until corroborated; keep simulation results explicitly scoped to simulation.
 - [ ] Add vLLM and pgvector when LinkedIn provides useful standardized skill labels; otherwise retain them in project/About evidence.
 - [ ] Keep Codex, Claude Code, and GitHub Copilot as secondary evidence; do not turn coding-agent experience into a long tool list.
 - [ ] Feature the public portfolio and public evidence rather than private repository URLs.

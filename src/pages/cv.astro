@@ -2,6 +2,7 @@
 import { withBase } from "../lib/paths";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { site, timeline, achievements, education, skillGroups, cases, type ProjectCase } from "../data/profile";
+import resumes from "../../public/cv/resumes.json";
 
 const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
 const htmlPath = withBase("cv/Tran_Quoc_Truong_CV.html");
@@ -18,20 +19,31 @@ const cvProjects = cvProjectSlugs
   .filter((item): item is ProjectCase => Boolean(item));
 ---
 
-<BaseLayout title="CV" description="CV summary for Tran Quoc Truong.">
+<BaseLayout title="Resumes" description="Preview and download Tran Quoc Truong's AI Engineer, Applied AI Engineer, and Automation Tester resumes.">
   <section class="border-b border-[var(--border-subtle)] pb-16 pt-28 md:pb-24 md:pt-36">
     <div class="site-shell">
-      <div class="grid gap-8 lg:grid-cols-12 lg:items-end">
-        <div class="lg:col-span-8">
-          <h1 class="text-4xl font-bold tracking-tight text-[var(--text-base)] md:text-6xl">{site.name}</h1>
-          <p class="measure mt-4 text-xl leading-relaxed text-[var(--text-muted)]">{site.role}. {site.summary}</p>
-        </div>
-        <div class="flex flex-wrap gap-3 lg:col-span-4 lg:justify-end">
-          <a class="btn-primary" href={pdfPath} target="_blank" rel="noreferrer">Download PDF</a>
-          <a class="btn-secondary" href={htmlPath} target="_blank" rel="noreferrer">Open HTML</a>
-          <a class="btn-secondary" href={yamlPath} target="_blank" rel="noreferrer">YAML Source</a>
-        </div>
+      <h1 class="text-4xl font-bold tracking-tight text-[var(--text-base)] md:text-6xl">Resumes for your role</h1>
+      <p class="measure mt-4 text-lg leading-relaxed text-[var(--text-muted)]">
+        {site.name} · Three focused views of the same experience. Choose a two-page resume to preview or download.
+      </p>
+      <div class="mt-8 grid gap-5 lg:grid-cols-3">
+        {resumes.map((resume) => (
+          <article class="bento-card flex flex-col" aria-labelledby={`role-${resume.id}`}>
+            <div class="min-h-7 text-sm font-semibold text-sky-700 dark:text-sky-400">
+              {resume.recommended && "Recommended · General purpose"}
+            </div>
+            <h2 id={`role-${resume.id}`} class="mt-2 text-2xl font-bold text-[var(--text-base)]">{resume.name}</h2>
+            <p class="mt-3 mb-6 text-sm leading-relaxed text-[var(--text-muted)]">{resume.description}</p>
+            <div class="mt-auto flex flex-wrap gap-3">
+              <a class="btn-secondary" href={withBase(`cv/${resume.filename}.pdf`)} target="_blank" rel="noreferrer"
+                aria-label={`Preview PDF — ${resume.name} (opens in a new tab)`}>Preview PDF</a>
+              <a class="btn-primary" href={withBase(`cv/${resume.filename}.pdf`)} download
+                aria-label={`Download PDF — ${resume.name}`}>Download PDF</a>
+            </div>
+          </article>
+        ))}
       </div>
+      <p class="mt-6 text-sm text-[var(--text-muted)]">Each PDF highlights different evidence. The background below is shared profile information.</p>
     </div>
   </section>
 
@@ -47,9 +59,10 @@ const cvProjects = cvProjectSlugs
         </div>
 
         <div class="evidence-card">
-          <h3>Downloads</h3>
+          <h3>General-purpose formats</h3>
+          <p class="mb-3 text-sm text-[var(--text-muted)]">Applied AI Engineer resume</p>
           <div class="grid gap-2">
-            <a class="btn-secondary justify-start px-4 py-2" href={pdfPath} target="_blank" rel="noreferrer">PDF</a>
+            <a class="btn-secondary justify-start px-4 py-2" href={pdfPath} download>Download PDF</a>
             <a class="btn-secondary justify-start px-4 py-2" href={mdPath} target="_blank" rel="noreferrer">Markdown</a>
             <a class="btn-secondary justify-start px-4 py-2" href={htmlPath} target="_blank" rel="noreferrer">HTML</a>
             <a class="btn-secondary justify-start px-4 py-2" href={yamlPath} target="_blank" rel="noreferrer">YAML Source</a>
@@ -59,7 +72,7 @@ const cvProjects = cvProjectSlugs
 
       <article class="space-y-16">
         <section class="surface-panel rounded-2xl p-6 md:p-8">
-          <h2 class="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-400 mb-3">Positioning</h2>
+          <h2 class="text-xl font-bold text-[var(--text-base)] mb-3">Shared profile</h2>
           <h3 class="max-w-4xl text-2xl font-bold leading-tight text-[var(--text-base)] md:text-3xl">
             Solution-oriented Applied AI Engineer translating business and operational problems into reliable systems.
           </h3>

@@ -4,12 +4,14 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "predev": "npm run render:cv",
     "dev": "astro dev",
     "dev:cv": "./.venv/bin/poe update-cv",
     "render:cv": "./.venv/bin/poe update-cv",
     "build": "npm run render:cv && astro check && astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "./.venv/bin/python -m unittest discover -s tests -v"
   },
   "dependencies": {
     "@astrojs/check": "0.9.10",

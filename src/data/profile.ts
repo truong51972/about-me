@@ -182,10 +182,10 @@ export const cases: ProjectCase[] = [
       "Delivered confidential banking validation work across transaction integrity, regression, API, database, web, and mobile systems.",
     tags: ["Core Banking", "Payment Hub", "Katalon", "Postman", "SQL", "JMeter"],
     highlights: [
-      "Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android, contributing to approximately 20 person-months of follow-on delivery work.",
+      "Built and demonstrated an omnichannel automation proof of concept across Web, iOS, and Android.",
       "Validated end-to-end financial transaction flows through API testing, SQL-based database verification, regression testing, and stress testing.",
-      "Authored more than 1,500 lines of reusable SQL validation queries and maintained coverage across all in-scope API endpoints.",
-      "Reduced manual QA effort by approximately 70% through reusable automation and transaction-validation workflows."
+      "Authored reusable SQL validation queries for transaction and database checks.",
+      "Built reusable automation and transaction-validation workflows to support repeatable regression checks."
     ]
   },
   {
@@ -299,8 +299,8 @@ export const timeline = [
     org: "FPT Software · IVS business unit · Ho Chi Minh City, Vietnam",
     bullets: [
       "IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.",
-      "Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.",
-      "Banking Automation: Reduced manual regression effort by ~70% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation."
+      "Agent Assurance: Built trace-based evaluation against versioned requirements to support evidence-backed regression analysis and explicit quality gates.",
+      "Banking Automation: Built reusable API, database, and cross-platform regression automation for banking and payment workflows with SQL-based transaction validation."
     ]
   },
   {

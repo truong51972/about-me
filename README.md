@@ -1,83 +1,73 @@
-# Tran Quoc Truong — Portfolio & CV
+# Tran Quoc Truong — Portfolio & Resumes
 
-Static Astro portfolio for a solution-oriented Product Engineer / Applied AI Engineer working across AI systems, backend platforms, evaluation, and delivery.
+Static Astro portfolio for an Applied AI Engineer, with three recruiter-ready resumes generated from shared facts.
 
-## Live site
+Live site: https://portfolio.truong51972.id.vn/
 
-https://portfolio.truong51972.id.vn/
-
-## Stack
-
-- Astro
-- TypeScript
-- RenderCV
-- GitHub Pages
-
-## Development
+## Development and validation
 
 ```bash
-npm install
-uv sync
+npm ci
+uv sync --locked
 npm run dev
 ```
 
-## Build
+Development generates the resumes before starting Astro. Build and validate the full static site with:
 
 ```bash
 npm run build
+npm test
 ```
 
-This runs RenderCV to generate CV files into `public/cv/`, then builds the Astro static site into `dist/`.
+`npm run build` renders all three resumes, runs Astro's checks, and builds `dist/`. CI and GitHub Pages deployment run the same build and tests. PR builds also upload the PDFs and page PNG previews as the `recruiter-resumes` Actions artifact.
 
-## CV
+## CV authoring
 
-`Tran_Quoc_Truong_CV.yaml` is the source of truth. Render generated outputs into `public/cv/`:
+- `Tran_Quoc_Truong_CV.yaml` is the **canonical shared factual catalog**, including identity, employment, education, achievements, skills, project evidence, design, and locale. It is no longer standalone RenderCV input.
+- `cv/roles/*.yaml` contains only the three role headlines, two-sentence summaries, display descriptions, and ordered references to fact/highlight IDs. Edit common facts once in the catalog.
+- `scripts/build_cvs.py` composes valid RenderCV inputs, rejects duplicate YAML keys and duplicate/unknown references, and stages all outputs before publishing them to `public/cv/`.
+- Generated outputs are **gitignored**, built locally and in CI, and copied into `dist/` for deployment. Do not author or commit generated PDFs, YAML, HTML, Markdown, Typst, or PNGs.
+- `docs/reviews/issue-9/` contains frozen review screenshots from this migration, separate from live generated outputs; they are never build inputs.
+
+Generate without building Astro:
 
 ```bash
 uv run poe update-cv
-```
-
-The Poe task runs:
-
-```bash
-uv run rendercv render Tran_Quoc_Truong_CV.yaml --output-folder public/cv
-```
-
-You can also use the npm script:
-
-```bash
+# or
 npm run render:cv
 ```
 
-Generated files:
-- `public/cv/Tran_Quoc_Truong_CV.pdf`
-- `public/cv/Tran_Quoc_Truong_CV.html`
-- `public/cv/Tran_Quoc_Truong_CV.md`
-- `public/cv/Tran_Quoc_Truong_CV.typ`
-- `public/cv/Tran_Quoc_Truong_CV_*.png`
+The three variants have materially different evidence priorities:
+
+- **AI Engineer:** model experiments and computer vision; Vehicle Detection, APIT, and self-driving research; research recognition first.
+- **Applied AI Engineer:** operational problems, architecture, retrieval, backend delivery, and reliability; Omni-Agent, IQP, and APIT. General-purpose default.
+- **Automation Tester:** banking transaction integrity, API/database regression, and evidence-backed evaluation; Banking Automation, Agent Assurance, and IQP.
+
+All preserve the same identity, employer names, historical position strings and dates, schools, and award ranks. The website retains its Applied AI Engineer positioning. Evidence decisions and limits are recorded in [cv/evidence.md](cv/evidence.md).
+
+The builder validates non-empty artifacts, two pages per PDF, role-specific PDF titles, and searchable identity/headings. Tests additionally cover factual invariants, invalid inputs, static preview/download links, and legacy alias equivalence. Visually inspect all six pages after substantive content edits.
+
+## Public files and compatibility
+
+`/cv/` provides direct, script-free Preview PDF and Download PDF links for:
+
+- `/cv/Tran_Quoc_Truong_AI_Engineer.pdf`
+- `/cv/Tran_Quoc_Truong_Applied_AI_Engineer.pdf`
+- `/cv/Tran_Quoc_Truong_Automation_Tester.pdf`
+
+Each role also has sibling `.yaml`, `.html`, `.md`, `.typ`, `_1.png`, and `_2.png` files. Generated YAML is portable RenderCV input with relative output paths.
+
+Existing `/cv/Tran_Quoc_Truong_CV.*` URLs (including both page PNGs) remain byte-identical aliases of the Applied AI Engineer version. `/Tran_Quoc_Truong_CV.yaml` also serves that generated RenderCV YAML. The public export deliberately does **not** expose the master catalog schema.
 
 ## Project structure
 
-```
-.
-├── astro.config.mjs
-├── package.json
-├── pyproject.toml
-├── Tran_Quoc_Truong_CV.yaml
-├── public/
-│   └── cv/           # Generated CV files (rendered + committed)
-├── src/
-│   ├── components/
-│   ├── data/
-│   ├── layouts/
-│   ├── pages/
-│   └── styles/
-└── dist/             # Build output (gitignored)
-
-## Validation
-
-```bash
-uv sync
-npm install
-npm run build
+```text
+Tran_Quoc_Truong_CV.yaml  # Shared facts and RenderCV design
+cv/roles/                # Three role selections
+cv/evidence.md           # Content evidence and limitations
+scripts/build_cvs.py     # Composition, rendering, output validation
+tests/test_cvs.py        # Composition and built-site checks
+public/cv/               # Generated outputs (ignored)
+src/                     # Astro portfolio
+dist/                    # Static deployment (ignored)
 ```

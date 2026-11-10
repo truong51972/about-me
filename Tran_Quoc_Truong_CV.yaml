@@ -1,116 +1,196 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
-
+# Shared factual catalog; generate RenderCV inputs with uv run poe update-cv.
 cv:
   name: Tran Quoc Truong
-  headline: Applied AI Engineer · AI Agents & RAG · Backend Systems
   location: Ho Chi Minh City, Vietnam
   email: tranquoctruong20@gmail.com
   website: https://portfolio.truong51972.id.vn/
   social_networks:
-    - network: LinkedIn
-      username: truong51972
-    - network: GitHub
-      username: truong51972
-
-  sections:
-    summary:
-      - 'Applied AI Engineer focused on translating business and operational challenges into practical, reliable AI solutions.'
-      - 'Combines solution architecture and hands-on engineering to address enterprise knowledge access, intelligent automation, and AI agent reliability, with end-to-end ownership from problem framing and architectural decisions to delivery and quality validation.'
-
-    technical_skills:
-      - label: AI & Agentic Systems
-        details: RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM, Qdrant, Docling
-
-      - label: ML, Fine-Tuning & Model Serving
-        details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
-
-      - label: LLM Evaluation & Reliability
-        details: OpenTelemetry, Runtime Trace Reconstruction, LLM-as-a-Judge, Quality Gates, Guardrails, Langfuse
-
-      - label: Backend Engineering
-        details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming APIs
-
-      - label: Test Automation & Quality Engineering
-        details: Playwright, Cypress, Katalon Studio, Postman, API Testing, Regression Testing, SQL Validation
-
-      - label: Infrastructure & Delivery
-        details: Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
-
-    experience:
-      - company: FPT Software
-        position: Applied AI Engineer & Automation Tester (IVS)
-        start_date: 2024-12
-        end_date: present
-        location: Ho Chi Minh City, Vietnam
-        highlights:
-          - 'IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic, lexical, and code-graph retrieval to provide traceable implementation and test context through MCP-enabled AI workflows.'
-          - 'Agent Assurance: Architected trace-based evaluation that reconstructs agent execution evidence against versioned requirements, supporting auditable regression analysis and governed quality-gate decisions.'
-          - 'Banking Automation: Reduced manual regression effort by ~70% across banking and payment workflows using reusable API, database, and cross-platform automation with SQL-based transaction validation.'
-
-      - company: FPT Software
-        position: Full-Stack Developer Intern (FSA)
-        start_date: 2024-09
-        end_date: 2024-12
-        location: Ho Chi Minh City, Vietnam
-        highlights:
-          - Built the core backend for an online learning and assessment platform using Django with role-based access control and automated exam workflows.
-          - Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam proctoring and face detection.
-          - Containerized and deployed the multi-service architecture using Docker Compose, Nginx reverse proxy, and Cloudflare Tunnel.
-
-    achievements:
-      - name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
-        date: 2026-09
-        summary: Recognized for Flezi Polaris, an Agent Assurance solution combining execution traceability, behavioral evaluation, and auditable quality gates.
-      - name: 2nd Runner-up (3rd Place) — IVS Hackathon 2026
-        date: 2026-08
-        summary: Independently architected the Agent Assurance engine later integrated into Omni-Agent, enabling trace-based evaluation and quality verification.
-      - name: Second Prize — Autonomous Driving Research Paper Competition
-        date: 2024-04
-        summary: Sole-authored the project, from dataset labeling and YOLOv8 training to lane segmentation and PID steering control.
-
-    featured_projects:
-      - name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
-        summary: Independently architected and built a pre-production Applied AI platform for enterprise document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.
-        highlights:
-          - 'Solution Architecture: Designed project-scoped FastAPI services with independent data ownership, authorization boundaries, and durable asynchronous workflows.'
-          - 'Knowledge Engineering: Built versioned Docling/OCR processing and PostgreSQL–Qdrant hybrid retrieval, preserving usable documents through recoverable indexing failures.'
-          - 'Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped citations, immutable answer evidence, and input/context/output guardrails.'
-          - 'Agent Assurance: Built versioned Scenarios and qualified Run snapshots, linking OpenTelemetry evidence with deterministic quality gates for reproducible agent evaluation.'
-          - 'Product Engineering: Reduced first-test STFV from 33 to 6 actions (4 for demo) through guided onboarding in a controlled Playwright fixture, preserving preflight checks and informed consent.'
-
-      - name: APIT — Agent Programmatic Integration Testing
-        summary: AI-assisted API testing framework generating structured test scenarios from API documentation via fine-tuned LLMs.
-        highlights:
-          - Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific API testing samples.
-          - Fine-tuned Qwen2.5-3B with LoRA/QLoRA, achieving macro-F1 of 0.655 (+41.5% relative improvement over Llama-3.2-3B baseline).
-          - Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with quantized inference and runtime LoRA adapters.
-          - Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and deterministic JSON-schema validation.
-
-      - name: E-Commerce AI Assistant — Conversational RAG & Search
-        summary: End-to-end shopping assistant combining filtered vector search and multi-agent conversational retrieval.
-        highlights:
-          - Built filtered semantic product retrieval with Milvus and conversational consultation through LangGraph/LangChain.
-          - Delivered a Docker-based prototype integrating FastAPI, PostgreSQL, Redis, and vector search.
-
-    education:
-      - institution: FPT School of Business & Technology
-        area: Master of Software Engineering in AI
-        start_date: 2026-05
-        end_date: present
-        location: Ho Chi Minh City, Vietnam
-
-      - institution: FPT University
-        area: Bachelor of Artificial Intelligence
-        start_date: 2021
-        end_date: 2025
-        location: Ho Chi Minh City, Vietnam
-
-    languages:
-      - label: Vietnamese
-        details: Native
-      - label: English
-        details: Professional working proficiency
-
+  - network: LinkedIn
+    username: truong51972
+  - network: GitHub
+    username: truong51972
+facts:
+  technical_skills:
+    agents:
+      label: AI & Agentic Systems
+      details: RAG, Hybrid Retrieval, LangGraph, MCP (Model Context Protocol), Tool Calling, LiteLLM,
+        Qdrant, Docling
+    models:
+      label: ML, Fine-Tuning & Model Serving
+      details: PyTorch, Hugging Face Transformers, PEFT, Unsloth, LoRA/QLoRA, vLLM, Synthetic Data Generation
+    evaluation:
+      label: LLM Evaluation & Reliability
+      details: OpenTelemetry, Runtime Trace Reconstruction, LLM-as-a-Judge, Quality Gates, Guardrails,
+        Langfuse
+    backend:
+      label: Backend Engineering
+      details: Python, FastAPI, Django/DRF, Pydantic, SQLAlchemy, PostgreSQL, Redis, Celery, SSE / Streaming
+        APIs
+    testing:
+      label: Test Automation & Quality Engineering
+      details: Playwright, Cypress, Katalon Studio, Postman, API Testing, Regression Testing, SQL Validation,
+        JMeter
+    delivery:
+      label: Infrastructure & Delivery
+      details: Docker, Docker Compose, RunPod, Nginx, MinIO, CI/CD, Linux
+    vision:
+      label: Computer Vision & Experiments
+      details: Python, PyTorch, YOLO, OpenCV, Lane Segmentation, Image Preprocessing, Model Training &
+        Evaluation
+  experience:
+    ivs:
+      company: FPT Software
+      position: Applied AI Engineer & Automation Tester (IVS)
+      start_date: 2024-12
+      end_date: present
+      location: Ho Chi Minh City, Vietnam
+      highlights:
+        bullet-1: 'IQP (Code Intelligence): Designed multi-repository code intelligence combining semantic,
+          lexical, and code-graph retrieval to provide traceable implementation and test context through
+          MCP-enabled AI workflows.'
+        bullet-2: 'Agent Assurance: Built trace-based evaluation against versioned requirements to support
+          evidence-backed regression analysis and explicit quality gates.'
+        bullet-3: 'Banking Automation: Built reusable API, database, and cross-platform regression automation
+          for banking and payment workflows with SQL-based transaction validation.'
+    fsa:
+      company: FPT Software
+      position: Full-Stack Developer Intern (FSA)
+      start_date: 2024-09
+      end_date: 2024-12
+      location: Ho Chi Minh City, Vietnam
+      highlights:
+        bullet-1: Built the core backend for an online learning and assessment platform using Django with
+          role-based access control and automated exam workflows.
+        bullet-2: Integrated a separate FastAPI computer-vision service for AI-assisted real-time exam
+          proctoring and face detection.
+        bullet-3: Containerized and deployed the multi-service architecture using Docker Compose, Nginx
+          reverse proxy, and Cloudflare Tunnel.
+  achievements:
+    solution-day:
+      name: Golden Solution Prize (1st Place) — IVS Solution Day 2.0 2026
+      date: 2026-09
+      summary: Recognized for Flezi Polaris, an Agent Assurance solution combining execution traceability,
+        behavioral evaluation, and auditable quality gates.
+    hackathon:
+      name: 2nd Runner-up (3rd Place) — IVS Hackathon 2026
+      date: 2026-08
+      summary: Independently architected the Agent Assurance engine later integrated into Omni-Agent,
+        enabling trace-based evaluation and quality verification.
+    research:
+      name: Second Prize — Autonomous Driving Research Paper Competition
+      date: 2024-04
+      summary: Sole-authored the project, from dataset labeling and YOLOv8 training to lane segmentation
+        and PID steering control.
+  featured_projects:
+    omni-agent:
+      name: Omni-Agent — Applied AI Platform (Knowledge Builder & Agent Assurance)
+      summary: Independently architected and built a pre-production Applied AI platform for enterprise
+        document intelligence, grounded multi-agent workflows, and reproducible AI-agent assurance.
+      highlights:
+        bullet-1: 'Solution Architecture: Designed project-scoped FastAPI services with independent data
+          ownership, authorization boundaries, and durable asynchronous workflows.'
+        bullet-2: 'Knowledge Engineering: Built versioned Docling/OCR processing and PostgreSQL–Qdrant
+          hybrid retrieval, preserving usable documents through recoverable indexing failures.'
+        bullet-3: 'Agentic RAG & Trust: Orchestrated LangGraph research agents through MCP, with run-scoped
+          citations, immutable answer evidence, and input/context/output guardrails.'
+        bullet-4: 'Agent Assurance: Built versioned Scenarios and qualified Run snapshots, linking OpenTelemetry
+          evidence with deterministic quality gates for reproducible agent evaluation.'
+        bullet-5: 'Product Engineering: Reduced first-test STFV from 33 to 6 actions (4 for demo) through
+          guided onboarding in a controlled Playwright fixture, preserving preflight checks and informed
+          consent.'
+    apit:
+      name: APIT — Agent Programmatic Integration Testing
+      summary: AI-assisted API testing framework generating structured test scenarios from API documentation
+        via fine-tuned LLMs.
+      highlights:
+        bullet-1: Developed a bilingual synthetic dataset generation pipeline producing 1,258 domain-specific
+          API testing samples.
+        bullet-2: Fine-tuned Qwen2.5-3B with LoRA/QLoRA using a 1,258-sample dataset; reached test macro-F1
+          of 0.655 (+41.5% relative to fine-tuned Llama-3.2-3B).
+        bullet-3: Deployed the fine-tuned model on RunPod through an OpenAI-compatible vLLM service with
+          quantized inference and runtime LoRA adapters.
+        bullet-4: Implemented a hybrid evaluation pipeline combining LLM-as-a-Judge, fuzzy matching, and
+          deterministic JSON-schema validation.
+    e-commerce:
+      name: E-Commerce AI Assistant — Conversational RAG & Search
+      summary: End-to-end shopping assistant combining filtered vector search and multi-agent conversational
+        retrieval.
+      highlights:
+        bullet-1: Built filtered semantic product retrieval with Milvus and conversational consultation
+          through LangGraph/LangChain.
+        bullet-2: Delivered a Docker-based prototype integrating FastAPI, PostgreSQL, Redis, and vector
+          search.
+    vehicle-detection:
+      name: Vehicle Detection — BDD100K Preprocessing Experiments
+      summary: Active computer-vision study comparing offline image-enhancement policies with a shared
+        YOLO26n fine-tuning and evaluation protocol.
+      highlights:
+        protocol: Defined frozen, group-separated train/calibration/development splits for five vehicle
+          classes; final holdout remains sealed.
+        experiments: Built versioned preprocessing, full fine-tuning, and development-evaluation workflows
+          with pinned checkpoints and reusable artifacts.
+        analysis: Designed paired Raw-versus-policy comparisons with source-group bootstrap intervals,
+          separating preprocessing effects from detector adaptation.
+    self-driving:
+      name: Self-Driving Car — Perception & Control Research
+      summary: Sole-authored autonomous-driving research in Unity simulation, recognized with Second Prize
+        in 2024.
+      highlights:
+        perception: Labeled data and trained YOLOv8 perception, combining lane segmentation and OpenCV
+          bird-view processing.
+        control: Integrated perception with PID steering control and evaluated the pipeline in a Unity
+          simulation loop.
+    iqp:
+      name: IQP — Enterprise Code Intelligence
+      summary: Enterprise delivery connecting product knowledge, source repositories, and quality artifacts
+        for traceable engineering context.
+      highlights:
+        retrieval: Combined semantic, lexical, and code-graph retrieval to link product concepts with
+          implementation and test assets.
+        delivery: Integrated workspace-scoped backend services, asynchronous indexing, and MCP-compatible
+          AI clients; proprietary project details remain confidential.
+    banking:
+      name: Core Banking & Payment Hub QA Automation
+      summary: FPT Software IVS delivery validating transaction integrity across API, database, web, and
+        mobile workflows; client details remain confidential.
+      highlights:
+        channels: Built and demonstrated a cross-platform automation proof of concept spanning Web, iOS,
+          and Android.
+        validation: Validated end-to-end transaction flows using Postman API tests, reusable SQL checks,
+          regression testing, and JMeter stress testing.
+        regression: Developed reusable automation and transaction-validation workflows to support repeatable
+          regression checks.
+    assurance:
+      name: Agent Assurance — AI Agent Testing & Evaluation
+      summary: Independently designed evaluation infrastructure connecting runtime traces, behavioral
+        checks, and explicit pass/fail/inconclusive outcomes.
+      highlights:
+        evidence: Designed OpenTelemetry evidence capture, asynchronous evaluation, and durable execution
+          records for reproducible agent tests.
+        verdicts: Preserved decisive failures through worst-record aggregation and returned inconclusive
+          outcomes when evidence was insufficient.
+        boundaries: Integrated versioned Scenarios and qualified Run snapshots into pre-production Omni-Agent;
+          complete release-decision governance remains future work.
+  education:
+    masters:
+      institution: FPT School of Business & Technology
+      area: Master of Software Engineering in AI
+      start_date: 2026-05
+      end_date: present
+      location: Ho Chi Minh City, Vietnam
+    bachelors:
+      institution: FPT University
+      area: Bachelor of Artificial Intelligence
+      start_date: 2021
+      end_date: 2025
+      location: Ho Chi Minh City, Vietnam
+  languages:
+    vietnamese:
+      label: Vietnamese
+      details: Native
+    english:
+      label: English
+      details: Professional working proficiency
 design:
   theme: classic
   page:
@@ -141,17 +221,5 @@ design:
   typography:
     line_spacing: 0.58em
     alignment: left
-
 locale:
   language: english
-
-settings:
-  current_date: today
-  render_command:
-    output_folder: public/cv
-    pdf_path: public/cv/Tran_Quoc_Truong_CV.pdf
-    typst_path: public/cv/Tran_Quoc_Truong_CV.typ
-    html_path: public/cv/Tran_Quoc_Truong_CV.html
-    markdown_path: public/cv/Tran_Quoc_Truong_CV.md
-    png_path: public/cv/Tran_Quoc_Truong_CV.png
-  pdf_title: Tran Quoc Truong - CV
