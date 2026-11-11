@@ -118,6 +118,19 @@ def validate_artifacts(folder, role, document):
             raise ValueError(f"{stem}: missing page preview {page}")
 
 
+def publish_artifacts(staging, output):
+    output.mkdir(parents=True, exist_ok=True)
+    files = [path for path in staging.iterdir() if path.is_file()]
+    for path in files:
+        shutil.copyfile(path, output / path.name)
+    current = {path.name for path in files}
+    # This prefix and these extensions are reserved for generated CV artifacts.
+    for path in output.glob("Tran_Quoc_Truong_*"):
+        if (path.is_file() and path.suffix in (".pdf", ".yaml", ".html", ".md", ".typ", ".png")
+                and path.name not in current):
+            path.unlink()
+
+
 def main():
     roles, documents = load_variants()
     output = ROOT / "public" / "cv"
@@ -136,10 +149,7 @@ def main():
                      "filename": role["filename"], "recommended": key == DEFAULT}
                     for key, role in roles.items()]
         (staging / "resumes.json").write_text(json.dumps(manifest, indent=2) + "\n")
-        output.mkdir(parents=True, exist_ok=True)
-        for path in staging.iterdir():
-            if path.is_file():
-                shutil.copyfile(path, output / path.name)
+        publish_artifacts(staging, output)
     print("Validated three 2-page resumes and the Applied AI Engineer legacy aliases.")
 
 

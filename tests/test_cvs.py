@@ -3,10 +3,11 @@ from html.parser import HTMLParser
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import yaml
 
 from scripts.build_cvs import (
-    DEFAULT, LEGACY, ROOT, compose, load_variants, read_yaml, validate_artifacts,
+    DEFAULT, LEGACY, ROOT, compose, load_variants, publish_artifacts, read_yaml, validate_artifacts,
 )
 
 
@@ -80,11 +81,51 @@ class CompositionTests(unittest.TestCase):
                 load_variants(root)
 
     def test_output_collisions_fail(self):
-        from unittest.mock import patch
         duplicate = self.roles[DEFAULT]
         with patch("scripts.build_cvs.read_yaml", side_effect=[self.source, duplicate, duplicate, duplicate]):
             with self.assertRaisesRegex(ValueError, "collision"):
                 load_variants()
+
+
+class PublicationTests(unittest.TestCase):
+    def test_stale_artifacts_removed_and_current_aliases_preserved(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            staging, output = Path(temporary) / "staging", Path(temporary) / "output"
+            staging.mkdir()
+            output.mkdir()
+            current = {"resumes.json": "[]"}
+            stale = []
+            for suffix in (".pdf", ".yaml", ".html", ".md", ".typ", "_1.png", "_2.png"):
+                current[f"{LEGACY}{suffix}"] = "new alias"
+                current[f"Tran_Quoc_Truong_Applied_AI_Engineer{suffix}"] = "new role"
+                stale.append(f"Tran_Quoc_Truong_Retired_Role{suffix}")
+            stale.append(f"{LEGACY}_3.png")
+            for name, content in current.items():
+                (staging / name).write_text(content)
+                (output / name).write_text("old")
+            for name in stale + ["notes.md", "Tran_Quoc_Truong_notes.txt"]:
+                (output / name).write_text("keep unless generated")
+            (output / "Tran_Quoc_Truong_directory.pdf").mkdir()
+            publish_artifacts(staging, output)
+            for name, content in current.items():
+                self.assertEqual((output / name).read_text(), content)
+            self.assertTrue(all(not (output / name).exists() for name in stale))
+            self.assertEqual((output / "notes.md").read_text(), "keep unless generated")
+            self.assertTrue((output / "Tran_Quoc_Truong_notes.txt").is_file())
+            self.assertTrue((output / "Tran_Quoc_Truong_directory.pdf").is_dir())
+
+    def test_copy_failure_does_not_prune_existing_artifacts(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            staging, output = Path(temporary) / "staging", Path(temporary) / "output"
+            staging.mkdir()
+            output.mkdir()
+            (staging / "resumes.json").write_text("[]")
+            previous = output / "Tran_Quoc_Truong_Retired_Role.pdf"
+            previous.write_text("previous resume")
+            with patch("scripts.build_cvs.shutil.copyfile", side_effect=OSError("copy failed")):
+                with self.assertRaisesRegex(OSError, "copy failed"):
+                    publish_artifacts(staging, output)
+            self.assertEqual(previous.read_text(), "previous resume")
 
 
 class BuiltSiteTests(unittest.TestCase):

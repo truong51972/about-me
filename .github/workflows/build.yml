@@ -30,6 +30,7 @@ jobs:
 
       - run: npm ci
       - run: uv sync --locked
+      - run: npm run check
       - run: npm run build
       - run: npm test
       - uses: actions/upload-artifact@v4

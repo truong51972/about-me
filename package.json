@@ -10,6 +10,7 @@
     "render:cv": "./.venv/bin/poe update-cv",
     "build": "npm run render:cv && astro check && astro build",
     "preview": "astro preview",
+    "precheck": "npm run render:cv",
     "check": "astro check",
     "test": "./.venv/bin/python -m unittest discover -s tests -v"
   },

@@ -12,20 +12,23 @@ uv sync --locked
 npm run dev
 ```
 
-Development generates the resumes before starting Astro. Build and validate the full static site with:
+Development generates the resumes before starting Astro. To run Astro's checks without building the site, use `npm run check`; its precheck step generates the required resume inputs, including on a fresh checkout.
+
+Build and validate the full static site with:
 
 ```bash
 npm run build
 npm test
 ```
 
-`npm run build` renders all three resumes, runs Astro's checks, and builds `dist/`. CI and GitHub Pages deployment run the same build and tests. PR builds also upload the PDFs and page PNG previews as the `recruiter-resumes` Actions artifact.
+`npm run build` renders all three resumes, runs Astro's checks, and builds `dist/`. CI and GitHub Pages deployment run the same build and tests. Build CI additionally runs `npm run check` before the build to cover its clean-checkout entrypoint. PR builds also upload the PDFs and page PNG previews as the `recruiter-resumes` Actions artifact.
 
 ## CV authoring
 
 - `Tran_Quoc_Truong_CV.yaml` is the **canonical shared factual catalog**, including identity, employment, education, achievements, skills, project evidence, design, and locale. It is no longer standalone RenderCV input.
 - `cv/roles/*.yaml` contains only the three role headlines, two-sentence summaries, display descriptions, and ordered references to fact/highlight IDs. Edit common facts once in the catalog.
 - `scripts/build_cvs.py` composes valid RenderCV inputs, rejects duplicate YAML keys and duplicate/unknown references, and stages all outputs before publishing them to `public/cv/`.
+- After copying validated outputs, the builder removes obsolete files in its reserved `Tran_Quoc_Truong_*` filename namespace with `.pdf`, `.yaml`, `.html`, `.md`, `.typ`, or `.png` extensions. Current role files and legacy aliases are preserved; unrelated filenames are left alone.
 - Generated outputs are **gitignored**, built locally and in CI, and copied into `dist/` for deployment. Do not author or commit generated PDFs, YAML, HTML, Markdown, Typst, or PNGs.
 - `docs/reviews/issue-9/` contains frozen review screenshots from this migration, separate from live generated outputs; they are never build inputs.
 
