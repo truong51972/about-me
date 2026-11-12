@@ -6,8 +6,10 @@ These rules apply to the portfolio and especially to CV-related changes in this 
 
 ## CV source of truth
 
-- `Tran_Quoc_Truong_CV.yaml` is the source of truth.
-- Do not hand-edit generated files in `public/cv/` as the primary change.
+- `Tran_Quoc_Truong_CV.yaml` is the shared factual catalog and design source of truth. It is composed with the three small selections in `cv/roles/` by `scripts/build_cvs.py`; it is not a standalone RenderCV input.
+- Edit facts once in the catalog, reference stable entry/highlight IDs in role overlays, and never override identity, historical job titles, dates, employers, education, or award ranks per role.
+- The public `/Tran_Quoc_Truong_CV.yaml` export is generated RenderCV input for the Applied AI Engineer default, not the master catalog.
+- Generated files in `public/cv/` are ignored and built locally and in CI; never hand-edit or commit them. The old PDF/HTML/Markdown/YAML/Typst/PNG filenames alias the Applied AI Engineer version.
 - After changing the CV source, regenerate with `uv run poe update-cv` or validate with `npm run build`.
 
 ## CV strategy
@@ -16,7 +18,7 @@ Treat the CV as an index of the strongest evidence, not a database of every tool
 
 Position the profile primarily as an Applied AI engineer with solution architecture, Python backend, and quality engineering strengths. Start from real business or operational problems, show system/solution design, then use implementation details as evidence rather than as the primary identity.
 
-- Keep one stable professional identity ("Applied AI Engineer"). Do not rewrite the headline for every job description.
+- Keep one stable portfolio-wide professional identity ("Applied AI Engineer"). Three predefined CV marketing headlines (AI Engineer, Applied AI Engineer, Automation Tester) are allowed; these never rewrite historical job titles. Applied AI Engineer is the general-purpose default.
 - Tailor primarily through ordering, selection, and emphasis of evidence.
 - Prefer concrete accomplishments over technology inventories.
 - A technology mentioned in a real project or experience bullet is stronger evidence than a long skills list.
@@ -120,3 +122,4 @@ Before merging a CV change:
 - Check that generated output remains readable and within the intended page count.
 - Run `npm run build` when the environment supports it; this regenerates PDF/HTML/Markdown/Typst CV outputs from the YAML source.
 - Inspect the generated PDF for a two-page layout, hyphenation, and accurate employer/award text before merging.
+- Inspect all three PDFs and run `npm test` after `npm run build`; the builder fails on invalid references, output collisions, missing artifacts, wrong PDF titles, non-searchable headings, or a page count other than two.

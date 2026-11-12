@@ -1,0 +1,49 @@
+filename: Tran_Quoc_Truong_Applied_AI_Engineer
+name: Applied AI Engineer
+description: AI Agents · RAG · Backend Systems
+headline: Applied AI Engineer — AI Agents, RAG & Backend Systems
+summary:
+- Applied AI Engineer focused on translating business and operational challenges into practical, reliable
+  AI solutions.
+- Combines solution architecture and hands-on engineering to address enterprise knowledge access, intelligent
+  automation, and AI agent reliability, with end-to-end ownership from problem framing and architectural
+  decisions to delivery and quality validation.
+skills:
+- agents
+- backend
+- evaluation
+- models
+- testing
+- delivery
+experience:
+- id: ivs
+  highlights:
+  - bullet-1
+  - bullet-2
+  - bullet-3
+- id: fsa
+  highlights:
+  - bullet-1
+  - bullet-2
+  - bullet-3
+projects:
+- id: omni-agent
+  highlights:
+  - bullet-1
+  - bullet-2
+  - bullet-3
+  - bullet-4
+  - bullet-5
+- id: iqp
+  highlights:
+  - retrieval
+  - delivery
+- id: apit
+  highlights:
+  - bullet-2
+  - bullet-3
+  - bullet-4
+achievements:
+- solution-day
+- hackathon
+- research

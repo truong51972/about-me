@@ -6,8 +6,10 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "poethepoet>=0.37",
+    "pypdf>=6",
+    "pyyaml>=6.0.3",
     "rendercv[full]>=2.8",
 ]
 
 [tool.poe.tasks]
-update-cv = "rendercv render Tran_Quoc_Truong_CV.yaml"
+update-cv = "python scripts/build_cvs.py"

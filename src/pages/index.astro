@@ -4,7 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HonorsSection from "../components/HonorsSection.astro";
 import { site, cases, education, skillGroups, timeline } from "../data/profile";
 
-const pdfPath = withBase("cv/Tran_Quoc_Truong_CV.pdf");
+const resumesPath = withBase("cv/");
 const projectHref = (slug: string) => withBase(`projects/${slug}/`);
 
 const projectImages: Record<string, string> = {
@@ -60,8 +60,8 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
             <a href="#featured-work" class="btn-primary">
               View Featured Work
             </a>
-            <a href={pdfPath} target="_blank" rel="noreferrer" class="btn-secondary">
-              Download CV (PDF)
+            <a href={resumesPath} class="btn-secondary">
+              View Resumes
             </a>
           </div>
 
@@ -554,8 +554,8 @@ const supportingCases = cases.filter((c) => !flagshipSlugs.includes(c.slug));
             <a href={site.linkedin} target="_blank" rel="noreferrer" class="btn-secondary w-full text-center sm:w-auto">
               Connect on LinkedIn ↗
             </a>
-            <a href={pdfPath} target="_blank" rel="noreferrer" class="btn-secondary w-full text-center sm:w-auto">
-              Download Full CV (PDF)
+            <a href={resumesPath} class="btn-secondary w-full text-center sm:w-auto">
+              View Resumes
             </a>
           </div>
         </div>

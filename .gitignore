@@ -2,3 +2,7 @@
 config.codekit
 node_modules/
 dist/
+public/cv/
+__pycache__/
+.astro/preview.json
+.astro/preview.log

@@ -27,7 +27,7 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
       - name: Install Python dependencies
-        run: uv sync
+        run: uv sync --locked
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -37,6 +37,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Validate resumes and static links
+        run: npm test
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

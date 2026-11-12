@@ -1,4 +1,4 @@
-import cvSource from "../../Tran_Quoc_Truong_CV.yaml?raw";
+import cvSource from "../../public/cv/Tran_Quoc_Truong_CV.yaml?raw";
 
 export const prerender = true;
 

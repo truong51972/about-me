@@ -1,0 +1,44 @@
+filename: Tran_Quoc_Truong_Automation_Tester
+name: Automation Tester
+description: Test Automation · API Testing · Quality Engineering
+headline: Automation Tester — API, Regression & Quality Engineering
+summary:
+- Automation Tester focused on transaction integrity and repeatable regression checks across banking APIs,
+  databases, and cross-platform workflows.
+- Combines reusable automation and SQL-based validation with backend engineering and evidence-backed AI-agent
+  evaluation to investigate failures and make quality results traceable.
+skills:
+- testing
+- backend
+- evaluation
+- delivery
+experience:
+- id: ivs
+  highlights:
+  - bullet-3
+  - bullet-2
+  - bullet-1
+- id: fsa
+  highlights:
+  - bullet-1
+  - bullet-3
+  - bullet-2
+projects:
+- id: banking
+  highlights:
+  - channels
+  - validation
+  - regression
+- id: assurance
+  highlights:
+  - evidence
+  - verdicts
+  - boundaries
+- id: iqp
+  highlights:
+  - retrieval
+  - delivery
+achievements:
+- solution-day
+- hackathon
+- research
